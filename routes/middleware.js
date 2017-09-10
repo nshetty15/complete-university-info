@@ -1,3 +1,4 @@
+var keystone = require('keystone');
 /**
  * This file contains the common middleware used by your routes.
  *
@@ -18,6 +19,9 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
+	// https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
+	res.locals.baseUrl = keystone.get('baseUrl');
+
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },

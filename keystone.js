@@ -62,6 +62,8 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 
+// https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
+keystone.set('baseUrl', (keystone.get('env') == 'production') ? 'https://www.completeuniversityinfo.com/' : 'http://localhost:3000/');
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'

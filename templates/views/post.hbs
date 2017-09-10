@@ -7,14 +7,20 @@
 				<header>
 					<h1>{{data.post.title}}</h1>
 					<h5>
-						{{{categoryList data.post.categories prefix="Posted in "}}}
-						{{#if author.name.first}}by {{author.name.first}}{{/if}}
+						{{{categoryList data.post.categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
 					</h5>
 				</header>
 				<div class="post">
 					{{#if data.post.image}}<img src="{{{cloudinaryUrl data.post.image width=750 height=450 crop='fit' }}}" class="img-responsive">{{/if}}
 					{{{data.post.content.extended}}}
 				</div>
+
+				{{!-- https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms --}}
+				<a class="ion-social-twitter" href="https://twitter.com/intent/tweet?text={{data.post.title}}&url={{data.post.fullPostUrl}}"
+				 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a>
+				<a class="ion-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{data.post.fullPostUrl}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">facebook</a>
+				<a class="ion-social-googleplus" href="https://plus.google.com/share?url={{data.post.fullPostUrl}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">Google plus</a>
+
 			</article>
 		</div>
 	</div>
