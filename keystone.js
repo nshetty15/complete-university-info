@@ -55,7 +55,9 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
+	universities: ['universities', 'university-cities', 'university-states', 'university-countries'],
 	posts: ['posts', 'post-categories'],
+	tests: 'tests',
 	enquiries: 'enquiries',
 	users: 'users',
 });

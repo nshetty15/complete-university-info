@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <article>
+        <p><a href="/universities">&larr; Back to universities</a></p>
+        <hr>
+        <header>
+          <h1>{{data.university.title}}</h1>
+        </header>
+        <div class="row">
+          <div class="col-md-6 col-lg-6">
+            {{#if data.university.image}}
+            <img src="{{cloudinaryUrl data.university.image crop='fit'}}" class="img-responsive"> {{/if}}
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Price: </strong>{{data.university.price}}</li>
+              <li class="list-group-item"><strong>Address: </strong>{{data.university.address}}</li>
+            </ul>
+            <div class="well">
+              {{{data.university.description}}}
+            </div>
+            <div class="well">
+
+              {{# each data.university.programs }} 
+              {{this}}
+              <br>
+              <h2>{{title}}</h2>
+              <div>{{{description}}}</div>
+              {{/each}}
+
+            </div>
+            <a class="btn btn-success btn-block" href="/contact">Ask About This Product</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

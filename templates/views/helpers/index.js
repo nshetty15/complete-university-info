@@ -207,6 +207,16 @@ module.exports = function () {
 		return ('/blog/' + categorySlug);
 	};
 
+	// Direct url link to a specific university
+	_helpers.universityUrl = function (universitySlug, options) {
+		console.log(options);
+		return ('/university/' + universitySlug);
+	};
+
+	//_helpers.universityCountryUrl = function (categorySlug, options) {
+	//	return ('/universities/' + categorySlug);
+	//};
+
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
 	// Mostly generalized and with a small adjust to `_helper.pageUrl` could be universal for content types
