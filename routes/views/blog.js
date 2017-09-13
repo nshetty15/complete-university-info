@@ -44,7 +44,7 @@ exports = module.exports = function (req, res) {
 	// Load the current category filter
 	view.on('init', function (next) {
 
-		if (req.params.category) {
+		if (req.params.category) { 
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
 				locals.data.category = result;
 				next(err);

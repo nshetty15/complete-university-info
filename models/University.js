@@ -29,6 +29,7 @@ University.add({
   //cityCategories: { type: Types.Relationship, ref: 'UniversityCity' },
   //stateCategory: { type: Types.Relationship, ref: 'UniversityState' },
   //countryCategory: { type: Types.Relationship, ref: 'UniversityCountry'},
+  categories: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
   publishedDate: {type: Date, default: Date.now}
 });
 

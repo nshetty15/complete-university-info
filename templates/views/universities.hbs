@@ -4,14 +4,22 @@
     <div class="col-md-12 col-lg-12">
       <div class="row">
         {{# each universities}}
-          <div class="col-md-4 col-lg-4">
-            <h2><a href="{{universityUrl slug}}">{{{title}}}</a></h2>
-            {{#if image}}
-              <img src="{{{cloudinaryUrl image width=160 height=160 crop="fit"}}}" class="thumbnail">
-            {{/if}}
-          </div>
+        <div class="col-md-4 col-lg-4">
+          <h2><a href="{{universityUrl slug}}">{{{title}}}</a></h2>
+          {{#if image}}
+          <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> {{/if}}
+        </div>
         {{/each}}
       </div>
     </div>
   </div>
+
+  <h2>Categories</h2>
+  <div style="margin-top: 70px;" class="list-group">
+    <a href="/blog" class="active list-group-item">All Categories</a> 
+    {{# each data.categories }}
+    <a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a> 
+    {{/each}}
+  </div>
+
 </div>

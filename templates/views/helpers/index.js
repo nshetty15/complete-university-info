@@ -206,16 +206,16 @@ module.exports = function () {
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
 	};
-
+	
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (universitySlug, options) {
 		console.log(options);
 		return ('/university/' + universitySlug);
 	};
 
-	//_helpers.universityCountryUrl = function (categorySlug, options) {
-	//	return ('/universities/' + categorySlug);
-	//};
+	_helpers.categoryCountryUrl = function (categorySlug, options) {
+		return ('/universities/' + categorySlug);
+	};
 
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
