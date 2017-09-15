@@ -9,7 +9,7 @@ exports = module.exports = function (req, res) {
   // Init locals
   locals.section = 'universities';
   locals.filters = {
-    category: req.params.category,
+    category: req.params.country,
   };
   locals.data = {
     posts: [],
@@ -27,7 +27,7 @@ exports = module.exports = function (req, res) {
       }
 
       locals.data.categories = results;
-      console.log("UniversityCountry: ", locals.data.categories);
+      //console.log("UniversityCountry: ", locals.data.categories);
 
       // Load the counts for each category
       async.each(locals.data.categories, function (category, next) {
@@ -49,7 +49,7 @@ exports = module.exports = function (req, res) {
 
     if (req.params.category) {
       keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-        console.log("locals.data.category", locals.data.category);
+        //("locals.data.category", locals.data.category);
         locals.data.category = result;
         next(err);
       });
@@ -73,7 +73,7 @@ exports = module.exports = function (req, res) {
           .populate('author categories');
     
         if (locals.data.category) {
-          console.log("locals.data.category: ", locals.data.category);
+          //console.log("locals.data.category: ", locals.data.category);
           q.where('categories').in([locals.data.category]);
         }
     

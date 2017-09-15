@@ -95,7 +95,7 @@ module.exports = function () {
 		var suffix = _.isString(options.hash.suffix) ? options.hash.suffix : '';
 		var output = '';
 
-		function createTagList (tags) {
+		function createTagList(tags) {
 			var tagNames = _.map(tags, 'name');
 
 			if (autolink) {
@@ -206,11 +206,11 @@ module.exports = function () {
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
 	};
-	
+
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (universitySlug, options) {
-		console.log(options);
-		return ('/university/' + universitySlug);
+		// console.log(options);
+		return ('/universities/' + universitySlug);
 	};
 
 	_helpers.categoryCountryUrl = function (categorySlug, options) {

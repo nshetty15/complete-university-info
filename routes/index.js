@@ -33,12 +33,16 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
+	//console.log(routes.views.index)
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/universities', routes.views.universities);
+
+	app.get('/universities/:country?', routes.views.universities);
 	app.get('/universities/:university', routes.views.university);
+
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
+
 	app.get('/tests', routes.views.tests);
 	app.get('/tests/:test', routes.views.test);
 	app.all('/contact', routes.views.contact);

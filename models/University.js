@@ -17,15 +17,22 @@ var University = new keystone.List('University', {
 });
 
 University.add({
-  title: {type: String, requried: true},
-  image: {type: Types.CloudinaryImage },
-  price: {type: Types.Money, format: '$0,0.00', currency: 'en-gb'},
-  address: {type: String},
+  state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+  author: { type: Types.Relationship, ref: 'User', index: true },
+
+  title: { type: String, requried: true },
+  image: { type: Types.CloudinaryImage },
+  
+  currency: { type: Types.TextArray },
+  //price: {type: Types.Money, format: '$0,0.00', currency: 'en-gb'},
+  address: { type: String },
   // programs: { type: Types.Relationship, ref: 'Program', many: true },
   website: {type: Types.Url},
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   introduction: {type: Types.Html, wysiwyg: true, height: 300},
   description: {type: Types.Html, wysiwyg: true, height: 300},
+  //manyStrings: { type: Types.TextArray },
+  
   //cityCategories: { type: Types.Relationship, ref: 'UniversityCity' },
   //stateCategory: { type: Types.Relationship, ref: 'UniversityState' },
   //countryCategory: { type: Types.Relationship, ref: 'UniversityCountry'},
@@ -34,15 +41,8 @@ University.add({
 });
 
 
-/**
- * Relationships
- * =============
- */
-//University.relationship({ path: 'programs', ref: 'Program', refPath: 'author' });
-
-
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-University.defaultColumns = 'title, address, website, location|20%';
+University.defaultColumns = 'title, address, website, location|20%, state';
 /**
  * Registration
  * ============

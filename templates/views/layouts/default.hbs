@@ -14,22 +14,33 @@
 	<meta name="twitter:title" content="{{data.post.meta.title}}"> {{else}}
 	<title>{{data.post.title}}</title>
 	<meta property="og:title" content="{{data.post.title}}">
-	<meta name="twitter:title" content="{{data.post.title}}"> {{/if}} {{#if data.post.meta.description}}
+	<meta name="twitter:title" content="{{data.post.title}}"> 
+	{{/if}} 
+
+	{{#if data.post.meta.description}}
 	<meta name="description" content="{{data.post.meta.description}}">
 	<meta property="og:description" content="{{data.post.meta.description}}">
-	<meta name="twitter:description" content="{{data.post.meta.description}}"> {{else}}
+	<meta name="twitter:description" content="{{data.post.meta.description}}"> 
+	{{else}}
 	<meta name="description" content="{{data.post.content.brief}}">
 	<meta property="og:description" content="{{data.post.content.brief}}">
-	<meta name="twitter:description" content="{{data.post.content.brief}}"> {{/if}}
+	<meta name="twitter:description" content="{{data.post.content.brief}}"> 
+	{{/if}}
+
 	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta property="og:image" content="{{data.post.image.url}}">
 	<meta name="twitter:image:src" content="{{data.post.image.url}}">
 	<meta property="og:url" content="{{data.post.fullPostUrl}}">
 	<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
-	<meta property="article:published_time" content="{{data.post.publishedDate}}"> {{# each data.post.categories}}
-	<meta property="article:tag" content="{{name}}"> {{/each}}
+	<meta property="article:published_time" content="{{data.post.publishedDate}}"> 
+
+	{{# each data.post.categories}}
+	<meta property="article:tag" content="{{name}}"> 
+	{{/each}}
+
 	<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}"> 
+
 	{{else}}
 	<title>Info</title>
 	<meta name="description" content="general description">
@@ -40,7 +51,8 @@
 
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link href="/styles/site.css" rel="stylesheet"> {{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
+	<link href="/styles/site.css" rel="stylesheet"> 
+	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
 	admin--}} {{{isAdminEditorCSS user}}} {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //-
 	Safely remove this block if you are not targeting IE8 --}}
 	<!--[if lt IE 9]>
