@@ -1,0 +1,13 @@
+<ul class="pagination">
+	<li {{#unless data.universities.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationPreviousUrl data.universities.previous}}">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</li>
+	{{{paginationNavigation data.universities.pages data.universities.currentPage data.universities.totalPages}}}
+	<li {{#unless data.universities.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationNextUrl data.universities.next data.universities.totalPages}}">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</li>
+</ul>

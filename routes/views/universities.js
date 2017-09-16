@@ -4,7 +4,7 @@ var async = require('async');
 exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var locals = res.locals;
-
+console.log(req.params.country);
   // init locals
   locals.section = 'universities';
   locals.filters = {
@@ -73,7 +73,7 @@ exports = module.exports = function (req, res) {
     }
 
     q.exec(function (err, results) {
-      console.log("FINAL RESULTS: " + JSON.stringify(results));
+      // console.log("FINAL RESULTS: " + JSON.stringify(results));
       locals.data.universities = results;
       next(err);
     });

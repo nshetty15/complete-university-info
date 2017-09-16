@@ -212,9 +212,14 @@ module.exports = function () {
 		// console.log(options);
 		return ('/universities/' + universitySlug);
 	};
-
+	// country category
 	_helpers.categoryCountryUrl = function (categorySlug, options) {
+		//var ac = delete options.results;
 		return ('/universities/' + categorySlug);
+	};
+
+	_helpers.pageUrl = function (pageNumber, options) {
+		return '/universities?page=' + pageNumber;
 	};
 
 	// ### Pagination Helpers

@@ -1,12 +1,13 @@
 <div class="container">
   <h1>Universities</h1>
-  <h4 class="text-weight-normal">Showing {{ data.universities.results.length}} post.</h4>
+  <h4 class="text-weight-normal">Total {{ data.universities.total}} Universities.</h4>
   <div class="row">
     <div class="col-md-8 col-lg-8">
       <div class="row">
         {{# each data.universities.results}}
         <div class="col-md-4 col-lg-4">
-          <h2><a href="{{universityUrl slug}}">{{{title}}}</a></h2>
+          {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
+          <h2><a href="{{universityUrl}}/{{filters.category}} {{ slug }}">{{{title}}}</a></h2>
           {{#if image}}
           <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
           {{/if}}
@@ -27,6 +28,6 @@
 
   </div>
 
-  {{>pagination}}
+  {{>paginationuniversity}}
 
 </div>
