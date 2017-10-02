@@ -89,6 +89,7 @@ module.exports = function () {
 	// output. 'Filed Undder <a href="blog/tech">tech</a>, <a href="blog/js">js</a>'
 
 	_helpers.categoryList = function (categories, options) {
+		// console.log("categories", categories);
 		var autolink = _.isString(options.hash.autolink) && options.hash.autolink === 'false' ? false : true;
 		var separator = _.isString(options.hash.separator) ? options.hash.separator : ', ';
 		var prefix = _.isString(options.hash.prefix) ? options.hash.prefix : '';
@@ -100,6 +101,7 @@ module.exports = function () {
 
 			if (autolink) {
 				return _.map(tags, function (tag) {
+					// console.log("tag key blog", tag.key, tag.name);
 					return linkTemplate({
 						url: ('/blog/' + tag.key),
 						text: _.escape(tag.name),
@@ -196,32 +198,37 @@ module.exports = function () {
 		return ('/blog/post/' + postSlug);
 	};
 
-	// might be a ghost helper
-	// used for pagination urls on blog
-	_helpers.pageUrl = function (pageNumber, options) {
-		return '/blog?page=' + pageNumber;
-	};
-
 	// create the category url for a blog-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
 	};
 
-	// Direct url link to a specific university
-	_helpers.universityUrl = function (universitySlug, options) {
-		// console.log(options);
-		return ('/universities/' + universitySlug);
+	// might be a ghost helper
+	// used for pagination urls on blog
+	_helpers.pageUrl = function (pageNumber, options) {
+		return '?page=' + pageNumber; // /blog
 	};
+
+	/***********/
+
+	// Direct url link to a specific university
+	_helpers.universityUrl = function (universityCountry, universitySlug, options) {
+		return ('/universities/' + universityCountry + '/' + universitySlug);
+	};
+
 	// country category
 	_helpers.categoryCountryUrl = function (categorySlug, options) {
-		//var ac = delete options.results;
 		return ('/universities/' + categorySlug);
 	};
 
-	_helpers.pageUrl = function (pageNumber, options) {
+	_helpers.uniPageUrl = function (pageNumber, options) {
 		return '/universities?page=' + pageNumber;
 	};
 
+	_helpers.uniPageCountryUrl = function (pageNumber, options) {
+		return '/universities/?page=' + pageNumber;
+	};
+	/******************* */
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
 	// Mostly generalized and with a small adjust to `_helper.pageUrl` could be universal for content types
@@ -242,9 +249,8 @@ module.exports = function () {
 		return options.inverse(this);
 	};
 
-	_helpers.paginationNavigation = function (pages, currentPage, totalPages, options) {
+	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, options) {
 		var html = '';
-
 		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
 		// '...' will be added by keystone if the pages exceed 10
 		_.each(pages, function (page, ctr) {
@@ -261,8 +267,16 @@ module.exports = function () {
 				page = ((ctr) ? totalPages : 1);
 			}
 
-			// get the pageUrl using the integer value
-			var pageUrl = _helpers.pageUrl(page);
+			// get the pageUrl||uniPageUrl using the integer value - 
+			var pageUrl;
+			if (source === "universities") {
+				pageUrl = _helpers.uniPageUrl(page);
+			} else if (source === "blog") {
+				pageUrl = _helpers.pageUrl(page);
+			} else if (source === "bycountry") {
+				pageUrl = _helpers.uniPageCountryUrl(page);
+			}
+
 			// wrapup the html
 			html += '<li' + liClass + '>' + linkTemplate({ url: pageUrl, text: pageText }) + '</li>\n';
 		});
@@ -340,6 +354,6 @@ module.exports = function () {
 	_helpers.underscoreFormat = function (obj, underscoreMethod) {
 		return obj._[underscoreMethod].format();
 	};
-
+	// console.log(_helpers)
 	return _helpers;
 };

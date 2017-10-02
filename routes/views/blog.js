@@ -14,6 +14,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		posts: [],
 		categories: [],
+		source: 'blog',
 	};
 
 	// Load all categories

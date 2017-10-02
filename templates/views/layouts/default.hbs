@@ -4,28 +4,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-
-	{{!-- https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms || https://modernweb.com/building-blog-keystone-cms-node-js/ --}}
-	{{#if data.post}} 
-	{{#if data.post.meta.title}}
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> {{!-- https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms || https://modernweb.com/building-blog-keystone-cms-node-js/
+	--}} {{#if data.post}} {{#if data.post.meta.title}}
 	<title>{{data.post.meta.title}}</title>
 	<meta property="og:title" content="{{data.post.meta.title}}">
 	<meta name="twitter:title" content="{{data.post.meta.title}}"> {{else}}
 	<title>{{data.post.title}}</title>
 	<meta property="og:title" content="{{data.post.title}}">
-	<meta name="twitter:title" content="{{data.post.title}}"> 
-	{{/if}} 
-
-	{{#if data.post.meta.description}}
+	<meta name="twitter:title" content="{{data.post.title}}"> {{/if}} {{#if data.post.meta.description}}
 	<meta name="description" content="{{data.post.meta.description}}">
 	<meta property="og:description" content="{{data.post.meta.description}}">
-	<meta name="twitter:description" content="{{data.post.meta.description}}"> 
-	{{else}}
+	<meta name="twitter:description" content="{{data.post.meta.description}}"> {{else}}
 	<meta name="description" content="{{data.post.content.brief}}">
 	<meta property="og:description" content="{{data.post.content.brief}}">
-	<meta name="twitter:description" content="{{data.post.content.brief}}"> 
-	{{/if}}
+	<meta name="twitter:description" content="{{data.post.content.brief}}"> {{/if}}
 
 	<meta property="og:type" content="article">
 	<meta name="twitter:card" content="summary_large_image">
@@ -33,26 +25,19 @@
 	<meta name="twitter:image:src" content="{{data.post.image.url}}">
 	<meta property="og:url" content="{{data.post.fullPostUrl}}">
 	<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
-	<meta property="article:published_time" content="{{data.post.publishedDate}}"> 
+	<meta property="article:published_time" content="{{data.post.publishedDate}}"> {{# each data.post.categories}}
+	<meta property="article:tag" content="{{name}}"> {{/each}}
 
-	{{# each data.post.categories}}
-	<meta property="article:tag" content="{{name}}"> 
-	{{/each}}
-
-	<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}"> 
-
-	{{else}}
+	<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}"> {{else}}
 	<title>Info</title>
 	<meta name="description" content="general description">
 	<meta property="og:image" content="{{baseUrl}}/images/logo.png">
 	<meta name="twitter:image:src" content="{{baseUrl}}/images/logo.png">
-	<meta name="keywords" content="Node.js, development, api"> 
-	{{/if}}
+	<meta name="keywords" content="Node.js, development, api"> {{/if}}
 
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link href="/styles/site.css" rel="stylesheet"> 
-	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
+	<link href="/styles/site.css" rel="stylesheet"> {{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
 	admin--}} {{{isAdminEditorCSS user}}} {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //-
 	Safely remove this block if you are not targeting IE8 --}}
 	<!--[if lt IE 9]>
@@ -76,11 +61,23 @@
 					</div>
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">
-							{{# each navLinks}}
-							<li {{#ifeq ../section key}}class="active" {{else}}{{/ifeq}}>
+							{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
+							{{# each navLinks}} {{#if href}}
+							<li {{#ifeq ../../section key}}class="active" {{/ifeq}}>
 								<a href="{{ href }}">{{ label }}</a>
 							</li>
-							{{/each}}
+							{{else}}
+							<li class="dropdown{{#ifeq ../../section key}} active{{/ifeq}}">
+								<a href="#" class="dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ label }} <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									{{#each pages}}
+									<li {{#ifeq ../../../subsection subkey}}class="active" {{/ifeq}}>
+										<a href="{{ href }}">{{ label }}</a>
+									</li>
+									{{/each}}
+								</ul>
+							</li>
+							{{/if}} {{/each}}
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							{{#if user}}

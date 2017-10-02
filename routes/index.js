@@ -33,10 +33,11 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	//console.log(routes.views.index)
+	// console.log(routes.views.index)
 	// Views
 	app.get('/', routes.views.index);
 
+	//app.get('/universities/', routes.views.universities);
 	app.get('/universities/:country?', routes.views.universities);
 	app.get('/universities/:country/:university', routes.views.university);
 
