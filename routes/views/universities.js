@@ -4,12 +4,12 @@ var async = require('async');
 exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var locals = res.locals;
-  // console.log(req.params.country);
+
   // init locals
   locals.section = 'universities';
-  locals.filters = {
-    category: req.params.country
-  };
+  // locals.filters = {
+  //   category: req.params.country
+  // };
   locals.data = {
     universities: [],
     categories: [],
@@ -41,21 +41,18 @@ exports = module.exports = function (req, res) {
   });
 
   // Load the current category filter
-  view.on('init', function (next) {
-
-    if (req.params.country) {
-      locals.data.source = "bycountry";
-
-      keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-        // console.log('INDIVIDUAL CATEGORY FILTER: ', JSON.stringify(result));
-        locals.data.category = result;
-        next(err);
-      });
-    } else {
-      next();
-    }
-
-  });
+  // view.on('init', function (next) {
+  //   if (req.params.country) {
+  //     locals.data.source = "bycountry";
+  //     keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
+  //       // console.log('INDIVIDUAL CATEGORY FILTER: ', JSON.stringify(result));
+  //       locals.data.category = result;
+  //       next(err);
+  //     });
+  //   } else {
+  //     next();
+  //   }
+  // });
 
   // Load the list of universities
   view.on('init', function (next) {
@@ -70,14 +67,14 @@ exports = module.exports = function (req, res) {
       .sort('-publishedDate')
       .populate('categories');
 
-    if (locals.data.category) {
-      // console.log('category: ', locals.data.category)
-      q.where('categories').in([locals.data.category]);
-    }
+    // if (locals.data.category) {
+    //   // console.log('category: ', locals.data.category)
+    //   q.where('categories').in([locals.data.category]);
+    // }
 
     q.exec(function (err, results) {
-      // console.log("FINAL RESULTS: " + JSON.stringify(results));
-      console.log("FINAL Count: " + JSON.stringify(results.total));
+       console.log("FINAL RESULTS: " + JSON.stringify(results));
+      // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universities = results;
       next(err);
     });

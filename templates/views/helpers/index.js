@@ -225,8 +225,8 @@ module.exports = function () {
 		return '/universities?page=' + pageNumber;
 	};
 
-	_helpers.uniPageCountryUrl = function (pageNumber, options) {
-		return '/universities/?page=' + pageNumber;
+	_helpers.uniPageCountryUrl = function (pageNumber, country, options) {
+		return '/universities/'+country+'/?page=' + pageNumber;
 	};
 	/******************* */
 	// ### Pagination Helpers
@@ -249,7 +249,7 @@ module.exports = function () {
 		return options.inverse(this);
 	};
 
-	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, options) {
+	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, country, options) {
 		var html = '';
 		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
 		// '...' will be added by keystone if the pages exceed 10
@@ -274,7 +274,7 @@ module.exports = function () {
 			} else if (source === "blog") {
 				pageUrl = _helpers.pageUrl(page);
 			} else if (source === "bycountry") {
-				pageUrl = _helpers.uniPageCountryUrl(page);
+				pageUrl = _helpers.uniPageCountryUrl(page, country);
 			}
 
 			// wrapup the html

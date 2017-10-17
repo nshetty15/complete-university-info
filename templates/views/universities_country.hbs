@@ -1,14 +1,15 @@
 <div class="container">
-  <h1>Universities</h1>
+  <h1>Universities By country</h1>
   <h4 class="text-weight-normal">Total {{ data.universities.total}} Universities.</h4>
   <div class="row">
     <div class="col-md-8 col-lg-8">
       <div class="row">
          {{!-- {{data.universities.results}}  --}}
-        {{# each data.universities.results}}
+        {{# each data.universitiescountry.results}}
         <div class="col-md-4 col-lg-4">
           {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
           <h2><a href="{{ universityUrl categories.0.key slug }}">{{{title}}}</a></h2>
+          <h3>{{categories.0.key}}</h3>
           {{#if image}}
           <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
           {{/if}}
@@ -17,18 +18,18 @@
       </div>
     </div>
 
-     <div class="col-sm-4 col-md-3">
-			<h2>By Country</h2>
+     {{!-- <div class="col-sm-4 col-md-3">
+			<h2>Categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
 				<a href="/universities" class="active list-group-item">All Categories</a>
 				{{# each data.categories }}
 				<a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a>
 				{{/each}}
 			</div>
-		</div> 
+		</div>  --}}
 
   </div>
 
-  {{>paginationuniversity}}
+  {{>paginationuniversitybycountry}}
 
 </div>

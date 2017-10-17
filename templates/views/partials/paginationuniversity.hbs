@@ -5,7 +5,7 @@
 		</a>
 	</li>
 
-	{{{paginationNavigation data.universities.pages data.universities.currentPage data.universities.totalPages data.source }}}
+	{{{paginationNavigation data.universities.pages data.universities.currentPage data.universities.totalPages data.source null }}}
 
 	<li {{#unless data.universities.next}}class="disabled"{{/unless}}>
 		<a href="{{paginationNextUrl data.universities.next data.universities.totalPages}}">

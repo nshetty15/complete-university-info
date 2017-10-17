@@ -37,8 +37,8 @@ exports = module.exports = function (app) {
 	// Views
 	app.get('/', routes.views.index);
 
-	//app.get('/universities/', routes.views.universities);
-	app.get('/universities/:country?', routes.views.universities);
+	app.get('/universities/', routes.views.universities);
+	app.get('/universities/:country?', routes.views.universities_country);
 	app.get('/universities/:country/:university', routes.views.university);
 
 	app.get('/blog/:category?', routes.views.blog);
