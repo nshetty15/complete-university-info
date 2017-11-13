@@ -24,15 +24,15 @@ exports.initLocals = function (req, res, next) {
 
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
-		{ label: 'Universities', key: 'universities', href: '/universities' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
+		{ label: 'Universities', key: 'universities', href: '/universities/' },
+		{ label: 'Blog', key: 'blog', href: '/blog/' },
 		{
 			label: 'Tests', key: 'tests', pages: [
-				{ label: 'GPA', subkey: 'whatwedo', href: "/gpa" },
-				{ label: 'GMAT', subkey: 'journey', href: "/gmat" }
+				{ label: 'GPA', subkey: 'whatwedo', href: "/testss/gpa/" },
+				{ label: 'GMAT', subkey: 'journey', href: "/tests/gmat/" }
 			]
 		},
-		{ label: 'Contact', key: 'contact', href: '/contact' },
+		{ label: 'Contact', key: 'contact', href: '/contact/' },
 
 	];
 	res.locals.user = req.user;
