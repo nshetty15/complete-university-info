@@ -28,8 +28,11 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Blog', key: 'blog', href: '/blog/' },
 		{
 			label: 'Tests', key: 'tests', pages: [
-				{ label: 'GPA', subkey: 'whatwedo', href: "/test/gpa/" },
-				{ label: 'GMAT', subkey: 'journey', href: "/test/gmat/" }
+				{ label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
+				{ label: 'GRE', subkey: 'gre', href: "/test/gre/" },
+				{ label: 'IELTS', subkey: 'ielts', href: "/test/ielts/" },
+				{ label: 'SAT', subkey: 'sat', href: "/test/sat/" },
+				{ label: 'TOEFL', subkey: 'toefl', href: "/test/toefl/" },
 			]
 		},
 		{ label: 'Contact', key: 'contact', href: '/contact/' },
