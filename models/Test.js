@@ -15,7 +15,11 @@ var Test = new keystone.List('Test', {
 
 Test.add({
 	title: { type: String, required: true },
-	image: { type: Types.CloudinaryImage },
+	meta: {
+		title: { type: String }, // under 70 characters
+		description: { type: String }, // under 160 characters
+	},
+	// image: { type: Types.CloudinaryImage },
 	introduction: { type: Types.Html, wysiwyg: true, height: 150 },
 	description: { type: Types.Html, wysiwyg: true, height: 250 },
 	publishedDate: { type: Date, default: Date.now }

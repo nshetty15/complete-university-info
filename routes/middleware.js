@@ -28,8 +28,8 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Blog', key: 'blog', href: '/blog/' },
 		{
 			label: 'Tests', key: 'tests', pages: [
-				{ label: 'GPA', subkey: 'whatwedo', href: "/testss/gpa/" },
-				{ label: 'GMAT', subkey: 'journey', href: "/tests/gmat/" }
+				{ label: 'GPA', subkey: 'whatwedo', href: "/test/gpa/" },
+				{ label: 'GMAT', subkey: 'journey', href: "/test/gmat/" }
 			]
 		},
 		{ label: 'Contact', key: 'contact', href: '/contact/' },
