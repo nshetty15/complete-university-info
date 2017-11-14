@@ -6,6 +6,14 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
+	locals.data = {
+		meta: {
+			title: keystone.get('Title'), // under 70 characters
+			description: keystone.get('Description'), // under 160 characters
+			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+		},
+	};
+
 	// Set locals
 	locals.section = 'contact';
 	locals.enquiryTypes = Enquiry.fields.enquiryType.ops;

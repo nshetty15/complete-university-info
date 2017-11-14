@@ -19,7 +19,11 @@ var University = new keystone.List('University', {
 University.add({
   state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   author: { type: Types.Relationship, ref: 'User', index: true },
-
+	meta: {
+		title: { type: String }, // under 70 characters
+    description: { type: String }, // under 160 characters
+    keywords: { type: String } // No more than 10 keyword phrases
+	},
   title: { type: String, requried: true },
   image: { type: Types.CloudinaryImage },
   
@@ -33,9 +37,8 @@ University.add({
   description: {type: Types.Html, wysiwyg: true, height: 300},
   //manyStrings: { type: Types.TextArray },
   
-  //cityCategories: { type: Types.Relationship, ref: 'UniversityCity' },
+  //cityCategory: { type: Types.Relationship, ref: 'UniversityCity' },
   //stateCategory: { type: Types.Relationship, ref: 'UniversityState' },
-  //countryCategory: { type: Types.Relationship, ref: 'UniversityCountry'},
   countryCategory: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
   publishedDate: {type: Date, default: Date.now}
 });

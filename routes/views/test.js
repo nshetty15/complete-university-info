@@ -1,6 +1,6 @@
 var keystone = require('keystone');
 
-exports = module.exports = function(req, res) {
+exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var locals = res.locals;
 
@@ -8,21 +8,28 @@ exports = module.exports = function(req, res) {
   locals.section = 'test';
   locals.filters = {
     test: req.params.test
-  }
+  };
   locals.data = {
-    tests:[]
-  }
+    tests: [],
+    meta: {},
+  };
 
-view.on('init', function(next){
-  var q = keystone.list('Test').model.findOne({
-    slug: locals.filters.test
-  });
+  view.on('init', function (next) {
+    var q = keystone.list('Test').model.findOne({
+      slug: locals.filters.test
+    });
 
-  q.exec(function(err, result){
-    locals.data.test = result;
-    next(err);
+    q.exec(function (err, result) {
+      // Add meta tags -title, description, keywords
+      if (result.meta) {
+        locals.data.meta = result.meta;
+      }
+
+      // Final result
+      locals.data.test = result;
+      next(err);
+    });
   });
-});
 
   // Render View
   view.render('test');

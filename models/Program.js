@@ -17,7 +17,8 @@ Program.add({
   // price: {type: Number},
   meta: {
 		title: { type: String }, // under 70 characters
-		description: { type: String }, // under 160 characters
+    description: { type: String }, // under 160 characters
+    keywords: { type: String } // No more than 10 keyword phrases
 	},
   discipline: {type: Types.Relationship, ref: 'Discipline', index: true },
   description: {type: Types.Html, wysiwyg: true, height: 300},

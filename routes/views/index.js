@@ -5,14 +5,20 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-	// console.log(JSON.stringify(locals.navLinks))
+	// console.log(JSON.stringify(locals.navLinks));
+	// console.log(res.meta);
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
 	locals.section = 'home';
 
 locals.data = {
 	articles:[],
-	tests: []
+	tests: [],
+	meta:{
+		title: keystone.get('Title'), // under 70 characters
+		description: keystone.get('Description'), // under 160 characters
+		keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+	},
 };
 
 // Load the latest 3 articles
@@ -40,7 +46,7 @@ locals.data = {
 
 		q.exec(function(err, results){
 			// console.log("Error:", err);
-			 console.log("Results:",  results);
+			// console.log("Results:",  results);
 			 locals.data.tests = results;
 			 next(err);
 		});

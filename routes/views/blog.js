@@ -6,6 +6,8 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
+	console.log(res.meta);
+
 	// Init locals
 	locals.section = 'blog';
 	locals.filters = {
@@ -14,7 +16,12 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		posts: [],
 		categories: [],
-		source: 'blog',
+		source: 'blog', // for pagination
+		meta: {
+			title: keystone.get('Title'), // under 70 characters
+			description: keystone.get('Description'), // under 160 characters
+			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+		},
 	};
 
 	// Load all categories

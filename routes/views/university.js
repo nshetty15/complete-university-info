@@ -9,10 +9,15 @@ exports = module.exports = function(req, res) {
   locals.section = 'universities';
   locals.filters = {
     university: req.params.university,
-  }
+  };
   locals.data = {
-    universities:[]
-  }
+    universities:[],
+    meta: {
+			title: keystone.get('Title'), // under 70 characters
+			description: keystone.get('Description'), // under 160 characters
+			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+		},
+  };
 
 view.on('init', function(next){
   var q = keystone.list('University').model.findOne({
@@ -20,6 +25,11 @@ view.on('init', function(next){
   });
 
   q.exec(function(err, result){
+    // Add meta tags -title, description, keywords
+			if(result.meta) {
+				locals.data.meta = result.meta;
+      }
+      
     locals.data.university = result;
     next(err);
   });

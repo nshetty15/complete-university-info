@@ -66,6 +66,9 @@ keystone.set('nav', {
 
 // https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
 keystone.set('baseUrl', (keystone.get('env') == 'production') ? 'https://www.completeuniversityinfo.com/' : 'http://localhost:3000/');
+keystone.set('Title', 'Complete University Info');
+keystone.get('Description', 'Made by the students for the students.');
+keystone.get('Keywords', 'study abroad, study, universities');
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'

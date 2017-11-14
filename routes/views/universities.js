@@ -12,6 +12,11 @@ exports = module.exports = function (req, res) {
     universities: [],
     countries: [],
     source: 'universities', // for pagination
+    meta: {
+			title: keystone.get('Title'), // under 70 characters
+			description: keystone.get('Description'), // under 160 characters
+			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+		},
   };
 
   // Load all countries
@@ -52,6 +57,10 @@ exports = module.exports = function (req, res) {
       .populate('countryCategory');
 
     q.exec(function (err, results) {
+      // Add meta tags -title, description, keywords
+			if(result.meta) {
+				locals.data.meta = result.meta;
+			}
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universities = results;

@@ -13,8 +13,13 @@ exports = module.exports = function (req, res) {
   locals.data = {
     universities: [],
     categories: [],
-    source: 'bycountry', // for pagination
     country: req.params.country,
+    source: 'bycountry', // for pagination
+    meta: {
+			title: keystone.get('Title'), // under 70 characters
+			description: keystone.get('Description'), // under 160 characters
+			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+		},
   };
 
   // Load all categories - may be state in future
@@ -41,8 +46,13 @@ exports = module.exports = function (req, res) {
   view.on('init', function (next) {
 
     keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
+      // Add meta tags -title, description, keywords
+			if(result.meta) {
+				locals.data.meta = result.meta;
+			} 
       // console.log('INDIVIDUAL CATEGORY FILTER: ', JSON.stringify(result)); // {"_id":"59b69aef92ce7a5e1c2cb1cb","key":"canada","name":"Canada","__v":0}
       locals.data.category = result;
+      
       next(err);
     });
     
