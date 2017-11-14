@@ -7,7 +7,7 @@
 
 	{{{paginationNavigation data.universitiescountry.pages data.universitiescountry.currentPage data.universitiescountry.totalPages data.source data.country }}}
 
-	<li {{#unless data.universities.next}}class="disabled"{{/unless}}>
+	<li {{#unless data.universitiescountry.next}}class="disabled"{{/unless}}>
 		<a href="{{paginationNextUrl data.universitiescountry.next data.universitiescountry.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 		</a>

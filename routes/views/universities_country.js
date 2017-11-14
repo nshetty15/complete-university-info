@@ -13,7 +13,7 @@ exports = module.exports = function (req, res) {
   locals.data = {
     universities: [],
     categories: [],
-    source: 'bycountry',
+    source: 'bycountry', // for pagination
     country: req.params.country,
   };
 
