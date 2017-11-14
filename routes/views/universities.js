@@ -73,7 +73,7 @@ exports = module.exports = function (req, res) {
     // }
 
     q.exec(function (err, results) {
-       console.log("FINAL RESULTS: " + JSON.stringify(results));
+      // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universities = results;
       next(err);

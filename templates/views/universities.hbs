@@ -17,20 +17,23 @@
       </div>
     </div>
 
-     
+     <div class="col-sm-4 col-md-3">
+			<h2>By Country</h2>
+			<div style="margin-top: 70px;" class="list-group">
+				<a href="/universities" class="active list-group-item">All Categories</a>
+				{{# each data.categories }}
+        {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional --}}
+          {{#checkIf  countryCode '==' 'US' '||' countryCode '==' 'CA' }}
+            <a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a>
+          {{/checkIf }}
+				{{/each}}
+			</div>
+		</div> 
 
   </div>
 
   {{>paginationuniversity}}
 
 
-<div class="col-sm-4 col-md-3">
-			<h2>By Country</h2>
-			<div style="margin-top: 70px;" class="list-group">
-				<a href="/universities" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
-				<a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a>
-				{{/each}}
-			</div>
-		</div> 
+
 </div>
