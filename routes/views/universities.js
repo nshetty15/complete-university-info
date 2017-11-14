@@ -7,16 +7,14 @@ exports = module.exports = function (req, res) {
 
   // init locals
   locals.section = 'universities';
-  // locals.filters = {
-  //   category: req.params.country
-  // };
+
   locals.data = {
     universities: [],
-    categories: [],
-    source: 'universities',
+    countries: [],
+    source: 'universities', // for pagination
   };
 
-  // Load all categories
+  // Load all countries
   view.on("init", function (next) {
     keystone.list('UniversityCountry').model.find().sort('name').exec(function (err, results) {
       // console.log("ERROR: " + JSON.stringify(err), "RESULTS: " + JSON.stringify(results));
@@ -25,10 +23,10 @@ exports = module.exports = function (req, res) {
         return next(err);
       }
 
-      locals.data.categories = results;
+      locals.data.countries = results;
 
-      async.each(locals.data.categories, function (category, next) {
-        keystone.list('University').model.count().where('categories').in([category.id]).exec(function (err, count) {
+      async.each(locals.data.countries, function (category, next) {
+        keystone.list('University').model.count().where('countryCategory').in([category.id]).exec(function (err, count) {
           category.countryCount = count;
           // console.log('COUNT:', count); // 10 - 11
           next(err);
@@ -39,20 +37,6 @@ exports = module.exports = function (req, res) {
 
     });
   });
-
-  // Load the current category filter
-  // view.on('init', function (next) {
-  //   if (req.params.country) {
-  //     locals.data.source = "bycountry";
-  //     keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-  //       // console.log('INDIVIDUAL CATEGORY FILTER: ', JSON.stringify(result));
-  //       locals.data.category = result;
-  //       next(err);
-  //     });
-  //   } else {
-  //     next();
-  //   }
-  // });
 
   // Load the list of universities
   view.on('init', function (next) {
@@ -65,12 +49,7 @@ exports = module.exports = function (req, res) {
       },
     })
       .sort('-publishedDate')
-      .populate('categories');
-
-    // if (locals.data.category) {
-    //   // console.log('category: ', locals.data.category)
-    //   q.where('categories').in([locals.data.category]);
-    // }
+      .populate('countryCategory');
 
     q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));

@@ -56,7 +56,7 @@ exports = module.exports = function (req, res) {
     var filter = {
       state: 'published',
     };
-    filter.categories = {$in: [locals.data.category]};
+    filter.countryCategory = {$in: [locals.data.category]};
 
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
@@ -65,7 +65,7 @@ exports = module.exports = function (req, res) {
       filters: filter,
     })
       .sort('-publishedDate')
-      .populate('categories');
+      .populate('countryCategory');
 
     // if (locals.data.category) {
     //   // console.log('category: ', locals.data.category)

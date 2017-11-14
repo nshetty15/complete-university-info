@@ -8,7 +8,7 @@
         {{# each data.universities.results}}
         <div class="col-md-4 col-lg-4">
           {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
-          <h2><a href="{{ universityUrl categories.0.key slug }}">{{{title}}}</a></h2>
+          <h2><a href="{{ universityUrl countryCategory.0.key slug }}">{{{title}}}</a></h2>
           {{#if image}}
           <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
           {{/if}}
@@ -20,8 +20,8 @@
      <div class="col-sm-4 col-md-3">
 			<h2>By Country</h2>
 			<div style="margin-top: 70px;" class="list-group">
-				<a href="/universities" class="active list-group-item">All Categories</a>
-				{{# each data.categories }}
+				<a href="/universities" class="active list-group-item">All Countries</a>
+				{{# each data.countries }}
         {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional --}}
           {{#checkIf  countryCode '==' 'US' '||' countryCode '==' 'CA' }}
             <a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a>

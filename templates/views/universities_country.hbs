@@ -8,8 +8,8 @@
         {{# each data.universitiescountry.results}}
         <div class="col-md-4 col-lg-4">
           {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
-          <h2><a href="{{ universityUrl categories.0.key slug }}">{{{title}}}</a></h2>
-          <h3>{{categories.0.key}}</h3>
+          <h2><a href="{{ universityUrl countryCategory.0.key slug }}">{{{title}}}</a></h2>
+          <h3>{{countryCategory.0.key}}</h3>
           {{#if image}}
           <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
           {{/if}}

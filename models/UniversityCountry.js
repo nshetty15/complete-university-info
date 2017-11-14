@@ -17,6 +17,6 @@ UniversityCountry.add({
 	nationality: { type: String },
 });
 
-UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'categories' });
+UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'countryCategory' });
 
 UniversityCountry.register();
