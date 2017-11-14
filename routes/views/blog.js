@@ -16,11 +16,12 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		posts: [],
 		categories: [],
+		pathName: req.url,
 		source: 'blog', // for pagination
 		meta: {
-			title: keystone.get('Title'), // under 70 characters
-			description: keystone.get('Description'), // under 160 characters
-			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
+			title: keystone.get('title'), // under 70 characters
+			description: keystone.get('description'), // under 160 characters
+			keywords: keystone.get('keywords') // No more than 10 keyword phrases
 		},
 	};
 

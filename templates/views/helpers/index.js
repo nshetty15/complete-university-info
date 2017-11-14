@@ -228,6 +228,11 @@ module.exports = function () {
 	_helpers.uniPageCountryUrl = function (pageNumber, country, options) {
 		return '/universities/' + country + '/?page=' + pageNumber;
 	};
+
+	_helpers.testUrl = function (categorySlug, options) {
+		return ('/test/' + categorySlug);
+	};
+	
 	/******************* */
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content

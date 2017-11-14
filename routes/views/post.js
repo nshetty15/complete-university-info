@@ -1,7 +1,6 @@
 var keystone = require('keystone');
 
 exports = module.exports = function (req, res) {
-
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 	// Set locals
@@ -12,6 +11,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		posts: [],
 		meta: {},
+		pathName: req.url,
 	};
 
 	// Load the current post
@@ -24,12 +24,16 @@ exports = module.exports = function (req, res) {
 
 		q.exec(function (err, result) {
 			// Add meta tags -title, description, keywords
-			if(result.meta) {
-				locals.data.meta = result.meta;
-			} 
+			var rex = /(<([^>]+)>)/ig;
+			locals.data.meta = {
+				title: result.meta.title,
+				description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
+				keywords: result.meta.keywords,
+			};
+
 			// Final result
 			locals.data.post = result;
-			
+
 			next(err);
 		});
 
@@ -39,10 +43,10 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		var q = keystone.list('Post').model.find()
-		.where('state', 'published')
-		.sort('-publishedDate')
-		.populate('author')
-		.limit(3);
+			.where('state', 'published')
+			.sort('-publishedDate')
+			.populate('author')
+			.limit(3);
 
 		q.exec(function (err, results) {
 			// console.log(err, results);

@@ -14,12 +14,13 @@ exports = module.exports = function (req, res) {
     universities: [],
     categories: [],
     country: req.params.country,
+    pathName: req.url,
     source: 'bycountry', // for pagination
     meta: {
-			title: keystone.get('Title'), // under 70 characters
-			description: keystone.get('Description'), // under 160 characters
-			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
-		},
+      title: keystone.get('title'), // under 70 characters
+      description: keystone.get('description'), // under 160 characters
+      keywords: keystone.get('keywords') // No more than 10 keyword phrases
+    },
   };
 
   // Load all categories - may be state in future
@@ -47,15 +48,15 @@ exports = module.exports = function (req, res) {
 
     keystone.list('UniversityCountry').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
       // Add meta tags -title, description, keywords
-			if(result.meta) {
-				locals.data.meta = result.meta;
-			} 
+      if (result.meta) {
+        locals.data.meta = result.meta;
+      }
       // console.log('INDIVIDUAL CATEGORY FILTER: ', JSON.stringify(result)); // {"_id":"59b69aef92ce7a5e1c2cb1cb","key":"canada","name":"Canada","__v":0}
       locals.data.category = result;
-      
+
       next(err);
     });
-    
+
   });
 
 
@@ -66,7 +67,7 @@ exports = module.exports = function (req, res) {
     var filter = {
       state: 'published',
     };
-    filter.countryCategory = {$in: [locals.data.category]};
+    filter.countryCategory = { $in: [locals.data.category] };
 
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,

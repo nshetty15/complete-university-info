@@ -65,10 +65,11 @@ keystone.set('nav', {
 // Start Keystone to connect to your database and initialise the web server
 
 // https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
-keystone.set('baseUrl', (keystone.get('env') == 'production') ? 'https://www.completeuniversityinfo.com/' : 'http://localhost:3000/');
-keystone.set('Title', 'Complete University Info');
-keystone.get('Description', 'Made by the students for the students.');
-keystone.get('Keywords', 'study abroad, study, universities');
+keystone.set('baseUrl', (keystone.get('env') == 'production') ? 'https://www.completeuniversityinfo.com' : 'http://localhost:3000');
+keystone.set('title', 'Complete University Info');
+keystone.set('description', 'Made by the students for the students.');
+keystone.set('keywords', 'study abroad, study, universities');
+keystone.set('twitterSite', '@completeuniversityinfo');
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'

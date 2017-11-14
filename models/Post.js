@@ -35,7 +35,7 @@ Post.schema.virtual('content.full').get(function () {
 
 // https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
 Post.schema.virtual('fullPostUrl').get(function () {
-	return keystone.get('baseUrl') + 'blog/post/' + this.slug;
+	return keystone.get('baseUrl') + '/blog/post/' + this.slug;
 });
 
 Post.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

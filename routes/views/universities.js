@@ -11,12 +11,13 @@ exports = module.exports = function (req, res) {
   locals.data = {
     universities: [],
     countries: [],
+    pathName: req.url,
     source: 'universities', // for pagination
     meta: {
-			title: keystone.get('Title'), // under 70 characters
-			description: keystone.get('Description'), // under 160 characters
-			keywords: keystone.get('Keywords') // No more than 10 keyword phrases
-		},
+      title: keystone.get('title'), // under 70 characters
+      description: keystone.get('description'), // under 160 characters
+      keywords: keystone.get('keywords') // No more than 10 keyword phrases
+    },
   };
 
   // Load all countries
@@ -58,9 +59,9 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords
-			if(result.meta) {
-				locals.data.meta = result.meta;
-			}
+      if (results.meta) {
+        locals.data.meta = results.meta;
+      }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universities = results;

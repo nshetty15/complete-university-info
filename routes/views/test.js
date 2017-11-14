@@ -11,6 +11,7 @@ exports = module.exports = function (req, res) {
   };
   locals.data = {
     tests: [],
+    pathName: req.url,
     meta: {},
   };
 
@@ -21,9 +22,12 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, result) {
       // Add meta tags -title, description, keywords
-      if (result.meta) {
-        locals.data.meta = result.meta;
-      }
+      locals.data.meta = {
+        title : result.meta.title || result.title,
+        description:result.meta.description || keystone.get('description'),
+        keywords: result.meta.keywords || keystone.get('keywords'), 
+      };
+
 
       // Final result
       locals.data.test = result;
@@ -33,4 +37,4 @@ exports = module.exports = function (req, res) {
 
   // Render View
   view.render('test');
-}
+};
