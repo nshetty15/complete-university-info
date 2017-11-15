@@ -3,25 +3,25 @@ var Types = keystone.Field.Types;
 
 
 /**
- * Discipline Model
+ * Career Model
  * ==========
  */
 
-var Discipline = new keystone.List('Discipline', {
+var Career = new keystone.List('Career', {
   map: { name: 'title' },
-  singular: 'Discipline',
-  plural: 'Disciplines',
+  singular: 'Career',
+  plural: 'Careers',
   autokey: { path: 'slug', from: 'title', unique: true },
 });
 
-Discipline.add({
+Career.add({
   title: {type: String, requried: true},
   description: {type: Types.Html, wysiwyg: true, height: 300},
   //image: {type: Types.CloudinaryImage },
-  createdAt: {type: Date, default: Date.now}
+  createdAt: { type: Date, default: Date.now },
 });
-Discipline.relationship({ ref: 'Program', path: 'programs', refPath: 'discipline' });
 
+Career.relationship({ ref: 'Program', path: 'programs', refPath: 'careers' });
 
-Discipline.defaultColumns = 'title';
-Discipline.register();
+Career.defaultColumns = 'title, description, createdAt|20%';
+Career.register();
