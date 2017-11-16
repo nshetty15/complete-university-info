@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
     university: req.params.university,
   };
   locals.data = {
-    universities: [],
+    university: [],
     pathName: req.url,
     meta: { },
   };

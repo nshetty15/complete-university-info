@@ -220,17 +220,25 @@ module.exports = function () {
 	_helpers.categoryCountryUrl = function (categorySlug, options) {
 		return ('/universities/' + categorySlug);
 	};
-
+// For pagination 
 	_helpers.uniPageUrl = function (pageNumber, options) {
 		return '/universities?page=' + pageNumber;
 	};
-
+// For pagination 
 	_helpers.uniPageCountryUrl = function (pageNumber, country, options) {
 		return '/universities/' + country + '/?page=' + pageNumber;
 	};
 
 	_helpers.testUrl = function (categorySlug, options) {
 		return ('/test/' + categorySlug);
+	};
+
+	_helpers.courseUrl = function(courseSlug, options){
+		return ('/courses/' + courseSlug );
+	};
+	// For pagination 
+	_helpers.coursePageUrl = function (pageNumber, options) {
+		return '/courses?page=' + pageNumber;
 	};
 	
 	/******************* */
@@ -280,6 +288,8 @@ module.exports = function () {
 				pageUrl = _helpers.pageUrl(page);
 			} else if (source === "bycountry") {
 				pageUrl = _helpers.uniPageCountryUrl(page, country);
+			} else if(source === "courses"){
+				pageUrl =	_helpers.coursePageUrl(page);
 			}
 
 			// wrapup the html

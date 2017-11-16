@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Universities</h1>
+  <h4 class="text-weight-normal">Total {{ data.courses.total}} Universities.</h4>
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <div class="row">
+         {{!-- {{data.universities.results}}  --}}
+        {{# each data.courses.results}}
+        <div class="col-md-4 col-lg-4">
+          {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
+          <h2><a href="{{ courseUrl slug }}">{{{title}}}</a></h2>
+          <p>Discipline: {{ discipline }}</p>
+          {{!-- {{#if image}}
+          <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
+          {{/if}} --}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+
+  </div>
+
+  {{>paginationcourse}}
+
+
+
+</div>

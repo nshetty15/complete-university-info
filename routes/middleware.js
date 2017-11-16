@@ -36,6 +36,7 @@ exports.initLocals = function (req, res, next) {
 				{ label: 'TOEFL', subkey: 'toefl', href: "/test/toefl/" },
 			]
 		},
+		{ label: 'Courses', key: 'Courses', href: '/courses/' },
 		{ label: 'Contact', key: 'contact', href: '/contact/' },
 
 	];

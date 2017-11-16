@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
+      <article>
+        <p>
+          <a href="/courses">&larr; Back to courses</a>
+        </p>
+        <hr>
+        <header>
+          <h1>{{data.course.title}}</h1>
+        </header>
+
+        <div style="margin-bottom:40px;">
+          <h3>Level</h3>
+         
+            {{#each data.level }}
+<p>this: {{this}}</p>
+<p>this.name: {{this.name}}</p>
+          <p>{{_id}}: {{name}}</p>
+
+            {{/each}} 
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Discipline</h3>
+          {{data.course.discipline}} {{# each data.course.discipline}} {{title}} {{/each}}
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Intro</h3>
+          {{{ data.course.intro}}}
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Structure</h3>
+          {{{ data.course.structure}}}
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Specializations</h3>
+          {{{ data.course.intro_specialization}}}
+          <ul>
+            {{# each data.course.specializations}}
+            <li>
+              <h2>{{title }}</h2>
+              {{{ description }}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Careers</h3>
+          {{{ data.course.intro_career }}}
+          <ul>
+            {{# each data.course.careers}}
+            <li>
+              <h2>{{title }}</h2>
+              {{{ this.description }}}
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
+        <div style="margin-bottom:40px;">
+          <h3>Skills</h3>
+          <ul>
+            {{# each data.course.skills}}
+            <li>
+              {{ this }}
+            </li>
+            {{/each}}
+        </div>
+
+      </article>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-var async = require('async');
+var async = require('async'); // use async to access multiple models - by pras
 
 exports = module.exports = function (req, res) {
 
