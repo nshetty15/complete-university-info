@@ -1,13 +1,14 @@
 {{!< default}}
-
 <main>
 
 	<div class="container">
 		<div class="jumbotron">
 			<h1>FIND YOUR DREAM UNIVERSITY ABROAD</h1>
-			<p>Study abroad with our <strong>free</strong> resources on choosing a university</p>
+			<p>Study abroad with our
+				<strong>free</strong> resources on choosing a university</p>
 			<p>
-				<a href="/universities/" style="margin-right: 10px" class="btn btn-lg btn-primary">Discover Universities</a></p>
+				<a href="/universities/" style="margin-right: 10px" class="btn btn-lg btn-primary">Discover Universities</a>
+			</p>
 		</div>
 
 		<div class="row">
@@ -17,16 +18,17 @@
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
 				<h3> Canada </h3>
-				<p>Canada is known for its excellent education institutions, multiplicity of top quality education programs 
-					in various streams and an innovative economy that welcomes international students with open arms. </p>
+				<p>Canada is known for its excellent education institutions, multiplicity of top quality education programs in various streams
+					and an innovative economy that welcomes international students with open arms. </p>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="/germany/" class="thumbnail">
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
 				<h3>Germany</h3>
-				<p>Germany is an attractive place to study and German university degrees are highly respected by employers worldwide.
-					Discover the beauty and diversity Germany has to offer! When you take time off from your studies, there are 1001 ways of finding out more about your host country. 
+				<p>Germany is an attractive place to study and German university degrees are highly respected by employers worldwide. Discover
+					the beauty and diversity Germany has to offer! When you take time off from your studies, there are 1001 ways of finding
+					out more about your host country.
 				</p>
 			</div>
 			<div class="col-xs-6 col-md-3">
@@ -34,7 +36,8 @@
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
 				<h3>United Kingdom</h3>
-				<p>Degrees and qualifications from UK higher education institutions are known around the world as high quality and world class. </p>
+				<p>Degrees and qualifications from UK higher education institutions are known around the world as high quality and world
+					class. </p>
 			</div>
 			<div class="col-xs-6 col-md-3">
 				<a href="/united-states/" class="thumbnail">
@@ -49,7 +52,7 @@
 
 		<div class="row">
 			<h2>Latest Articles</h2>
-			{{# each data.articles}}
+			{{#each data.articles}}
 			<div class="col-sm-6 col-md-4">
 				<div class="thumbnail">
 					<img src="/images/cui-g-plc.jpg" alt="{{title}}">
@@ -57,7 +60,7 @@
 						<h3>{{title}}</h3>
 						<p>{{ meta.description }}</p>
 						<p>
-							<a href="/blog/post/{{slug}}" class="btn btn-primary" role="button">Button</a>
+							<a href="/blog/post/{{slug}}" class="btn btn-primary" role="button">Read more</a>
 						</p>
 					</div>
 				</div>
@@ -68,40 +71,21 @@
 
 
 		<div class="row">
-			<h2>Courses</h2>
-			<div class="col-lg-4">
-				<h2>Bachelors degree</h2>
-				<p class="text-danger">As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified
-					nav that are cleared upon refreshing.</p>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details »</a>
-				</p>
+			<h2>Levels</h2>
+			{{#each data.levels}}
+			<div class="col-lg-6">
+				<h2>{{title}}</h2>
+				{{{description}}}
+				<a class="btn btn-primary" href="/{{key}}/" role="button">View details »</a>
 			</div>
-			<div class="col-lg-4">
-				<h2>Masters degree</h2>
-				<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-					nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<h2>MBA</h2>
-				<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod
-					semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-				<p>
-					<a class="btn btn-primary" href="#" role="button">View details »</a>
-				</p>
-			</div>
+			{{/each}}
 		</div>
 
 
 
 		<div class="row tests">
 			<h2>Tests</h2>
-			{{# each data.tests }}
+			{{#each data.tests }}
 			<div class="col-lg-3">
 				<h2>{{title}}</h2>
 				<img src="/images/test/{{slug}}_logo.jpg" class="img-responsive" alt="{{title}}">

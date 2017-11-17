@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Types = keystone.Field.Types;
 
 /**
  * Level Model
@@ -12,8 +13,11 @@ var Level = new keystone.List('Level', {
 Level.add({
   name: { type: String, required: true },
   code: { type: String},
+  description: {type: Types.Html, wysiwyg: true, height: 300},
 });
 
 Level.relationship({ ref: 'Program', path: 'programs', refPath: 'level' });
+
+Level.defaultColumns = 'name, description';
 
 Level.register();

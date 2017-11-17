@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-//var async = require('async');
+var async = require('async');
 
 exports = module.exports = function (req, res) {
 
@@ -14,6 +14,7 @@ exports = module.exports = function (req, res) {
 locals.data = {
 	articles:[],
 	tests: [],
+	levels: [],
 	pathName: req.url,
 	meta:{
 		title: keystone.get('title'), // under 70 characters
@@ -50,6 +51,19 @@ locals.data = {
 			// console.log("Results:",  results);
 			 locals.data.tests = results;
 			 next(err);
+		});
+	});
+
+	// Load Levels
+	view.on('init', function(next){
+		var q = keystone.list("Level").model.find()
+		.sort('name')
+		.limit(2);
+
+		q.exec(function(err, results){
+			// console.log(results);
+			locals.data.levels = results;
+			next(err);
 		});
 	});
 
