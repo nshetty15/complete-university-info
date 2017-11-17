@@ -23,5 +23,5 @@ Discipline.add({
 Discipline.relationship({ ref: 'Program', path: 'programs', refPath: 'discipline' });
 
 
-Discipline.defaultColumns = 'title';
+Discipline.defaultColumns = 'title, description';
 Discipline.register();

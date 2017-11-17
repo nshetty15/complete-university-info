@@ -15,7 +15,7 @@ var Program = new keystone.List('Program', {
 Program.add({
   title: {type: String, requried: true},
   level: { type: Types.Relationship, ref: 'Level', many: true },
-  discipline: {type: Types.Relationship, ref: 'Discipline' },
+  discipline: {type: Types.Relationship, ref: 'Discipline', many: true },
   // price: {type: Number},
   meta: {
 		title: { type: String }, // under 70 characters
