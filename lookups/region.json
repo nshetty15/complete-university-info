@@ -1,58 +1,82 @@
 [
+  // {
+  //   "regionCode": "AFR",
+  //   "name": "Africa"
+  // },
+  // {
+  //   "regionCode": "EEU",
+  //   "name": "Eastern Europe"
+  // },
+  // {
+  //   "regionCode": "GC",
+  //   "name": "Greater China"
+  // },
+  // {
+  //   "regionCode": "LAM",
+  //   "name": "Latin America"
+  // },
+  // {
+  //   "regionCode": "ME",
+  //   "name": "Middle East"
+  // },
+  // {
+  //   "regionCode": "NAM",
+  //   "name": "North America"
+  // },
+  // {
+  //   "regionCode": "NE",
+  //   "name": "North Europe"
+  // },
+  // {
+  //   "regionCode": "NEA",
+  //   "name": "North East Asia"
+  // },
+  // {
+  //   "regionCode": "PI",
+  //   "name": "Pacific Islands"
+  // },
+  // {
+  //   "regionCode": "RA",
+  //   "name": "Rest of Asia"
+  // },
+  // {
+  //   "regionCode": "RMEA",
+  //   "name": "Rest of MEA"
+  // },
+  // {
+  //   "regionCode": "SA",
+  //   "name": "South Asia"
+  // },
+  // {
+  //   "regionCode": "SEA",
+  //   "name": "South East Asia"
+  // },
+  // {
+  //   "regionCode": "SEU",
+  //   "name": "South Europe"
+  // }
   {
-    "regionCode": "AFR",
-    "name": "Africa"
+    "name": "Africa",
+    "code": "AFR"
   },
   {
-    "regionCode": "EEU",
-    "name": "Eastern Europe"
+    "name": "Asia",
+    "code": "ASI"
   },
   {
-    "regionCode": "GC",
-    "name": "Greater China"
+    "name": "Europe",
+    "code": "EUR"
   },
   {
-    "regionCode": "LAM",
-    "name": "Latin America"
+    "name": "Latin America",
+    "code": "LAM"
   },
   {
-    "regionCode": "ME",
-    "name": "Middle East"
+    "name": "North America",
+    "code": "NAM"
   },
   {
-    "regionCode": "NAM",
-    "name": "North America"
-  },
-  {
-    "regionCode": "NE",
-    "name": "North Europe"
-  },
-  {
-    "regionCode": "NEA",
-    "name": "North East Asia"
-  },
-  {
-    "regionCode": "PI",
-    "name": "Pacific Islands"
-  },
-  {
-    "regionCode": "RA",
-    "name": "Rest of Asia"
-  },
-  {
-    "regionCode": "RMEA",
-    "name": "Rest of MEA"
-  },
-  {
-    "regionCode": "SA",
-    "name": "South Asia"
-  },
-  {
-    "regionCode": "SEA",
-    "name": "South East Asia"
-  },
-  {
-    "regionCode": "SEU",
-    "name": "South Europe"
+    "name": "Oceania",
+    "code": "OCE"
   }
 ]
