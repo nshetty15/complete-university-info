@@ -1,9 +1,0 @@
-1. "Not reported", && "null", && "",  -- replace all with -- null,
-
-RUN the json code on - E:\projects\NodeJS\Guide\resources\scraper
-2. affiliations && accreditations  - change from array object to array string
-
-after the stringify result
-
-3. \n  -- remove & replace with single space
-
