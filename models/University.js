@@ -33,8 +33,6 @@ University.add({
   //},
 
   // http://www.4icu.org/ || https://www.niche.com || sa
-
-  address: { type: String },
   website: { type: Types.Url },
 
   acronym: { type: String },
@@ -129,7 +127,8 @@ University.add({
   wikipedia: { type: Types.Url },
 
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
-  city: { type: Types.Relationship, ref: 'UniversityCity' },
+  address: { type: String },
+  city: { type: Types.Relationship, ref: 'UniversityCity', many: true },
   state_province: { type: Types.Relationship, ref: 'UniversityState' },
   country: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
   publishedDate: { type: Date, default: Date.now }

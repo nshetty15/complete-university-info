@@ -13,6 +13,6 @@ UniversityState.add({
 	name: { type: String, required: true },
 });
 
-UniversityState.relationship({ ref: 'University', path: 'universities', refPath: 'stateCategories' });
+UniversityState.relationship({ ref: 'University', path: 'universities', refPath: 'state_province' });
 
 UniversityState.register();

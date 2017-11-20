@@ -13,6 +13,6 @@ UniversityCity.add({
 	name: { type: String, required: true },
 });
 
-UniversityCity.relationship({ ref: 'University', path: 'universities', refPath: 'cityCategories' });
+UniversityCity.relationship({ ref: 'University', path: 'universities', refPath: 'city' });
 
 UniversityCity.register();
