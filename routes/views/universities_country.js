@@ -67,7 +67,7 @@ exports = module.exports = function (req, res) {
     var filter = {
       state: 'published',
     };
-    filter.countryCategory = { $in: [locals.data.category] };
+    filter.country = { $in: [locals.data.category] };
 
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
@@ -76,7 +76,7 @@ exports = module.exports = function (req, res) {
       filters: filter,
     })
       .sort('-publishedDate')
-      .populate('countryCategory');
+      .populate('country');
 
     // if (locals.data.category) {
     //   // console.log('category: ', locals.data.category)
@@ -85,7 +85,7 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
-      console.log("FINAL Count: " + JSON.stringify(results.total));
+      // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universitiescountry = results;
       next(err);
     });

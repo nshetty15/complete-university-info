@@ -32,7 +32,7 @@ exports = module.exports = function (req, res) {
       locals.data.countries = results;
 
       async.each(locals.data.countries, function (category, next) {
-        keystone.list('University').model.count().where('countryCategory').in([category.id]).exec(function (err, count) {
+        keystone.list('University').model.count().where('country').in([category.id]).exec(function (err, count) {
           category.countryCount = count;
           // console.log('COUNT:', count); // 10 - 11
           next(err);
@@ -55,7 +55,7 @@ exports = module.exports = function (req, res) {
       },
     })
       .sort('-publishedDate')
-      .populate('countryCategory');
+      .populate('country');
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords

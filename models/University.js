@@ -43,7 +43,7 @@ University.add({
 
   // FACTS & BADGES
   avgTuition: { type: String },
-  acceptanceRate: {},
+  acceptanceRate: { type: String },
 
   // TUITION
   BDtuitionLocal: { type: String },
@@ -52,7 +52,7 @@ University.add({
   MDtuitionInterntl: { type: String },
 
   // PROGRAMS
-  programsOffered: {},
+  programsOffered: { type: String },
   BDprograms: { type: Types.Relationship, ref: 'Program', many: true },
   MDprograms: { type: Types.Relationship, ref: 'Program', many: true },
 
@@ -78,26 +78,26 @@ University.add({
   distanceLearning: { type: String },
 
   // ACCREDITATION AND RECOGNITION
-  accreditations : { type: Types.TextArray },
+  accreditations: { type: Types.TextArray },
 
   // AFFILIATIONS AND MEMBERSHIPS
   affiliations: { type: Types.TextArray },
 
   // SOCIAL MEDIA
-  facebook : { type: Types.Url },
-  twitter : { type: Types.Url },
-  linkedin : { type: Types.Url },
-  instagram : { type: Types.Url },
-  youtube : { type: Types.Url },
-  vimeo : { type: Types.Url },
+  facebook: { type: Types.Url },
+  twitter: { type: Types.Url },
+  linkedin: { type: Types.Url },
+  instagram: { type: Types.Url },
+  youtube: { type: Types.Url },
+  vimeo: { type: Types.Url },
 
   // ONLINE COURSES
-  itunes: {type: String},
- 
+  itunes: { type: String },
+
   // WIKIPEDIA ARTICLE
-  wikipedia : { type: Types.Url },
-  
-  
+  wikipedia: { type: Types.Url },
+
+
   // price: {type: Types.Money, format: '$0,0.00', currency: 'en-gb'},
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   // introduction: {type: Types.Html, wysiwyg: true, height: 300},
@@ -106,13 +106,13 @@ University.add({
 
   city: { type: Types.Relationship, ref: 'UniversityCity' },
   state_province: { type: Types.Relationship, ref: 'UniversityState' },
-  countryCategory: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
+  country: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
   publishedDate: { type: Date, default: Date.now }
 });
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-University.defaultColumns = 'name, address, website, phone, founded, country';
+University.defaultColumns = 'name|30%, state|8%, address, website, founded|5%, country';
 /**
  * Registration
  * ============

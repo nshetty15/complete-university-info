@@ -28,7 +28,7 @@ exports = module.exports = function(req, res){
       },
     });
     //.sort('-publishedDate')
-    //.populate('countryCategory')
+    //.populate('country')
     q.exec(function(err, results){
       locals.data.courses = results;
       next(err);

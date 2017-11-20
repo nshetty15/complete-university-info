@@ -5,10 +5,10 @@
     <div class="col-md-8 col-lg-8">
       <div class="row">
          {{!-- {{data.universities.results}}  --}}
-        {{# each data.universities.results}}
+        {{#each data.universities.results}}
         <div class="col-md-4 col-lg-4">
           {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
-          <h2><a href="{{ universityUrl countryCategory.0.key slug }}">{{{title}}}</a></h2>
+          <h2><a href="{{ universityUrl country.0.key slug }}">{{name}}</a></h2>
           {{#if image}}
           <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> 
           {{/if}}

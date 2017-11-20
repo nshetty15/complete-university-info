@@ -1,7 +1,7 @@
 var keystone = require('keystone');
 
 /**
- * UniversityCountryCategory Model
+ * University Country Model
  * ==================
  */
 
@@ -17,6 +17,6 @@ UniversityCountry.add({
 	nationality: { type: String },
 });
 
-UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'countryCategory' });
+UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'country' });
 
 UniversityCountry.register();
