@@ -32,12 +32,12 @@ University.add({
   extended: { type: Types.Html, wysiwyg: true, height: 400 },
   //},
 
-  // http://www.4icu.org/ || https://www.niche.com || sa
+  // http://www.4icu.org/ || https://www.niche.com || https://in.linkedin.com/edu/memorial-university-of-newfoundland-20062 || sa
   website: { type: Types.Url },
 
   acronym: { type: String },
   currency: { type: String },
-  
+
   founded: { type: String },
   motto: { type: String },
   phone: { type: Types.TextArray },
@@ -57,6 +57,9 @@ University.add({
   femaleMaleRatio: { type: String }, // 47:53
   scholarships: { type: String }, // 165,629,375
   outStudents: { type: String }, // 12.5% - International students
+  BDstudents: { type: String }, // linkedIn - https://in.linkedin.com/edu/memorial-university-of-newfoundland-20062
+  MDstudents: { type: String }, // linkedIn -
+  yearLevel: { type: String }, // linkedIn
   //SIZE AND PROFILE
   students: { type: String }, // 25000 || over-45,000
   academicCalendar: { type: String }, // Semesters
