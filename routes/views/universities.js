@@ -59,7 +59,8 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords
-      if (results.meta) {
+      // console.log(results);
+      if (results && results.meta) {
         locals.data.meta = results.meta;
       }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));

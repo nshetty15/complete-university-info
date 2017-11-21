@@ -61,5 +61,5 @@ exports = module.exports = function (app) {
 	app.post('/api/countries', routes.api.countries);
 	app.post('/api/universities', routes.api.universities);
 	app.post('/api/regions', routes.api.regions);
-
+	app.post('/api/states', routes.api.states);
 };
