@@ -37,7 +37,7 @@ University.add({
 
   acronym: { type: String },
   currency: { type: String },
-  // price: {type: Types.Money, format: '$0,0.00', currency: 'en-gb'},
+  
   founded: { type: String },
   motto: { type: String },
   phone: { type: Types.TextArray },
@@ -131,6 +131,7 @@ University.add({
   city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
   state: { type: Types.Relationship, ref: 'UniversityState' },
   country: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
+  region: { type: Types.Relationship, ref: 'Region' },
   publishedDate: { type: Date, default: Date.now }
 });
 

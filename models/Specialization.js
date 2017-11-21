@@ -18,6 +18,7 @@ Specialization.add({
   title: {type: String, requried: true},
   description: {type: Types.Html, wysiwyg: true, height: 300},
   //image: {type: Types.CloudinaryImage },
+  // price: {type: Types.Money, format: '$0,0.00', currency: 'en-gb'},
   createdAt: { type: Date, default: Date.now },
 });
 

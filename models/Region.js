@@ -11,7 +11,7 @@ var Types = keystone.Field.Types;
 
  Region.add({
   name: { type: String, required: true },
-  regionCode: {type: String},
+  code: {type: String},
 	// image: { type: Types.CloudinaryImages },
 });
 
