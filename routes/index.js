@@ -20,8 +20,11 @@
 
 var _ = require('underscore');
 var keystone = require('keystone');
+
+// console.log(keystone);
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+// var bodyParser = require('body-parser');
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -35,6 +38,10 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
+
+	// Body parsing increase the limit to post large data - https://github.com/TryGhost/Ghost/issues/5998
+	// app.use(bodyParser({limit: '50mb'}));
+
 	// console.log(routes.views.index)
 	// Views
 	app.get('/', routes.views.index);
@@ -58,7 +65,8 @@ exports = module.exports = function (app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	// Post methods
-	app.post('/api/countries',  routes.api.countries);
-	app.post('/api/universities',  routes.api.universities);
+	app.post('/api/countries', routes.api.countries);
+	app.post('/api/universities', routes.api.universities);
+	app.post('/api/regions', routes.api.regions);
 
 };
