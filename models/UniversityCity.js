@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Types = keystone.Field.Types;
 
 /**
  * UniversityCity Category Model
@@ -11,8 +12,12 @@ var UniversityCity = new keystone.List('UniversityCity', {
 
 UniversityCity.add({
 	name: { type: String, required: true },
+	// state: {type: Types.Relationship, ref: 'UniversityState'},
+	// country: {type: Types.Relationship, ref: 'UniversityCountry'},
 });
 
 UniversityCity.relationship({ ref: 'University', path: 'universities', refPath: 'city' });
+
+UniversityCity.defaultColumns = 'name';
 
 UniversityCity.register();

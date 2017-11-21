@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var Types = keystone.Field.Types;
 
 /**
  * University Country Model
@@ -18,5 +19,8 @@ UniversityCountry.add({
 });
 
 UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'country' });
+
+/******/
+UniversityCountry.defaultColumns = 'name, countryCode, regionCode, currencyCode, nationality';
 
 UniversityCountry.register();

@@ -26,5 +26,7 @@ Test.add({
 	publishedDate: { type: Date, default: Date.now }
 });
 
+Test.defaultColumns = 'title, publishedDate';
+
 Test.register();
 
