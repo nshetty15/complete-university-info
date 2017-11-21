@@ -35,6 +35,8 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 
+	'file limit': '50MB', // increase data upload via api to 50mb from 100kb
+
 	// 'wysiwyg override toolbar': false,
 	// 'wysiwyg menubar': true,
 	// 'wysiwyg skin': 'lightgray',
