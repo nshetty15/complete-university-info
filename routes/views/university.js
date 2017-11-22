@@ -27,7 +27,7 @@ exports = module.exports = function (req, res) {
       var rex = /(<([^>]+)>)/ig;
       // result.title + ( result.meta.title ? " - " + result.meta.title : "")
       locals.data.meta = {
-				title: result.title + ( result.country[0].name ? " - " + result.country[0].name : ""), // need to fix country
+				// title: result.title + ( result.country[0].name ? " - " + result.country[0].name : ""), // need to fix country
 				//description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
 				keywords: result.meta.keywords  || keystone.get('keywords') ,
 			};
