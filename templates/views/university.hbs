@@ -5,10 +5,10 @@
         <hr>
         <div class="row">
           <div style="margin-bottom:40px;">
-            <h1>{{data.university.name}}</h1>
             {{#if data.university.image}}
             <img src="{{cloudinaryUrl data.university.image crop='fit'}}" class="img-responsive"> {{else}}
-            <img src="/images/university_placeholder_2.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
+            <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
+            <h1>{{data.university.name}}</h1>
           </div>
 
           <div style="margin-bottom:40px;">
