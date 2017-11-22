@@ -51,7 +51,7 @@ exports = module.exports = function (req, res) {
       perPage: 2,
       maxPages: 10,
       filters: {
-        state: 'published',
+        status: 'published',
       },
     })
       .sort('-publishedDate')
@@ -59,7 +59,7 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords
-      // console.log("error: ", err, "\n", results);
+      
       if (results && results.meta) {
         locals.data.meta = results.meta;
       }

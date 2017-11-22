@@ -65,7 +65,7 @@ exports = module.exports = function (req, res) {
 
     // https://github.com/keystonejs/keystone/issues/4253
     var filter = {
-      state: 'published',
+      status: 'published',
     };
     filter.country = { $in: [locals.data.category] };
 

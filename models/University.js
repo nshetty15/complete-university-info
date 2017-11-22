@@ -140,7 +140,7 @@ University.add({
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-University.defaultColumns = 'name|30%, status|8%, address, website, founded|5%, country';
+University.defaultColumns = 'name|30%, status|8%, address, website, founded, country';
 /**
  * Registration
  * ============
