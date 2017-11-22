@@ -19,7 +19,8 @@ exports = module.exports = function (req, res) {
   view.on('init', function (next) {
     var q = keystone.list('Program').model.findOne({
       slug: locals.filters.course
-    });
+    })
+    .populate('level discipline specializations careers');
 
     q.exec(function (err, result) {
 

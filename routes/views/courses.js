@@ -26,9 +26,9 @@ exports = module.exports = function(req, res){
       filters: {
         //state:'published'
       },
-    });
-    //.sort('-publishedDate')
-    //.populate('country')
+    })
+    .populate('discipline');
+        //.sort('-publishedDate')
     q.exec(function(err, results){
       locals.data.courses = results;
       next(err);

@@ -12,27 +12,16 @@
 
         <div style="margin-bottom:40px;">
           <h3>Level</h3>
-         
-            {{#each data.course.level }}
-          <p>this: {{this}}</p>
 
-          <p>this.name: {{this.name}}</p>
-
-          <p>{{_id}}: {{name}}</p>
-
-          <p>{{../name}}</p>
-
-          <p>{{../../name}}</p>
-
-            {{/each}} 
+          {{#each data.course.level }}
+          <p>{{name}}</p>
+          {{/each}}
         </div>
 
         <div style="margin-bottom:40px;">
           <h3>Discipline</h3>
-          {{data.course.discipline}} 
-
           {{#each data.course.discipline}} 
-          {{title}} 
+          <p>{{title}} </p>
           {{/each}}
         </div>
 
@@ -59,19 +48,6 @@
           </ul>
         </div>
 
-        <div style="margin-bottom:40px;">
-          <h3>Specializations</h3>
-          <ul>
-            {{#each data.course.specializations as |value key| }}
-            <li>
-              {{#each child as |childValue childKey|}}
-                <h2>{{@key}} {{childKey}}. {{childValue}}    {{title }}</h2>
-                {{{ description }}}
-              {{/each}} 
-            </li>
-            {{/each}}
-          </ul>
-        </div>
 
         <div style="margin-bottom:40px;">
           <h3>Careers</h3>
