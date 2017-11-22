@@ -1,0 +1,114 @@
+[
+  {
+    "countryCode": "AU",
+    "name": "Australia",
+    "regionCode": "PI",
+    "currencyCode": "AUD",
+    "nationality": "Australian"
+  },
+  {
+    "countryCode": "CA",
+    "name": "Canada",
+    "regionCode": "NAM",
+    "currencyCode": "CAD",
+    "nationality": "Canadian"
+  },
+  {
+    "countryCode": "CH",
+    "name": "Switzerland",
+    "regionCode": "NE",
+    "currencyCode": "CHF",
+    "nationality": "Swiss"
+  },
+  {
+    "countryCode": "CN",
+    "name": "China",
+    "regionCode": "GC",
+    "currencyCode": "CNY",
+    "nationality": "chinese"
+  },
+  {
+    "countryCode": "DE",
+    "name": "Germany",
+    "regionCode": "NE",
+    "currencyCode": "EUR",
+    "nationality": "German"
+  },
+  {
+    "countryCode": "ES",
+    "name": "Spain",
+    "regionCode": "SEU",
+    "currencyCode": "EUR",
+    "nationality": "Spanish"
+  },
+  {
+    "countryCode": "FR",
+    "name": "France",
+    "regionCode": "SEU",
+    "currencyCode": "EUR",
+    "nationality": "French"
+  },
+  {
+    "countryCode": "GB",
+    "name": "United Kingdom",
+    "regionCode": "NE",
+    "currencyCode": "GBP",
+    "nationality": "british"
+  },
+  {
+    "countryCode": "IE",
+    "name": "Ireland",
+    "regionCode": "NE",
+    "currencyCode": "EUR",
+    "nationality": "Irish"
+  },
+  {
+    "countryCode": "IT",
+    "name": "Italy",
+    "regionCode": "SEU",
+    "currencyCode": "EUR",
+    "nationality": "Italian"
+  },
+  {
+    "countryCode": "NL",
+    "name": "Netherlands",
+    "regionCode": "NE",
+    "currencyCode": "EUR",
+    "nationality": "Dutch"
+  },
+  {
+    "countryCode": "NO",
+    "name": "Norway",
+    "regionCode": "NE",
+    "currencyCode": "NOK",
+    "nationality": "Norwegian"
+  },
+  {
+    "countryCode": "NZ",
+    "name": "New Zealand",
+    "regionCode": "PI",
+    "currencyCode": "NZD",
+    "nationality": "New Zealander"
+  },
+  {
+    "countryCode": "SE",
+    "name": "Sweden",
+    "regionCode": "NE",
+    "currencyCode": "SEK",
+    "nationality": "Swedish"
+  },
+  {
+    "countryCode": "SG",
+    "name": "Singapore",
+    "regionCode": "SEA",
+    "currencyCode": "SGD",
+    "nationality": "Singapore"
+  },
+  {
+    "countryCode": "US",
+    "name": "United States",
+    "regionCode": "NAM",
+    "currencyCode": "USD",
+    "nationality": "American"
+  }
+]

@@ -133,7 +133,7 @@ University.add({
   address: { type: String },
   city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
   state: { type: Types.Relationship, ref: 'UniversityState' },
-  country: { type: Types.Relationship, ref: 'UniversityCountry', many: true },
+  country: { type: Types.Relationship, ref: 'UniversityCountry' },
   region: { type: Types.Relationship, ref: 'Region' },
   publishedDate: { type: Date, default: Date.now }
 });
