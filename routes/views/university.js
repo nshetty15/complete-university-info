@@ -19,7 +19,8 @@ exports = module.exports = function (req, res) {
   view.on('init', function (next) {
     var q = keystone.list('University').model.findOne({
       slug: locals.filters.university
-    });
+    })
+    .populate('BDprograms MDprograms city state country region');
 
     q.exec(function (err, result) {
       // Add meta tags -title, description, keywords
@@ -27,7 +28,7 @@ exports = module.exports = function (req, res) {
       // result.title + ( result.meta.title ? " - " + result.meta.title : "")
       locals.data.meta = {
 				title: result.title + ( result.country[0].name ? " - " + result.country[0].name : ""), // need to fix country
-				description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
+				//description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
 				keywords: result.meta.keywords  || keystone.get('keywords') ,
 			};
 

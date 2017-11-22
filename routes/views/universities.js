@@ -40,7 +40,7 @@ exports = module.exports = function (req, res) {
       }, function (err) {
         next(err);
       });
-
+      
     });
   });
 
@@ -59,7 +59,7 @@ exports = module.exports = function (req, res) {
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords
-      // console.log(results);
+      // console.log("error: ", err, "\n", results);
       if (results && results.meta) {
         locals.data.meta = results.meta;
       }

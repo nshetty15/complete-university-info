@@ -50,7 +50,7 @@ University.add({
   totalCost: { type: String },
   acceptanceRate: { type: String }, // 25 %
   studentFacultyRatio: { type: String }, // 4:1
-  RoomAndBoard: { type: String }, // 14,601
+  roomAndBoard: { type: String }, // 14,601
   financialAid: { type: String }, // 35,000 || yes
   studentClubs: { type: String }, // 650
   graduateEmployment: { type: String }, // 80%
