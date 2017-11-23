@@ -47,7 +47,7 @@ University.add({
   phone: { type: Types.TextArray },
   fax: { type: Types.TextArray },
   email: { type: Types.TextArray },
-  locations: { type: String },
+  otherLocations: { type: String },
   motto: { type: String },
   acronym: { type: String },
   currency: { type: String },

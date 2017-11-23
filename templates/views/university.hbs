@@ -55,7 +55,7 @@
               {{/each}} {{#each data.university.fax}}
               <p>fax: {{ this }} </p>
               {{/each}}
-              <p>locations: {{data.university.locations }} </p>
+              <p>locations: {{data.university.otherLocations }} </p>
               <p>applicationDeadline: {{data.university.applicationDeadline }} </p>
               <p>applicationFee: {{data.university.applicationFee }} </p>
 
@@ -126,7 +126,6 @@
               <h3>FACILITIES AND SERVICES</h3>
               <p>library: {{data.university.library }} </p>
               <p>housing: {{data.university.housing }} </p>
-              <p>studyAbroad: {{data.university.studyAbroad }} </p>
               <p>sportFacilities: {{data.university.sportFacilities }} </p>
               <p>distanceLearning: {{data.university.distanceLearning }} </p>
             </div>
@@ -183,10 +182,6 @@
               <p>itunes: {{data.university.itunes }} </p>
             </div>
 
-            <div class="well" style="margin-bottom:40px;">
-              <h3>WIKIPEDIA</h3>
-              <p>wikipedia: {{data.university.wikipedia }} </p>
-            </div>
           </div>
           {{!--
           <div class="well" style="margin-bottom:40px;">
