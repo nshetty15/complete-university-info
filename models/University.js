@@ -42,6 +42,7 @@ University.add({
   motto: { type: String },
   phone: { type: Types.TextArray },
   fax: { type: Types.TextArray },
+  email: { type: Types.TextArray },
   locations: { type: String },
   applicationDeadline: { type: Types.Date },
   applicationFee: { type: Types.Number },
@@ -78,6 +79,7 @@ University.add({
   totalPrograms: { type: String }, // 48
   BDprograms: { type: Types.Relationship, ref: 'Program', many: true },
   MDprograms: { type: Types.Relationship, ref: 'Program', many: true },
+  
   // ADMISSIONS
   admissionOffice: { type: String }, // 51 Dineen Drive Fredericton E3B 5G3+1 (506) 452 0532
   admissionRate: { type: String }, // 80-90%
@@ -118,6 +120,7 @@ University.add({
   // SOCIAL MEDIA
   facebook: { type: Types.Url }, // FB page url
   twitter: { type: Types.Url },
+  google: { type: Types.Url},
   linkedin: { type: Types.Url },
   instagram: { type: Types.Url },
   youtube: { type: Types.Url },
