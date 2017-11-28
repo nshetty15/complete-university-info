@@ -1,14 +1,16 @@
-{{!< default}}
-<main>
+{{!
+< default}} <main>
 
 	<div class="container">
 		<div class="jumbotron">
 			<h1>FIND YOUR DREAM UNIVERSITY ABROAD</h1>
 			<p>Study abroad with our
 				<strong>free</strong> resources on choosing a university</p>
-			<p>
-				<a href="/universities/" style="margin-right: 10px" class="btn btn-lg btn-primary">Discover Universities</a>
-			</p>
+
+			<form method="GET" action="/search/" role="search">
+				<input type="text" class="form-control" placeholder="Search" name="q">
+				<button class="btn btn-lg btn-primary" type="submit">Discover Universities</button>
+			</form>
 		</div>
 
 		<div class="row">
@@ -103,4 +105,4 @@
 
 	</div>
 
-</main>
+	</main>

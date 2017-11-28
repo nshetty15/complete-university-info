@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Searched Universities</h1>
+
+  <form method="GET" action="/search/" role="search">
+    <div class="input-group">
+      <input type="text" class="form-control input-lg" placeholder="Search" name="q" id="q" value="{{data.searchQuery}}">
+      
+        <button class="btn btn-lg btn-primary" type="submit">Discover Universities</button>
+      
+    </div>
+  </form>
+
+  <div class="row">
+    <div class="col-md-8 col-lg-8">
+      <ul class="row">
+        {{!-- {{data.universities}} --}} {{#each data.universities}}
+        <li>
+          {{!--
+          <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}} {{#if image}}
+          <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="img-responsive"> {{else}}
+          <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
+          <h2>
+            <a href="{{ universityUrl country.key slug }}">{{name}}</a>
+          </h2>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+  </div>
+
+</div>

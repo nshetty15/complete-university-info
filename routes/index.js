@@ -52,6 +52,8 @@ exports = module.exports = function (app) {
 	app.get('/courses/', routes.views.courses);
 	app.get('/courses/:course', routes.views.course);
 
+	app.get('/search/', routes.views.search);
+
 	app.all('/contact', routes.views.contact);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
@@ -62,4 +64,6 @@ exports = module.exports = function (app) {
 	app.post('/api/universities', routes.api.universities);
 	app.post('/api/regions', routes.api.regions);
 	app.post('/api/states', routes.api.states);
+	// Get methods
+	app.get('/api/search/:value', routes.api.search);
 };
