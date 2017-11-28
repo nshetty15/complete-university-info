@@ -27,6 +27,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Universities', key: 'universities', href: '/universities/' },
 		{ label: 'Blog', key: 'blog', href: '/blog/' },
+		{ label: 'Study In', key: 'studyin', href: '/study-in/' },
 		{
 			label: 'Tests', key: 'tests', pages: [
 				{ label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },

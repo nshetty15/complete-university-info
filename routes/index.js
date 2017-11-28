@@ -54,6 +54,8 @@ exports = module.exports = function (app) {
 
 	app.get('/search/', routes.views.search);
 
+	app.get('/study-in/:region/:country/guide', routes.views.study_destination);
+
 	app.all('/contact', routes.views.contact);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
