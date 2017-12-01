@@ -42,7 +42,9 @@ University.add({
   // ABOUT UNIVERSITY
   website: { type: Types.Url },
   founded: { type: String },
-  applicationDeadline: { type: Types.Date },
+  januaryDeadline: { type: Types.Date },
+  mayDeadline: { type: Types.Date },
+  septemberDeadline: { type: Types.Date },
   applicationFee: { type: Types.Number },
   phone: { type: Types.TextArray },
   fax: { type: Types.TextArray },
