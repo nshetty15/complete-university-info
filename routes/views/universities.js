@@ -56,7 +56,7 @@ exports = module.exports = function (req, res) {
       },
     })
       .sort('-publishedDate')
-      .populate('country');
+      .populate('region country state city');
 
     q.exec(function (err, results) {
       // Add meta tags -title, description, keywords

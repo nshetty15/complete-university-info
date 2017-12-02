@@ -76,7 +76,7 @@ exports = module.exports = function (req, res) {
       filters: filter,
     })
       .sort('-publishedDate')
-      .populate('country');
+      .populate('region country state city');
 
     // if (locals.data.category) {
     //   // console.log('category: ', locals.data.category)

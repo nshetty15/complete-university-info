@@ -212,19 +212,23 @@ module.exports = function () {
 	/***********/
 
 	// Direct url link to a specific university
-	_helpers.universityUrl = function (universityCountry, universitySlug, options) {
-		return ('/universities/' + universityCountry + '/' + universitySlug);
+	_helpers.universityUrl = function (region, country, state, city, universitySlug, options) {
+		// some countries do not have state
+		// if(!state){
+		// 	return ('/universities/' + region + '/' + country + '/' + city + '/' + universitySlug);
+		// }
+		return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug);
 	};
 
 	// country category
-	_helpers.categoryCountryUrl = function (categorySlug, options) {
-		return ('/universities/' + categorySlug);
+	_helpers.categoryCountryUrl = function (country, options) {
+		return ('/universities/' + country);
 	};
-// For pagination 
+	// For pagination 
 	_helpers.uniPageUrl = function (pageNumber, options) {
 		return '/universities?page=' + pageNumber;
 	};
-// For pagination 
+	// For pagination 
 	_helpers.uniPageCountryUrl = function (pageNumber, country, options) {
 		return '/universities/' + country + '/?page=' + pageNumber;
 	};
@@ -233,14 +237,14 @@ module.exports = function () {
 		return ('/test/' + categorySlug);
 	};
 
-	_helpers.courseUrl = function(courseSlug, options){
-		return ('/courses/' + courseSlug );
+	_helpers.courseUrl = function (courseSlug, options) {
+		return ('/courses/' + courseSlug);
 	};
 	// For pagination 
 	_helpers.coursePageUrl = function (pageNumber, options) {
 		return '/courses?page=' + pageNumber;
 	};
-	
+
 	/******************* */
 	// ### Pagination Helpers
 	// These are helpers used in rendering a pagination system for content
@@ -288,8 +292,8 @@ module.exports = function () {
 				pageUrl = _helpers.pageUrl(page);
 			} else if (source === "bycountry") {
 				pageUrl = _helpers.uniPageCountryUrl(page, country);
-			} else if(source === "courses"){
-				pageUrl =	_helpers.coursePageUrl(page);
+			} else if (source === "courses") {
+				pageUrl = _helpers.coursePageUrl(page);
 			}
 
 			// wrapup the html

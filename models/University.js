@@ -20,7 +20,7 @@ University.add({
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   author: { type: Types.Relationship, ref: 'User', index: true },
   meta: {
-    // title: { type: String }, // under 70 characters
+    title: { type: String }, // under 70 characters
     description: { type: String }, // under 160 characters
     keywords: { type: String } // No more than 10 keyword phrases
   },
@@ -29,10 +29,11 @@ University.add({
   logo: { type: Types.CloudinaryImage },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   address: { type: String },
-  city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
-  state: { type: Types.Relationship, ref: 'UniversityState' },
-  country: { type: Types.Relationship, ref: 'UniversityCountry' },
   region: { type: Types.Relationship, ref: 'Region' },
+  country: { type: Types.Relationship, ref: 'UniversityCountry' },
+  state: { type: Types.Relationship, ref: 'UniversityState' },
+  city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
+
   //content: {
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
   extended: { type: Types.Html, wysiwyg: true, height: 400 },
