@@ -22,7 +22,7 @@ exports = module.exports = function (req, res) {
 
   // Load all countries
   view.on("init", function (next) {
-    keystone.list('UniversityCountry').model.find().sort('name').exec(function (err, results) {
+    keystone.list('UniversityCountry').model.find().sort('name').populate('region').exec(function (err, results) {
       // console.log("ERROR: " + JSON.stringify(err), "RESULTS: " + JSON.stringify(results));
 
       if (err || !results.length) {

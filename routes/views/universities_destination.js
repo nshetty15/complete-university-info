@@ -4,7 +4,7 @@ var async = require('async');
 exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
   var locals = res.locals;
-  console.log(req.params);
+
   // init locals
   locals.section = 'universities';
   locals.filters = {
@@ -16,8 +16,14 @@ exports = module.exports = function (req, res) {
 
   locals.data = {
     universities: [],
+
+    region: req.params.region,
+    country: req.params.country,
+    state: req.params.state,
+    city: req.params.city,
+
     pathName: req.url,
-    source: 'bycountry', // for pagination
+    source: 'bydestination', // for pagination
     meta: {
       title: keystone.get('title'), // under 70 characters
       description: keystone.get('description'), // under 160 characters
@@ -34,7 +40,7 @@ exports = module.exports = function (req, res) {
         // if (result.meta) {
         //   locals.data.meta = result.meta;
         // }
-        console.log('CITY: ', JSON.stringify(result));
+        // console.log('CITY: ', JSON.stringify(result));
         locals.data.category = result;
         next(err);
       });
@@ -44,7 +50,7 @@ exports = module.exports = function (req, res) {
         // if (result.meta) {
         //   locals.data.meta = result.meta;
         // }
-        console.log('STATE: ', JSON.stringify(result));
+        // console.log('STATE: ', JSON.stringify(result));
         locals.data.category = result;
         next(err);
       });
@@ -54,7 +60,7 @@ exports = module.exports = function (req, res) {
         if (result.meta) {
           locals.data.meta = result.meta;
         }
-        console.log('COUNTRY: ', JSON.stringify(result)); // {"_id":"59b69aef92ce7a5e1c2cb1cb","key":"canada","name":"Canada","__v":0}
+        // console.log('COUNTRY: ', JSON.stringify(result)); // {"_id":"59b69aef92ce7a5e1c2cb1cb","key":"canada","name":"Canada","__v":0}
         locals.data.category = result;
 
         next(err);
@@ -65,7 +71,7 @@ exports = module.exports = function (req, res) {
         // if (result.meta) {
         //   locals.data.meta = result.meta;
         // }
-        console.log('REGION: ', JSON.stringify(result));
+        // console.log('REGION: ', JSON.stringify(result));
         locals.data.category = result;
         next(err);
       });
@@ -103,12 +109,12 @@ exports = module.exports = function (req, res) {
       q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
-      locals.data.universitiescountry = results;
+      locals.data.universitiesdestination = results;
       next(err);
     });
 
   });
 
   // Render View
-  view.render('universities_country');
+  view.render('universities_destination');
 };

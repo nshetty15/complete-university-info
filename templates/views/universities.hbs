@@ -31,17 +31,18 @@
       <h2>By Country</h2>
       <div style="margin-top: 70px;" class="list-group">
         <a href="/universities" class="active list-group-item">All Countries</a>
+
         {{# each data.countries }} 
         {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
         --}} {{!-- {{#checkIf countryCode '==' 'US' '||' countryCode '==' 'CA' }} --}}
-        <a href="{{categoryCountryUrl key}}" class="false list-group-item">{{name}}</a>
+        <a href="{{categoryCountryUrl region.key key}}" class="false list-group-item">{{name}}</a>
         {{!-- {{/checkIf }} --}} {{/each}}
       </div>
     </div>
 
   </div>
 
-  {{>paginationuniversity}}
+  {{>paginationuniversities}}
 
 
 

@@ -1,14 +1,14 @@
 <ul class="pagination">
-	<li {{#unless data.universitiescountry.previous}}class="disabled"{{/unless}}>
-		<a href="{{paginationPreviousUrl data.universitiescountry.previous}}">
+	<li {{#unless data.universitiesdestination.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationPreviousUrl data.universitiesdestination.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
 		</a>
 	</li>
 
-	{{{paginationNavigation data.universitiescountry.pages data.universitiescountry.currentPage data.universitiescountry.totalPages data.source data.country }}}
+	{{{paginationNavigation data.universitiesdestination.pages data.universitiesdestination.currentPage data.universitiesdestination.totalPages data.source data.region data.country data.state data.city }}}
 
-	<li {{#unless data.universitiescountry.next}}class="disabled"{{/unless}}>
-		<a href="{{paginationNextUrl data.universitiescountry.next data.universitiescountry.totalPages}}">
+	<li {{#unless data.universitiesdestination.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationNextUrl data.universitiesdestination.next data.universitiesdestination.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 		</a>
 	</li>

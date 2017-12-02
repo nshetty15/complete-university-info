@@ -221,16 +221,30 @@ module.exports = function () {
 	};
 
 	// country category
-	_helpers.categoryCountryUrl = function (country, options) {
-		return ('/universities/' + country);
+	_helpers.categoryCountryUrl = function (region, country, options) {
+		return ('/universities/' + region + '/' + country);
 	};
-	// For pagination 
+
+	// For pagination - eg: http://localhost:3000/universities/
 	_helpers.uniPageUrl = function (pageNumber, options) {
 		return '/universities?page=' + pageNumber;
 	};
-	// For pagination 
-	_helpers.uniPageCountryUrl = function (pageNumber, country, options) {
-		return '/universities/' + country + '/?page=' + pageNumber;
+
+	// For pagination - eg: http://localhost:3000/universities/north-america/united-states/queensland/calgary/
+	_helpers.uniPageDestinationUrl = function (pageNumber, region, country, state, city, options) {
+		if (region && country && state && city) {
+			return '/universities/' + region + '/' + country + '/' + state + '/' + city + '?page=' + pageNumber;
+		}
+		else if (region && country && state) {
+			return '/universities/' + region + '/' + country + '/' + state + '?page=' + pageNumber;
+		}
+		else if (region && country) {
+			return '/universities/' + region + '/' + country + '?page=' + pageNumber;
+		}
+		else if (region) {
+			return '/universities/' + region + '?page=' + pageNumber;
+		}
+
 	};
 
 	_helpers.testUrl = function (categorySlug, options) {
@@ -266,7 +280,7 @@ module.exports = function () {
 		return options.inverse(this);
 	};
 
-	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, country, options) {
+	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, region, country, state, city, options) {
 		var html = '';
 		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
 		// '...' will be added by keystone if the pages exceed 10
@@ -290,8 +304,8 @@ module.exports = function () {
 				pageUrl = _helpers.uniPageUrl(page);
 			} else if (source === "blog") {
 				pageUrl = _helpers.pageUrl(page);
-			} else if (source === "bycountry") {
-				pageUrl = _helpers.uniPageCountryUrl(page, country);
+			} else if (source === "bydestination") {
+				pageUrl = _helpers.uniPageDestinationUrl(page, region, country, state, city);
 			} else if (source === "courses") {
 				pageUrl = _helpers.coursePageUrl(page);
 			}
