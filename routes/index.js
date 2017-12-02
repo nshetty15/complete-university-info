@@ -40,7 +40,12 @@ exports = module.exports = function (app) {
 	app.get('/', routes.views.index);
 
 	app.get('/universities/', routes.views.universities);
-	app.get('/universities/:country?', routes.views.universities_country);
+
+	app.get('/universities/:region/', routes.views.universities_destination);
+	app.get('/universities/:region/:country/', routes.views.universities_destination);
+	app.get('/universities/:region/:country/:state/', routes.views.universities_destination);
+	app.get('/universities/:region/:country/:state/:city/', routes.views.universities_destination);
+
 	app.get('/universities/:region/:country/:state/:city/:university', routes.views.university);
 
 	app.get('/blog/:category?', routes.views.blog);

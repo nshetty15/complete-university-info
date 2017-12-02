@@ -12,7 +12,9 @@ var Types = keystone.Field.Types;
  Region.add({
   name: { type: String, required: true },
   code: {type: String},
-	// image: { type: Types.CloudinaryImages },
+  // image: { type: Types.CloudinaryImages },
 });
+
+Region.relationship({ ref: 'University', path: 'universities', refPath: 'region' });
 
 Region.register();

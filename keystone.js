@@ -69,7 +69,7 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	universities: ['universities', 'university-cities', 'university-states', 'university-countries'],
+	universities: ['universities', 'regions', 'university-countries', 'university-states', 'university-cities'],
 	posts: ['posts', 'post-categories'],
 	levels: ['levels', 'disciplines', 'programs', 'specializations', 'careers'],
 	tests: 'tests',
@@ -88,12 +88,12 @@ keystone.set('twitterSite', '@completeuniversityinfo');
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'
-	+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
-	+ '\n----------------------------------------'
-	+ '\nYou have opted into email sending but have not provided'
-	+ '\nmailgun credentials. Attempts to send will fail.'
-	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
-	+ '\nset up your mailgun integration');
+		+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
+		+ '\n----------------------------------------'
+		+ '\nYou have opted into email sending but have not provided'
+		+ '\nmailgun credentials. Attempts to send will fail.'
+		+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
+		+ '\nset up your mailgun integration');
 }
 
 
