@@ -5,9 +5,25 @@
         <hr>
         <div class="row">
           <div style="margin-bottom:40px;">
-            {{#if data.university.image}}
-            <img src="{{cloudinaryUrl data.university.image crop='fit'}}" class="img-responsive"> {{else}}
-            <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
+
+            {{{cloudinaryUrl data.university.logo }}}<br>
+            {{{cloudinaryUrl data.university.logo width=160 height=160 crop=" fit "}}}<br>
+
+
+          {{!-- {{#if foundUser.userImage.version}}
+            http://res.cloudinary.com/uguide/image/upload/aijlsivj2kc3qqm30nr3.png
+              <img src="https://res.cloudinary.com/closebrace/image/upload/w_400/v{{foundUser.userImage.version}}/{{foundUser.userImage.public_id}}.jpg" alt="User Icon" class="user-icon" />
+            {{else}}
+              <img src="https://res.cloudinary.com/closebrace/image/upload/w_400/v1491315007/usericon_id76rb.png" alt="Default User Icon" class="user-icon" />
+            {{/if}} --}}
+
+            {{#if data.university.logo}}
+           
+
+            <img src="{{cloudinaryUrl data.university.logo width=160 height=160 crop=" fit "}}" class="img-responsive"> 
+            {{else}}
+            <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> 
+            {{/if}}
             <h1>{{data.university.name}}</h1>
           </div>
 

@@ -26,7 +26,18 @@ University.add({
   },
 
   name: { type: String, requried: true },
-  logo: { type: Types.CloudinaryImage },
+  logo: {
+    type: Types.CloudinaryImage,
+    folder: 'logo',
+    autoCleanup: true,
+    generateFilename: function(file, attemptNumber, callback) {
+      var originalname = file.originalname;
+      var filenameWithoutExtension = originalname.substring(0, originalname.lastIndexOf('.'));
+      var timestamp = new Date().getTime();
+      //console.log(`${filenameWithoutExtension}-${timestamp}`);
+      return filenameWithoutExtension;
+    },
+  },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   address: { type: String },
   region: { type: Types.Relationship, ref: 'Region' },

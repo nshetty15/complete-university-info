@@ -35,19 +35,13 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 
+	//added later
 	'file limit': '50MB', // increase data upload via api to 50mb from 100kb
 
-	// 'wysiwyg override toolbar': false,
-	// 'wysiwyg menubar': true,
-	// 'wysiwyg skin': 'lightgray',
-	// 'wysiwyg additional buttons': 'searchreplace visualchars,'
-	//  + ' charmap ltr rtl pagebreak paste, forecolor backcolor,'
-	//  +' emoticons media, preview print ',
-	// 'wysiwyg additional plugins': 'example, table, advlist, anchor,'
-	//  + ' autolink, autosave, bbcode, charmap, contextmenu, '
-	//  + ' directionality, emoticons, fullpage, hr, media, pagebreak,'
-	//  + ' paste, preview, print, searchreplace, textcolor,'
-	//  + ' visualblocks, visualchars, wordcount',
+	'wysiwyg cloudinary images': true,
+	'cors allow origin': true, //
+	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
+
 });
 
 // Load your project's Models
