@@ -9,7 +9,7 @@ var StudyDestination = new keystone.List('StudyDestination', {
 });
 
 StudyDestination.add({
-  name: {type: String, requried: true},
+  name: {type: Types.Relationship, ref: 'UniversityCountry', requried: true},
   meta: {
     title: { type: String }, // under 70 characters
     description: { type: String }, // under 160 characters
@@ -17,15 +17,21 @@ StudyDestination.add({
   },
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   image: {type: Types.CloudinaryImage },
-  // cities, applications, fees & visas, Study, student  living, about, institutes, 
-  city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
+  // cities, applications, fees & visas, Study, student  living, about, institutes,
+  region: { type: Types.Relationship, ref: 'Region' }, 
+  // country: { type: Types.Relationship, ref: 'UniversityCountry' },
   state: { type: Types.Relationship, ref: 'UniversityState' },
-  country: { type: Types.Relationship, ref: 'UniversityCountry' },
-  region: { type: Types.Relationship, ref: 'Region' },
-  
-  intro: {type: Types.Html, wysiwyg: true, height: 300}, //
-  overview: {type: Types.Html, wysiwyg: true, height: 300},
-  description: {type: Types.Html, wysiwyg: true, height: 300},
+  city: { type: Types.Relationship, ref: 'UniversityCity' }, // don't many: true - as it is a slug value
+
+  intro: { type: Types.Html, wysiwyg: true, height: 300 }, //
+  overview: { type: Types.Html, wysiwyg: true, height: 300 },
+  description: { type: Types.Html, wysiwyg: true, height: 300 },
   facts: {type: Types.TextArray},
   createdAt: { type: Date, default: Date.now },
 });
+
+
+/* A comma-delimited list of default columns to display in the Admin UI List View.  */
+// University.defaultColumns = 'name, status, address, website, founded, region, country, state, city';
+
+StudyDestination.register();

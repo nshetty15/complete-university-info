@@ -66,6 +66,7 @@ keystone.set('nav', {
 	universities: ['universities', 'regions', 'university-countries', 'university-states', 'university-cities'],
 	posts: ['posts', 'post-categories'],
 	levels: ['levels', 'disciplines', 'programs', 'specializations', 'careers'],
+	studyDestination: "study-destinations",
 	tests: 'tests',
 	enquiries: 'enquiries',
 	users: 'users',

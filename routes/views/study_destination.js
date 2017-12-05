@@ -6,7 +6,7 @@ exports = module.exports = function (req, res) {
 	// Set locals
 	locals.section = 'studyin';
 	locals.filters = {
-		country: req.params.country,
+		destination: req.params.destination,
 	};
 	locals.data = {
 		study: [],
@@ -19,22 +19,25 @@ exports = module.exports = function (req, res) {
 
 		var q = keystone.list('StudyDestination').model.findOne({
 			state: 'published',
-			slug: locals.filters.country,
+			slug: locals.filters.destination,
 		}).populate('city state country region');
 
 		q.exec(function (err, result) {
+			if(err){
+				next(err);
+			}
+			// console.log(result);
 			// Add meta tags -title, description, keywords
-			var rex = /(<([^>]+)>)/ig;
-			locals.data.meta = {
-				title: result.meta.title,
-				description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
-				keywords: result.meta.keywords,
-			};
+			// locals.data.meta = {
+			// 	title: result.meta.title,
+			// 	description: result.meta.description,
+			// 	keywords: result.meta.keywords,
+			// };
 
 			// Final result
 			locals.data.study = result;
 
-			next(err);
+			
 		});
 
 	});

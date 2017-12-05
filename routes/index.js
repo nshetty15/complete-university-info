@@ -59,7 +59,7 @@ exports = module.exports = function (app) {
 
 	app.get('/search/', routes.views.search);
 
-	app.get('/study-in/:region/:country/guide', routes.views.study_destination);
+	app.get('/study-in/:destination/guide', routes.views.study_destination);
 
 	app.all('/contact', routes.views.contact);
 
