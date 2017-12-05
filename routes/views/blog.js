@@ -6,8 +6,6 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 
-	console.log(res.meta);
-
 	// Init locals
 	locals.section = 'blog';
 	locals.filters = {
@@ -40,6 +38,7 @@ exports = module.exports = function (req, res) {
 			async.each(locals.data.categories, function (category, next) {
 
 				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function (err, count) {
+					// console.log(count)
 					category.postCount = count;
 					next(err);
 				});
@@ -82,6 +81,7 @@ exports = module.exports = function (req, res) {
 		}
 
 		q.exec(function (err, results) {
+			//console.log(results);
 			locals.data.posts = results;
 			next(err);
 		});
