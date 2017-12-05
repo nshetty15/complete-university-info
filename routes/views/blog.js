@@ -54,7 +54,6 @@ exports = module.exports = function (req, res) {
 
 		if (req.params.category) { 
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
-				console.log(result)
 				locals.data.category = result;
 				next(err);
 			});

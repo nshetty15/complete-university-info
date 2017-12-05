@@ -23,9 +23,16 @@
 			<h2>Tagged categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
 				<a href="/blog" class="active list-group-item">All Categories</a>
+
 				{{#each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">{{name}}</a>
+				<a href="{{categoryUrl key}}" class="false list-group-item">
+					{{name}}
+					{{#if postCount}}
+						<span class="badge pull-right">{{postCount}}</span>
+					{{/if}}
+				</a>
 				{{/each}}
+
 			</div>
 		</div>
 	</div>
