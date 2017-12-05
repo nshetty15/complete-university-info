@@ -38,7 +38,7 @@ exports = module.exports = function (req, res) {
 			async.each(locals.data.categories, function (category, next) {
 
 				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function (err, count) {
-					// console.log(count)
+					// use this for the count of each categories
 					category.postCount = count;
 					next(err);
 				});
@@ -54,6 +54,7 @@ exports = module.exports = function (req, res) {
 
 		if (req.params.category) { 
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
+				console.log(result)
 				locals.data.category = result;
 				next(err);
 			});
@@ -81,7 +82,7 @@ exports = module.exports = function (req, res) {
 		}
 
 		q.exec(function (err, results) {
-			//console.log(results);
+			// console.log(results);
 			locals.data.posts = results;
 			next(err);
 		});
