@@ -30,13 +30,7 @@ University.add({
     type: Types.CloudinaryImage,
     folder: 'logo',
     autoCleanup: true,
-    generateFilename: function(file, attemptNumber, callback) {
-      var originalname = file.originalname;
-      var filenameWithoutExtension = originalname.substring(0, originalname.lastIndexOf('.'));
-      var timestamp = new Date().getTime();
-      //console.log(`${filenameWithoutExtension}-${timestamp}`);
-      return filenameWithoutExtension;
-    },
+    publicID: 'slug'
   },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   address: { type: String },
@@ -89,11 +83,17 @@ University.add({
   controlType: { type: String }, // Private||Private
   religiousAffiliation: { type: String }, // None
   entityType: { type: String }, // Non-Profit
-  eveningDegreeProgram: { type: Types.Boolean }, // -:https://www.niche.com/colleges/harvard-university/
+  
+  // FACILITIES AND SERVICES
+  library: { type: String }, // http://www.4icu.org/reviews/614.htm
+  housing: { type: String },
+  // studyAbroad: { type: String },
+  sportFacilities: { type: String },
+  distanceLearning: { type: String },
 
   // TUITION
   BDtuitionIn: { type: String }, // $ 2,500-5,000  || 2,500-5,000 US$ (1,800-3,700 Euro) - 
-  BDtuitionOut: { type: String }, //   
+  BDtuitionOut: { type: String }, // Out-of-State Tuition (International students)
   MDtuitionIn: { type: String }, // In-State Tuition
   MDtuitionOut: { type: String }, // Out-of-State Tuition (International students)
 
@@ -102,6 +102,8 @@ University.add({
   BDprogramsCount: { type: String }, // 48
   MDprograms: { type: Types.Relationship, ref: 'Program', many: true },
   MDprogramsCount: { type: String }, // 43
+  programs: { type: Types.Html, wysiwyg: true, height: 400 }, //Bachelors & master programs
+  eveningDegree: { type: Types.Boolean }, // -:https://www.niche.com/colleges/harvard-university/
 
   // ADMISSIONS
   admissionOffice: { type: String }, // 51 Dineen Drive Fredericton E3B 5G3+1 (506) 452 0532
@@ -117,20 +119,14 @@ University.add({
   ieltsRange: { type: String }, // value1-value2-value3 || value1-value3
   gpaRange: { type: String }, // value1-value2-value3 || value1-value3
 
-  // FACILITIES AND SERVICES
-  library: { type: String }, // http://www.4icu.org/reviews/614.htm
-  housing: { type: String },
-  // studyAbroad: { type: String },
-  sportFacilities: { type: String },
-  distanceLearning: { type: String },
 
   // RANKINGS
   timesWorldUniversity: { type: String }, // https://www.timeshighereducation.com/world-university-rankings  
+  qs: { type: String }, // https://www.topuniversities.com/university-rankings
   forbes: { type: String }, // https://www.forbes.com/top-colleges/list/
   macleans: { type: String }, // http://www.macleans.ca/education/unirankings/university-rankings-2017/
   completeUniversityGuide: { type: String }, // https://www.thecompleteuniversityguide.co.uk/
   financialTimes: { type: String }, // http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017
-  qs: { type: String }, // https://www.topuniversities.com/university-rankings
   arwu: { type: String }, // http://www.shanghairanking.com/
   theEconomist: { type: String }, // http://www.economist.com/whichmba/full-time-mba-ranking
   usNewsNational: { type: String }, // https://www.usnews.com/best-colleges/rankings/national-universities  
