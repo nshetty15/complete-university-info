@@ -26,7 +26,7 @@ University.add({
   },
 
   name: { type: String, requried: true },
-  logo: { type: Types.CloudinaryImage, folder: 'logo', autoCleanup: true  },
+  logo: { type: Types.CloudinaryImage, folder: 'logo', autoCleanup: true, uploadOptions: { use_filename: true }  },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   address: { type: String,  },
   region: { type: Types.Relationship, ref: 'Region' },
