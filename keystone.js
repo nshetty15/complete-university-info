@@ -38,10 +38,9 @@ keystone.init({
 	//added later
 	'file limit': '50MB', // increase data upload via api to 50mb from 100kb
 
-	'wysiwyg cloudinary images': true,
 	'cors allow origin': true, //
 	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
-
+	'wysiwyg override toolbar': false,
 });
 
 // Load your project's Models
