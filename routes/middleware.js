@@ -22,6 +22,7 @@ exports.initLocals = function (req, res, next) {
 	// https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
 	res.locals.baseUrl = keystone.get('baseUrl');
 	res.locals.twitterSite = keystone.get('twitterSite');
+	res.locals.gaProperty = keystone.get('ga property front');
 
 	res.locals.navLinks = [
 		// { label: 'Home', key: 'home', href: '/' },

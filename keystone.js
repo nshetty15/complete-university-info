@@ -16,7 +16,7 @@ keystone.init({
 
 	'sass': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'favicon': 'public/images/favicon/icon.ico',
 	'views': 'templates/views',
 	'view engine': '.hbs',
 
@@ -41,6 +41,7 @@ keystone.init({
 	'cors allow origin': true, //
 	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
 	'wysiwyg override toolbar': false,
+	'ga property front': process.env.GA_PROPERTY_FRONT,
 });
 
 // Load your project's Models
