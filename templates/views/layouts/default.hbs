@@ -41,8 +41,8 @@
 		<meta name="twitter:image:src" content="{{baseUrl}}/completeuniversityinfo.png">
 		<meta name="twitter:url" content="{{baseUrl}}/">
 	{{/if}}
-
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon">
 	<link href="/styles/site.css" rel="stylesheet"> 
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
 	admin--}} 
@@ -201,7 +201,7 @@
 	{{!-- //- Customise which Bootstrap javascript files are served by including //- them specifically here, instead of bootstrap-3.3.5.min.js
 	--}}
 		<script src="/js/bootstrap/bootstrap.bundle.js"></script>
-
+{{!--enable when service work is required <script src="/js/main.js"></script> --}}
 	{{{isAdminEditorJS user}}}
 </body>
 
