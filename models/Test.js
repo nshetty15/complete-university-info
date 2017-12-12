@@ -20,7 +20,7 @@ Test.add({
 		description: { type: String }, // under 160 characters
 		keywords: { type: String } // No more than 10 keyword phrases
 	},
-	// image: { type: Types.CloudinaryImage },
+	image: { type: Types.CloudinaryImage },
 	introduction: { type: Types.Html, wysiwyg: true, height: 150 },
 	description: { type: Types.Html, wysiwyg: true, height: 250 },
 	publishedDate: { type: Date, default: Date.now }
