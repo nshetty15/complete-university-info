@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 
 	<title>{{data.meta.title}}</title>
@@ -56,6 +56,48 @@
 </head>
 
 <body>
+	<div class="container">
+	<header class="masthead">
+        <h3 class="text-muted">
+					<a href="/" class="navbar-brand">
+						<img src="/images/completeuniversityinfo_1.png" alt="Complete university Info logo" />
+					</a>
+				</h3>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-md-center nav-justified w-100">
+              {{# each navLinks}} 
+							{{#if href}}
+							<li class="nav-item">
+								<a class="nav-link" href="{{href }}" title="{{key}}">{{ label }}</a>
+							</li>
+							{{else}}
+							<li class="nav-item dropdown">
+								<a href="/tests/" class="nav-link dropdown-toggle" id="dropdown01" 
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="{{key}}">
+									{{ label }} 
+								</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown01">
+									{{#each pages}}
+									
+										<a class="dropdown-item" href="{{ href }}">{{ label }} </a>
+									
+									{{/each}}
+								</div>
+							</li>
+							{{/if}} 
+							{{/each}}
+
+            </ul>
+          </div>
+        </nav>
+      </header>
+			</div>
+
 	<div id="header">
 		<div class="container">
 			<div role="navigation" class="navbar navbar-default">
@@ -70,6 +112,7 @@
 					<div class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-left">
 							{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
+
 							{{# each navLinks}} 
 							{{#if href}}
 							<li {{#ifeq ../../section key}}class="active" {{/ifeq}}>
@@ -90,6 +133,7 @@
 							</li>
 							{{/if}} 
 							{{/each}}
+
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							{{#if user}}
@@ -151,10 +195,13 @@
 	</div>
 	{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content Editor. If
 	you are not targeting IE8, //- you can upgrade to 2.1.4 (also bundled) for better performance. --}}
-	<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+	{{!-- <script src="/js/jquery/jquery-1.11.3.min.js"></script> --}}
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
 	{{!-- //- Customise which Bootstrap javascript files are served by including //- them specifically here, instead of bootstrap-3.3.5.min.js
 	--}}
-	<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script src="/js/bootstrap/bootstrap.bundle.js"></script>
+
 	{{{isAdminEditorJS user}}}
 </body>
 
