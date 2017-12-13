@@ -18,6 +18,6 @@ Level.add({
 
 Level.relationship({ ref: 'Program', path: 'programs', refPath: 'level' });
 
-Level.defaultColumns = 'name, description';
+Level.defaultColumns = 'name, code, description';
 
 Level.register();

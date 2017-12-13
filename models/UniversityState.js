@@ -18,6 +18,6 @@ UniversityState.add({
 UniversityState.relationship({ ref: 'University', path: 'universities', refPath: 'state' });
 
 /******/
-UniversityState.defaultColumns = 'name, country';
+UniversityState.defaultColumns = 'name, countryCode';
 
 UniversityState.register();

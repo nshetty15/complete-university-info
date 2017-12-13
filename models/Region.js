@@ -17,4 +17,7 @@ var Types = keystone.Field.Types;
 
 Region.relationship({ ref: 'University', path: 'universities', refPath: 'region' });
 
+/******/
+Region.defaultColumns = 'name, code';
+
 Region.register();

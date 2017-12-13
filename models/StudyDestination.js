@@ -32,6 +32,6 @@ StudyDestination.add({
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-// University.defaultColumns = 'name, status, address, website, founded, region, country, state, city';
+// StudyDestination.defaultColumns = 'name, status, address, region, country, state, city';
 
 StudyDestination.register();

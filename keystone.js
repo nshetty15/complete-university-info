@@ -11,7 +11,7 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'name': 'Complete University Info',
+	'name': 'info', // do not change-mongodb connection fails
 	'brand': 'Complete University Info',
 	'brand safe': 'cui', //take out when not needed
 
