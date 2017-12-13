@@ -116,13 +116,13 @@ University.add({
 
 
   // RANKINGS
-  timesWorldUniversity: { type: String, label: 'Times World University', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
   qs: { type: String, label: 'QS', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
+  the: { type: String, label: 'Times World University', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
+  arwu: { type: String, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' }, // 
   forbes: { type: String, label: 'Forbes', note: 'eg: https://www.forbes.com/top-colleges/list/' }, // 
   macleans: { type: String, label: 'Macleans', note: 'eg: http://www.macleans.ca/education/unirankings/university-rankings-2017/' }, // 
-  completeUniversityGuide: { type: String, label: 'Complete University Guide', note: 'eg: https://www.thecompleteuniversityguide.co.uk/' }, // 
-  financialTimes: { type: String, label: 'Financial Times', note: 'eg: http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017' }, // 
-  arwu: { type: String, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' }, // 
+  cug: { type: String, label: 'Complete University Guide', note: 'eg: https://www.thecompleteuniversityguide.co.uk/' }, // 
+  ft: { type: String, label: 'Financial Times', note: 'eg: http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017' }, // 
   theEconomist: { type: String, label: 'The Economist', note: 'eg:  http://www.economist.com/whichmba/full-time-mba-ranking' }, //
   usNewsNational: { type: String, label: 'US News National', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-universities  ' }, // 
   usNewsLiberal: { type: String, label: 'US News Liberal', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-liberal-arts-colleges' }, // 
