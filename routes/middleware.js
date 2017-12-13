@@ -20,9 +20,13 @@ var _ = require('lodash');
 */
 exports.initLocals = function (req, res, next) {
 	// https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
-	res.locals.baseUrl = keystone.get('baseUrl');
-	res.locals.twitterSite = keystone.get('twitterSite');
-	res.locals.gaProperty = keystone.get('ga property front');
+	res.locals.baseUrl = keystone.get('base url');
+	res.locals.title = keystone.get('title name');
+	res.locals.brandSafe = keystone.get('brand safe');
+	res.locals.description = keystone.get('description client');
+	res.locals.keywords = keystone.get('keywords client');
+	res.locals.gaProperty = keystone.get('ga property client');
+	res.locals.twitterSite = keystone.get('twitter');
 
 	res.locals.navLinks = [
 		// { label: 'Home', key: 'home', href: '/' },
@@ -46,6 +50,31 @@ exports.initLocals = function (req, res, next) {
 	next();
 };
 
+/****
+ * Error handlers
+ */
+exports.initErrorHandlers = function (req, res, next) {
+	
+		res.err = function (err, title, message) {
+			res.status(500).render('errors/500', {
+				layout: false,
+				err: err,
+				errorTitle: title,
+				errorMsg: message,
+			});
+		};
+	
+		res.notFound = function (title, message) {
+			res.status(404).render('errors/404', {
+				layout: false,
+				errorTitle: title,
+				errorMsg: message,
+			});
+		};
+	
+		next();
+	
+	};
 
 /**
 	Fetches and clears the flashMessages before a view is rendered

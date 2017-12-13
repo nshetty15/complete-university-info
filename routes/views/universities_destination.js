@@ -107,6 +107,10 @@ exports = module.exports = function (req, res) {
       .populate('region country state city');
 
       q.exec(function (err, results) {
+
+        if (err || !results.length) {
+          res.notFound();
+        }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universitiesdestination = results;
