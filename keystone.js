@@ -11,8 +11,15 @@ var handlebars = require('express-handlebars');
 // and documentation.
 
 keystone.init({
-	'name': 'Info',
-	'brand': 'Info',
+	'name': 'Complete University Info',
+	'brand': 'Complete University Info',
+	'brand safe': 'cui', //take out when not needed
+
+	'title name': process.env.CLIENT_TITLE,
+	'description client': process.env.CLIENT_DESCRIPTION,
+	'keywords client': process.env.CLIENT_KEYWORDS,
+	'env': process.env.NODE_ENV,
+	'base url': process.env.NODE_ENV === 'production' ? 'https://www.completeuniversityinfo.com': 'http://localhost:3000',
 
 	'sass': 'public',
 	'static': 'public',
@@ -41,7 +48,8 @@ keystone.init({
 	'cors allow origin': true, //
 	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
 	'wysiwyg override toolbar': false,
-	'ga property front': process.env.GA_PROPERTY_FRONT,
+	'ga property client': process.env.GA_PROPERTY_FRONT,
+	'twitter': process.env.TWITTER_ACCOUNT
 });
 
 // Load your project's Models
@@ -60,7 +68,6 @@ keystone.set('locals', {
 // Load your project's Routes
 keystone.set('routes', require('./routes'));
 
-
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	universities: ['universities', 'regions', 'university-countries', 'university-states', 'university-cities'],
@@ -74,12 +81,7 @@ keystone.set('nav', {
 
 // Start Keystone to connect to your database and initialise the web server
 
-// https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
-keystone.set('baseUrl', (keystone.get('env') == 'production') ? 'https://www.completeuniversityinfo.com' : 'http://localhost:3000');
-keystone.set('title', 'Complete University Info');
-keystone.set('description', 'Made by the students for the students.');
-keystone.set('keywords', 'study abroad, study, universities');
-keystone.set('twitterSite', '@completeuniversityinfo');
+
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'
