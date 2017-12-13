@@ -53,7 +53,7 @@ University.add({
   locations: { type: String, label: 'Other Locations' },
   motto: { type: String },
   acronym: { type: String },
-  currency: { type: String, label: 'Country Currency' },
+  // currency: { type: String, label: 'Country Currency' },
 
   // FOR STUDENTS  -
   students: { type: String, label: 'Total Students', note: 'eg: 25000 || over 45000'  },  
@@ -117,7 +117,7 @@ University.add({
 
   // RANKINGS
   qs: { type: String, label: 'QS', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
-  the: { type: String, label: 'Times World University', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
+  the: { type: String, label: 'Times Higher Education', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
   arwu: { type: String, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' }, // 
   forbes: { type: String, label: 'Forbes', note: 'eg: https://www.forbes.com/top-colleges/list/' }, // 
   macleans: { type: String, label: 'Macleans', note: 'eg: http://www.macleans.ca/education/unirankings/university-rankings-2017/' }, // 
