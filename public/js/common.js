@@ -1,9 +1,11 @@
 var $ = require('jquery');
 // var bootstrap = require('bootstrap'); 
+// || import _ from 'lodash';
+import '../styles/site.css';
 
 
 
-console.log("hello");
+console.log("hellooo");
 $("h1").append("hello");
 
 
