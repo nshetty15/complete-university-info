@@ -194,15 +194,9 @@
 			</p>
 		</div>
 	</div>
-	{{!-- //- jQuery 1.11.3 is included by default, and required by both Bootstrap //- and the KeystoneJS Content Editor. If
-	you are not targeting IE8, //- you can upgrade to 2.1.4 (also bundled) for better performance. --}}
-	<script src="/js/vendor/jquery/jquery-3.2.1.min.js"></script>
-	
-	{{!-- //- Customise which Bootstrap javascript files are served by including //- them specifically here, instead of bootstrap-3.3.5.min.js
-	--}}
-		<script src="/js/vendor/bootstrap/bootstrap.bundle.min.js"></script>
-{{!--enable when service work is required <script src="/js/main.js"></script> --}}
-	{{{isAdminEditorJS user}}}
+
+<script src="/dist/js/common.bundle.js" async></script>
+{{!-- {{{isAdminEditorJS user}}}  --}}
 </body>
 
 </html>

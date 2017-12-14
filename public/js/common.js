@@ -1,4 +1,24 @@
+var $ = require('jquery');
+// var bootstrap = require('bootstrap'); 
+
+
+
+console.log("hello");
+$("h1").append("hello");
+
+
+
+
+
+
+
+
+
+
+
+
 // register the service worker if available
+/* 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function(reg) {
       console.log('Successfully registered service worker', reg);
@@ -8,12 +28,10 @@ if ('serviceWorker' in navigator) {
 }
 
 window.addEventListener('online', function(e) {
-  // re-sync data with server
   console.log("You are online");
-  
 }, false);
 
 window.addEventListener('offline', function(e) {
-  // queue up events for server
   console.log("You are offline");
 }, false);
+*/

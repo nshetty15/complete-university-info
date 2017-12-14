@@ -68,7 +68,7 @@
 /***/ 2:
 /***/ (function(module, exports) {
 
-console.log('about.js');
+console.log('home.js');
 
 /***/ })
 
