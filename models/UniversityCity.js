@@ -12,6 +12,7 @@ var UniversityCity = new keystone.List('UniversityCity', {
 
 UniversityCity.add({
 	name: { type: String, required: true },
+	countryCode: { type: String }, // could be many
 	// state: {type: Types.Relationship, ref: 'UniversityState'},
 	// country: {type: Types.Relationship, ref: 'UniversityCountry'},
 });
