@@ -6,18 +6,6 @@ import '../styles/site.css';
 
 
 console.log("hellooo");
-$("h1").append("hello");
-
-
-
-
-
-
-
-
-
-
-
 
 // register the service worker if available
 /* 

@@ -32,7 +32,7 @@ exports.initLocals = function (req, res, next) {
 		// { label: 'Home', key: 'home', href: '/' },
 		{ label: 'Universities', key: 'universities', href: '/universities/' },
 		{ label: 'Blog', key: 'blog', href: '/blog/' },
-		{ label: 'Where to study', key: 'studyin', href: '/study-in/' },
+		// { label: 'Where to study', key: 'studyin', href: '/study-in/' },
 		{
 			label: 'Why Tests', key: 'Language and Admission Tests explained', pages: [
 				{ label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
@@ -42,7 +42,7 @@ exports.initLocals = function (req, res, next) {
 				{ label: 'TOEFL', subkey: 'toefl', href: "/test/toefl/" },
 			]
 		},
-		{ label: 'Courses', key: 'Courses', href: '/courses/' },
+		// { label: 'Courses', key: 'Courses', href: '/courses/' },
 		{ label: 'Contact', key: 'contact', href: '/contact/' },
 
 	];

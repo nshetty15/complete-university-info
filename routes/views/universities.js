@@ -59,11 +59,6 @@ exports = module.exports = function (req, res) {
       .populate('region country state city');
 
     q.exec(function (err, results) {
-      // Add meta tags -title, description, keywords
-      
-      if (results && results.meta) {
-        locals.data.meta = results.meta;
-      }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
       locals.data.universities = results;
