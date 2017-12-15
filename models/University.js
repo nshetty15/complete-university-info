@@ -46,11 +46,16 @@ University.add({
   // currency: { type: String, label: 'Country Currency' },
 
 
+  //content: {
+  brief: { type: Types.Html, wysiwyg: true, height: 150 },
+  extended: { type: Types.Html, wysiwyg: true, height: 400 },
+  //},
+
   // FOR STUDENTS  -
   students: { type: String, label: 'Total Students', note: 'eg: 25000 || over 45000 || 10000-15000' },
   outStudents: { type: String, label: 'Total International Students', note: 'eg: 12.5% https://www.timeshighereducation.com/' },
-  BDstudents: { type: String, label: 'Bachelors Degree Students', note: 'eg: 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
-  MDstudents: { type: String, label: 'Masters Degree Students', note: 'eg: 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
+  BDstudents: { type: String, label: 'Bachelors Degree Students', note: 'eg: 82% || 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
+  MDstudents: { type: String, label: 'Masters Degree Students', note: 'eg: 18% || 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
   studentFaculty: { type: String, label: 'Student Faculty Ratio', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
   staff: { type: String, label: 'Total staffs', note: 'eg: 2500-2999' },
   femaleMale: { type: String, label: 'Female Male Ratio', note: 'eg: 47:53 https://www.timeshighereducation.com/' },
@@ -61,7 +66,7 @@ University.add({
   financialAid: { type: String, label: 'financialAid', note: 'eg: 35,000 || yes' },
   studentClubs: { type: String, label: 'Student Clubs', note: 'eg: 650' },
   gradEmployee: { type: String, label: 'Graduate Employment Rate', note: 'eg: 80%' },
-  scholarships: { type: String, label: '', note: 'eg: 165629375' },
+  scholarshipAmt: { type: String, label: '', note: 'eg: 165629375' },
 
   yearLevel: { type: String, label: 'Year Level', note: 'eg: Four or more Years' },
   academicCalendar: { type: String, label: '', note: 'eg: Semesters' },
@@ -69,11 +74,6 @@ University.add({
   controlType: { type: String, label: '', note: 'eg: Private || Public https://www.topuniversities.com/universities/' },
   religiousAffiliation: { type: String, label: 'Religious Affiliation', note: 'eg: None' },
   entityType: { type: String, label: 'Entity Type', note: 'eg: Non-Profit' },
-
-  //content: {
-  brief: { type: Types.Html, wysiwyg: true, height: 150 },
-  extended: { type: Types.Html, wysiwyg: true, height: 400 },
-  //},
 
   // TUITION
   BDtuitionIn: { type: String, label: 'Bachelors Degree Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
@@ -97,6 +97,9 @@ University.add({
   toeflRange: { type: String, label: 'TOEFL range', note: 'eg: value1-value2-value3 || value1-value3' },
   ieltsRange: { type: String, label: 'IELTS range', note: 'eg: value1-value2-value3 || value1-value3' },
   gpaRange: { type: String, label: 'GPA score', note: 'eg: 2.7' },
+
+  // Scholarships
+  scholarships: { type: Types.TextArray, label: '', note: 'eg: Canadian Bureau for International Education (CBIE)' },
 
   // RANKINGS
   qs: { type: String, label: 'QS World University Rankings', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
@@ -125,6 +128,7 @@ University.add({
 
   // AFFILIATIONS AND MEMBERSHIPS
   affiliations: { type: Types.TextArray, label: '', note: 'eg: Canadian Bureau for International Education (CBIE)' }, // eg: 
+
 
   // SOCIAL MEDIA
   facebook: { type: Types.Url, label: 'Facebook page url' },
