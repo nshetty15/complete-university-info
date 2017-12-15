@@ -19,6 +19,6 @@ UniversityCity.add({
 
 UniversityCity.relationship({ ref: 'University', path: 'universities', refPath: 'city' });
 
-UniversityCity.defaultColumns = 'name';
+UniversityCity.defaultColumns = 'name, countryCode';
 
 UniversityCity.register();
