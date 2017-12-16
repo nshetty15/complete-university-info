@@ -94,6 +94,8 @@ University.add({
   MDtoefl: { type: String, label: 'TOEFL Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
   BDielts: { type: String, label: 'IELTS Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
   MDielts: { type: String, label: 'IELTS Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  BDpte: { type: String, label: 'PTE Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  MDpte: { type: String, label: 'PTE Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
   gmat: { type: String, label: 'Gamat range', note: 'eg: (graduate management programs of business schools) value1-value2-value3  || value1-value3 (value 1 is minimum & value 2 is averge & value 3 maximum)' },
   gre: { type: String, label: 'GRE range', note: 'eg: (masters and doctoral degree programs : US) value1-value2-value3 || value1-value3' },
   sat: { type: String, label: 'SAT range', note: 'eg: (Bachelor:US) value1-value2-value3 -1400-1600-2020 || value1-value3 - https://www.niche.com/colleges/harvard-university/' },
