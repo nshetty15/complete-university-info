@@ -45,7 +45,6 @@ University.add({
   appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
   // currency: { type: String, label: 'Country Currency' },
 
-
   //content: {
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
   extended: { type: Types.Html, wysiwyg: true, height: 400 },
@@ -54,13 +53,14 @@ University.add({
   // FOR STUDENTS  -
   students: { type: String, label: 'Total Students', note: 'eg: 25000 || over 45000 || 10000-15000' },
   outStudents: { type: String, label: 'Total International Students', note: 'eg: 12.5% https://www.timeshighereducation.com/' },
-  BDstudents: { type: String, label: 'Bachelors Degree Students', note: 'eg: 82% || 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
-  MDstudents: { type: String, label: 'Masters Degree Students', note: 'eg: 18% || 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
+  BDstudents: { type: String, label: 'Total Bachelors Students', note: 'eg: 82% || 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
+  MDstudents: { type: String, label: 'Total Masters Students', note: 'eg: 18% || 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
   studentFaculty: { type: String, label: 'Student Faculty Ratio', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
   staff: { type: String, label: 'Total staffs', note: 'eg: 2500-2999' },
   femaleMale: { type: String, label: 'Female Male Ratio', note: 'eg: 47:53 https://www.timeshighereducation.com/' },
   avgTuition: { type: String, label: 'Average Tuition (per year)', note: 'eg: 46300 (convert to country currency)' },
-  totalCost: { type: String, label: 'Total Annual Cost', note: 'eg: (convert to country currency)' },
+  totalCost: { type: String, label: 'Total Annual Cost', note: 'eg: OVERALL COST OF LIVING (convert to country currency)' },
+  campusAcc: { type: String, label: 'Campus Accomodation Cost', note: 'eg: CAMPUS ACCOMMODATION (https://www.hotcoursesabroad.com/india/newzealand/school-college-university/southern-institute-of-technology/142331/international.html)'},
   acceptRate: { type: String, label: 'Acceptance Rate', note: 'eg: 25%' },
   roomBoard: { type: String, label: 'Room and Board', note: 'eg: 14601' },
   financialAid: { type: String, label: 'financialAid', note: 'eg: 35,000 || yes' },
@@ -76,30 +76,32 @@ University.add({
   entityType: { type: String, label: 'Entity Type', note: 'eg: Non-Profit' },
 
   // TUITION
-  BDtuitionIn: { type: String, label: 'Bachelors Degree Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
-  BDtuitionOut: { type: String, label: 'Bachelors Degree Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
-  MDtuitionIn: { type: String, label: 'Masters Degree Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
-  MDtuitionOut: { type: String, label: 'Masters Degree Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
+  BDtuitionIn: { type: String, label: 'Bachelor Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
+  BDtuitionOut: { type: String, label: 'Bachelor Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
+  MDtuitionIn: { type: String, label: 'Masters Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
+  MDtuitionOut: { type: String, label: 'Masters Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
 
   // PROGRAMS
-  BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Degree Programs' },
-  BDprogramsCount: { type: String, label: 'Total Bachelors Degree Programs', note: 'eg: 48 https://www.topuniversities.com/' },
-  MDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Masters Degree Programs' },
-  MDprogramsCount: { type: String, label: 'Total Masters Degree Programs', note: 'eg: 43 https://www.topuniversities.com/' },
+  BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Programs' },
+  BDprogramsCount: { type: String, label: 'Total Bachelor Programs', note: 'eg: 48 https://www.topuniversities.com/' },
+  MDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Masters Programs' },
+  MDprogramsCount: { type: String, label: 'Total Masters Programs', note: 'eg: 43 https://www.topuniversities.com/' },
   programs: { type: Types.Html, wysiwyg: true, height: 400, label: 'Bachelors & master programs', note: 'eg: https://www.timeshighereducation.com/ ' },
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
   // ACADEMIC & LANGUAGE TESTS
-  gmatRange: { type: String, label: 'Gamat Range', note: 'eg: value1-value2-value3 (value 1 is minimum & value 2 is averge & value 3 maximum)' },
-  greRange: { type: String, label: 'GRE range', note: 'eg: value1-value2-value3 || value1-value3' },
-  satRange: { type: String, label: 'SAT range', note: 'eg: value1-value2-value3 -1400-1600-2020 || value1-value3 - https://www.niche.com/colleges/harvard-university/' },
-  actRange: { type: String, label: 'ACT range', note: 'eg: value1-value2-value3 || value1-value3' },
-  toeflRange: { type: String, label: 'TOEFL range', note: 'eg: value1-value2-value3 || value1-value3' },
-  ieltsRange: { type: String, label: 'IELTS range', note: 'eg: value1-value2-value3 || value1-value3' },
-  gpaRange: { type: String, label: 'GPA score', note: 'eg: 2.7' },
+  BDtoefl: { type: String, label: 'TOEFL Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  MDtoefl: { type: String, label: 'TOEFL Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  BDielts: { type: String, label: 'IELTS Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  MDielts: { type: String, label: 'IELTS Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  gmat: { type: String, label: 'Gamat range', note: 'eg: (graduate management programs of business schools) value1-value2-value3  || value1-value3 (value 1 is minimum & value 2 is averge & value 3 maximum)' },
+  gre: { type: String, label: 'GRE range', note: 'eg: (masters and doctoral degree programs : US) value1-value2-value3 || value1-value3' },
+  sat: { type: String, label: 'SAT range', note: 'eg: (Bachelor:US) value1-value2-value3 -1400-1600-2020 || value1-value3 - https://www.niche.com/colleges/harvard-university/' },
+  act: { type: String, label: 'ACT range', note: 'eg: (Bachelor:US) value1-value2-value3 || value1-value3 || value1' },
+  gpa: { type: String, label: 'GPA score', note: 'eg: 4.0' },
 
   // Scholarships
-  scholarships: { type: Types.TextArray, label: '', note: 'eg: Canadian Bureau for International Education (CBIE)' },
+  scholarships: { type: Types.Html, wysiwyg: true, height: 200, label: 'Scholarships', note: 'eg: Canadian Bureau for International Education (CBIE)' },
 
   // RANKINGS
   qs: { type: String, label: 'QS World University Rankings', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
