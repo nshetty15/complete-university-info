@@ -37,7 +37,7 @@ University.add({
   motto: { type: String },
   acronym: { type: String },
   phone: { type: Types.TextArray },
-  fax: { type: Types.TextArray },
+  // fax: { type: Types.TextArray },
   email: { type: Types.TextArray },
   janDate: { type: Types.Date, label: 'January Deadline', },
   mayDate: { type: Types.Date, label: 'May Deadline', },
@@ -51,16 +51,22 @@ University.add({
   //},
 
   // FOR STUDENTS  -
-  students: { type: String, label: 'Total Students', note: 'eg: 25000 || over 45000 || 10000-15000' },
+  students: { type: String, label: 'Total Students', note: 'eg: 25000 || 35000+ || over 45000 || 10000-15000' },
   outStudents: { type: String, label: 'Total International Students', note: 'eg: 12.5% https://www.timeshighereducation.com/' },
   BDstudents: { type: String, label: 'Total Bachelors Students', note: 'eg: 82% || 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
   MDstudents: { type: String, label: 'Total Masters Students', note: 'eg: 18% || 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
   studentFaculty: { type: String, label: 'Student Faculty Ratio', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
   staff: { type: String, label: 'Total staffs', note: 'eg: 2500-2999' },
   femaleMale: { type: String, label: 'Female Male Ratio', note: 'eg: 47:53 https://www.timeshighereducation.com/' },
-  avgTuition: { type: String, label: 'Average Tuition (per year)', note: 'eg: 46300 (convert to country currency)' },
+  // avgTuition: { type: String, label: 'Average Tuition (per year)', note: 'eg: 46300 (convert to country currency)' },
+  // TUITION
   totalCost: { type: String, label: 'Total Annual Cost', note: 'eg: OVERALL COST OF LIVING (convert to country currency)' },
   campusAcc: { type: String, label: 'Campus Accomodation Cost', note: 'eg: CAMPUS ACCOMMODATION (https://www.hotcoursesabroad.com/india/newzealand/school-college-university/southern-institute-of-technology/142331/international.html)'},
+  BDtuitionIn: { type: String, label: 'Bachelor Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
+  BDtuitionOut: { type: String, label: 'Bachelor Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
+  MDtuitionIn: { type: String, label: 'Masters Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
+  MDtuitionOut: { type: String, label: 'Masters Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
+
   acceptRate: { type: String, label: 'Acceptance Rate', note: 'eg: 25%' },
   roomBoard: { type: String, label: 'Room and Board', note: 'eg: 14601' },
   financialAid: { type: String, label: 'financialAid', note: 'eg: 35,000 || yes' },
@@ -70,16 +76,10 @@ University.add({
 
   yearLevel: { type: String, label: 'Year Level', note: 'eg: Four or more Years' },
   academicCalendar: { type: String, label: '', note: 'eg: Semesters' },
-  campusSetting: { type: String, label: '', note: 'eg: Urban' },
+  campusSetting: { type: String, label: '', note: 'eg: Urban || Rural || Regional' },
   controlType: { type: String, label: '', note: 'eg: Private || Public https://www.topuniversities.com/universities/' },
   religiousAffiliation: { type: String, label: 'Religious Affiliation', note: 'eg: None' },
   entityType: { type: String, label: 'Entity Type', note: 'eg: Non-Profit' },
-
-  // TUITION
-  BDtuitionIn: { type: String, label: 'Bachelor Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
-  BDtuitionOut: { type: String, label: 'Bachelor Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
-  MDtuitionIn: { type: String, label: 'Masters Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
-  MDtuitionOut: { type: String, label: 'Masters Tuition(International students)', note: 'eg: 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
 
   // PROGRAMS
   BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Programs' },
@@ -90,10 +90,10 @@ University.add({
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
   // ACADEMIC & LANGUAGE TESTS
-  BDtoefl: { type: String, label: 'TOEFL Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
-  MDtoefl: { type: String, label: 'TOEFL Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
-  BDielts: { type: String, label: 'IELTS Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
-  MDielts: { type: String, label: 'IELTS Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
+  BDtoefl: { type: String, label: 'TOEFL Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1 (https://www.hotcoursesabroad.com/)' },
+  MDtoefl: { type: String, label: 'TOEFL Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1 (https://www.hotcoursesabroad.com/)' },
+  BDielts: { type: String, label: 'IELTS Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1 (https://www.hotcoursesabroad.com/)' },
+  MDielts: { type: String, label: 'IELTS Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1 (https://www.hotcoursesabroad.com/)' },
   BDpte: { type: String, label: 'PTE Bachelor', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
   MDpte: { type: String, label: 'PTE Masters', note: 'eg: value1-value2-value3 || value1-value3 || value1' },
   gmat: { type: String, label: 'Gamat range', note: 'eg: (graduate management programs of business schools) value1-value2-value3  || value1-value3 (value 1 is minimum & value 2 is averge & value 3 maximum)' },
@@ -141,6 +141,8 @@ University.add({
   linkedin: { type: Types.Url },
   instagram: { type: Types.Url },
   youtube: { type: Types.Url },
+  // pinterest: { type: Types.Url },
+  // flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
 
   // ONLINE COURSES
