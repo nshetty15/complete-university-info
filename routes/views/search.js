@@ -24,7 +24,8 @@ exports = module.exports = function (req, res) {
     //   status: 'published',
     // },
 
-    keystone.list('University').model.find({'name' : new RegExp(locals.data.searchQuery, 'i')}, function (err, results) {
+    keystone.list('University')
+    .model.find({'name' : new RegExp(locals.data.searchQuery, 'i'), 'status': 'published'}, function (err, results) {
       // console.log(err, results)
       if (err) {
         res.send(err);

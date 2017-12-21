@@ -4,6 +4,7 @@ exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
 
   var locals = res.locals;
+  //console.log(req, res)
 
   // Set locals
   locals.section = 'universities';
@@ -15,15 +16,16 @@ exports = module.exports = function (req, res) {
     pathName: req.url,
     meta: { },
   };
+  //console.log(req.params.university)
 
   view.on('init', function (next) {
     var q = keystone.list('University').model.findOne({
       slug: locals.filters.university
     })
-    .populate('BDprograms MDprograms region country state city');
+    .populate('region country state city'); // BDprograms MDprograms 
 
     q.exec(function (err, result) {
-      // Add meta tags -title, description, keywords
+      // Add meta tags -title, description, keywords 
       var rex = /(<([^>]+)>)/ig;
       // result.title + ( result.meta.title ? " - " + result.meta.title : "")
       locals.data.meta = {
