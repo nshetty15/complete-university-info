@@ -109,7 +109,7 @@ exports = module.exports = function (req, res) {
       q.exec(function (err, results) {
 
         if (err || !results.length) {
-          res.notFound();
+          // res.notFound();
         }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
