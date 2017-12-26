@@ -12,6 +12,12 @@ module.exports = {
    plugins: [
     new UglifyJSPlugin({
       sourceMap: true
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
     })
   //   new HtmlWebpackPlugin({
   //     title: 'Output management'

@@ -1,0 +1,47 @@
+body {
+    font-size: $font-size-base;
+    color: $black;
+}
+
+* {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+a {
+    color: $anchor;
+    &:hover,
+    &:focus {
+        color: lighten($anchor, 30%);
+    }
+}
+
+
+.form-control {
+    &:focus {
+        border-color: $cui-color;
+    }
+}
+
+.container,
+.mid-column {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.mid-column {
+    max-width: 740px;
+    margin: 0 auto;
+}
+
+@media(min-width:768px) {
+    .container,
+    .mid-column {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}

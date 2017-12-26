@@ -4,155 +4,91 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<title>{{data.meta.title}}</title>
 	<meta property="og:title" content="{{data.meta.title}}">
-	<meta name="twitter:title" content="{{data.meta.title}}"> 
+	<meta name="twitter:title" content="{{data.meta.title}}">
 
 	<meta name="description" content="{{data.meta.description}}">
 	<meta property="og:description" content="{{data.meta.description}}">
-	<meta name="twitter:description" content="{{data.meta.description}}"> 
+	<meta name="twitter:description" content="{{data.meta.description}}">
 
 	<meta name="twitter:site" content="{{twitterSite}}">
-	<meta name="twitter:card" content="summary">
+	<meta name="twitter:card" content="summary"> {{#if data.post}}
+	<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}{{data.meta.keywords}}"> {{# each data.post.categories}}
+	<meta property="article:tag" content="{{name}}"> {{/each}}
 
-	{{#if data.post}} 
-		<meta name="keywords" content="{{# each data.post.categories}}{{name}}, {{/each}}{{data.meta.keywords}}"> 
-		{{# each data.post.categories}}
-    	<meta property="article:tag" content="{{name}}">
-    {{/each}}
+	<meta property="og:type" content="article">
 
-		<meta property="og:type" content="article">
+	<meta property="og:image" content="{{data.post.image.url}}">
+	<meta property="og:url" content="{{data.post.fullPostUrl}}">
 
-		<meta property="og:image" content="{{data.post.image.url}}">
-		<meta property="og:url" content="{{data.post.fullPostUrl}}">
-		
-		<meta name="twitter:image:src" content="{{data.post.image.url}}">
-		<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
+	<meta name="twitter:image:src" content="{{data.post.image.url}}">
+	<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
 
-		<meta property="article:published_time" content="{{data.post.publishedDate}}"> 
-	{{else}}
-		<meta name="keywords" content="{{data.meta.keywords}}"> 
-		
-		<meta property="og:image" content="{{baseUrl}}/completeuniversityinfo.png">
-		<meta property="og:url" content="{{baseUrl}}/">
+	<meta property="article:published_time" content="{{data.post.publishedDate}}"> {{else}}
+	<meta name="keywords" content="{{data.meta.keywords}}">
 
-		<meta name="twitter:image:src" content="{{baseUrl}}/completeuniversityinfo.png">
-		<meta name="twitter:url" content="{{baseUrl}}/">
-	{{/if}}
+	<meta property="og:image" content="{{baseUrl}}/completeuniversityinfo.png">
+	<meta property="og:url" content="{{baseUrl}}/">
+
+	<meta name="twitter:image:src" content="{{baseUrl}}/completeuniversityinfo.png">
+	<meta name="twitter:url" content="{{baseUrl}}/"> {{/if}}
 	<link rel="manifest" href="/manifest.json">
-	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon">
-
-	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
-	admin--}} 
-	{{{isAdminEditorCSS user}}} 
-	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries 
-	//-	Safely remove this block if you are not targeting IE8 --}}
+	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> {{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
+	admin--}} {{{isAdminEditorCSS user}}} {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //-
+	Safely remove this block if you are not targeting IE8 --}}
 	<!--[if lt IE 9]>
 		<script src="//cdn.jsdelivr.net/combine/npm/html5shiv@3.7.3,npm/respond.js@1.4.2/dest/respond.min.js"></script>
 	<![endif]-->
-		{{>analytics}}
+	{{>analytics}}
+	<script src="/dist/js/common.bundle.js" async></script>
 </head>
 
 <body>
-	<div class="container">
-	<header class="masthead">
-        <h3 class="text-muted">
-					<a href="/" class="navbar-brand">
-						<img src="/images/completeuniversityinfo_1.png" alt="Complete university Info logo" />
-					</a>
-				</h3>
-
-        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav text-md-center nav-justified w-100">
-              {{# each navLinks}} 
-							{{#if href}}
-							<li class="nav-item">
-								<a class="nav-link" href="{{href }}" title="{{key}}">{{ label }}</a>
-							</li>
-							{{else}}
-							<li class="nav-item dropdown">
-								<a href="/tests/" class="nav-link dropdown-toggle" id="dropdown01" 
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="{{key}}">
-									{{ label }} 
-								</a>
-								<div class="dropdown-menu" aria-labelledby="dropdown01">
-									{{#each pages}}
-									
-										<a class="dropdown-item" href="{{ href }}">{{ label }} </a>
-									
-									{{/each}}
-								</div>
-							</li>
-							{{/if}} 
-							{{/each}}
-
-            </ul>
-          </div>
-        </nav>
-      </header>
-			</div>
-
-	<div id="header">
+	<header>
 		<div class="container">
-			<div role="navigation" class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-							</button>
-						<a href="/" class="navbar-brand"><img src="/images/completeuniversityinfo_1.png" alt="Complete university Info logo" /></a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
-
-							{{# each navLinks}} 
-							{{#if href}}
-							<li {{#ifeq ../../section key}}class="active" {{/ifeq}}>
-								<a href="{{href }}" title="{{key}}">{{ label }}</a>
-							</li>
-							{{else}}
-							<li class="dropdown{{#ifeq ../../section key}} active{{/ifeq}}">
-								<a href="#" class="dropdown toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="{{key}}">
-									{{ label }} <span class="caret"></span>
-								</a>
-								<ul class="dropdown-menu">
-									{{#each pages}}
-									<li {{#ifeq ../../../subsection subkey}}class="active" {{/ifeq}}>
-										<a href="{{ href }}">{{ label }} </a>
-									</li>
-									{{/each}}
-								</ul>
-							</li>
-							{{/if}} 
-							{{/each}}
-
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							{{#if user}}
-							<li><a href="/keystone/signout">Sign Out</a></li>
-							{{else}}
-							<li><a href="/keystone/signin">Sign In</a></li>
-							{{/if}}
-						</ul>
-					</div>
+			<a href="/">
+				<img src="/images/completeuniversityinfo_1.png" alt="Complete university Info logo" />
+			</a>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark"> 
+			{{!-- fixed-top --}}
+			<div class="container">
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
+				<div class="navbar-collapse collapse" id="cuiMenu" style="">
+					<ul class="navbar-nav mr-auto">
+						{{# each navLinks}} {{#if href}}
+						<li class="nav-item {{#ifeq ../../section key}}active{{/ifeq}}">
+							<a class="nav-link" href="{{href }}" title="{{key}}">
+								{{ label }} {{#ifeq ../../section key}}
+								<span class="sr-only">(current)</span>
+								{{/ifeq}}
+							</a>
+						</li>
+						{{else}}
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
+							<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
+								{{#each pages}} {{/each}}
+								<a class="dropdown-item" href="{{ href }}">{{ label }}</a>
+							</div>
+						</li>
+						{{/if}} {{/each}}
+					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div id="body">
-		<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-		{{#if messages}}
+		</nav>
+	</header>
+
+	<section>
+		{{!-- Flash messages allow you to display once-off status messages to users, e.g. form validation errors, success messages,
+		etc --}} {{#if messages}}
 		<div id="flash-messages" class="container">
 			{{#if messages.info}}
 			<div class="alert alert-info">
@@ -172,30 +108,36 @@
 			</div>
 			{{/if}}
 		</div>
-		{{/if}}
-		<!-- The content block should contain the body of your template's content-->
-		{{{body}}}
-	</div>
-	<div class="container">
-		<div id="footer">
-			<h4 class="text-center">Spread love</h4>
-			<p class="text-center">
-				<a class="ion-social-twitter" href="https://twitter.com/intent/tweet?text={{data.meta.title}}&url={{baseUrl}}{{data.pathName}}"
-				 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> | 
-				<a class="ion-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.post.pathName}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">facebook</a> |
-				<a class="ion-social-googleplus" href="https://plus.google.com/share?url={{baseUrl}}{{data.post.pathName}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">Google plus</a>
-</p>
-			<p>&copy; 2017 completeuniversityinfo.com </p>
-			<p>
-				<a href="/aboutus/" target="_blank">About Us</a> | 
-				<a href="/privacy/" target="_blank">Privacy Policy</a> | 
-				 <a href="/terms/" target="_blank">Terms of Use</a>
-			</p>
-		</div>
-	</div>
+		{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}}
+	</section>
+	<aside>
+		<h4 class="text-center">Spread love</h4>
 
-<script src="/dist/js/common.bundle.js" async></script>
-{{!-- {{{isAdminEditorJS user}}}  --}}
+		<p class="text-center">
+			<a class="ion-social-twitter" href="https://twitter.com/intent/tweet?text={{data.meta.title}}&url={{baseUrl}}{{data.pathName}}"
+			 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> |
+			<a class="ion-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.post.pathName}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">facebook</a> |
+			<a class="ion-social-googleplus" href="https://plus.google.com/share?url={{baseUrl}}{{data.post.pathName}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">Google plus</a>
+		</p>
+	</aside>
+	<footer>
+		<div class="container text-center">
+			<p>
+				<a href="/aboutus/" target="_blank">About Us</a>
+				<a href="/privacy/" target="_blank">Privacy Policy</a>
+				<a href="/terms/" target="_blank">Terms of Use</a>
+			</p>
+
+			<span>&copy; 2017 completeuniversityinfo.com</span>
+		</div>
+	</footer>
+
+
+
+
+
+
+	{{!-- {{{isAdminEditorJS user}}} --}}
 </body>
 
 </html>

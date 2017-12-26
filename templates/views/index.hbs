@@ -1,30 +1,35 @@
 {{!
-< default}} <main>
+< default}} <section class="banner">
 
-	<div class="container">
-		<div class="jumbotron">
-			<h1>FIND YOUR DREAM UNIVERSITY ABROAD</h1>
-			<p>Study abroad with our
-				<strong>free</strong> resources on choosing a university</p>
+	<div class="mid-column">
+		<h1>FIND YOUR DREAM UNIVERSITY ABROAD</h1>
+		<p>Study abroad with our
+			<strong>free</strong> resources on choosing a university</p>
 
-			<form method="GET" action="/search/" role="search">
-				<input type="text" class="form-control" placeholder="Search" name="q">
-				<button class="btn btn-lg btn-primary" type="submit">Discover Universities</button>
-			</form>
-		</div>
+		<form method="GET" action="/search/" role="search">
+			<input type="text" class="form-control form-control-lg" placeholder="Type a university" name="q">
+			<button class="btn btn-lg btn-primary" type="submit">Discover Universities</button>
+		</form>
+	</div>
 
+	</section>
+
+
+	<section class="container study-locations">
+		<h2>Where can I study</h2>
+		<p>Top study destinations by students</p>
 		<div class="row">
-			<h2>Where can I study</h2>
-			<p>Top study destinations by students</p>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-6 col-md-6">
 				<a href="/canada/" class="thumbnail">
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
-				<h3> Canada </h3>
+				<h3>
+					<a href="/blog/post/{{slug}}"> Canada </a>
+				</h3>
 				<p>Canada is known for its excellent education institutions, multiplicity of top quality education programs in various streams
 					and an innovative economy that welcomes international students with open arms. </p>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-6 col-md-6">
 				<a href="/germany/" class="thumbnail">
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
@@ -34,7 +39,7 @@
 					out more about your host country.
 				</p>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-6 col-md-6">
 				<a href="/united-kingdom" class="thumbnail">
 					<img src="/images/logo.svg" width="200" alt="...">
 				</a>
@@ -42,7 +47,7 @@
 				<p>Degrees and qualifications from UK higher education institutions are known around the world as high quality and world
 					class. </p>
 			</div>
-			<div class="col-xs-6 col-md-3">
+			<div class="col-xs-6 col-md-6">
 				<a href="/united-states/" class="thumbnail">
 					<img src="/images/logo-email.gif" width="200" alt="...">
 				</a>
@@ -51,60 +56,57 @@
 					system, and offers a huge variety of English-language courses and speciality degrees. </p>
 			</div>
 		</div>
+	</section>
 
-
+	<section class="container articles">
+		<h2>Latest Articles</h2>
+		<p>Helpful articles and discussions to make your journey even more simpler</p>
+		<a href="/blog/">More articles</a>
 		<div class="row">
-			<h2>Latest Articles</h2>
-			<p>Helpful articles and discussions to make your journey even more simpler</p>
 			{{#each data.articles}}
-			<div class="col-sm-6 col-md-4">
+
+			<div class="col-md-4">
 				<div class="thumbnail">
-					<img src="/images/cui-g-plc.jpg" alt="{{title}}">
+					<a href="/blog/post/{{slug}}">
+						<img src="/images/cui-g-plc.jpg" alt="{{title}}">
+					</a>
 					<div class="caption">
-						<h3>{{title}}</h3>
+						<h3>
+							<a href="/blog/post/{{slug}}">{{title}}</a>
+						</h3>
 						<p>{{ meta.description }}</p>
-						<p>
-							<a href="/blog/post/{{slug}}" class="btn btn-primary" role="button">Read more</a>
-						</p>
 					</div>
 				</div>
 			</div>
+
 			{{/each}}
-			<a href="/blog/">More articles</a>
 		</div>
+	</section>
 
-
+	<section class="container">
+		<h2>Levels</h2>
 		<div class="row">
-			<h2>Levels</h2>
 			{{#each data.levels}}
 			<div class="col-lg-6">
-				<h2>{{title}}</h2>
+				<h3><a href="/{{key}}/">{{title}}</a></h3>
 				{{{description}}}
-				<a class="btn btn-primary" href="/{{key}}/" role="button">View details »</a>
 			</div>
 			{{/each}}
 		</div>
+	</section>
 
 
-
-		<div class="row tests">
-			<h2>Tests</h2>
+	<section class="tests container">
+		<h2>Why do I write Tests?</h2>
+		<p>Language and admission tests explained</p>
+		<div class="row">
 			{{#each data.tests }}
 			<div class="col-lg-3">
-				<h2>{{title}}</h2>
-				{{!-- <img src="/images/test/{{slug}}_logo.jpg" class="img-responsive" alt="{{title}}"> --}}
+				<h3><a href="/test/{{slug}}">{{title}}</a></h3>
+				{{!--
+				<img src="/images/test/{{slug}}_logo.jpg" class="img-responsive" alt="{{title}}"> --}}
 				<p>{{ meta.description }}</p>
-				<p>
-					<a class="btn btn-primary" href="/test/{{slug}}" role="button">View details »</a>
-				</p>
-				</p>
 			</div>
 			{{/each}}
-
 		</div>
-
-
-
-	</div>
-
-	</main>
+	</section>

@@ -1,11 +1,12 @@
 var $ = require('jquery');
+//import 'bootstrap';
 // var bootstrap = require('bootstrap'); 
 // || import _ from 'lodash';
 import '../styles/site.css';
 
 
-
-console.log("hellooo");
+$('body');
+//console.log("hellooo");
 
 // register the service worker if available
 /* 

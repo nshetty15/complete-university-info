@@ -34,7 +34,7 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Blog', key: 'blog', href: '/blog/' },
 		// { label: 'Where to study', key: 'studyin', href: '/study-in/' },
 		{
-			label: 'Why Tests', key: 'Language and Admission Tests explained', pages: [
+			label: 'Tests', key: 'tests', pages: [
 				{ label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
 				{ label: 'GRE', subkey: 'gre', href: "/test/gre/" },
 				{ label: 'IELTS', subkey: 'ielts', href: "/test/ielts/" },
