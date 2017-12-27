@@ -1,53 +1,54 @@
-<div class="container">
-  <h1>Universities</h1>
-  <h4 class="text-weight-normal">Total {{ data.universities.total}} Universities.</h4>
+<section>
+  <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+      <h1>Universities</h1>
+      
+      <p>Compare universities around the world with our interactive university search tool. Use the options below to search
+        for universities by country and location.</p>
 
-  <form method="GET" action="/search/" role="search">
-    <div class="input-group">
-      <input type="text" class="form-control input-lg" placeholder="Search" name="q" id="q" value="{{data.searchQuery}}">
-      <button class="btn btn-lg btn-primary" type="submit">Search</button>
-    </div>
-  </form>
-
-  <div class="row">
-    <div class="col-md-8 col-lg-8">
-      <div class="row">
-        {{!-- {{data.universities.results}} --}}
-        {{#each data.universities.results}} 
-        <div class="col-md-4 col-lg-4">
-          {{!--
-          <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}} 
-
-          {{#if logo.version}}
-          <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="User Icon" class="Image responsive" width="200" />
-          {{else}}
-          <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;">
-          {{/if}}
-          <h2>
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}">{{name}}</a>
-          </h2>
-        </div>
-        {{/each}}
-      </div>
-    </div>
-
-    <div class="col-sm-4 col-md-3">
-      <h2>By Country</h2>
-      <div style="margin-top: 70px;" class="list-group">
-        <a href="/universities" class="active list-group-item">All Countries</a>
-
-        {{# each data.countries }} 
-        {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+      <div>
+        {{# each data.countries }} {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
         --}} {{!-- {{#checkIf countryCode '==' 'US' '||' countryCode '==' 'CA' }} --}}
         <a href="{{categoryCountryUrl region.key key}}" class="false list-group-item">{{name}}</a>
         {{!-- {{/checkIf }} --}} {{/each}}
       </div>
     </div>
-
+    <div class="col-md-6">
+      <form method="GET" action="/search/" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control input-lg" placeholder="Search" name="q" id="q" value="{{data.searchQuery}}">
+          <button class="btn btn-lg btn-primary" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    </div>
   </div>
+</section>
 
+<section class="uni-results">
+  <div class="container">
+    <h4 class="text-weight-normal">Total {{ data.universities.total}} Universities.</h4>
+    <ul id="universities" class="no-style">
+      {{#each data.universities.results}}
+      <li>
+        <h2>
+          <a href="{{ universityUrl region.key country.key state.key city.key slug }}">{{name}}</a>
+        </h2>
+        {{#if logo.version}}
+        <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="User Icon"  width="100" height="100" class="Image responsive"
+          width="200" /> {{else}}
+        <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
+        <p>{{address}}</p>
+        <p>{{outStudents}}</p>
+        <p>{{qs}} {{the}} {{ arwu}}</p>
+      </li>
+      {{/each}}
+    </ul>
+   
+  </div>
+</section>
+
+<section class="container">
   {{>paginationuniversities}}
-
-
-
-</div>
+</section>

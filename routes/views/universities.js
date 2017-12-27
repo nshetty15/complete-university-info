@@ -14,9 +14,9 @@ exports = module.exports = function (req, res) {
     pathName: req.url,
     source: 'universities', // for pagination
     meta: {
-      title: keystone.get('title'), // under 70 characters
-      description: keystone.get('description'), // under 160 characters
-      keywords: keystone.get('keywords') // No more than 10 keyword phrases
+      title: locals.title, // under 70 characters
+      description: locals.description, // under 160 characters
+      keywords: locals.keywords // No more than 10 keyword phrases
     },
   };
 
@@ -41,7 +41,7 @@ exports = module.exports = function (req, res) {
       }, function (err) {
         next(err);
       });
-      
+
     });
   });
 

@@ -1,13 +1,17 @@
+<nav aria-label="Search results pages">
 <ul class="pagination">
-	<li {{#unless data.posts.previous}}class="disabled"{{/unless}}>
-		<a href="{{paginationPreviousUrl data.posts.previous}}">
+	<li class="page-item {{#unless data.posts.previous}}disabled{{/unless}}">
+		<a class="page-link" href="{{paginationPreviousUrl data.posts.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
+			prev
 		</a>
 	</li>
 	{{{paginationNavigation data.posts.pages data.posts.currentPage data.posts.totalPages data.source null}}}
-	<li {{#unless data.posts.next}}class="disabled"{{/unless}}>
-		<a href="{{paginationNextUrl data.posts.next data.posts.totalPages}}">
+	<li class="page-item {{#unless data.posts.next}}disabled{{/unless}}">
+		<a class="page-link" href="{{paginationNextUrl data.posts.next data.posts.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
+			next
 		</a>
 	</li>
 </ul>
+</nav>

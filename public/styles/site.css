@@ -5536,6 +5536,9 @@ a {
   a:hover, a:focus {
     color: #fed4d0; }
 
+.avg-m-top {
+  margin-top: 40px; }
+
 .form-control:focus {
   border-color: #f4bb3a; }
 
@@ -5548,11 +5551,23 @@ a {
   max-width: 740px;
   margin: 0 auto; }
 
+.dark-bg {
+  background-color: #2f3135;
+  color: #fff; }
+
+.no-style {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 @media (min-width: 768px) {
   .container,
   .mid-column {
     padding-right: 15px;
-    padding-left: 15px; } }
+    padding-left: 15px; }
+
+  .avg-m-top {
+    margin-top: 60px; } }
 header > .container {
   padding-top: 15px;
   padding-bottom: 15px; }
@@ -5590,6 +5605,21 @@ footer {
     background-color: #fff;
     box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1); }
 
+.study-locations .col-md-6 {
+  background-color: #f5f5f5; }
+
+.articles {
+  padding: 30px 0; }
+  .articles .col-md-4 {
+    padding: 20px;
+    border-bottom: 3px solid; }
+
+#universities li {
+  margin-top: 40px;
+  border: #f5f5f5;
+  padding: 20px;
+  box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1); }
+
 @media (min-width: 768px) {
   section {
     margin-bottom: 4rem; }
@@ -5598,6 +5628,9 @@ footer {
     padding: 60px 0; }
 
   .banner {
-    min-height: 550px; } }
+    min-height: 550px; }
+
+  #universities li {
+    margin-top: 60px; } }
 
 /*# sourceMappingURL=site.css.map */

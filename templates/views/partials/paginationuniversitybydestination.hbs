@@ -1,15 +1,19 @@
+<nav aria-label="Search results pages">
 <ul class="pagination">
-	<li {{#unless data.universitiesdestination.previous}}class="disabled"{{/unless}}>
-		<a href="{{paginationPreviousUrl data.universitiesdestination.previous}}">
+	<li class="page-item {{#unless data.universitiesdestination.previous}}disabled{{/unless}}">
+		<a class="page-link" href="{{paginationPreviousUrl data.universitiesdestination.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
+			prev
 		</a>
 	</li>
 
 	{{{paginationNavigation data.universitiesdestination.pages data.universitiesdestination.currentPage data.universitiesdestination.totalPages data.source data.region data.country data.state data.city }}}
 
-	<li {{#unless data.universitiesdestination.next}}class="disabled"{{/unless}}>
-		<a href="{{paginationNextUrl data.universitiesdestination.next data.universitiesdestination.totalPages}}">
+	<li class="page-item {{#unless data.universitiesdestination.next}}disabled{{/unless}}">
+		<a class="page-link" href="{{paginationNextUrl data.universitiesdestination.next data.universitiesdestination.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
+			next
 		</a>
 	</li>
 </ul>
+</nav>

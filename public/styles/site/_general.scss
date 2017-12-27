@@ -4,8 +4,8 @@ body {
 }
 
 * {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 section {
@@ -20,6 +20,9 @@ a {
     }
 }
 
+.avg-m-top {
+    margin-top: 40px;
+}
 
 .form-control {
     &:focus {
@@ -38,10 +41,30 @@ a {
     margin: 0 auto;
 }
 
+.dark-bg {
+    background-color: $cui-dark-grey;
+    color: #fff;
+    // a {
+    //     color: $cui-color;
+    //     &:hover,
+    //     &:focus {
+    //         color: $white;
+    //     }
+    // }
+}
+.no-style{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 @media(min-width:768px) {
     .container,
     .mid-column {
         padding-right: 15px;
         padding-left: 15px;
+    }
+    .avg-m-top {
+        margin-top: 60px;
     }
 }
