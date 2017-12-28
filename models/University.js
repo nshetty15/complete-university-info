@@ -55,7 +55,7 @@ University.add({
   outStudents: { type: String, label: 'Total International Students', note: 'eg: 12.5% https://www.timeshighereducation.com/' },
   BDstudents: { type: String, label: 'Total Bachelors Students', note: 'eg: 82% || 14442 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
   MDstudents: { type: String, label: 'Total Masters Students', note: 'eg: 18% || 3565 (https://www.topuniversities.com/universities/ || https://in.linkedin.com/edu/)' },
-  studentFaculty: { type: String, label: 'Student Faculty Ratio', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
+  studentFaculty: { type: String, label: 'Student per staff', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
   staff: { type: String, label: 'Total staffs', note: 'eg: 2500-2999 (https://in.linkedin.com/)' },
   femaleMale: { type: String, label: 'Female Male Ratio', note: 'eg: 47:53 https://www.timeshighereducation.com/' },
   // avgTuition: { type: String, label: 'Average Tuition (per year)', note: 'eg: 46300 (convert to country currency)' },

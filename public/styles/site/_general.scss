@@ -3,7 +3,7 @@ body {
     color: $black;
 }
 
-* {
+a {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -36,11 +36,6 @@ a {
     padding-right: 25px;
 }
 
-.mid-column {
-    max-width: 740px;
-    margin: 0 auto;
-}
-
 .dark-bg {
     background-color: $cui-dark-grey;
     color: #fff;
@@ -59,8 +54,7 @@ a {
 }
 
 @media(min-width:768px) {
-    .container,
-    .mid-column {
+    .container{
         padding-right: 15px;
         padding-left: 15px;
     }
