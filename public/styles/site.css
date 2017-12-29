@@ -5160,7 +5160,7 @@ body {
   font-size: 1rem;
   color: #000; }
 
-a {
+a, button, input {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
 
@@ -5210,6 +5210,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0;
   padding: 0;
   list-style: none; }
+
+.page-link {
+  color: #FB493A; }
+  .page-link:focus, .page-link:hover {
+    color: #FB493A; }
+
+.page-item.active .page-link {
+  background-color: #FB493A;
+  border-color: #FB493A; }
+
+.padding-tb {
+  padding: 30px 0; }
 
 @media (min-width: 768px) {
   .container {
@@ -5286,12 +5298,16 @@ footer {
     padding-right: 70px; }
     .search-form .form-control:focus {
       box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1); }
-  .search-form button {
+  .search-form .btn {
     position: absolute;
     right: 2px;
     top: 2px;
     height: 44px;
     line-height: 0px; }
+  .search-form.inner .form-control:focus {
+    box-shadow: none; }
+  .search-form.inner .btn {
+    height: 34px; }
 
 .study-locations .wrap {
   margin-top: 1rem;
@@ -5304,7 +5320,7 @@ footer {
 
 .articles,
 .levels {
-  padding: 2rem 0 1rem; }
+  padding: 2.5rem 0 .5rem; }
 
 .articles article {
   color: initial;
@@ -5323,12 +5339,38 @@ footer {
   padding: 1rem;
   margin-bottom: 1.5rem; }
 
-/******* Universities **********/
-#universities li {
-  margin-top: 40px;
-  border: #f5f5f5;
-  padding: 20px;
-  box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1); }
+/******* Universities (search) **********/
+.search-banner {
+  position: relative;
+  background-color: #f4bb3a; }
+
+.search-filter {
+  background-color: #f5f5f5; }
+
+#universities h3 {
+  font-size: 1.25rem; }
+#universities .wrapper {
+  margin: 0 0 40px;
+  border: 1px solid #f5f5f5;
+  padding: 1.5rem;
+  box-shadow: 0 0px 20px 0 rgba(116, 116, 116, 0.1); }
+#universities .logo {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #f5f5f5;
+  margin-bottom: 1rem;
+  overflow: hidden; }
+#universities address {
+  color: #999999;
+  margin-top: 5px; }
+#universities .feature {
+  color: #777777; }
+#universities .rankings strong {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #f4bb3a; }
+#universities .fa {
+  margin-right: 15px; }
 
 @media (min-width: 768px) {
   section {
@@ -5373,8 +5415,23 @@ footer {
   .study-locations .thumbnail {
     margin-bottom: 0; }
 
-  #universities li {
-    margin-top: 60px; } }
+  .articles,
+  .levels {
+    padding: 4rem 0 2.5rem; }
+
+  /*************** Universities (search) **************/
+  .cover-50 {
+    background-image: url(/images/search-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%; }
+
+  #universities .wrapper {
+    margin: 0 10px 60px; } }
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding: 1rem 2rem; } }

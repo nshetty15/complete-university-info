@@ -3,7 +3,7 @@ import 'bootstrap';
 import '../styles/site.css';
 
 // register the service worker if available
-/* 
+/**/ 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').then(function(reg) {
       console.log('Successfully registered service worker', reg);
@@ -19,4 +19,3 @@ window.addEventListener('online', function(e) {
 window.addEventListener('offline', function(e) {
   console.log("You are offline");
 }, false);
-*/

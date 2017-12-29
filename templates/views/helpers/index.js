@@ -214,13 +214,13 @@ module.exports = function () {
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (region, country, state, city, universitySlug, options) {
 		// some countries do not have city & state (eg: Singapore)
-		 if(!city && !state){
-		 	return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-		 }
+		if (!city && !state) {
+			return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
+		}
 		// some countries do not have state (eg: new zealand(auckland))
-		 if(!state){
+		if (!state) {
 			return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-		 }
+		}
 		return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug);
 	};
 
@@ -357,6 +357,30 @@ module.exports = function () {
 		var a2 = operators[o2](v3, v4);
 		var isTrue = operators[mainOperator](a1, a2);
 		return isTrue ? options.fn(this) : options.inverse(this);
+	};
+
+	// https://stackoverflow.com/questions/14839375/boolean-logic-within-a-handlebars-template
+	_helpers.ifCond = function (v1, operator, v2, options) {
+		switch (operator) {
+			case '==':
+				return (v1 == v2) ? options.fn(this) : options.inverse(this);
+			case '===':
+				return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			case '<':
+				return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			case '<=':
+				return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			case '>':
+				return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			case '>=':
+				return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			case '&&':
+				return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			case '||':
+				return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			default:
+				return options.inverse(this);
+		}
 	};
 
 	//  ### Flash Message Helper

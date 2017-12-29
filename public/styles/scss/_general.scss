@@ -3,7 +3,7 @@ body {
     color: $black;
 }
 
-a {
+a,button,input {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -58,19 +58,26 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .dark-bg {
     background-color: $cui-dark-grey;
     color: #fff; 
-    // a {
-    //     color: $cui-color;
-    //     &:hover,
-    //     &:focus {
-    //         color: darken($cui-color, 10%);
-    //     }
-    // }
 }
 
 .no-style {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.page-link{
+    color: $anchor;
+    &:focus, &:hover{
+        color: $anchor;
+    }
+}
+.page-item.active .page-link{
+    background-color: $anchor;
+    border-color: $anchor;
+}
+.padding-tb{
+    padding:30px 0;
 }
 
 @media(min-width:768px) {
