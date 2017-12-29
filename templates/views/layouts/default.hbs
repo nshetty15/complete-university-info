@@ -91,7 +91,7 @@
 
 	{{!-- Flash messages allow you to display once-off status messages to users, e.g. form validation errors, success messages,
 	etc --}} {{#if messages}}
-	<div id="flash-messages" class="container">
+	<div id="flash-messages" class="container avg-m-top">
 		{{#if messages.info}}
 		<div class="alert alert-info">
 			{{{flashMessages messages.info}}}
@@ -164,7 +164,8 @@
 		</div>
 	</footer>
 
-	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> {{!-- {{{isAdminEditorJS user}}} --}}
+	{{!-- <script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script>  --}}
+	{{!-- {{{isAdminEditorJS user}}} --}}
 </body>
 
 </html>

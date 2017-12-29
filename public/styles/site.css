@@ -1,3 +1,4 @@
+@import url("//use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css");
 @media print {
   *,
   *::before,
@@ -5156,6 +5157,12 @@ a.text-dark:focus, a.text-dark:hover {
 #1C0203
 #E08955
 **/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot");
+  src: url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2") format("woff2"), url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff") format("woff"), url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf") format("truetype"), url("//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 body {
   font-size: 1rem;
   color: #000; }
@@ -5221,7 +5228,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   border-color: #FB493A; }
 
 .padding-tb {
-  padding: 30px 0; }
+  padding: 40px 0; }
 
 @media (min-width: 768px) {
   .container {
@@ -5238,6 +5245,7 @@ header > .container {
   padding-bottom: 15px;
   text-align: center; }
 
+/** top navigation **/
 .navbar {
   background-color: #2f3135;
   padding-left: 25px;
@@ -5245,11 +5253,10 @@ header > .container {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff; }
-  .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: #f4bb3a; }
   .navbar-dark .navbar-nav .nav-link.active {
-    border-top: 2px solid #f4bb3a; }
+    color: #f4bb3a; }
 
+/*** footer ***/
 footer {
   background-color: #2f3135;
   padding: 40px 0;
@@ -5384,6 +5391,11 @@ footer {
 
   .nav-link {
     padding: 1rem 2rem; }
+
+  .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    color: #f4bb3a; }
+  .navbar-dark .navbar-nav .nav-link.active {
+    border-top: 2px solid #f4bb3a; }
 
   footer {
     padding: 60px 0; }

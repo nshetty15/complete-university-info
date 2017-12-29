@@ -6,6 +6,9 @@ header {
     }
 }
 
+
+/** top navigation **/
+
 .navbar {
     background-color: $cui-dark-grey;
     padding-left: 25px;
@@ -14,14 +17,13 @@ header {
 
 .navbar-dark .navbar-nav .nav-link {
     color: $white;
-    &:hover,
-    &:focus {
+    &.active {
         color: $cui-color;
     }
-    &.active {
-        border-top: 2px solid $cui-color;
-    }
 }
+
+
+/*** footer ***/
 
 footer {
     background-color: $cui-dark-grey;
@@ -125,7 +127,7 @@ footer {
 
 .articles,
 .levels {
-	padding: 2.5rem 0 .5rem;
+    padding: 2.5rem 0 .5rem;
 }
 
 .articles {
@@ -215,6 +217,15 @@ footer {
     .nav-link {
         padding: 1rem 2rem;
     }
+    .navbar-dark .navbar-nav .nav-link {
+        &:hover,
+        &:focus {
+            color: $cui-color;
+        }
+        &.active {
+            border-top: 2px solid $cui-color;
+        }
+    }
     footer {
         padding: 60px 0;
         p {
@@ -254,8 +265,8 @@ footer {
     }
     .articles,
     .levels {
-			padding: 4rem 0 2.5rem;
-		}
+        padding: 4rem 0 2.5rem;
+    }
     /*************** Universities (search) **************/
     .cover-50 {
         background-image: url(/images/search-banner.jpg);

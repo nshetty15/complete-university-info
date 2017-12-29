@@ -45,13 +45,15 @@
       <li class="col-md-4">
         <div class="wrapper">
           <div class="logo mx-auto">
+            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
             {{#if logo.version}}
             <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid"
             /> {{else}}
             <img src="/images/university_placeholder.png" class="img-fluid"> {{/if}}
+            </a>
           </div>
           <h3>
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}">{{name}}</a>
+            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">{{name}}</a>
           </h3>
           {{#if address}}
           <address>
@@ -102,7 +104,7 @@
       </li>
       {{/each}}
     </ul>
-    
+
     <div class="pagi-block">
       {{>paginationuniversities}}
     </div>
