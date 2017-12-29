@@ -1,6 +1,6 @@
 const path = require('path');
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -19,9 +19,6 @@ module.exports = {
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
     })
-  //   new HtmlWebpackPlugin({
-  //     title: 'Output management'
-  //   })
    ],
   output: {
     filename: './public/dist/js/[name].bundle.js'
