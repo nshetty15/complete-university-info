@@ -201,6 +201,23 @@ footer {
     }
 }
 
+.blog {
+    article {
+        .wrap {
+            border-bottom: 5px solid;
+            margin: 0 2rem 2.5rem 0;
+        }
+        &:nth-of-type(2n) {
+            .wrap {
+                margin-right: 0;
+            }
+        }
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
 @media (min-width: 576px) {}
 
 // Medium devices (tablets, 768px and up)

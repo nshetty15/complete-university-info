@@ -1,55 +1,70 @@
-<div class="container">
-	<h1>Blog</h1>
-</div>
-
-
-{{!-- <section>
-	
-		<article>
-			<header>
-				<h2>Article title</h2>
-				<p>Posted on <time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time> by <a href="#">Writer</a> - <a href="#comments">6 comments</a></p>
-			</header>
-			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-		</article>
-		</section> --}}
-
-<div class="container">
+<section class="container avg-m-top blog">
 	<div class="row">
 		<div class="col-sm-8 col-md-9">
-			<h4 class="text-weight-normal">Showing {{ data.posts.results.length}} post.</h4>
-			<div class="blog">
-				{{# each data.posts.results}}
-				<div data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="post">
-					<h2><a href="{{postUrl slug}}">{{{title}}}</a></h2>
-					<p class="lead text-muted">{{{categoryList categories prefix="Posted in "}}}
-							{{#if author.name.first}}by {{author.name.first}}{{/if}}
-					</p>
-					{{#if image}}<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img pull-right">{{/if}}
+			{{!--
+			<h4>Showing {{ data.posts.results.length}} post.</h4> --}}
+			<div class="row no-gutters">
+				{{# each data.posts.results}} 
+				{{#if @first}}
+				<article data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="clearfix">
+					<header>
+						<h3>
+							<a href="{{postUrl slug}}">{{{title}}}</a>
+						</h3>
+						<p class="lead text-muted">
+							<time datetime="{{publishedDate}}">{{publishedDate}}</time>
+							{{!-- {{formatDate publishedDate "short"}} --}}
+							| {{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
+						</p>
+					</header>
+					{{#if image.version}}
+					{{!-- <img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
+					<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" >
+					{{else}}
+					<img src="/images/cui-g-plc.jpg" class="img-fluid" alt="{{title}}">
+					{{/if}}
 					<p>{{{content.brief}}}</p>
-					{{#if content.extended}}<p class="read-more"><a href="{{postUrl slug}}">Read more...</a></p>{{/if}}
-				</div>
+				</article>
+				{{else}}
+				{{!-- other articles --}}
+			
+					<article data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-6">
+					<div class="wrap">
+						<div class="">
+							{{#if image.version}}
+								<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" >
+							{{else}}
+								<img src="/images/cui-g-plc.jpg" class="img-fluid" alt="{{title}}">
+							{{/if}}
+						</div>
+						<header>
+							<h3>
+								<a href="{{postUrl slug}}">{{{title}}}</a>
+							</h3>
+							<p class="lead text-muted">
+								<time datetime="{{publishedDate}}">{{publishedDate}}</time> | {{#if author.name.first}}by {{author.name.first}} {{{categoryList categories prefix="Posted in "}}} {{/if}}
+							</p>
+						</header>
+						</div>
+					</article>
+				
+				{{/if}} 
 				{{/each}}
 			</div>
 		</div>
 		<div class="col-sm-4 col-md-3">
 			<h2>Tagged categories</h2>
 			<div style="margin-top: 70px;" class="list-group">
-				<a href="/blog" class="active list-group-item">All Categories</a>
-
 				{{#each data.categories }}
-				<a href="{{categoryUrl key}}" class="false list-group-item">
-					{{name}}
-					{{#if postCount}}
-						<span class="badge pull-right">{{postCount}}</span>
+				<a href="{{categoryUrl key}}" class="page-link">
+					{{name}} {{#if postCount}}
+					<span class="badge badge-light">{{postCount}}</span>
 					{{/if}}
 				</a>
 				{{/each}}
 
 			</div>
 		</div>
+		{{>paginationblog}}
 	</div>
-
-	{{>paginationblog}}
-
-</div>
+</section>

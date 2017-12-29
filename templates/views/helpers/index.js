@@ -1,13 +1,17 @@
 var moment = require('moment');
 var _ = require('lodash');
 var hbs = require('handlebars');
+var hbsIntl = require('handlebars-intl');
 var keystone = require('keystone');
 var cloudinary = require('cloudinary');
 
 // Collection of templates to interpolate
 var linkTemplate = _.template('<a class="page-link" href="<%= url %>"><%= text %></a>');
+var linkTemplateBlog = _.template('<a class="badge badge-secondary" href="<%= url %>"><%= text %></a>');
 var scriptTemplate = _.template('<script src="<%= src %>"></script>');
 var cssLinkTemplate = _.template('<link href="<%= href %>" rel="stylesheet">');
+
+hbsIntl.registerWith(hbs);
 
 module.exports = function () {
 
@@ -102,7 +106,7 @@ module.exports = function () {
 			if (autolink) {
 				return _.map(tags, function (tag) {
 					// console.log("tag key blog", tag.key, tag.name);
-					return linkTemplate({
+					return linkTemplateBlog({
 						url: ('/blog/' + tag.key),
 						text: _.escape(tag.name),
 					});

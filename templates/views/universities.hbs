@@ -19,7 +19,7 @@
             <p>
               {{# each data.countries }} {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
               --}} {{!-- {{#checkIf countryCode '==' 'US' '||' countryCode '==' 'CA' }} --}}
-              <a href="{{categoryCountryUrl region.key key}}" class="false list-group-item">{{name}}</a>
+              <a href="{{categoryCountryUrl region.key key}}" class="badge badge-secondary">{{name}}</a>
               {{!-- {{/checkIf }} --}} {{/each}}
             </p>
 
@@ -47,7 +47,7 @@
           <div class="logo mx-auto">
             <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
             {{#if logo.version}}
-            <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid"
+            <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid" >
             /> {{else}}
             <img src="/images/university_placeholder.png" class="img-fluid"> {{/if}}
             </a>
