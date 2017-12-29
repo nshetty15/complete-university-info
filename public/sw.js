@@ -8,9 +8,9 @@ self.addEventListener('install', function(e) {
         caches.open(cacheName).then(function(cache) {
             return cache.addAll([
                 '/',
-                '/styles/site.css',
-                '/js/bootstrap/bootstrap.bundle.js',
-                '/js/main.js',
+                //'/styles/site.css',
+                //'/js/bootstrap/bootstrap.bundle.js',
+                //'/js/main.js',
                 './offline.html'
             ]).then(function() {
                 self.skipWaiting();

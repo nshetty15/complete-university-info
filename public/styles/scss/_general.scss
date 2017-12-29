@@ -11,13 +11,19 @@ a {
 section {
     margin-bottom: 2.5rem;
 }
-
+.no-mb{
+    margin-bottom:0;
+}
 a {
     color: $anchor;
     &:hover,
     &:focus {
-        color: lighten($anchor, 30%);
+        color: darken($anchor, 10%);
     }
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    margin-bottom: 1.5rem;
 }
 
 .avg-m-top {
@@ -25,38 +31,55 @@ a {
 }
 
 .form-control {
+    border-color: $cui-color;
     &:focus {
-        border-color: $cui-color;
+        border-color: darken($cui-color, 10%)
     }
 }
 
-.container,
-.mid-column {
+.btn-primary {
+    background-color: $cui-color;
+    border-color: $cui-color;
+    &:hover, &:focus, &:active, &.active{
+        background-color: $anchor;
+        border-color:$anchor;
+    }
+}
+
+.container {
     padding-left: 25px;
     padding-right: 25px;
 }
-
+.bg-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
 .dark-bg {
     background-color: $cui-dark-grey;
-    color: #fff;
+    color: #fff; 
     // a {
     //     color: $cui-color;
     //     &:hover,
     //     &:focus {
-    //         color: $white;
+    //         color: darken($cui-color, 10%);
     //     }
     // }
 }
-.no-style{
+
+.no-style {
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 @media(min-width:768px) {
-    .container{
+    .container {
         padding-right: 15px;
         padding-left: 15px;
+    }
+    .w-medium {
+        max-width: 740px;
     }
     .avg-m-top {
         margin-top: 60px;

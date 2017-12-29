@@ -1,84 +1,159 @@
-header{
-	> .container{
-		padding-top:15px; padding-bottom:15px;
-	}
+header {
+    >.container {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+    }
 }
 
 .navbar {
-	background-color: $cui-dark-grey;
-	a {
-			color: $white;
-			&:hover,
-			&:focus {
-					color: $cui-color;
-			}
-	}
+    background-color: $cui-dark-grey;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-footer {
-	background-color: $cui-dark-grey;
-	padding: 40px 0;
-	color: $cui-light-grey;
-	span{
-		display: block;
-		margin:0 5px;
-		text-align:center;
-	}
-	a {
-			margin-left: 20px;
-			color:$cui-mdm-grey;
-			&:hover,
-			&:focus {
-					color: darken($cui-light-grey, 10%);
-			}
-	}
+.navbar-dark .navbar-nav .nav-link {
+    color: $white;
+    &:hover,
+    &:focus {
+        color: $cui-color;
+    }
+    &.active {
+        border-top: 2px solid $cui-color;
+    }
+}
+
+footer { 
+    background-color: $cui-dark-grey;
+    padding: 40px 0;
+    color: $cui-light-grey;
+    span {
+        display: block;
+        text-align: center;
+    }
+    a {
+        margin: 0 1rem;
+        color: $cui-mdm-grey;
+        &:hover,
+        &:focus {
+						color: lighten($cui-light-grey, 10%);
+						text-decoration: none;
+        }
+    }
+}
+
+.social-links {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+}
+
+.share-social {
+    cursor: pointer;
+    .dropdown-toggle {
+        margin: 0 auto;
+        border: 1px solid;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        &::after {
+            display: none;
+        }
+    }
+    .dropdown-menu {
+        font-size: 20px;
+    }
 }
 
 
 /***** home page****/
-.banner{
-	padding:80px 0;
-	background-color: $cui-bg-light;
-	background-image:url(/images/banner.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
 
-	input[type=text]:focus{
-		background-color: #fff;
-    box-shadow: 0 10px 40px 0 rgba(0,0,0,.1);
-	}
+.page-home {
+    h3 {
+        font-size: 1.5rem;
+    }
 }
 
-.study-locations{
-	.row{
-		// margin-top:40px;
-	}
-	.col-md-6{
-		background-color:$cui-bg-light;
-	}
+.banner {
+    padding: 80px 0;
+    background-color: $cui-light;
+    background-image: url(/images/banner.jpg);
+    p {
+        font-size: 1.5rem;
+    }
 }
 
-.articles{
-	padding:30px 0;
-
-	.col-md-4{
-		padding:20px;
-		border-bottom:3px solid;
-	}
+.search-form {
+    position: relative;
+    .form-control {
+        padding-right: 70px;
+        &:focus {
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .1);
+        }
+    }
+    button {
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        height: 44px;
+        line-height: 0px;
+    }
 }
 
-.uni-results{
-}
-#universities{
-	li{
-		margin-top:40px;
-		border:$cui-bg-light;
-		padding:20px;
-		box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1);
-	}
+.study-locations {
+    .wrap {
+			margin-top: 1rem;
+        background-color: $cui-light;
+    }
+    .thumbnail {
+        min-height: 250px;
+        margin-bottom: 1rem;
+    }
+    .copy {
+        padding: 1rem;
+    }
+} 
+
+.articles,
+.levels {
+    padding: 2rem 0 1rem;
 }
 
+.articles {
+    article {
+        color: initial;
+        background-color: $white;
+        padding: 20px;
+        border-bottom: 5px solid $cui-light-grey;
+        margin-bottom: 2rem;
+    }
+}
+
+.levels {
+    background-color: $cui-light;
+    .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+
+.test-block {
+    border: 1px solid $cui-light;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+/******* Universities **********/
+
+.uni-results {}
+
+#universities {
+    li {
+        margin-top: 40px;
+        border: $cui-light;
+        padding: 20px;
+        box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.1);
+    }
+}
 
 @media (min-width: 576px) {}
 
@@ -87,22 +162,65 @@ footer {
     section {
         margin-bottom: 4rem;
     }
+    header>.container {
+        text-align: left;
+    }
+    .navbar {
+        padding: 0 1rem;
+    }
+    .nav-link {
+        padding: 1rem 2rem;
+    }
     footer {
         padding: 60px 0;
-		}
-		.banner{
-			min-height:550px;
-		}
-
-		#universities{
-			li{
-				margin-top:60px;
-			}
-		}
+        p {
+            float: left;
+        }
+    }
+    .ft-links,
+    .social-links {
+        display: inline-block;
+    }
+    .social-links {
+        margin: 0;
+    }
+    .share-social {
+        margin-top: 2rem;
+        .dropdown-toggle {
+            margin: 0;
+        }
+    }
+    /*** Home page *********/
+    .banner {
+        min-height: 550px;
+        h1 {
+            margin-top: 60px;
+        }
+    }
+    .study-locations {
+        .wrap {
+            margin-top: 2rem;
+            .col-md-5 {
+                padding-right: 0;
+            }
+        }
+        .thumbnail {
+            margin-bottom: 0;
+        }
+    }
+    #universities {
+        li {
+            margin-top: 60px;
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 1rem 2rem;
+    }
+}
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
