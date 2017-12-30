@@ -11,9 +11,9 @@ exports = module.exports = function (req, res) {
     universities: [],
     searchQuery: req.query.q,
     meta: {
-      title: keystone.get('title'), // under 70 characters
-      description: keystone.get('description'), // under 160 characters
-      keywords: keystone.get('keywords') // No more than 10 keyword phrases
+      title: locals.title + " search results", // under 70 characters
+      description: "Want to study a university courses abroad? Use our free tool to find your dream university.", // under 160 characters
+      keywords: "search, find, universities, courses, programs, university" // No more than 10 keyword phrases
     },
   };
 

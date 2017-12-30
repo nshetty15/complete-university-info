@@ -1,4 +1,4 @@
-<section class="search-filter">
+<section class="search-filter no-mb">
   <div class="container padding-tb">
     <div class="w-medium mx-auto">
       <h1>Universities in {{data.category.key}}</h1>
@@ -13,9 +13,7 @@
   </div>
 </section>
 
-<section class="uni-results">
-
-
+<section class="uni-results no-mb">
   <div class="container">
 
     <h4>Total {{ data.universitiesdestination.total}} Universities</h4>
@@ -28,7 +26,7 @@
             {{#if logo.version}}
             <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid"
             /> {{else}}
-            <img src="/images/university_placeholder.png" class="img-fluid"> {{/if}}
+            <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
             </a>
           </div>
           <h3>

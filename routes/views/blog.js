@@ -17,9 +17,9 @@ exports = module.exports = function (req, res) {
 		pathName: req.url,
 		source: 'blog', // for pagination
 		meta: {
-			title: keystone.get('title'), // under 70 characters
-			description: keystone.get('description'), // under 160 characters
-			keywords: keystone.get('keywords') // No more than 10 keyword phrases
+			title: "Student blog, " + locals.title, // under 70 characters
+			description: "Read the latest posts from Complete University Info's blog, for advice on studying abroad and more.", // under 160 characters
+			keywords: "blog, articles, posts, student advice, study abroad" // No more than 10 keyword phrases
 		},
 	};
 
@@ -52,7 +52,7 @@ exports = module.exports = function (req, res) {
 	// Load the current category filter
 	view.on('init', function (next) {
 
-		if (req.params.category) { 
+		if (req.params.category) {
 			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
 				locals.data.category = result;
 				next(err);

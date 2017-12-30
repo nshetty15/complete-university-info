@@ -31,8 +31,8 @@ exports = module.exports = function (req, res) {
       locals.data.meta = {
         title: result.name, 
 				// title: result.title + ( result.country[0].name ? " - " + result.country[0].name : ""), // need to fix country
-				// description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
-				// keywords: result.meta.keywords  || keystone.get('keywords') ,
+				// description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : locals.description,
+				// keywords: result.meta.keywords  || locals.keywords ,
 			};
 
       locals.data.university = result;

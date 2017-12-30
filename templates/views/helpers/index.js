@@ -17,6 +17,7 @@ module.exports = function () {
 
 	var _helpers = {};
 
+
 	/**
 	 * Generic HBS Helpers
 	 * ===================
@@ -385,6 +386,28 @@ module.exports = function () {
 			default:
 				return options.inverse(this);
 		}
+	};
+
+	// https://formatjs.io/handlebars/#formatNumber
+	// https://jonathanmh.com/handlebars-custom-helpers-chaining/
+	_helpers.formatNumber = function (value) {
+		value = parseInt(value);
+
+		var context = {
+			value: value
+		};
+
+		var intlData = {
+			locales: ['en-US'],
+		};
+		// use the formatNumber helper from handlebars-intl
+		var template = hbs.compile('{{formatNumber value}}');
+
+		var compiled = template(context, {
+			data: {intl: intlData}
+		});
+
+		return compiled;
 	};
 
 	//  ### Flash Message Helper

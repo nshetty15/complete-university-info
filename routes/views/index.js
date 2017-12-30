@@ -17,7 +17,7 @@ locals.data = {
 	levels: [],
 	pathName: req.url,
 	meta:{
-		title: locals.title, // under 70 characters
+		title: "Find Information on university and college rankings, fees, courses, guidance for free", // under 70 characters
 		description: locals.description, // under 160 characters
 		keywords: locals.keywords // No more than 10 keyword phrases
 	},

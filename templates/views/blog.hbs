@@ -1,60 +1,63 @@
 <section class="container avg-m-top blog">
 	<div class="row">
 		<div class="col-sm-8 col-md-9">
-			{{!--
-			<h4>Showing {{ data.posts.results.length}} post.</h4> --}}
+			{{!-- <h4>Showing {{ data.posts.results.length}} post.</h4> --}}
+
 			<div class="row no-gutters">
-				{{# each data.posts.results}} 
-				{{#if @first}}
-				<article data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="clearfix">
+				{{# each data.posts.results}} {{#if @first}} {{!-- data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}"
+				--}}
+				<article class="post">
 					<header>
 						<h3>
 							<a href="{{postUrl slug}}">{{{title}}}</a>
 						</h3>
 						<p class="lead text-muted">
-							<time datetime="{{publishedDate}}">{{publishedDate}}</time>
-							{{!-- {{formatDate publishedDate "short"}} --}}
-							| {{{categoryList categories prefix="Posted in "}}} {{#if author.name.first}}by {{author.name.first}}{{/if}}
+							<time datetime="{{publishedDate}}">
+								{{date publishedDate format='MMM Do YYYY'}}
+							</time>
+							{{{categoryList categories prefix="| Posted in "}}}
 						</p>
 					</header>
-					{{#if image.version}}
-					{{!-- <img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
-					<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" >
-					{{else}}
-					<img src="/images/cui-g-plc.jpg" class="img-fluid" alt="{{title}}">
-					{{/if}}
-					<p>{{{content.brief}}}</p>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="thumbnail text-center">
+								{{#if image.version}} {{!--
+								<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
+								<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" /> {{else}}
+								<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}" /> {{/if}}
+							</div>
+						</div>
+						<div class="col-md-8">
+							{{{content.brief}}}
+						</div>
+					</div>
 				</article>
-				{{else}}
-				{{!-- other articles --}}
-			
-					<article data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" class="col-md-6">
-					<div class="wrap">
-						<div class="">
+				{{else}} {{!-- other articles --}} {{!-- data-ks-editable="{{#if ../user}}{{adminEditableUrl ../../user _id}}{{/if}}" --}}
+				<article class="col-md-6">
+					<div class="post wrap">
+						<div class="thumbnail text-center">
 							{{#if image.version}}
-								<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" >
-							{{else}}
-								<img src="/images/cui-g-plc.jpg" class="img-fluid" alt="{{title}}">
-							{{/if}}
+							<img src="//res.cloudinary.com/uguide/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid"> {{else}}
+							<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}"> {{/if}}
 						</div>
 						<header>
 							<h3>
 								<a href="{{postUrl slug}}">{{{title}}}</a>
 							</h3>
-							<p class="lead text-muted">
-								<time datetime="{{publishedDate}}">{{publishedDate}}</time> | {{#if author.name.first}}by {{author.name.first}} {{{categoryList categories prefix="Posted in "}}} {{/if}}
+							<p class="text-muted">
+								<time datetime="{{publishedDate}}">{{date publishedDate format='MMM Do YYYY'}}</time>
+								{{{categoryList categories prefix="| Posted in "}}}
 							</p>
 						</header>
-						</div>
-					</article>
-				
-				{{/if}} 
-				{{/each}}
+					</div>
+				</article>
+
+				{{/if}} {{/each}}
 			</div>
 		</div>
 		<div class="col-sm-4 col-md-3">
-			<h2>Tagged categories</h2>
-			<div style="margin-top: 70px;" class="list-group">
+			<aside class="categories">
+				<h4>Categories</h4>
 				{{#each data.categories }}
 				<a href="{{categoryUrl key}}" class="page-link">
 					{{name}} {{#if postCount}}
@@ -62,9 +65,10 @@
 					{{/if}}
 				</a>
 				{{/each}}
-
-			</div>
+			</aside>
 		</div>
+
 		{{>paginationblog}}
+
 	</div>
 </section>

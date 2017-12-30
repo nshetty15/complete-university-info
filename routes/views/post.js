@@ -26,9 +26,9 @@ exports = module.exports = function (req, res) {
 			// Add meta tags -title, description, keywords
 			var rex = /(<([^>]+)>)/ig;
 			locals.data.meta = {
-				title: result.meta.title,
-				description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : keystone.get('description'),
-				keywords: result.meta.keywords,
+				title: result.meta.title || result.data.title,
+				description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : locals.description,
+				keywords: result.meta.keywords || locals.keywords,
 			};
 
 			// Final result

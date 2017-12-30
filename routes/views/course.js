@@ -29,8 +29,8 @@ exports = module.exports = function (req, res) {
 
         locals.data.meta = {
           title: result.title,
-          description: result.meta.description || keystone.get('description'),
-          keywords: result.meta.keywords || keystone.get('keywords'),
+          description: result.meta.description || locals.description,
+          keywords: result.meta.keywords || locals.keywords,
         };
         locals.data.course = result;
       }

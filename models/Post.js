@@ -21,7 +21,7 @@ Post.add({
 		description: { type: String }, // under 160 characters
 		keywords: { type: String } // No more than 10 keyword phrases
 	},
-	image: { type: Types.CloudinaryImage },
+	image: { type: Types.CloudinaryImage, folder: 'blog', autoCleanup: true  },
 	content: {
 		brief: { type: Types.Html, wysiwyg: true, height: 150 },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
