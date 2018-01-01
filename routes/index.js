@@ -89,6 +89,7 @@ exports = module.exports = function (app) {
 	app.post('/api/universities', routes.api.universities);
 	app.post('/api/regions', routes.api.regions);
 	app.post('/api/states', routes.api.states);
+	app.post('/api/cities', routes.api.cities);
 	// Get methods
 	app.get('/api/search/:value', routes.api.search);
 };
