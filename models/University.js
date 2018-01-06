@@ -145,6 +145,9 @@ University.add({
   // flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
 
+  // notable alumni
+  alumni: { type: Types.TextArray },
+
   // ONLINE COURSES
   itunes: { type: String },
 
