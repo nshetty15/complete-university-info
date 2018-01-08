@@ -22,6 +22,9 @@ var _ = require('underscore');
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
+var sslRedirect = require('heroku-ssl-redirect');
+
+
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
@@ -53,6 +56,10 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
+
+	// enable heroku ssl redirect - to use https
+	app.use(sslRedirect());
+	
 	// console.log(routes.views.index)
 	// Views
 	app.get('/', routes.views.index);
