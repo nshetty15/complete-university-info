@@ -1,8 +1,13 @@
+import 'bootstrap';
 import '../styles/site.css';
 
 var $ = require('jquery');
-import 'bootstrap';
+var LazyLoad = require('vanilla-lazyload');
 
+// Lazy load images 
+var myLazyLoad = new LazyLoad({
+  elements_selector: ".img-lazy"
+});
 
 // register the service worker if available
 if ('serviceWorker' in navigator) {

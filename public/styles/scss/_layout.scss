@@ -1,3 +1,10 @@
+
+/************* Bootstrap reset *************/
+.pagination{
+    flex-wrap: wrap;
+}
+
+/*** header ***/
 header {
     >.container {
         padding-top: 15px;
@@ -76,7 +83,7 @@ footer {
 }
 
 .banner {
-    padding: 80px 0;
+    padding: 40px 0;
     background-color: $cui-light;
     background-image: url(/images/banner.jpg);
     p {
@@ -86,27 +93,32 @@ footer {
 
 .search-form {
     position: relative;
+    label {
+        display: block;
+        margin: 0;
+    }
     .form-control {
-        padding-right: 70px;
         &:focus {
             box-shadow: 0 10px 40px 0 rgba(0, 0, 0, .1);
         }
     }
     .btn {
-        position: absolute;
-        right: 2px;
-        top: 2px;
-        height: 44px;
-        line-height: 0px;
+        width: 100%;
     }
     &.inner {
         .form-control {
+            padding-right: 55px;
             &:focus {
                 box-shadow: none;
             }
         }
         .btn {
             height: 34px;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            line-height: 0;
+            width: auto;
         }
     }
 }
@@ -239,28 +251,27 @@ footer {
     }
     .w-large {
         padding-top: 2.5rem;
-		}
-		div,
-		p,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
+    }
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
     img {
         margin-bottom: 30px;
     }
     img {
-				display: block;
-				margin: 0 auto;
+        display: block;
+        margin: 0 auto;
     }
 }
 
 .post-content {
     line-height: 1.8;
     font-size: 1.2rem;
-    
 }
 
 @media (min-width: 576px) {}
@@ -310,8 +321,20 @@ footer {
     /*** Home page *********/
     .banner {
         min-height: 550px;
+        padding: 80px 0;
         h1 {
             margin-top: 60px;
+        }
+        .btn {
+            width:auto;
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            height: 44px;
+            line-height: 0;
+        }
+        .form-control {
+            padding-right: 230px;
         }
     }
     .study-locations {
@@ -362,12 +385,12 @@ footer {
     }
     /** individual article*/
     .blog-post {
-			header{
-				h1{
-					font-size:3rem;
-					font-weight: 700;
-				}
-			}
+        header {
+            h1 {
+                font-size: 3rem;
+                font-weight: 700;
+            }
+        }
         .banner {
             display: block;
             min-height: 300px;

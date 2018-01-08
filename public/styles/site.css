@@ -7740,6 +7740,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
   .avg-m-top {
     margin-top: 60px; } }
+/************* Bootstrap reset *************/
+.pagination {
+  flex-wrap: wrap; }
+
+/*** header ***/
 header > .container {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -7793,7 +7798,7 @@ footer {
   font-size: 1.5rem; }
 
 .banner {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: #f5f5f5;
   background-image: url(/images/banner.jpg); }
   .banner p {
@@ -7801,20 +7806,24 @@ footer {
 
 .search-form {
   position: relative; }
-  .search-form .form-control {
-    padding-right: 70px; }
-    .search-form .form-control:focus {
-      box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1); }
+  .search-form label {
+    display: block;
+    margin: 0; }
+  .search-form .form-control:focus {
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1); }
   .search-form .btn {
+    width: 100%; }
+  .search-form.inner .form-control {
+    padding-right: 55px; }
+    .search-form.inner .form-control:focus {
+      box-shadow: none; }
+  .search-form.inner .btn {
+    height: 34px;
     position: absolute;
     right: 2px;
     top: 2px;
-    height: 44px;
-    line-height: 0px; }
-  .search-form.inner .form-control:focus {
-    box-shadow: none; }
-  .search-form.inner .btn {
-    height: 34px; }
+    line-height: 0;
+    width: auto; }
 
 .study-locations .wrap {
   margin-top: 1rem;
@@ -7959,9 +7968,19 @@ footer {
 
   /*** Home page *********/
   .banner {
-    min-height: 550px; }
+    min-height: 550px;
+    padding: 80px 0; }
     .banner h1 {
       margin-top: 60px; }
+    .banner .btn {
+      width: auto;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      height: 44px;
+      line-height: 0; }
+    .banner .form-control {
+      padding-right: 230px; }
 
   .study-locations .wrap {
     margin-top: 2rem; }
