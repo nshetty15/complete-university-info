@@ -17,16 +17,16 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     extractCSS,
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
     //  new UglifyJSPlugin({
     //    sourceMap: true
     //  }),
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery',
-    //   jQuery: 'jquery',
-    //   'window.jQuery': 'jquery',
-    //   Popper: ['popper.js', 'default'],
-    // })
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
+    })
   ],
   module: {
     rules: [
