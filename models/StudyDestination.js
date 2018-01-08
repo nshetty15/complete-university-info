@@ -9,7 +9,7 @@ var StudyDestination = new keystone.List('StudyDestination', {
 });
 
 StudyDestination.add({
-  name: {type: Types.Relationship, ref: 'UniversityCountry', requried: true},
+  name: { type: String, requried: true, label: 'eg: Study in Canada' },
   meta: {
     title: { type: String }, // under 70 characters
     description: { type: String }, // under 160 characters

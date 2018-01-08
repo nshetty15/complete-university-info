@@ -79,10 +79,13 @@ keystone.set('nav', {
 	users: 'users',
 });
 
+// 301 redirection - https://github.com/keystonejs/keystone/issues/303
+// keystone.redirect({
+// 	'/index.php': '/',
+// 	'sermons.php': '/'
+// });
+
 // Start Keystone to connect to your database and initialise the web server
-
-
-
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'
 		+ '\nWARNING: MISSING MAILGUN CREDENTIALS'
@@ -95,3 +98,4 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 
 
 keystone.start();
+ 

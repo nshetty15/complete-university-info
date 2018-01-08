@@ -146,7 +146,7 @@ University.add({
   vimeo: { type: Types.Url },
 
   // notable alumni
-  alumni: { type: Types.TextArray },
+  alumni: { type: Types.TextArray, label: 'Notable Alumni' },
 
   // ONLINE COURSES
   itunes: { type: String },

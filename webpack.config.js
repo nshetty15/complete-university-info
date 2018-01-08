@@ -1,38 +1,48 @@
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const extractCSS = new ExtractTextPlugin('./public/styles/site.css');
 
 module.exports = {
   entry: {
-    common: './public/js/common.js',
+    // common: './public/js/common.js',
     home: './public/js/home.js',
-    about: './public/js/about.js'
+    // about: './public/js/about.js'
+  },
+  output: {
+    filename: './public/dist/js/[name].bundle.js'
+    //path: path.resolve(__dirname, 'dist')
   },
   devtool: 'inline-source-map',
-   plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true
-    }),
+  plugins: [
+    extractCSS,
+    new webpack.optimize.UglifyJsPlugin(),
+    //  new UglifyJSPlugin({
+    //    sourceMap: true
+    //  }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
     })
-   ],
-  output: {
-    filename: './public/dist/js/[name].bundle.js'
-    //path: path.resolve(__dirname, 'dist')
-  },
-
+  ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        // use: [{ loader: "style-loader" }, { loader: "css-loader" }] // loaders are applied from right to left
+        use: extractCSS.extract(['css-loader?minimize'])
+      },
+      {
+        test: /\.js?$/,
+        use: {
+          loader: 'babel-loader', options: {
+            presets:
+              ['babel-preset-env']
+          }
+        }
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -42,8 +52,4 @@ module.exports = {
       }
     ]
   }
-  // entry: './public/js/common.js',
-  // output: {
-  //   filename: './public/dist/js/commons.bundle.js',
-  // }
 };
