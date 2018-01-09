@@ -9,8 +9,6 @@ exports = module.exports = function (req, res) {
 		destination: req.params.destination,
 	};
 	locals.data = {
-		study: [],
-		meta: {},
 		pathName: req.url,
 	};
 
@@ -18,26 +16,16 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		var q = keystone.list('StudyDestination').model.findOne({
-			state: 'published',
+			status: 'published',
 			slug: locals.filters.destination,
-		}).populate('city state country region');
+		}).populate('country');
 
 		q.exec(function (err, result) {
 			if(err){
 				next(err);
 			}
-			// console.log(result);
-			// Add meta tags -title, description, keywords
-			// locals.data.meta = {
-			// 	title: result.meta.title,
-			// 	description: result.meta.description,
-			// 	keywords: result.meta.keywords,
-			// };
-
 			// Final result
-			locals.data.study = result;
-
-			
+			locals.data = result;
 		});
 
 	});

@@ -27,8 +27,8 @@ University.add({
 
   // http://www.4icu.org/ || https://www.niche.com || https://in.linkedin.com/edu/memorial-university-of-newfoundland-20062 || sa
   // ABOUT UNIVERSITY
-  logo: { type: Types.CloudinaryImage, folder: 'logo', autoCleanup: true },
-  // photo: { type: Types.CloudinaryImage, folder: 'photo', autoCleanup: true },
+  logo: { type: Types.CloudinaryImage, folder: '/university/logo', autoCleanup: true },
+  photo: { type: Types.CloudinaryImage, folder: '/university/photo', autoCleanup: true },
   address: { type: String, },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   locations: { type: String, label: 'Other Locations' },

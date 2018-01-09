@@ -256,17 +256,23 @@ module.exports = function () {
 
 	};
 
+	// Tests - academic & language
 	_helpers.testUrl = function (categorySlug, options) {
 		return ('/test/' + categorySlug);
 	};
 
-	_helpers.courseUrl = function (courseSlug, options) {
-		return ('/courses/' + courseSlug);
+	// Study in 
+	_helpers.studyDestinationtUrl = function (locationSlug, options) {
+		return ('/study-abroad/' + locationSlug);
 	};
-	// For pagination 
-	_helpers.coursePageUrl = function (pageNumber, options) {
-		return '/courses?page=' + pageNumber;
-	};
+
+	// _helpers.courseUrl = function (courseSlug, options) {
+	// 	return ('/courses/' + courseSlug);
+	// };
+	// // For pagination 
+	// _helpers.coursePageUrl = function (pageNumber, options) {
+	// 	return '/courses?page=' + pageNumber;
+	// };
 
 	/******************* */
 	// ### Pagination Helpers
