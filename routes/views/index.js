@@ -75,7 +75,6 @@ locals.data = {
 			.limit(6);
 			// { status: 'published'}
 			q.exec(function(err, results){
-				console.log(results);
 				locals.data.studyIn = results;
 				next(err);
 			});
