@@ -2,14 +2,14 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var StudyDestination = new keystone.List('StudyDestination', {
-  map: { name: 'name' },
+  map: { name: 'title' },
   singular: 'StudyDestination',
   plural: 'StudyDestinations',
   autokey: { path: 'slug', from: 'name', unique: true },
 });
 
 StudyDestination.add({
-  name: { type: String, requried: true, label: 'eg: Study in Canada' },
+  title: { type: String, requried: true },
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   meta: {
     title: { type: String }, // under 70 characters
@@ -34,6 +34,6 @@ StudyDestination.add({
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-// StudyDestination.defaultColumns = 'name, status, address, region, country, state, city';
+StudyDestination.defaultColumns = 'title, status, country';
 
 StudyDestination.register();

@@ -22,120 +22,30 @@
 	<section class="container study-locations">
 		<h2>Where do I study?</h2>
 		<p>Top study abroad destinations by students</p>
-
 		<div class="row">
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="/universities/oceania/australia/">
-								<div class="thumbnail bg-cover text-hide img-lazy" data-original="/images/country/au/australia.jpg">
-									Australia
-								</div>
-							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="/universities/oceania/australia/">Australia</a>
-								</h3>
-								<p>Canada is known for its excellent education institutions, multiplicity of top quality education programs in various
-									streams and an innovative economy that welcomes international students with open arms. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="/universities/north-america/canada/">
-								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/ca/canada.jpg);">
-									Canada
-								</div>
-							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="/universities/north-america/canada/">Canada</a>
-								</h3>
-								<p>Canada is known for its excellent education institutions, multiplicity of top quality education programs in various
-									streams and an innovative economy that welcomes international students with open arms.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="row">
-
-						<div class="col-md-5">
-							<a href="/universities/europe/ireland/">
-								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/ie/ireland.jpg);">
-									Ireland
-								</div>
-							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="/universities/oceania/australia/">Ireland</a>
-								</h3>
-								<p>Degrees and qualifications from UK higher education institutions are known around the world as high quality and world
-									class. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="/universities/europe/switzerland/">
-								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/ch/switzerland.jpg);">
-									Switzerland
-								</div>
-							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="/universities/europe/switzerland/">Switzerland </a>
-								</h3>
-								<p> The U.S. is home to some of the most prestigious universities in the world. It has an internationally renowned education
-									system, and offers a huge variety of English-language courses and speciality degrees. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="row">
-						<div class="col-md-5">
-							<a href="/universities/oceania/new-zealand/">
-								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/nz/newzealand.jpg);">
-									New Zealand
-								</div>
-							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="/universities/oceania/new-zealand/">New Zealand </a>
-								</h3>
-								<p> The U.S. is home to some of the most prestigious universities in the world. It has an internationally renowned education
-									system, and offers a huge variety of English-language courses and speciality degrees. </p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			{{# each data.studyIn}}
+      <div class="col-md-6">
+        <div class="wrap">
+          <div class="row">
+            <div class="col-md-5">
+              <a href="{{studyDestinationtUrl slug}}">
+                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/au/australia.jpg)">
+                  {{ title }}
+                </div>
+              </a>
+            </div>
+            <div class="col-md-7">
+              <div class="copy">
+                <h3>
+                  <a href="{{slug}}">{{ title }}</a>
+                </h3>
+                {{{ brief}}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
 		</div>
 	</section>
 

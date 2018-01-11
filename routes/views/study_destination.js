@@ -12,23 +12,19 @@ exports = module.exports = function (req, res) {
 		pathName: req.url,
 	};
 
-	// Load the current post
+	// Load the current 
+
 	view.on('init', function (next) {
+    var q = keystone.list('StudyDestination').model.findOne({
+      slug: locals.filters.destination
+    }).populate('country');
 
-		var q = keystone.list('StudyDestination').model.findOne({
-			status: 'published',
-			slug: locals.filters.destination,
-		}).populate('country');
-
-		q.exec(function (err, result) {
-			if(err){
-				next(err);
-			}
-			// Final result
-			locals.data = result;
-		});
-
-	});
+    q.exec(function (err, result) {
+      // Final result
+      locals.data.destination = result;
+      next(err);
+    });
+  });
 
 	// Render the view
 	view.render('study_destination');

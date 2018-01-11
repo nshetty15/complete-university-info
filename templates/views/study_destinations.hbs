@@ -1,4 +1,38 @@
-<h1>Study abroad destinations</h1>
+<section class="search-filter">
+  <div class="container">
+    <div class="padding-tb search-intro">
+      <h1>Study abroad destinations</h1>
+      <p>Top study abroad destinations by students</p>
+    </div>
+  </div>
+</section>
 
-{{!-- {{ data.study }} --}}
-{{!-- {{# each data.study.results}} --}}
+<section class="study-locations">
+  <div class="container">
+    <div class="row">
+      {{# each data.studyIn.results}}
+      <div class="col-md-6">
+        <div class="wrap">
+          <div class="row">
+            <div class="col-md-5">
+              <a href="{{studyDestinationtUrl slug}}">
+                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/au/australia.jpg)">
+                  {{ title }}
+                </div>
+              </a>
+            </div>
+            <div class="col-md-7">
+              <div class="copy">
+                <h3>
+                  <a href="{{slug}}">{{ title }}</a>
+                </h3>
+                {{{ brief}}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

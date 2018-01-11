@@ -15,6 +15,7 @@ locals.data = {
 	articles:[],
 	tests: [],
 	levels: [],
+	studyIn: [],
 	pathName: req.url,
 	meta:{
 		title: "Find Information on university and college rankings, fees, courses, guidance for free", // under 70 characters
@@ -66,6 +67,19 @@ locals.data = {
 			next(err);
 		});
 	});
+
+		// Load Levels
+		view.on('init', function(next){
+			var q = keystone.list("StudyDestination").model.find()
+			.sort('name')
+			.limit(6);
+			// { status: 'published'}
+			q.exec(function(err, results){
+				console.log(results);
+				locals.data.studyIn = results;
+				next(err);
+			});
+		});
 
 	// Render the view
 	view.render('index');
