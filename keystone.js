@@ -47,7 +47,10 @@ keystone.init({
 
 	'cors allow origin': true, //
 	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
+	
 	'wysiwyg override toolbar': false,
+	'wysiwyg additional buttons':'formatselect, removeformat ',
+
 	'ga property client': process.env.GA_PROPERTY_FRONT,
 	'twitter': process.env.TWITTER_ACCOUNT
 });
