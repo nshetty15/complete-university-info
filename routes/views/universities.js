@@ -55,7 +55,8 @@ exports = module.exports = function (req, res) {
         status: 'published',
       },
     })
-      .sort('-publishedDate')
+      //.sort({publishedDate: '-publishedDate', the: '-the'})
+      .sort('-the')
       .populate('region country state city');
 
     q.exec(function (err, results) {
