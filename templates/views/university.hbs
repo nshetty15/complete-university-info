@@ -1,29 +1,50 @@
-<section class="search-banner no-mb">
+<section class="uni-banner bg-cui no-mb">
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <div class="uni-logo">
+        <div class="bg-white h-100 text-center">
+          <div class="uni-logo">
+            {{#if data.university.logo.version}}
+            <img src="//res.cloudinary.com/uguide/image/upload/v{{data.university.logo.version}}/{{data.university.logo.public_id}}.jpg"
+              alt="{{data.university.name}} logo" class="img-fluid" /> {{else}}
+            <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
+          </div>
 
-          {{#if data.university.logo.version}}
-          <img src="//res.cloudinary.com/uguide/image/upload/v{{data.university.logo.version}}/{{data.university.logo.public_id}}.jpg"
-            alt="{{data.university.name}} logo" class="img-fluid" /> {{else}}
-          <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
+          {{#if data.university.acronym}}
+          <abbr title="{{data.university.name}}">
+            <strong>{{data.university.acronym}}</strong>
+          </abbr>
+          {{/if}}
 
+          <div class="text-left uni-contact">
+            {{#if data.university.phone}}
+            <div class="contact-row">
+              <i class="fa fa-phone-square" aria-hidden="true"></i>
+              {{#each data.university.phone}}
+              <a href="tel:{{this}}">{{ this }} </a>
+              {{/each}}
+            </div>
+            {{/if}} {{#if data.university.email}}
+            <div class="contact-row">
+              <i class="fa fa-envelope-square" aria-hidden="true"></i>
+              {{#each data.university.email}}
+              <a href="mailto:{{this}}">{{ this }} </a>
+              {{/each}}</div>
+            {{/if}}
+          </div>
         </div>
       </div>
       <div class="col-md-9">
         <div class=" padding-tb">
           <h1>{{data.university.name}}</h1>
-          {{data.university.address}} | 
 
-          {{#each data.university.phone}}
-              <p>{{ this }} </p>
-              {{/each}}
+          {{#if data.university.address}}
+          <address>
+            <i class="fa fa-map-marker" aria-hidden="true"></i> {{data.university.address}}
+          </address>
+          {{/if}}
 
-              
-
-          | {{data.university.acronym}}
-          {{{data.university.brief }}} 
+          <div class="uni-brief"> {{{data.university.brief }}}</div>
         </div>
       </div>
     </div>
@@ -33,145 +54,299 @@
 <section class="uni-profile">
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <h3>TUITION</h3>
-              <p>BDtuitionIn: {{data.university.BDtuitionIn }} </p>
-              <p>BDtuitionOut: {{data.university.BDtuitionOut }} </p>
-              <p>MDtuitionIn: {{data.university.MDtuitionIn }} </p>
-              <p>MDtuitionOut: {{data.university.MDtuitionOut }} </p>
+      <div class="col-md-9">
 
-              <div class="well" style="margin-bottom:40px;">
-              <h3>RANKINGS</h3>
-              <p>timesWorldUniversity: {{ data.university.the }} </p>
-              <p>qs: {{data.university.qs }} </p>
-              <p>arwu: {{data.university.arwu }} </p>
-              <p>forbes: {{data.university.forbes }} </p>
-              <p>macleans: {{data.university.macleans }} </p>
-              <p>completeUniversityGuide: {{data.university.cug }} </p>
-              <p>financialTimes: {{data.university.ft }} </p>
-              <p>theEconomist: {{data.university.theEconomist }} </p>
-              <p>usNewsNational: {{data.university.usNewsNational }} </p>
-              <p>usNewsLiberal: {{data.university.usNewsLiberal }} </p>
+        <section class="col-highlight">
+          <ul class="list-unstyled text-center row">
+            {{#if data.university.students}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.students}}</div>
+              <div class="title">
+                <strong>Total students</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.outStudents}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.outStudents }}</div>
+              <div class="title">
+                <strong>International students</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.studentFaculty}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.studentFaculty}}</div>
+              <div class="title">
+                <strong>Students per staff</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.totalCost}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.country.currencyCode}} {{data.university.totalCost }}</div>
+              <div class="title">
+                <strong>Average Total Cost</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.campusAcc}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.country.currencyCode}} {{data.university.campusAcc }}</div>
+              <div class="title">
+                <strong>Campus Accomodation</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.acceptanceRate}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.acceptanceRate }} </div>
+              <div class="title">
+                <strong>Acceptance Rate</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.financialAid}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.financialAid }}</div>
+              <div class="title">
+                <strong>Financial Aid</strong>
+              </div>
+            </li>
+            {{/if}} {{#if data.university.scholarshipAmt}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.scholarshipAmt}}</div>
+              <div class="title">
+                <strong>Scholarship</strong>
+              </div>
+            </li>
+
+            {{/if}} {{#if data.university.roomBoard}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.roomBoard}}</div>
+              <div class="title">
+                <strong>Room and Board</strong>
+              </div>
+            </li>
+
+            {{/if}} {{#if data.university.gradEmployee}}
+            <li class="col-md-4">
+              <div class="value">{{data.university.gradEmployee }}</div>
+              <div class="title">
+                <strong>Graduate Employment Rate</strong>
+              </div>
+            </li>
+            {{/if}}
+          </ul>
+          {{!--
+          <li class="col-md-4">
+            <div class="value"></div>
+            <div class="title">
+              <strong></strong>
             </div>
-        <ul>
-          <li></li>
-        </ul>
+          </li> --}}
+        </section>
 
-        {{{data.university.extended}}}
+        <section>
+          <h3>Overview</h3>
+          {{{data.university.extended}}}
+        </section>
+
+        <section class="row-block">
+          <h3>University Rankings</h3>
+          <ul class="list-unstyled clearfix">
+            {{#if data.university.the}}
+            <li>
+              <div class="title float-left">Times World University</div>
+              <div class="value float-left">{{ data.university.the }} </div>
+            </li>
+            {{/if}} {{#if data.university.qs}}
+            <li>
+              <div class="title float-left">QS </div>
+              <div class="value float-left">{{data.university.qs }} </div>
+            </li>
+            {{/if}} {{#if data.university.arwu}}
+            <li>
+              <div class="title float-left">ARWU </div>
+              <div class="value float-left">{{data.university.arwu }}</div>
+            </li>
+            {{/if}} {{#if data.university.forbes}}
+            <li>
+              <div class="title float-left">Forbes </div>
+              <div class="value float-left">{{data.university.forbes }} </div>
+            </li>
+            {{/if}} {{#if data.university.macleans}}
+            <li>
+              <div class="title float-left">macleans </div>
+              <div class="value float-left">{{data.university.macleans }}</div>
+            </li>
+            {{/if}} {{#if data.university.cug}}
+            <li>
+              <div class="title float-left">complete University Guide </div>
+              <div class="value float-left">{{data.university.cug }}</div>
+            </li>
+            {{/if}} {{#if data.university.ft}}
+            <li>
+              <div class="title float-left">financial Times </div>
+              <div class="value float-left">{{data.university.ft }}</div>
+            </li>
+            {{/if}} {{#if data.university.theEconomist}}
+            <li>
+              <div class="title float-left">the Economist </div>
+              <div class="value float-left">{{data.university.theEconomist }}</div>
+            </li>
+            {{/if}} {{#if data.university.usNewsNational}}
+            <li>
+              <div class="title float-left">us News National </div>
+              <div class="value float-left">{{data.university.usNewsNational }}</div>
+            </li>
+            {{/if}} {{#if data.university.usNewsLiberal}}
+            <li>
+              <div class="title float-left">us News Liberal </div>
+              <div class="value float-left">{{data.university.usNewsLiberal }}</div>
+            </li>
+            {{/if}}
+
+          </ul>
+        </section>
+
+        <section>
+
+          <h3>General Information</h3>
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled list-group">
+                <li class="list-group-item bg-light text-uppercase">
+                  <strong>Bachelors degree</strong>
+                </li>
+                {{#if data.university.BDstudents}}
+                <li class="list-group-item">Students
+                  <span class="badge badge-1 float-right">{{data.university.BDstudents }}</span></li>
+                  {{/if}}
+                  {{#if data.university.BDtuitionIn}}
+                <li class="list-group-item">Domestic tuition fee(average) <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{data.university.BDtuitionIn }}</span></li>
+                {{/if}}{{#if data.university.BDtuitionOut}}
+                <li class="list-group-item">International tuition fee(average) <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{data.university.BDtuitionOut }}</span></li>
+                {{/if}}{{#if data.university.BDprogramsCount}}
+                <li class="list-group-item">Total programs <span class="badge badge-1 float-right">{{data.university.BDprogramsCount }}</span></li>
+                {{/if}}
+              </ul>
+            </div>
+
+            <div class="col-md-6">
+              <ul class="list-unstyled list-group">
+                
+                <li class="list-group-item bg-light text-uppercase">
+                  <strong>Masters degree</strong>
+                </li>
+                {{#if data.university.MDstudents}}
+                <li class="list-group-item">Students <span class="badge badge-1 float-right">{{data.university.MDstudents }}</span></li>
+                {{/if}}
+                {{#if data.university.MDtuitionIn}}
+                <li class="list-group-item">Domestic student tuition fee(average) <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{data.university.MDtuitionIn }}</span></li>
+                {{/if}}
+                {{#if data.university.MDtuitionOut}}
+                <li class="list-group-item">International student tuition fee(average) <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{data.university.MDtuitionOut }}</span></li>
+                {{/if}}
+                {{#if data.university.MDprogramsCount}}
+                <li class="list-group-item">Total programs <span class="badge badge-1 float-right">{{data.university.MDprogramsCount }}</span></li>
+                {{/if}}
+              </ul>
+            </div>
+
+        </section>
+
+        <section>
+          <h3>Subjects taught at {{data.university.name}}</h3>
+          {{{data.university.programs}}}
+        </section>
+
 
         <h2>FACTS &amp; BADGES</h2>
-        <p>avgTuition: {{data.university.avgTuition }} </p>
-              <p>totalCost: {{data.university.totalCost }} </p>
-              <p>acceptanceRate: {{data.university.acceptanceRate }} </p>
-              <p>studentFacultyRatio: {{data.university.studentFacultyRatio }} </p>
-              <p>roomAndBoard: {{data.university.roomAndBoard }} </p>
-              <p>financialAid: {{data.university.financialAid }} </p>
-              <p>studentClubs: {{data.university.studentClubs }} </p>
-              <p>graduateEmployment(Graduate Employment Rate:eg-80% ): {{data.university.graduateEmployment }} </p>
-              <p>femaleMaleRatio: {{data.university.femaleMaleRatio }} </p>
-              <p>scholarships: </p>
-              <p>outStudents(Internation Students:eg-12.5% ): {{data.university.outStudents }} </p>
-              <p>BDstudents(Bachelors degress Students): {{data.university.BDstudents }} </p>
-              <p>MDstudents(Masters degress Students): {{data.university.MDstudents }} </p>
-              <p>yearLevel: {{data.university.yearLevel }} </p>
-        <ul>
-          <li></li>
-        </ul>
-
-        <h3>Subjects taught at {{data.university.name}}</h3>
-        <h5>Total bachelor degree programs</h5>
-        {{data.university.BDprogramsCount }}
-        <h5>Total masters degree programs</h5>
-        {{data.university.MDprogramsCount }}
-        {{{data.university.programs}}}
+        <p>roomAndBoard: {{data.university.roomBoard }} </p>
+        <p>studentClubs: {{data.university.studentClubs }} </p>
+        <p>yearLevel: {{data.university.yearLevel }} </p>
+        <p>total employees: {{data.university.staff }}</p>
+        <p>Female male ratio: {{data.university.femaleMale}}</p>
 
 
-              <h3>SIZE AND PROFILE</h3>
-              <p>students: {{data.university.students }} </p>
-              <p>academicCalendar(eg-Semesters): {{data.university.academicCalendar }} </p>
-              <p>staff: {{data.university.staff }} </p>
-              <p>campusSetting: {{data.university.campusSetting }} </p>
-              <p>controlType: {{data.university.controlType }} </p>
-              <p>religiousAffiliation: {{data.university.religiousAffiliation }} </p>
-              <p>entityType: {{data.university.entityType }} </p>
-              <p>eveningDegreeProgram: {{#if data.university.eveningDegreeProgram }} available {{else}} not available {{/if}}</p>
+        <h3>SIZE AND PROFILE</h3>
+
+        <p>academicCalendar(eg-Semesters): {{data.university.academicCalendar }} </p>
+        <p>campusSetting: {{data.university.campusSetting }} </p>
+        <p>controlType: {{data.university.controlType }} </p>
+        <p>religiousAffiliation: {{data.university.religiousAffiliation }} </p>
+        <p>entityType: {{data.university.entityType }} </p>
+        <p>eveningDegreeProgram: {{#if data.university.eveningDegreeProgram }} available {{else}} not available {{/if}}</p>
 
 
         <h3>Scholarships</h3>
         {{{data.university.scholarships }}}
 
         <div class="well" style="margin-bottom:40px;">
-              <h3>LANGUAGE &amp; ACADEMIC TEST SCORE</h3>
-              <p>gmatRange: {{data.university.gmatRange }} </p>
-              <p>greRange: {{data.university.greRange }} </p>
-              <p>satRange: {{data.university.satRange }} </p>
-              <p>actRange: {{data.university.actRange }} </p>
-              <p>toeflRange: {{data.university.toeflRange }} </p>
-              <p>ieltsRange: {{data.university.ieltsRange }} </p>
-              <p>gpaRange: {{data.university.gpaRange }} </p>
-            </div>
-
-            <div class="well" style="margin-bottom:40px;">
-              <p>{{data.university.website }}</p>
-              <h3>SOCIAL MEDIA</h3>
-              <p>{{data.university.facebook }} </p>
-              <p>{{data.university.twitter }} </p>
-              <p>{{data.university.google }} </p>
-              <p>{{data.university.linkedin }} </p>
-              <p>{{data.university.instagram }} </p>
-              <p>{{data.university.youtube }} </p>
-              <p>{{data.university.vimeo }} </p>
-            </div>
-
-      </div>
-
-      <div class="col-md-4">
-        <p>applicationDeadline: {{data.university.januaryDeadline }} , may, september</p>
-
-        <p>founded</p> {{data.university.founded}}
-        <p>motto</p> {{data.university.motto}}
-        <p>other locations</p>{{data.university.locations }}
-         <p>application Fee:  </p>{{data.university.appFee }}
-
-        <div class="block">
-          <h3>ACCREDITATION AND RECOGNITION</h3>
-          <ul>
-            {{#each data.university.accreditations}}
-            <li>
-              {{ this }}
-            </li>
-            {{/each}}
-          </ul>
+          <h3>LANGUAGE &amp; ACADEMIC TEST SCORE</h3>
+          <p>gmatRange: {{data.university.gmatRange }} </p>
+          <p>greRange: {{data.university.greRange }} </p>
+          <p>satRange: {{data.university.satRange }} </p>
+          <p>actRange: {{data.university.actRange }} </p>
+          <p>toeflRange: {{data.university.toeflRange }} </p>
+          <p>ieltsRange: {{data.university.ieltsRange }} </p>
+          <p>gpaRange: {{data.university.gpaRange }} </p>
         </div>
 
-
-        <div class="block">
-          <h3>AFFILIATIONS AND MEMBERSHIPS</h3>
-          <ul>
-            {{#each data.university.affiliations }}
-            <li>
-              {{ this }}
-            </li>
-            {{/each}}
-          </ul>
+        <div class="well" style="margin-bottom:40px;">
+          <p>{{data.university.website }}</p>
+          <h3>SOCIAL MEDIA</h3>
+          <p>{{data.university.facebook }} </p>
+          <p>{{data.university.twitter }} </p>
+          <p>{{data.university.google }} </p>
+          <p>{{data.university.linkedin }} </p>
+          <p>{{data.university.instagram }} </p>
+          <p>{{data.university.youtube }} </p>
+          <p>{{data.university.vimeo }} </p>
         </div>
 
-        <div class="well block" style="margin-bottom:40px;">
-          <h3>FACILITIES AND SERVICES</h3>
-          <p>library: {{data.university.library }} </p>
-          <p>housing: {{data.university.housing }} </p>
-          <p>sportFacilities: {{data.university.sportFacilities }} </p>
-          <p>distanceLearning: {{data.university.distanceLearning }} </p>
         </div>
 
-        <div class="block">
-          <h3>admissions</h3>
-          <p>{{data.university.admissionOffice }} </p>
-          <p>{{data.university.admissionRate }} </p>
+        <div class="col-md-3">
+
+          <p>founded</p> {{data.university.founded}}
+          <p>motto</p> {{data.university.motto}}
+          <p>other locations</p>{{data.university.locations }}
+          <p>application Fee: </p>{{data.university.appFee }}
+
+          <div class="block">
+            <h3>ACCREDITATION AND RECOGNITION</h3>
+            <ul>
+              {{#each data.university.accreditations}}
+              <li>
+                {{ this }}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+
+          <div class="block">
+            <h3>AFFILIATIONS AND MEMBERSHIPS</h3>
+            <ul>
+              {{#each data.university.affiliations }}
+              <li>
+                {{ this }}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <div class="well block" style="margin-bottom:40px;">
+            <h3>FACILITIES AND SERVICES</h3>
+            <p>library: {{data.university.library }} </p>
+            <p>housing: {{data.university.housing }} </p>
+            <p>sportFacilities: {{data.university.sportFacilities }} </p>
+            <p>distanceLearning: {{data.university.distanceLearning }} </p>
+          </div>
+
+          <div class="block">
+            <h3>admissions</h3>
+            <p>{{data.university.admissionOffice }} </p>
+            <p>{{data.university.admissionRate }} </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 </section>
-

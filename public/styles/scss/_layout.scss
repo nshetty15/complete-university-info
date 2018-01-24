@@ -1,10 +1,12 @@
-
 /************* Bootstrap reset *************/
-.pagination{
+
+.pagination {
     flex-wrap: wrap;
 }
 
+
 /*** header ***/
+
 header {
     >.container {
         padding-top: 15px;
@@ -71,6 +73,10 @@ footer {
     .dropdown-menu {
         font-size: 20px;
     }
+}
+
+.bg-cui {
+    background-color: $cui-color;
 }
 
 
@@ -273,13 +279,101 @@ footer {
     line-height: 1.8;
     font-size: 1.2rem;
 }
-.uni-profile{
-    
-}
+
+.uni-profile {}
+
 
 /********* university  page**********/
-.uni-logo{
-    background:#fff;
+
+.uni-banner {
+    address {
+        color: #666;
+    }
+}
+
+.uni-logo {
+    margin-bottom: 20px;
+    img {
+        max-width: 200px;
+    }
+}
+
+.uni-contact {
+    padding: 20px 20px 10px;
+    a {
+        display: block;
+    }
+    .fa {
+        position: absolute;
+        left: 0;
+        top: 5px;
+    }
+}
+
+.contact-row {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.uni-brief {
+    font-size: 18px;
+}
+.badge-1{
+    font-size: 1rem;
+}
+
+.uni-profile {
+    h3 {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.col-highlight {
+    background-color: $cui-light;
+    padding: 30px;
+    border: 1px solid #efefef;
+    li {
+        margin-bottom: 30px;
+    }
+}
+
+.value {
+    font-size: 24px;
+    color: #335d67;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.row-block {
+    li {
+        border: 1px solid #efefef;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 48%;
+        float: left;
+        margin-right: 4%;
+        &:nth-of-type(2n) {
+            margin-right: 0;
+        }
+
+        &:last-child, &:nth-last-child(2) {
+            margin-bottom: 0;
+        }
+    }
+    .value {
+        width: 20%;
+        margin-bottom: 0;
+    }
+    .title {
+        width: 80%;
+        font-weight: 500;
+    }
 }
 
 @media (min-width: 576px) {}
@@ -334,7 +428,7 @@ footer {
             margin-top: 60px;
         }
         .btn {
-            width:auto;
+            width: auto;
             position: absolute;
             right: 2px;
             top: 2px;
@@ -408,6 +502,14 @@ footer {
             padding: 3rem;
             margin-top: -200px;
         }
+    }
+    /******* University page ***********/
+    .uni-banner {
+        padding-bottom: 80px;
+    }
+    .uni-profile {}
+    .col-highlight {
+        margin-top: -80px;
     }
 }
 
