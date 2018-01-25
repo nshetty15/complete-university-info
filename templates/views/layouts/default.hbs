@@ -124,6 +124,7 @@
 
 			</div>
 			<div class="social-links">
+				<h6>Follow us on</h6>
 				<a title="Like us on Facebook" href="https://www.facebook.com/completeuniversityinfo/" target="_blank" rel="nofollow" rel="noopener">
 					<i class="fa fa-facebook-square" aria-hidden="true"></i>
 					<span class="sr-only">Like us on Facebook</span>
@@ -151,19 +152,25 @@
 					<span class="sr-only">Share on social media</span>
 				</span>
 				<div class="dropdown-menu">
-					<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.post.pathName}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.post.pathName}}" 
+					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" rel="nofollow">
 						<i class="fa fa-facebook-square" aria-hidden="true"></i>
 						<span class="sr-only">Facebook</span>
 					</a>
-					<a tittle="Share via Whatsapp" href="whatsapp://send?text=University information at one place!" data-action="share/whatsapp/share">
+					<a tittle="Share via Whatsapp" href="whatsapp://send?text=University information at one place! {{baseUrl}}" 
+					data-action="share/whatsapp/share" rel="nofollow">
 						<i class="fa fa-whatsapp" aria-hidden="true"></i>
 						<span class="sr-only">Whatsapp</span>
 					</a>
 					<a title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{data.meta.title}}&url={{baseUrl}}{{data.pathName}}"
-					 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" rel="nofollow">
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<span class="sr-only">Twitter</span>
 					</a>
+					<a class="" href="mailto:" 
+						data-href="" rel="nofollow" target="_blank">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+                <span class="sr-only">Email</span>            </a>
 				</div>
 			</div>
 		</div>
