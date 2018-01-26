@@ -23,7 +23,9 @@ header {
     padding-left: 25px;
     padding-right: 25px;
 }
-
+.nav-link{
+    padding:1rem 0 .5rem;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: $white;
     &.active {

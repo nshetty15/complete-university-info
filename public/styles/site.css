@@ -7923,9 +7923,6 @@ a {
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1.5rem; }
 
-.avg-m-top {
-  margin-top: 40px; }
-
 .form-control {
   border-color: #f4bb3a; }
   .form-control:focus {
@@ -7975,10 +7972,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     max-width: 740px; }
 
   .w-large {
-    max-width: 900px; }
-
-  .avg-m-top {
-    margin-top: 60px; } }
+    max-width: 900px; } }
 /************* Bootstrap reset *************/
 .pagination {
   flex-wrap: wrap; }
@@ -7994,6 +7988,9 @@ header > .container {
   background-color: #2f3135;
   padding-left: 25px;
   padding-right: 25px; }
+
+.nav-link {
+  padding: 1rem 0 .5rem; }
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff; }
