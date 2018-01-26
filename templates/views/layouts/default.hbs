@@ -56,7 +56,7 @@
 				<img src="/images/completeuniversityinfo.png" alt="Complete university Info logo" />
 			</a>
 		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark">
+		<nav class="navbar navbar-dark">
 			{{!-- fixed-top --}}
 			<div class="container">
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
@@ -119,12 +119,12 @@
 
 			<div class="ft-links">
 				<a href="/aboutus/">About Us</a>
-				<a href="/privacy/">Privacy Policy</a>
-				<a href="/terms/">Terms of Use</a>
+				{{!-- <a href="/privacy/">Privacy Policy</a>
+				<a href="/terms/">Terms of Use</a> --}}
 
 			</div>
 			<div class="social-links">
-				<h6>Follow us on</h6>
+				<h6>Show us some <span><i class="fa fa-heart" aria-hidden="true"></i><span class="sr-only">Love</span></span></h6>
 				<a title="Like us on Facebook" href="https://www.facebook.com/completeuniversityinfo/" target="_blank" rel="nofollow" rel="noopener">
 					<i class="fa fa-facebook-square" aria-hidden="true"></i>
 					<span class="sr-only">Like us on Facebook</span>
@@ -144,20 +144,20 @@
 				</a>
 			</div>
 
-			<p>&copy; 2017 completeuniversityinfo.com</p>
+			<p>&copy; 2018 www.completeuniversityinfo.com</p>
 
-			<div class="btn-group dropright share-social">
+			<div class="btn-group dropright share-social" style="display:none;">
 				<span class="rounded-circle dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<i class="fa fa-share-alt" aria-hidden="true"></i>
 					<span class="sr-only">Share on social media</span>
 				</span>
 				<div class="dropdown-menu">
-					<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.post.pathName}}" 
+					<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.pathName}}" 
 					onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" rel="nofollow">
 						<i class="fa fa-facebook-square" aria-hidden="true"></i>
 						<span class="sr-only">Facebook</span>
 					</a>
-					<a tittle="Share via Whatsapp" href="whatsapp://send?text=University information at one place! {{baseUrl}}" 
+					<a class="d-md-none" tittle="Share via Whatsapp" href="whatsapp://send?text={{baseUrl}}{{data.pathName}}" 
 					data-action="share/whatsapp/share" rel="nofollow">
 						<i class="fa fa-whatsapp" aria-hidden="true"></i>
 						<span class="sr-only">Whatsapp</span>
@@ -167,10 +167,11 @@
 						<i class="fa fa-twitter-square" aria-hidden="true"></i>
 						<span class="sr-only">Twitter</span>
 					</a>
-					<a class="" href="mailto:" 
-						data-href="" rel="nofollow" target="_blank">
+					<a title="Share by Email" 
+					href="mailto:?subject=I wanted you to see this site&amp;body={{data.meta.title}} {{baseUrl}}{{data.pathName}}.">
 						<i class="fa fa-envelope" aria-hidden="true"></i>
-                <span class="sr-only">Email</span>            </a>
+                <span class="sr-only">Email</span>
+					</a>
 				</div>
 			</div>
 		</div>

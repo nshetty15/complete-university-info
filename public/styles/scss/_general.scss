@@ -9,7 +9,7 @@ a,button,input {
 }
 
 section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 .no-mb{
     margin-bottom:0;
@@ -75,6 +75,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 
 
 @media(min-width:768px) {
+    section {
+        margin-bottom: 5rem;
+    }
     .container {
         padding-right: 15px;
         padding-left: 15px;

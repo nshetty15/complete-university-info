@@ -3,7 +3,7 @@
     <div class="w-medium mx-auto">
       <h1>Universities in {{data.category.key}}</h1>
       <form method="GET" action="/search/" role="search" class="search-form inner">
-        <label><input type="text" class="form-control form-control" placeholder="Type a university..." name="q"></label>
+        <label><input type="text" class="form-control form-control" placeholder="Type an university..." name="q"></label>
         <button class="btn btn-primary" type="submit" title="Search universities">
           <i class="fa fa-search" aria-hidden="true"></i>
           <span class="sr-only">Search Universities</span>
@@ -82,22 +82,11 @@
 
 
     {{!-- <div class="row">
-      <div class="col-md-8 col-lg-8">
-        <div class="row">
           {{# each data.universitiesdestination.results}}
-          <div class="col-md-4 col-lg-4">
             {{#if image}}
             <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="img-responsive"> {{else}}
             <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
-            <h2>
-              <a href="{{ universityUrl region.key country.key state.key city.key slug }}">{{name}}</a>
-            </h2>
-            <h3>{{country.key}}</h3>
-          </div>
           {{/each}}
-        </div>
-      </div>
-
     </div> --}}
 
     <div class="pagi-block">

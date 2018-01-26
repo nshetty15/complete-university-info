@@ -32,16 +32,16 @@ University.add({
   address: { type: String, },
   // location: { type: Types.Location, defaults: { country: 'Australia' } },
   locations: { type: String, label: 'Other Locations' },
-  website: { type: Types.Url },
+  website: { type: Types.Url, note: 'http:// || https://  - must' },
   founded: { type: String },
   motto: { type: String },
   acronym: { type: String },
   phone: { type: Types.TextArray },
   // fax: { type: Types.TextArray },
   email: { type: Types.TextArray },
-  janDate: { type: Types.Date, label: 'January Deadline', },
-  mayDate: { type: Types.Date, label: 'May Deadline', },
-  sepDate: { type: Types.Date, label: 'September Deadline', },
+  janDate: { type: Types.Date, label: 'January Deadline', }, // x
+  mayDate: { type: Types.Date, label: 'May Deadline', }, // x
+  sepDate: { type: Types.Date, label: 'September Deadline', }, // x
   appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
   // currency: { type: String, label: 'Country Currency' },
 
@@ -141,7 +141,7 @@ University.add({
   linkedin: { type: Types.Url },
   instagram: { type: Types.Url },
   youtube: { type: Types.Url },
-  // pinterest: { type: Types.Url },
+  pinterest: { type: Types.Url },
   // flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
 

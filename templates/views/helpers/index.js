@@ -370,7 +370,22 @@ module.exports = function () {
 		return isTrue ? options.fn(this) : options.inverse(this);
 	};
 
-	// https://stackoverflow.com/questions/14839375/boolean-logic-within-a-handlebars-template
+// https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+// {{#or foo bar "" sally bob}} yup {{else}} nope {{/or}} // yup
+_helpers.or = function() {
+    var args = Array.prototype.slice.call(arguments);
+    var options = args[args.length-1];
+
+    for(var i=0; i<args.length-1; i++){
+        if( args[i] ){
+            return options.fn(this);
+        }
+    }
+
+    return options.inverse(this);
+};
+
+// https://stackoverflow.com/questions/14839375/boolean-logic-within-a-handlebars-template
 	_helpers.ifCond = function (v1, operator, v2, options) {
 		switch (operator) {
 			case '==':
@@ -392,6 +407,11 @@ module.exports = function () {
 			default:
 				return options.inverse(this);
 		}
+	};
+
+	// https://stackoverflow.com/questions/14492098/handlebars-function-to-format-currency-with-javascript
+	_helpers.formatCurrency = function(value){
+		return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 	};
 
 	// https://formatjs.io/handlebars/#formatNumber
