@@ -37,8 +37,7 @@ header {
 footer {
     background-color: $cui-dark-grey;
     padding: 40px 0;
-    color: $cui-light-grey;
-    // span {
+    color: $cui-light-grey; // span {
     //     display: block;
     //     text-align: center;
     // }
@@ -56,24 +55,94 @@ footer {
 .social-links {
     margin: 1rem 0;
     font-size: 1.4rem;
+    h5 {
+        margin-bottom: .5rem;
+    }
 }
 
-.share-social {
-    // cursor: pointer;
-    // .dropdown-toggle {
-    //     margin: 0 auto;
-    //     border: 1px solid;
-    //     width: 2rem;
-    //     height: 2rem;
-    //     line-height: 2rem;
-    //     &::after {
-    //         display: none;
-    //     }
-    // }
-    // .dropdown-menu {
-    //     font-size: 20px;
-    // }
+
+/**** Share ****/
+
+.social {
+    position: fixed;
+    bottom: 0;
 }
+
+.social ul {
+    padding: 0px;
+    -webkit-transform: translate(-275px, 0);
+    -moz-transform: translate(-275px, 0);
+    -ms-transform: translate(-275px, 0);
+    -o-transform: translate(-275px, 0);
+    transform: translate(-275px, 0);
+}
+
+.social ul li {
+    display: block;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.36);
+    width: 300px;
+    text-align: right;
+    padding: 5px;
+    -webkit-border-radius: 0 30px 30px 0;
+    -moz-border-radius: 0 30px 30px 0;
+    border-radius: 0 30px 30px 0;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.social ul li:hover {
+    -webkit-transform: translate(110px, 0);
+    -moz-transform: translate(110px, 0);
+    -ms-transform: translate(110px, 0);
+    -o-transform: translate(110px, 0);
+    transform: translate(110px, 0);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.social ul li:hover a {
+    color: #000;
+}
+
+.social ul li:hover i {
+    color: #fff;
+    background: red;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.social ul li i {
+    margin-left: 20px;
+    color: #000;
+    background: #fff;
+    padding: 7px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    background: #ffffff;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+
+/********8 ***********/
 
 .bg-cui {
     background-color: $cui-color;
@@ -280,8 +349,6 @@ footer {
     font-size: 1.2rem;
 }
 
-.uni-profile {}
-
 
 /********* university  page**********/
 
@@ -420,8 +487,7 @@ footer {
         margin-bottom: 0;
         padding-left: 15px;
         border-left: 1px solid #efefef;
-        margin-left:-1px;
-        
+        margin-left: -1px;
     }
     .title {
         width: 75%;
@@ -478,7 +544,7 @@ footer {
     background-color: #fff;
 }
 
-.mb-sm{
+.mb-sm {
     margin-bottom: 3rem;
 }
 
@@ -486,7 +552,6 @@ footer {
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-
     header>.container {
         text-align: left;
     }
@@ -511,18 +576,34 @@ footer {
             float: left;
         }
     }
+    .social {
+        top: 50%; 
+        margin-top: -120px;
+        bottom:auto;
+
+        ul {
+            -webkit-transform: translate(-260px, 0);
+            -moz-transform: translate(-260px, 0);
+            -ms-transform: translate(-260px, 0);
+            -o-transform: translate(-260px, 0);
+            transform: translate(-260px, 0);
+            li {
+                padding: 10px;
+                i {
+                    padding: 10px;
+                    width: 40px;
+                    height: 40px;
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
     .ft-links,
     .social-links {
         display: inline-block;
     }
     .social-links {
         margin: 0;
-    }
-    .share-social {
-        // margin-top: 2rem;
-        // .dropdown-toggle {
-        //     margin: 0;
-        // }
     }
     /*** Home page *********/
     .banner {
@@ -655,11 +736,10 @@ footer {
     .uni-seconday {
         margin-top: -80px;
     }
-    .uni-social a{
+    .uni-social a {
         margin-bottom: 0;
     }
-
-    .mb-sm{
+    .mb-sm {
         margin-bottom: 0;
     }
 }

@@ -8015,7 +8015,82 @@ footer {
 .social-links {
   margin: 1rem 0;
   font-size: 1.4rem; }
+  .social-links h5 {
+    margin-bottom: .5rem; }
 
+/**** Share ****/
+.social {
+  position: fixed;
+  bottom: 0; }
+
+.social ul {
+  padding: 0px;
+  -webkit-transform: translate(-275px, 0);
+  -moz-transform: translate(-275px, 0);
+  -ms-transform: translate(-275px, 0);
+  -o-transform: translate(-275px, 0);
+  transform: translate(-275px, 0); }
+
+.social ul li {
+  display: block;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.36);
+  width: 300px;
+  text-align: right;
+  padding: 5px;
+  -webkit-border-radius: 0 30px 30px 0;
+  -moz-border-radius: 0 30px 30px 0;
+  border-radius: 0 30px 30px 0;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
+
+.social ul li:hover {
+  -webkit-transform: translate(110px, 0);
+  -moz-transform: translate(110px, 0);
+  -ms-transform: translate(110px, 0);
+  -o-transform: translate(110px, 0);
+  transform: translate(110px, 0);
+  background: rgba(255, 255, 255, 0.4); }
+
+.social ul li:hover a {
+  color: #000; }
+
+.social ul li:hover i {
+  color: #fff;
+  background: red;
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
+
+.social ul li i {
+  margin-left: 20px;
+  color: #000;
+  background: #fff;
+  padding: 7px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  background: #ffffff;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+/********8 ***********/
 .bg-cui {
   background-color: #f4bb3a; }
 
@@ -8318,6 +8393,24 @@ footer {
     padding: 60px 0; }
     footer p {
       float: left; }
+
+  .social {
+    top: 50%;
+    margin-top: -120px;
+    bottom: auto; }
+    .social ul {
+      -webkit-transform: translate(-260px, 0);
+      -moz-transform: translate(-260px, 0);
+      -ms-transform: translate(-260px, 0);
+      -o-transform: translate(-260px, 0);
+      transform: translate(-260px, 0); }
+      .social ul li {
+        padding: 10px; }
+        .social ul li i {
+          padding: 10px;
+          width: 40px;
+          height: 40px;
+          font-size: 1.25rem; }
 
   .ft-links,
   .social-links {
