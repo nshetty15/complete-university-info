@@ -14,7 +14,7 @@ exports = module.exports = function (req, res) {
   locals.data = {
     university: [],
     pathName: req.url,
-    meta: { },
+    meta: {},
   };
   //console.log(req.params.university)
 
@@ -22,18 +22,38 @@ exports = module.exports = function (req, res) {
     var q = keystone.list('University').model.findOne({
       slug: locals.filters.university
     })
-    .populate('region country state city'); // BDprograms MDprograms 
+      .populate('region country state city'); // BDprograms MDprograms 
 
     q.exec(function (err, result) {
       // Add meta tags -title, description, keywords 
       var rex = /(<([^>]+)>)/ig;
       // result.title + ( result.meta.title ? " - " + result.meta.title : "")
+      var pageTitle = "";
+      // console.log(result)
+      if (result.qs || result.the || result.arwu || result.forbes || result.macleans
+        || result.cug || result.ft || result.theEconomist || result.usNewsNational || result.usNewsLiberal) {
+        pageTitle += ", rankings";
+      }
+      if (result.acceptRate) {
+        pageTitle += ", acceptance rate";
+      }
+      if (result.programs) {
+        pageTitle += ", courses, programs";
+      }
+      if (result.BDtuitionIn || result.BDtuitionOut || result.MDtuitionIn || result.MDtuitionOut) {
+        pageTitle += ", tuition fee";
+      }
+
+      if (result.totalCost) {
+        pageTitle += ", total cost";
+      }
+
+      // title, description, keywords
       locals.data.meta = {
-        title: result.name, 
-				// title: result.title + ( result.country[0].name ? " - " + result.country[0].name : ""), // need to fix country
-				// description: result.meta.description ? result.meta.description : result.content.brief ? (result.content.brief).replace(rex, "") : locals.description,
-				// keywords: result.meta.keywords  || locals.keywords ,
-			};
+        title: result.name + " - profile" + pageTitle,
+        description: result.brief.replace(rex, ""),
+        keywords: result.name + ",university" + pageTitle + "," + result.country.name + "," + result.region.name
+      };
 
       locals.data.university = result;
       next(err);

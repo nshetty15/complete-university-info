@@ -2,10 +2,10 @@
   <div class="container">
     <div class="padding-tb search-intro">
       <div class="w-medium mx-auto">
-        <h1>Searched results</h1>
-        <form method="GET" action="/search/" role="search" class="search-form inner">
+        <h1>Searched university</h1>
+        <form method="GET" action="/search/" role="search" class="search-form main-search inner">
           <label>
-            <input type="text" class="form-control form-control-lg" placeholder="Type an university..." name="q">
+            <input type="text" class="form-control form-control-lg" value="{{data.searchQuery}}" placeholder="Type an university..." name="q">
           </label>
           <button class="btn btn-lg btn-primary" type="submit" title="Search universities">
             <i class="fa fa-search" aria-hidden="true"></i>
@@ -19,7 +19,8 @@
 
 <section class="uni-results no-mb">
   <div class="container">
-    <h4>Total {{ data.universities.total}} results displayed.</h4>
+     {{!-- {{ data.universities.total }} --}}
+    <h4>Result(s) displayed</h4>
     <ul id="universities" class="list-unstyled row no-gutters">
       {{#each data.universities}}
       <li class="col-md-4">
@@ -84,8 +85,10 @@
       {{/each}}
     </ul>
 
+    {{#if data.universities}}
     <div class="pagi-block">
       {{>paginationuniversities}}
     </div>
+    {{/if}}
   </div>
 </section>

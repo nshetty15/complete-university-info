@@ -197,6 +197,12 @@ footer {
             line-height: 0;
             width: auto;
         }
+        &.main-search{
+            .btn{
+                height: auto;
+                line-height: 26px;
+            }
+        }
     }
 }
 

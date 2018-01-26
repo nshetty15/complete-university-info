@@ -8122,6 +8122,9 @@ footer {
     top: 2px;
     line-height: 0;
     width: auto; }
+  .search-form.inner.main-search .btn {
+    height: auto;
+    line-height: 26px; }
 
 .study-locations .wrap {
   margin-top: 1rem;

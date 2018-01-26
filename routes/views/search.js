@@ -23,22 +23,24 @@ exports = module.exports = function (req, res) {
     // filters: {
     //   status: 'published',
     // },
+    if (locals.data.searchQuery) {
+      keystone.list('University')
+        .model.find({ 'name': new RegExp(locals.data.searchQuery, 'i'), 'status': 'published' }, function (err, results) {
+          
+          if (err) {
+            res.send(err);
+          }
+          // console.log(results.total)
+          locals.data.universities = results;
 
-    keystone.list('University')
-    .model.find({'name' : new RegExp(locals.data.searchQuery, 'i'), 'status': 'published'}, function (err, results) {
-      // console.log(err, results)
-      if (err) {
-        res.send(err);
-      }
+          next(err);
 
-      locals.data.universities = results;
-      
-      next(err);
-
-    }).limit(10);
-
+        }).limit(10)
+    } else {
+      next();
+    }
   });
 
-    // Render View
-    view.render('search');
+  // Render View
+  view.render('search');
 };
