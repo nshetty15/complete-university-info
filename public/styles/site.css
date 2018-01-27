@@ -8008,6 +8008,8 @@ footer {
     footer a:hover, footer a:focus {
       color: #b3b3b3;
       text-decoration: none; }
+  footer h6 {
+    margin-bottom: 1rem; }
 
 .social-links {
   margin: 1rem 0;

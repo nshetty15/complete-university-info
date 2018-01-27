@@ -40,9 +40,7 @@ footer {
     background-color: $cui-dark-grey;
     padding: 40px 0;
     color: $cui-light-grey; // span {
-    //     display: block;
-    //     text-align: center;
-    // }
+
     a {
         margin: 0 1rem;
         color: $cui-mdm-grey;
@@ -51,6 +49,10 @@ footer {
             color: lighten($cui-light-grey, 10%);
             text-decoration: none;
         }
+    }
+
+    h6{
+        margin-bottom:1rem;
     }
 }
 

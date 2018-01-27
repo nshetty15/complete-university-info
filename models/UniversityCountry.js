@@ -17,6 +17,7 @@ UniversityCountry.add({
 	// regionCode: { type: String }, 
 	currencyCode: { type: String },
 	nationality: { type: String },
+	show: {type: Types.Boolean },
 });
 
 UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'country' });
