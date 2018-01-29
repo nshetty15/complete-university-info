@@ -1,35 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Fel...</title>
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	{{#ifeq env "production"}}
-	<link href="/dist/{{brandSafe}}.styles.css" rel="stylesheet">
-	{{/ifeq}}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Compete University Info</title>
+
+	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> 
+	{{>analytics}}
+	<script src="/dist/common.bundle.js" async></script> 
 </head>
+
 <body>
-	<div class="container error-page">
-		<h1>
-			{{#if errorTitle}}
-			{{errorTitle}}
-			{{else}}
-			Serverfel...
-			{{/if}}
-		</h1>
-		<p class="error-page-message">
-			{{errorMsg}}
-		</p>
-		<p class="back-link">
-			<a href="/">Gå till startsidan</a>
-		</p>
-	</div>
-	{{!-- React scripts --}}
-	{{#ifeq env "development"}}
-	<script type="text/javascript" src="/js/bundle.js"></script>
-	{{else}}
-	<script type="text/javascript" src="/dist/{{brandSafe}}.vendors.js"></script>
-	<script type="text/javascript" src="/dist/{{brandSafe}}.bundle.js"></script>
-	{{/ifeq}}
+	<header>
+		<div class="container">
+			<a href="/">
+				<img src="/images/completeuniversityinfo.png" alt="Complete university Info logo" />
+			</a>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<div class="container">
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
+				<div class="navbar-collapse collapse" id="cuiMenu" style="">
+					<ul class="navbar-nav mr-auto">
+						{{# each navLinks}} {{#if href}}
+						<li class="nav-item">
+							<a class="nav-link{{#ifeq ../section key}} active{{/ifeq}}" href="{{href }}" title="{{key}}">
+								{{ label }} {{#ifeq ../section key}}
+								<span class="sr-only">(current)</span>
+								{{/ifeq}}
+							</a>
+						</li>
+						{{else}}
+						<li class="nav-item dropdown{{#ifeq ../section key}} active{{/ifeq}}">
+							<a class="nav-link dropdown-toggle" href="#" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
+							<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
+								{{#each pages}}
+								<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{ href }}">{{ label }}</a>
+								{{/each}}
+							</div>
+						</li>
+						{{/if}} {{/each}}
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<section style="min-height:300px;">
+		<div class="container mt-5 text-center">
+			<h1 class="text-uppercase text-secondary">500 </h1>
+			<h3 class="lead">Internal Server Error</h3>
+			<p>Our server isn't feeling too well. 
+				<br>Come back later so you don't get sick too.
+			</p>
+		</div>
+	</section>
+
+	<footer>
+		<div class="container text-center">
+
+			<div class="ft-links">
+				<a href="/aboutus/">About Us</a>
+			</div>
+			<div class="social-links">
+				<h6>Show us some
+					<span>
+						<i class="fa fa-heart" aria-hidden="true"></i>
+						<span class="sr-only">Love</span>
+					</span>
+				</h6>
+				<a title="Like us on Facebook" href="https://www.facebook.com/completeuniversityinfo/" target="_blank" rel="noopener">
+					<i class="fa fa-facebook-square" aria-hidden="true"></i>
+					<span class="sr-only">Like us on Facebook</span>
+				</a>
+				<a title="Follow us on Twitter" href="https://twitter.com/@cUniversityInfo" target="_blank" rel="noopener">
+					<i class="fa fa-twitter-square" aria-hidden="true"></i>
+					<span class="sr-only">Follow us on Twitter</span>
+				</a>
+				<a title="Follow us on Instagram" href="https://www.instagram.com/completeuniversityinfo/" target="_blank" rel="noopener">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+					<span class="sr-only">Follow us on Instagram</span>
+				</a>
+				<a title="Like us on Google Plus" href="https://plus.google.com/u/0/111981045973859219763" target="_blank" rel="noopener">
+					<i class="fa fa-google-plus-square" aria-hidden="true"></i>
+					<span class="sr-only">Like us on Google Plus</span>
+				</a>
+			</div>
+
+			<p>&copy; 2018 www.completeuniversityinfo.com</p>
+
+		</div>
+	</footer>
 </body>
 </html>
