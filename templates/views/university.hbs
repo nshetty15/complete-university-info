@@ -35,14 +35,15 @@
             <div class="contact-row">
               <i class="fa fa-envelope-square" aria-hidden="true"></i>
               {{#each data.university.email}}
-              <a href="mailto:{{this}}">{{ this }} </a>
+              <a href="mailto:{{this}}?subject=Look at this website&body=Hi,I found this website
+and thought you might like it {{baseUrl}}{{data.pathName}}">{{ this }} </a>
               {{/each}}</div>
             {{/if}}
           </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-7 col-lg-8">
-        <div class=" padding-tb">
+        <div class="padding-tb">
           <h1>
             {{#if data.university.website}}
             <a href="{{data.university.website }}?utm_source=completeuniversityinfo" target="_blank" rel="noopener">
@@ -288,7 +289,7 @@
         </section>
         {{/or}} {{!-- Subjects --}}
         <section>
-          <h3>Subjects / Programs / Courses at {{data.university.name}}</h3>
+          <h3>Programs at {{data.university.name}}</h3>
           <div class="subjects text-secondary">
             {{{data.university.programs}}}
           </div>
@@ -436,7 +437,7 @@
             <li class="col-md-4">
               <div class="value">{{data.university.staff }}</div>
               <div class="title">
-                Total employees
+                Employees
               </div>
             </li>
             {{/if}} {{#if data.university.campusSetting}}
@@ -594,7 +595,7 @@
                 <ul class="list-group list-group-flush">
                   {{#each data.university.alumni }}
                   <li class="list-group-item">
-                    <a href="https://www.google.com/search?q={{this}}" target="_blank" rel="noopener noreferrer nofollow">{{ this }}</a>
+                    <a href="https://www.google.com/search?q={{this}}" target="_blank" rel="noopener">{{ this }}</a>
                   </li>
                   {{/each}}
                 </ul>

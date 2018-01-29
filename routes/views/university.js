@@ -32,25 +32,25 @@ exports = module.exports = function (req, res) {
       // console.log(result)
       if (result.qs || result.the || result.arwu || result.forbes || result.macleans
         || result.cug || result.ft || result.theEconomist || result.usNewsNational || result.usNewsLiberal) {
-        pageTitle += ", rankings";
+        pageTitle += ", Rankings";
       }
       if (result.acceptRate) {
-        pageTitle += ", acceptance rate";
+        pageTitle += ", Acceptance Rate";
       }
       if (result.programs) {
-        pageTitle += ", courses, programs";
+        pageTitle += ", Courses, Programs";
       }
       if (result.BDtuitionIn || result.BDtuitionOut || result.MDtuitionIn || result.MDtuitionOut) {
-        pageTitle += ", tuition fee";
+        pageTitle += ", Tuition Fee";
       }
 
       if (result.totalCost) {
-        pageTitle += ", total cost";
+        pageTitle += ", Total Cost";
       }
 
       // title, description, keywords
       locals.data.meta = {
-        title: result.name + " - profile" + pageTitle,
+        title: result.name + " - " + result.country.name + pageTitle,
         description: result.brief.replace(rex, ""),
         keywords: result.name + ",university" + pageTitle + "," + result.country.name + "," + result.region.name
       };

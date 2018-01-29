@@ -142,14 +142,14 @@ University.add({
   instagram: { type: Types.Url },
   youtube: { type: Types.Url },
   pinterest: { type: Types.Url },
-  // flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
+  flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
 
   // notable alumni
   alumni: { type: Types.TextArray, label: 'Notable Alumni' },
 
   // ONLINE COURSES
-  itunes: { type: String },
+  // itunes: { type: String },
 
   // WIKIPEDIA ARTICLE
   // wikipedia: { type: Types.Url },
