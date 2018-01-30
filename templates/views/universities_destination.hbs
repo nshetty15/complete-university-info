@@ -16,6 +16,14 @@
 <section class="uni-results no-mb">
   <div class="container">
 
+<nav aria-label="breadcrumb" style="display:none;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/universities/">Universities</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>
+  </ol>
+</nav>
+
     <h4>Total {{ data.universitiesdestination.total}} Universities</h4>
     <ul id="universities" class="list-unstyled row no-gutters">
       {{#each data.universitiesdestination.results}}
