@@ -35,11 +35,11 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Study In', key: 'studyin', href: '/study-abroad/' },
 		{
 			label: 'Tests', key: 'tests', pages: [
-				{ label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
-				{ label: 'GRE', subkey: 'gre', href: "/test/gre/" },
 				{ label: 'IELTS', subkey: 'ielts', href: "/test/ielts/" },
-				{ label: 'SAT', subkey: 'sat', href: "/test/sat/" },
 				{ label: 'TOEFL', subkey: 'toefl', href: "/test/toefl/" },
+				// { label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
+				// { label: 'GRE', subkey: 'gre', href: "/test/gre/" },
+				// { label: 'SAT', subkey: 'sat', href: "/test/sat/" },
 			]
 		},
 		// { label: 'Courses', key: 'Courses', href: '/courses/' },

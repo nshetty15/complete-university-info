@@ -10,11 +10,12 @@ var Test = new keystone.List('Test', {
 	map: { name: 'name' },
 	singular: 'Test',
   plural: 'Tests',
-	autokey: { path: 'slug', from: 'title', unique: true },
+	autokey: { path: 'slug', from: 'name', unique: true },
 });
 
 Test.add({
 	name: { type: String, required: true },
+	status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	meta: {
 		title: { type: String }, // under 70 characters
 		description: { type: String }, // under 160 characters
@@ -26,7 +27,7 @@ Test.add({
 	publishedDate: { type: Date, default: Date.now }
 });
 
-Test.defaultColumns = 'title, publishedDate';
+Test.defaultColumns = 'name, publishedDate';
 
 Test.register();
 
