@@ -219,22 +219,22 @@ module.exports = function () {
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (region, country, state, city, universitySlug, options) {
 		// some countries do not have city & state (eg: Singapore)
-		// if (!city && !state) {
-		// 	return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-		// }
-		// // some countries do not have state (eg: new zealand(auckland))
-		// if (!state) {
-		// 	return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-		// }
-		if (!city || !state) {
-			if (!city && !state) {
-				return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-			} else if (!city) {
-				return ('/universities/' + region + '/' + country + '/' + state + '/-/' + universitySlug);
-			} else if(!state){
-				return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-			}
+		if (!city && !state) {
+			return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
 		}
+		// some countries do not have state (eg: new zealand(auckland))
+		if (!state) {
+			return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
+		}
+		// if (!city || !state) {
+		// 	if (!city && !state) {
+		// 		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
+		// 	} else if (!city) {
+		// 		return ('/universities/' + region + '/' + country + '/' + state + '/-/' + universitySlug);
+		// 	} else if(!state){
+		// 		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
+		// 	}
+		// }
 
 		return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug);
 	};

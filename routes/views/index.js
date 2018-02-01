@@ -44,6 +44,7 @@ locals.data = {
 	// Load language & admission tests
 	view.on('init', function(next){
 		var q = keystone.list("Test").model.find()
+		.where('status', 'published')
 		.sort('-publishedDate')
 		.limit(6);
 
@@ -59,7 +60,7 @@ locals.data = {
 	view.on('init', function(next){
 		var q = keystone.list("Level").model.find()
 		.sort('name')
-		.limit(2);
+		.limit(6);
 
 		q.exec(function(err, results){
 			// console.log(results);
@@ -68,9 +69,11 @@ locals.data = {
 		});
 	});
 
-		// Load Levels
+		// Load Study destinations
 		view.on('init', function(next){
 			var q = keystone.list("StudyDestination").model.find()
+			.where('status', 'published')
+			.populate('country')
 			.sort('name')
 			.limit(6);
 			// { status: 'published'}

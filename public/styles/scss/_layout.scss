@@ -264,7 +264,7 @@ footer {
 
 .uni-results {
     padding: 40px 0;
-    background-color: #eeede9;
+    // background-color: #eeede9;
 }
 
 #universities {
@@ -558,6 +558,10 @@ footer {
     margin-bottom: 3rem;
 }
 
+.height-5{
+    min-height:300px;
+}
+
 @media (min-width: 576px) {}
 
 // Medium devices (tablets, 768px and up)
@@ -643,6 +647,7 @@ footer {
         }
         .thumbnail {
             margin-bottom: 0;
+            height:100%;
         }
     }
     .articles,
@@ -693,7 +698,6 @@ footer {
             min-height: 300px;
         }
         .w-large {
-            background-color: $white;
             padding: 3rem;
             margin-top: -200px;
         }
@@ -751,6 +755,9 @@ footer {
     }
     .mb-sm {
         margin-bottom: 0;
+    }
+    .height-5{
+        min-height:500px;
     }
 }
 

@@ -16,7 +16,7 @@
           <div class="row">
             <div class="col-md-5">
               <a href="{{studyDestinationtUrl slug}}">
-                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/au/australia.jpg)">
+                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
                   {{ title }}
                 </div>
               </a>
@@ -24,7 +24,7 @@
             <div class="col-md-7">
               <div class="copy">
                 <h3>
-                  <a href="{{slug}}">{{ title }}</a>
+                  <a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
                 </h3>
                 {{{ brief}}}
               </div>

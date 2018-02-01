@@ -1,15 +1,14 @@
-<section class="search-filter">
+<section class="search-filter height-5 bg-cover" style="background-image:url(/images/country/{{data.destination.country.countryCode}}_banner.jpg)">
   <div class="container">
     <div class="padding-tb search-intro">
-      <h1>{{ data.destination.title }}</h1>
-      <p>{{{ data.destination.brief }}}</p>
+      
 
-      <div>
+      {{!-- <div>
         {{#if data.destination.image.version}}
         <img src="//res.cloudinary.com/uguide/image/upload/v{{data.destination.image.version}}/{{data.destination.image.public_id}}.jpg"
           alt="{{data.destination}}" class="img-fluid" /> {{else}}
-        <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
-      </div>
+        <img src="/images/country/{{data.destination.country.countryCode}}_banner.jpg" class="img-fluid" /> {{/if}}
+      </div> --}}
 
     </div>
   </div>
@@ -18,6 +17,9 @@
 <section class="study-locations">
   <div class="container">
     <div class="row">
+
+<h1>{{ data.destination.name }}</h1>
+      <p class="lead">{{{ data.destination.brief }}}</p>
 
       <div>
         {{!-- <h2>About destination</h2> --}}
@@ -50,10 +52,15 @@
       </div>
 
       <div>
+        {{!-- <h2>Miscellaneous</h2> --}}
+        {{{ data.destination.misc }}}
+      </div>
+
+      <div>
         <h2>fast facts</h2>
         <ul>
         {{# each data.destination.facts}}
-        <li>{{  this}}</li>
+        <li>{{ this }}</li>
         {{/each}}
         </ul>
       </div>

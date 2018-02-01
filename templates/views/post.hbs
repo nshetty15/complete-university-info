@@ -1,7 +1,7 @@
 <section class="blog-post">
 	<div class="banner" style="background-image: none;"></div>
 
-	<div class="container">
+	<div class="container bg-white">
 		{{!--
 		<div class="">
 			<p>
@@ -21,7 +21,7 @@
 					</div>
 					<p class="lead text-muted">
 						<time datetime="{{data.post.publishedDate}}">
-							{{date data.post.publishedDate format='MMM Do YYYY'}}
+							{{date data.post.publishedDate format='MMM Do'}}
 						</time>
 					</p>
 				</header>
@@ -32,8 +32,8 @@
 
 			</article>
 		</div>
-		<aside class="">
+		{{!-- <aside class="">
 			<h3>Similar posts</h3>
-		</aside>
+		</aside> --}}
 	</div>
 </section>

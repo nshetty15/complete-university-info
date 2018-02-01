@@ -21,7 +21,7 @@
 
 	<section class="container study-locations">
 		<h2>Where do I study?</h2>
-		<p>Top study abroad destinations by students</p>
+		<p>Study abroad destinations</p>
 		<div class="row">
 			{{# each data.studyIn}}
       <div class="col-md-6">
@@ -29,15 +29,15 @@
           <div class="row">
             <div class="col-md-5">
               <a href="{{studyDestinationtUrl slug}}">
-                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/au/australia.jpg)">
-                  {{ title }}
+                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
+                  {{ name }}
                 </div>
               </a>
             </div>
             <div class="col-md-7">
               <div class="copy">
                 <h3>
-                  <a href="{{slug}}">{{ title }}</a>
+                  <a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
                 </h3>
                 {{{ brief}}}
               </div>
@@ -53,7 +53,7 @@
 		<div class="container">
 			<a href="/blog/" class="float-right">All articles</a>
 			<h2>Latest Articles</h2>
-			<p>Helpful articles and views to make your journey even more simpler</p>
+			<p>Helpful articles to make your journey even more simpler</p>
 			<div class="row">
 				{{#each data.articles}}
 				<div class="col-md-4">
@@ -95,7 +95,7 @@
 	</section>
 
 	<section class="tests container">
-		<h2>Why do I write Tests?</h2>
+		<h2>Standardized Tests</h2>
 		<p>Language and admission tests explained</p>
 		<div class="row">
 			{{#each data.tests }}

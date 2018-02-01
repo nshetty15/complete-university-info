@@ -2,14 +2,14 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var StudyDestination = new keystone.List('StudyDestination', {
-  map: { name: 'title' },
+  map: { name: 'name' },
   singular: 'StudyDestination',
   plural: 'StudyDestinations',
   autokey: { path: 'slug', from: 'name', unique: true },
 });
 
 StudyDestination.add({
-  title: { type: String, requried: true },
+  name: { type: String, requried: true },
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   meta: {
     title: { type: String }, // under 70 characters
@@ -28,12 +28,13 @@ StudyDestination.add({
   cost: { type: Types.Html, wysiwyg: true, height: 300, label: 'Cost of study & living' },
   visa: { type: Types.Html, wysiwyg: true, height: 300, label: 'Visa Requirements' },
   scholarships: { type: Types.Html, wysiwyg: true, height: 300, label: 'Available Scholarships' },
+  misc: { type: Types.Html, wysiwyg: true, height: 150, label: 'Miscellaneous' },
   facts: {type: Types.TextArray, label: '', note: 'eg: fast facts https://www.topuniversities.com/where-to-study/north-america/canada/guide'}, // right side panel may be
   createdAt: { type: Date, default: Date.now },
 });
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-StudyDestination.defaultColumns = 'title, status, country';
+StudyDestination.defaultColumns = 'name, status, country';
 
 StudyDestination.register();

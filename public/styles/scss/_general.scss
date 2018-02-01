@@ -1,8 +1,11 @@
 body {
     font-size: $font-size-base;
     color: $black;
+    background-color:#eeede9;
 }
-
+header, .bg-white{
+    background-color:$white;
+} 
 a,button,input {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -68,7 +71,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .padding-tb{
     padding:40px 0;
 }
-
+.padding{
+    padding:1rem;
+}
 
 @media(min-width:768px) {
     section {
