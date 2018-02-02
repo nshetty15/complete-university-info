@@ -17,9 +17,10 @@ Enquiry.add({
 	phone: { type: String },
 	enquiryType: { type: Types.Select, options: [
 		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'article', label: 'I wish to write an article for CUI' },
+		// { value: 'article', label: 'I wish to write an article for CUI' },
 		{ value: 'story', label: 'Write my story at the university' },
 		{ value: 'error', label: 'Found an error' },
+		{ value: 'error', label: 'Partner with us' },
 		{ value: 'other', label: 'Something else...' },
 	] },
 	message: { type: Types.Markdown, required: true },
