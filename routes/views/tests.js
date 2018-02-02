@@ -6,12 +6,13 @@ exports = module.exports = function (req, res) {
 
   // Set locals
   locals.section = 'tests';
+
   locals.data = {
     pathName: req.url,
     meta: {
-      title: locals.title, // under 70 characters
-      description: locals.description, // under 160 characters
-      keywords: locals.keywords // No more than 10 keyword phrases
+      title: "Language and Admission tests explained", // under 70 characters
+      description: "At universities teaching in English, a test of English language proficiency and admission test is likely to be part of the applications process for many international students.", // under 160 characters
+      keywords: "IELTS, TOEFL, GMAT, GRE, PTE, language test, admission test" // No more than 10 keyword phrases
     },
   };
 

@@ -1,17 +1,56 @@
+<section class="search-filter">
+  <div class="container">
+    <div class="padding-tb search-intro">
+      <h1>Standarised Tests</h1>
+      <p class="lead">
+        At universities teaching in English, a test of English language proficiency and admission test is likely to be part of the
+        applications process for many international students. Here is a list of language and admission test that students
+        may need to take for admissions to various Universities and Colleges overseas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="study-locations">
+  <div class="container">
+    <div class="row">
+      {{# each tests}}
+      <div class="col-md-4">
+        <div class="card">
+          <a href="{{testUrl slug}}">
+            <img class="card-img-top" src="/images/tests/{{ name }}_logo.jpg" alt="{{ name }}">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{{testUrl slug}}">{{ name }}</a>
+            </h5>
+            <p class="card-text">{{ meta.description }}</p>
+            {{!--
+            <a href="#" class="btn btn-primary">Go somewhere</a> --}}
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+{{!--
 <div class="container">
   <h1>Tests</h1>
   <div class="row">
     <div class="col-md-12 col-lg-12">
       <div class="row">
-        {{# each tests}}
-          <div class="col-md-4 col-lg-4">
-            <h2><a href="{{testUrl slug}}">{{name}}</a></h2>
-            {{#if image}}
-              <img src="{{{cloudinaryUrl image width=160 height=160 crop="fit"}}}" class="thumbnail">
-            {{/if}}
-          </div>
+        {{# each }}
+        <div class="col-md-4 col-lg-4">
+          <h2>
+            <a href="">{{name}}</a>
+          </h2>
+          {{#if image}}
+          <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="thumbnail"> {{/if}}
+        </div>
         {{/each}}
       </div>
     </div>
   </div>
-</div>
+</div> --}}

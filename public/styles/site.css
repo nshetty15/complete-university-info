@@ -8117,6 +8117,66 @@ footer {
 .bg-cui {
   background-color: #f4bb3a; }
 
+.mb-sm {
+  margin-bottom: 3rem; }
+
+.height-5 {
+  min-height: 300px; }
+
+@media (min-width: 768px) {
+  header > .container {
+    text-align: left; }
+
+  .navbar {
+    padding: 0 1rem; }
+
+  .nav-link {
+    padding: 1rem 2rem; }
+
+  .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    color: #f4bb3a; }
+  .navbar-dark .navbar-nav .nav-link.active {
+    border-top: 2px solid #f4bb3a; }
+
+  footer {
+    padding: 60px 0; }
+    footer p {
+      float: left; }
+
+  .social {
+    top: 50%;
+    margin-top: -120px;
+    bottom: auto; }
+    .social ul {
+      -webkit-transform: translate(-260px, 0);
+      -moz-transform: translate(-260px, 0);
+      -ms-transform: translate(-260px, 0);
+      -o-transform: translate(-260px, 0);
+      transform: translate(-260px, 0); }
+      .social ul li {
+        padding: 10px; }
+        .social ul li i {
+          padding: 10px;
+          width: 40px;
+          height: 40px;
+          font-size: 1.25rem; }
+
+  .ft-links,
+  .social-links {
+    display: inline-block; }
+
+  .social-links {
+    margin: 0; }
+
+  /**/
+  .mb-sm {
+    margin-bottom: 0; }
+
+  .height-5 {
+    min-height: 500px; } }
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem 2rem; } }
 /***** home page****/
 .banner {
   padding: 40px 0;
@@ -8181,7 +8241,37 @@ footer {
   padding: 1rem;
   margin-bottom: 1.5rem; }
 
-/******* Universities (search) **********/
+@media (min-width: 768px) {
+  /*** Home page *********/
+  .banner {
+    min-height: 550px;
+    padding: 80px 0; }
+    .banner h1 {
+      margin-top: 60px; }
+    .banner .btn {
+      width: auto;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      height: 44px;
+      line-height: 0; }
+    .banner .form-control {
+      padding-right: 230px; }
+
+  .study-locations .wrap {
+    margin-bottom: 2rem; }
+    .study-locations .wrap .col-md-5 {
+      padding-right: 0; }
+    .study-locations .wrap:last-child {
+      margin-bottom: 0; }
+  .study-locations .thumbnail {
+    margin-bottom: 0;
+    height: 100%; }
+
+  .articles,
+  .levels {
+    padding: 4rem 0 2.5rem; } }
+/******* Universities,  (search) **********/
 .search-banner {
   position: relative;
   background-color: #f4bb3a; }
@@ -8218,42 +8308,23 @@ footer {
 #universities .fa {
   margin-right: 15px; }
 
-.blog .wrap {
-  border-bottom: 5px solid;
-  margin: 0 0 2.5rem; }
-.blog .post {
-  margin-bottom: 40px; }
-.blog .thumbnail {
-  margin-bottom: 1rem; }
-.blog h3 {
-  font-size: 1.5rem; }
+@media (min-width: 768px) {
+  /*************** Universities (search) **************/
+  .uni-results {
+    padding: 60px 0; }
 
-.categories a {
-  margin-bottom: .5rem; }
+  .cover-50 {
+    background-image: url(/images/search-banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%; }
 
-/** individual article*/
-.blog-post .banner {
-  display: none; }
-.blog-post .w-large {
-  padding-top: 2.5rem; }
-.blog-post div,
-.blog-post p,
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
-.blog-post h4,
-.blog-post h5,
-.blog-post h6,
-.blog-post img {
-  margin-bottom: 30px; }
-.blog-post img {
-  display: block;
-  margin: 0 auto; }
-
-.post-content {
-  line-height: 1.8;
-  font-size: 1.2rem; }
-
+  #universities .wrapper {
+    margin: 0 10px 60px; } }
 /********* university  page**********/
 .uni-banner address {
   color: #666; }
@@ -8392,122 +8463,7 @@ footer {
 .uni-seconday {
   padding: 40px 20px; }
 
-.mb-sm {
-  margin-bottom: 3rem; }
-
-.height-5 {
-  min-height: 300px; }
-
 @media (min-width: 768px) {
-  header > .container {
-    text-align: left; }
-
-  .navbar {
-    padding: 0 1rem; }
-
-  .nav-link {
-    padding: 1rem 2rem; }
-
-  .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-    color: #f4bb3a; }
-  .navbar-dark .navbar-nav .nav-link.active {
-    border-top: 2px solid #f4bb3a; }
-
-  footer {
-    padding: 60px 0; }
-    footer p {
-      float: left; }
-
-  .social {
-    top: 50%;
-    margin-top: -120px;
-    bottom: auto; }
-    .social ul {
-      -webkit-transform: translate(-260px, 0);
-      -moz-transform: translate(-260px, 0);
-      -ms-transform: translate(-260px, 0);
-      -o-transform: translate(-260px, 0);
-      transform: translate(-260px, 0); }
-      .social ul li {
-        padding: 10px; }
-        .social ul li i {
-          padding: 10px;
-          width: 40px;
-          height: 40px;
-          font-size: 1.25rem; }
-
-  .ft-links,
-  .social-links {
-    display: inline-block; }
-
-  .social-links {
-    margin: 0; }
-
-  /*** Home page *********/
-  .banner {
-    min-height: 550px;
-    padding: 80px 0; }
-    .banner h1 {
-      margin-top: 60px; }
-    .banner .btn {
-      width: auto;
-      position: absolute;
-      right: 2px;
-      top: 2px;
-      height: 44px;
-      line-height: 0; }
-    .banner .form-control {
-      padding-right: 230px; }
-
-  .study-locations .wrap {
-    margin-bottom: 2rem; }
-    .study-locations .wrap .col-md-5 {
-      padding-right: 0; }
-    .study-locations .wrap:last-child {
-      margin-bottom: 0; }
-  .study-locations .thumbnail {
-    margin-bottom: 0;
-    height: 100%; }
-
-  .articles,
-  .levels {
-    padding: 4rem 0 2.5rem; }
-
-  /*************** Universities (search) **************/
-  .uni-results {
-    padding: 60px 0; }
-
-  .cover-50 {
-    background-image: url(/images/search-banner.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 50%; }
-
-  #universities .wrapper {
-    margin: 0 10px 60px; }
-
-  /************ Blog ****************/
-  .blog .wrap {
-    margin: 0 2rem 2.5rem 0; }
-
-  .post {
-    line-height: 1.8; }
-
-  /** individual article*/
-  .blog-post header h1 {
-    font-size: 3rem;
-    font-weight: 700; }
-  .blog-post .banner {
-    display: block;
-    min-height: 300px; }
-  .blog-post .w-large {
-    padding: 3rem;
-    margin-top: -200px; }
-
   /******* University page ***********/
   .uni-banner {
     padding-bottom: 80px; }
@@ -8548,15 +8504,61 @@ footer {
     background-color: #fff; }
 
   .uni-social a {
-    margin-bottom: 0; }
+    margin-bottom: 0; } }
+.blog .wrap {
+  border-bottom: 5px solid;
+  margin: 0 0 2.5rem; }
+.blog .post {
+  margin-bottom: 40px; }
+.blog .thumbnail {
+  margin-bottom: 1rem; }
+.blog h3 {
+  font-size: 1.5rem; }
 
-  .mb-sm {
-    margin-bottom: 0; }
+.categories a {
+  margin-bottom: .5rem; }
 
-  .height-5 {
-    min-height: 500px; } }
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 1rem 2rem; } }
+@media (min-width: 768px) {
+  /************ Blog ****************/
+  .blog .wrap {
+    margin: 0 2rem 2.5rem 0; }
+
+  .post {
+    line-height: 1.8; } }
+/** individual article*/
+.blog-post .banner {
+  display: none; }
+.blog-post .w-large {
+  padding-top: 2.5rem; }
+.blog-post div,
+.blog-post p,
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6,
+.blog-post img {
+  margin-bottom: 30px; }
+.blog-post img {
+  display: block;
+  margin: 0 auto; }
+
+.post-content {
+  line-height: 1.8;
+  font-size: 1.2rem; }
+
+@media (min-width: 768px) {
+  /** individual article*/
+  .blog-post header h1 {
+    font-size: 3rem;
+    font-weight: 700; }
+  .blog-post .banner {
+    display: block;
+    min-height: 300px; }
+  .blog-post .w-large {
+    padding: 3rem;
+    margin-top: -200px; } }
+/********** contact us, About us**************/
 
 /*# sourceMappingURL=site.css.map */

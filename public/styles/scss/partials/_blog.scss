@@ -1,0 +1,33 @@
+.blog {
+    .wrap {
+        border-bottom: 5px solid;
+        margin: 0 0 2.5rem;
+    }
+    .post {
+        margin-bottom: 40px;
+    }
+    .thumbnail {
+        margin-bottom: 1rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.categories {
+    a {
+        margin-bottom: .5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    /************ Blog ****************/
+    .blog {
+        .wrap {
+            margin: 0 2rem 2.5rem 0;
+        }
+    }
+    .post {
+        line-height: 1.8;
+    }
+}
