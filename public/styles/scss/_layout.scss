@@ -4,7 +4,6 @@
     flex-wrap: wrap;
 }
 
-
 /*** header ***/
 
 header {
@@ -14,7 +13,6 @@ header {
         text-align: center;
     }
 }
-
 
 /** top navigation **/
 
@@ -155,18 +153,12 @@ footer {
 
 /***** home page****/
 
-.page-home {
-    h3 {
-        font-size: 1.5rem;
-    }
-}
-
 .banner {
     padding: 40px 0;
     background-color: $cui-light;
     background-image: url(/images/banner.jpg);
-    p {
-        font-size: 1.5rem;
+     .lead {
+         font-size: 1.5rem;
     }
 }
 
@@ -210,8 +202,12 @@ footer {
 
 .study-locations {
     .wrap {
-        margin-top: 1rem;
         background-color: $cui-light;
+        margin-bottom: 1rem;
+
+        &:nth-last-child(2){
+            margin-bottom: 0;
+        }
     }
     .thumbnail {
         min-height: 250px;
@@ -321,12 +317,10 @@ footer {
 }
 
 .categories {
-    margin-bottom: 40px;
     a {
         margin-bottom: .5rem;
     }
 }
-
 
 /** individual article*/
 
@@ -436,13 +430,13 @@ footer {
     h3 {
         text-transform: inherit;
         font-size: 1.2rem;
+        color: $cui-mdm-grey;
     }
 }
 
 .col-highlight {
     background-color: #faf8f9;
     padding: 30px; // border: 1px solid #efefef;
-    // box-shadow: 1px 4px 20px 0 rgba(0, 0, 0, 0.07);
 }
 
 .col-highlight,
@@ -549,9 +543,7 @@ footer {
 }
 
 .uni-seconday {
-    box-shadow: 1px 4px 20px 0 rgba(0, 0, 0, 0.07);
     padding: 40px 20px;
-    background-color: #fff;
 }
 
 .mb-sm {
@@ -640,9 +632,12 @@ footer {
     }
     .study-locations {
         .wrap {
-            margin-top: 2rem;
+            margin-bottom: 2rem;
             .col-md-5 {
                 padding-right: 0;
+            }
+            &:last-child{
+                margin-bottom: 0;
             }
         }
         .thumbnail {
@@ -682,9 +677,7 @@ footer {
     .post {
         line-height: 1.8;
     }
-    .categories {
-        margin-bottom: 60px;
-    }
+    
     /** individual article*/
     .blog-post {
         header {
@@ -749,6 +742,8 @@ footer {
     .col-highlight,
     .uni-seconday {
         margin-top: -80px;
+        
+        background-color: #fff;
     }
     .uni-social a {
         margin-bottom: 0;

@@ -268,7 +268,7 @@ module.exports = function () {
 
 	// Tests - academic & language
 	_helpers.testUrl = function (categorySlug, options) {
-		return ('/test/' + categorySlug);
+		return ('/tests/' + categorySlug);
 	};
 
 	// Study in 

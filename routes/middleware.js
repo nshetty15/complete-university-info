@@ -30,20 +30,21 @@ exports.initLocals = function (req, res, next) {
 
 	res.locals.navLinks = [
 		// { label: 'Home', key: 'home', href: '/' },
-		{ label: 'Universities', key: 'universities', href: '/universities/' },
-		{ label: 'Blog', key: 'blog', href: '/blog/' },
-		{ label: 'Study In', key: 'studyin', href: '/study-abroad/' },
+		{ label: 'Universities', key: 'universities', title:'Find universities', href: '/universities/' },
+		{ label: 'Blog', key: 'blog', title:'Blog posts', href: '/blog/' },
+		{ label: 'Study In', key: 'studyin', title:'Study abroad destinations', href: '/study-abroad/' },
 		{
-			label: 'Tests', key: 'tests', pages: [
-				{ label: 'IELTS', subkey: 'ielts', href: "/test/ielts/" },
-				{ label: 'TOEFL', subkey: 'toefl', href: "/test/toefl/" },
-				// { label: 'GMAT', subkey: 'gmat', href: "/test/gmat/" },
-				// { label: 'GRE', subkey: 'gre', href: "/test/gre/" },
-				// { label: 'SAT', subkey: 'sat', href: "/test/sat/" },
+			label: 'Tests', key: 'tests', title:'Language and Academic tests', pages: [
+				{ label: 'IELTS', subkey: 'ielts', title:'What is the IELTS?', href: "/tests/ielts/" },
+				{ label: 'TOEFL', subkey: 'toefl', title:'What is the TOEFL?', href: "/tests/toefl/" },
+				{ label: 'PTE', subkey: 'pte', title:'What is the PTE test?', href: "/tests/pte/" },
+				{ label: 'GMAT', subkey: 'gmat', title:'What is the GMAT?', href: "/tests/gmat/" },
+				{ label: 'GRE', subkey: 'gre', title:'What is the GRE?', href: "/tests/gre/" },
+				// { label: 'SAT', subkey: 'sat', href: "/tests/sat/" },
 			]
 		},
 		// { label: 'Courses', key: 'Courses', href: '/courses/' },
-		{ label: 'Contact', key: 'contact', href: '/contact/' },
+		{ label: 'Contact', key: 'contact', title:'Contact us', href: '/contact/' },
 
 	];
 	res.locals.user = req.user;

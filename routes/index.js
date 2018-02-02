@@ -77,7 +77,7 @@ exports = module.exports = function (app) {
 	app.get('/blog/post/:post', routes.views.post);
 
 	app.get('/tests/', routes.views.tests);
-	app.get('/test/:test', routes.views.test);
+	app.get('/tests/:test', routes.views.test);
 
 	app.get('/courses/', routes.views.courses);
 	app.get('/courses/:course', routes.views.course);

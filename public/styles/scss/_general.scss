@@ -1,12 +1,14 @@
 body {
-    font-size: $font-size-base;
-    color: $black;
-    background-color:#eeede9;
+    font-size: $font-size-base; // color: $black;
 }
-header, .bg-white{
-    background-color:$white;
-} 
-a,button,input {
+
+header {
+    background-color: $white;
+}
+
+a,
+button,
+input {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -14,9 +16,11 @@ a,button,input {
 section {
     margin-bottom: 3rem;
 }
-.no-mb{
-    margin-bottom:0;
+
+.no-mb {
+    margin-bottom: 0;
 }
+
 a {
     color: $anchor;
     &:hover,
@@ -25,7 +29,18 @@ a {
     }
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     margin-bottom: 1.5rem;
 }
 
@@ -39,9 +54,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .btn-primary {
     background-color: $cui-color;
     border-color: $cui-color;
-    &:hover, &:focus, &:active, &.active{
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
         background-color: $anchor;
-        border-color:$anchor;
+        border-color: $anchor;
     }
 }
 
@@ -49,33 +67,41 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     padding-left: 25px;
     padding-right: 25px;
 }
-.bg-cover{
+
+.bg-cover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
 .dark-bg {
     background-color: $cui-dark-grey;
-    color: #fff; 
+    color: $white;
 }
-.page-link{
+
+.page-link {
     color: $anchor;
-    &:focus, &:hover{
+    &:focus,
+    &:hover {
         color: $anchor;
     }
 }
-.page-item.active .page-link{
+
+.page-item.active .page-link {
     background-color: $anchor;
     border-color: $anchor;
 }
-.padding-tb{
-    padding:40px 0;
-}
-.padding{
-    padding:1rem;
+
+.padding-tb {
+    padding: 40px 0;
 }
 
+
+
 @media(min-width:768px) {
+    body {
+        background-color: #eeede9;
+    }
     section {
         margin-bottom: 5rem;
     }
@@ -86,7 +112,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
     .w-medium {
         max-width: 740px;
     }
-    .w-large{
+    .w-large {
         max-width: 900px;
+    }
+    .padding {
+        padding: 1rem;
+    }
+    
+    .bs {
+        box-shadow: 1px 4px 20px 0 rgba(0, 0, 0, 0.07);
     }
 }
