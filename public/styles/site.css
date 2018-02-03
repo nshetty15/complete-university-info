@@ -7902,7 +7902,7 @@ a.text-dark:focus, a.text-dark:hover {
   font-weight: normal;
   font-style: normal; }
 body {
-  font-size: 1rem; }
+  margin-top: 152px; }
 
 header {
   background-color: #fff; }
@@ -8104,6 +8104,25 @@ footer {
   .social-links h5 {
     margin-bottom: .5rem; }
 
+.navbar.navbar-fixed-top.fixed-theme {
+  background-color: #222;
+  border-color: #080808;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8); }
+
+.navbar-brand.fixed-theme {
+  font-size: 18px; }
+
+.navbar-container.fixed-theme {
+  padding: 0; }
+
+.navbar-brand.fixed-theme,
+.navbar-container.fixed-theme,
+.navbar.navbar-fixed-top.fixed-theme,
+.navbar-brand,
+.navbar-container {
+  transition: 0.8s;
+  -webkit-transition: 0.8s; }
+
 .share a {
   color: #fff;
   display: inline-block;
@@ -8193,7 +8212,7 @@ footer {
 .banner {
   padding: 40px 0;
   background-color: #f5f5f5;
-  background-image: url(/images/banner.jpg); }
+  background-image: url(/images/banner_1.jpg); }
   .banner .lead {
     font-size: 1.5rem; }
 
