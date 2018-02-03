@@ -1,69 +1,49 @@
-<section class="search-filter height-5 bg-cover" style="background-image:url(/images/country/{{data.destination.country.countryCode}}_banner.jpg)">
+<section class="search-filter height-5 bg-cover mb-0" style="background-image:url(/images/country/{{data.destination.country.countryCode}}_banner.jpg)">
+  {{!--
   <div class="container">
     <div class="padding-tb search-intro">
-      
-
-      {{!-- <div>
+      <div>
         {{#if data.destination.image.version}}
         <img src="//res.cloudinary.com/uguide/image/upload/v{{data.destination.image.version}}/{{data.destination.image.public_id}}.jpg"
           alt="{{data.destination}}" class="img-fluid" /> {{else}}
         <img src="/images/country/{{data.destination.country.countryCode}}_banner.jpg" class="img-fluid" /> {{/if}}
-      </div> --}}
-
+      </div>
     </div>
-  </div>
+  </div>--}}
 </section>
 
-<section class="study-locations">
+<section class="tu-heading content">
   <div class="container">
     <div class="row">
+      <div class="col-xs-12 col-md-8 col-lg-8">
 
-<h1>{{ data.destination.name }}</h1>
-      <p class="lead">{{{ data.destination.brief }}}</p>
+        <section class="padding bs bg-white m-top-m">
+          <h1>{{ data.destination.name }}</h1>
+          <div class="lead">{{{ data.destination.brief }}}</div>
 
-      <div>
-        {{!-- <h2>About destination</h2> --}}
-        {{{ data.destination.about }}}
+          {{{ data.destination.about }}}
+
+          <hr>{{!--
+          <Education system --}} {{{ data.destination.education }}} {{!-- Study Options --}} {{{ data.destination.options }}} {{!--
+            Cost of study &amp; living --}} {{{ data.destination.cost }}} <hr> {{!-- Visa Requirements --}} {{{ data.destination.visa }}} {{!-- Available Scholarships --}} {{{ data.destination.scholarships
+            }}} {{!-- Miscellaneous> --}}
+            <hr> {{{ data.destination.misc }}}
+            
+
       </div>
 
-      <div>
-        {{!-- <h2>Education system</h2> --}}
-        {{{ data.destination.education }}}
+
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <aside class="m-top-m bs text-secondary padding">
+          <h4>{{data.destination.country.name}} Facts &amp; Figures</h4>
+          <ul class="list-group">
+            {{# each data.destination.facts}}
+            <li class="list-group-item">{{ this }}</li>
+            {{/each}}
+          </ul>
+        </aside>
       </div>
 
-      <div>
-        {{!-- <h2>Study Options</h2> --}}
-        {{{ data.destination.options }}}
-      </div>
-
-      <div>
-        {{!-- <h2>Cost of study &amp; living</h2> --}}
-        {{{ data.destination.cost }}}
-      </div>
-
-      <div>
-        {{!-- <h2>Visa Requirements</h2> --}}
-        {{{ data.destination.visa }}}
-      </div>
-
-      <div>
-        {{!-- <h2>Available Scholarships</h2> --}}
-        {{{ data.destination.scholarships }}}
-      </div>
-
-      <div>
-        {{!-- <h2>Miscellaneous</h2> --}}
-        {{{ data.destination.misc }}}
-      </div>
-
-      <div>
-        <h2>fast facts</h2>
-        <ul>
-        {{# each data.destination.facts}}
-        <li>{{ this }}</li>
-        {{/each}}
-        </ul>
-      </div>
     </div>
   </div>
-</section>
+  </section>

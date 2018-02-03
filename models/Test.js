@@ -24,6 +24,7 @@ Test.add({
 	image: {  type: Types.CloudinaryImage, folder: 'tests', autoCleanup: true  },
 	introduction: { type: Types.Html, wysiwyg: true, height: 150 },
 	description: { type: Types.Html, wysiwyg: true, height: 250 },
+	inshort: { type: Types.Html, wysiwyg: true, height: 250 },
 	publishedDate: { type: Date, default: Date.now }
 });
 

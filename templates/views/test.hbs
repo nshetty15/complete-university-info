@@ -1,28 +1,39 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 col-lg-12">
-      <article>
-        <p><a href="/tests">&larr; Back to Tests</a></p>
-        <hr>
-        <header>
-          <h1>{{data.test.name}}</h1>
-        </header>
-        <div class="row">
-          <div class="col-md-6 col-lg-6">
-            {{#if data.test.image}}
-              <img src="{{cloudinaryUrl data.test.image crop='fit'}}" class="img-responsive">
-            {{/if}}
+<section class="bg-white padding-tb text-center mb-0 test">
+  <div class="container">
+    <img class="img-fluid" src="/images/tests/{{data.test.name}}_logo.jpg" alt="{{data.test.name}}">
+  </div>
+</section>
+
+<section class="tu-heading content">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-lg-8">
+
+        <section class="padding bs bg-white m-top-m mb-0">
+
+          {{!--
+          <div class="lead">{{{ data.destination.brief }}}</div> --}} {{{data.test.introduction}}}
+
+          <div class="media-cont">
+            <img src="/images/notes-coffee.jpg" class="img-fluid" alt="Student browsing" />
           </div>
-          <div class="col-md-6 col-lg-6">
-            <ul class="list-group">
-            </ul>
-            <div class="well">
-              {{{data.test.description}}}
-            </div>
-            <a class="btn btn-success btn-block" href="/contact">Ask About This Test</a>
-          </div>
-        </div>
-      </article>
+
+          <hr> {{{data.test.description}}}
+
+          
+
+        </section>
+
+      </div>
+
+
+      <div class="col-xs-12 col-md-4 col-lg-4">
+        <aside class="bs text-secondary bg-white padding m-top-m tl-dr">
+          <h4>TL;DR</h4>
+          {{{data.test.inshort}}}
+        </aside>
+      </div>
+
     </div>
   </div>
-</div>
+</section>

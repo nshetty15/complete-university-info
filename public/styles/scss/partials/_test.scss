@@ -1,2 +1,8 @@
+
 @media (min-width: 768px) {
+  .test {
+    &.padding-tb{
+      padding-bottom:5rem;
+    }
+  }
 }
