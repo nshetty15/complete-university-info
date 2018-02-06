@@ -1,6 +1,6 @@
 <section class="bg-white padding-tb text-center mb-0 test">
   <div class="container">
-    <img class="img-fluid" src="/images/tests/{{data.test.name}}_logo.jpg" alt="{{data.test.name}}">
+    <img class="img-fluid" src="/images/tests/{{lowercase data.test.name}}_logo.jpg" alt="{{data.test.name}}">
   </div>
 </section>
 
@@ -20,16 +20,12 @@
 
           <hr> {{{data.test.description}}}
 
-          
-
         </section>
 
       </div>
 
-
       <div class="col-xs-12 col-md-4 col-lg-4">
         <aside class="bs text-secondary bg-white padding m-top-m tl-dr">
-          <h4>TL;DR</h4>
           {{{data.test.inshort}}}
         </aside>
       </div>

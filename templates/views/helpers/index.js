@@ -446,6 +446,14 @@ _helpers.or = function() {
 		return compiled;
 	};
 
+	/**Lowercase */
+	_helpers.lowercase = function (str) {
+		if(str && typeof str === "string") {
+			return str.toLowerCase();
+		}
+		return '';
+	};
+
 	//  ### Flash Message Helper
 	//  KeystoneJS supports a message interface for information/errors to be passed from server
 	//  to the front-end client and rendered in a html-block.  FlashMessage mirrors the Pug Mixin
