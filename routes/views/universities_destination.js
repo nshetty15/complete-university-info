@@ -24,11 +24,7 @@ exports = module.exports = function (req, res) {
 
     pathName: req.url,
     source: 'bydestination', // for pagination
-    meta: {
-      title: locals.title, // under 70 characters
-      description: locals.description, // under 160 characters
-      keywords: locals.keywords // No more than 10 keyword phrases
-    },
+    meta: {},
   };
 
   // Load the current category filter
@@ -106,13 +102,21 @@ exports = module.exports = function (req, res) {
       .sort('-publishedDate')
       .populate('region country state city');
 
-      q.exec(function (err, results) {
+    q.exec(function (err, results) {
 
-        if (err || !results.length) {
-          // res.notFound();
-        }
+      if (err || !results.length) {
+        // res.notFound();
+      }
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
+
+      // title, description, keywords
+      locals.data.meta = {
+        title: "Universities in " + locals.data.category.name, // under 70 characters
+        description: "Do you want to study in " + locals.data.category.name + "? Find out the universities in "+ locals.data.category.name, // under 160 characters
+        keywords: "study abroad, study guide, university, universities abroad," + locals.data.category.name // No more than 10 keyword phrases
+      };
+
       locals.data.universitiesdestination = results;
       next(err);
     });

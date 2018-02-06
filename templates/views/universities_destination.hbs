@@ -1,7 +1,7 @@
 <section class="search-filter no-mb">
   <div class="container padding-tb">
     <div class="w-medium mx-auto">
-      <h1>Universities in {{data.category.key}}</h1>
+      <h1>Universities in {{data.category.name}}</h1>
       <form method="GET" action="/search/" role="search" class="search-form inner">
         <label><input type="text" class="form-control form-control" placeholder="Type an university..." name="q"></label>
         <button class="btn btn-primary" type="submit" title="Search universities">
@@ -16,13 +16,13 @@
 <section class="uni-results no-mb">
   <div class="container">
 
-<nav aria-label="breadcrumb" style="display:none;">
+{{!-- <nav aria-label="breadcrumb" style="display:none;">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/universities/">Universities</a></li>
     <li class="breadcrumb-item active" aria-current="page">Data</li>
   </ol>
-</nav>
+</nav> --}}
 
     <h4>Total {{ data.universitiesdestination.total}} Universities</h4>
     <ul id="universities" class="list-unstyled row no-gutters">

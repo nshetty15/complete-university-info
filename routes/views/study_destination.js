@@ -10,17 +10,23 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
 		pathName: req.url,
+		meta:{},
 	};
 
 	// Load the current 
-
 	view.on('init', function (next) {
     var q = keystone.list('StudyDestination').model.findOne({
       slug: locals.filters.destination
     }).populate('country');
 
     q.exec(function (err, result) {
-      // Final result
+			// Final result
+			locals.data.meta = {
+				title: result.meta.title || result.data.title,
+				description: result.meta.description || locals.description,
+				keywords: result.meta.keywords || locals.keywords,
+			};
+
       locals.data.destination = result;
       next(err);
     });

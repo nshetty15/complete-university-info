@@ -24,7 +24,7 @@ exports = module.exports = function (req, res) {
       // Add meta tags -title, description, keywords
       locals.data.meta = {
         title : result.meta.title || result.title,
-        description:result.meta.description || locals.description,
+        description: result.meta.description || locals.description,
         keywords: result.meta.keywords || locals.keywords, 
       };
 

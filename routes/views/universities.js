@@ -14,9 +14,9 @@ exports = module.exports = function (req, res) {
     pathName: req.url,
     source: 'universities', // for pagination
     meta: {
-      title: locals.title, // under 70 characters
-      description: locals.description, // under 160 characters
-      keywords: locals.keywords // No more than 10 keyword phrases
+      title: "Universities around the world - find your ideal university", // under 70 characters
+      description: "Find degree options by comparing the universities around the world and choose universities of your choice.", // under 160 characters - locals.description
+      keywords:  "universities,study abroad,international students,study guide" // No more than 10 keyword phrases - locals.keywords
     },
   };
 

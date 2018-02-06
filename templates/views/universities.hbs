@@ -5,8 +5,8 @@
       <div class="col-md-6">
         <div class="padding-tb search-intro">
           <h1>Universities</h1>
-          Compare universities around the world with our interactive university search tool. Use the options below to search for universities
-          by country and location.
+          Education is too important to leave to chance, compare universities around the world 
+          and choose universities of your choice from the results below or find by location.
         </div>
       </div>
     </div>
@@ -17,12 +17,11 @@
         <div class="col-md-6">
           <div class="padding-tb">
             <p>
-              {{# each data.countries }} {{!-- https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
-              --}} {{!-- {{#checkIf countryCode '==' 'US' '||' countryCode '==' 'CA' }} --}}
+              {{# each data.countries }} 
               {{#if show}}
-              <a href="{{categoryCountryUrl region.key key}}" class="badge badge-secondary">{{name}}</a>
+              <a href="{{categoryCountryUrl region.key key}}" class="badge badge-secondary" title="{{name}}">{{name}}</a>
               {{/if}}
-              {{!-- {{/checkIf }} --}} {{/each}}
+              {{/each}}
             </p>
 
             <form method="GET" action="/search/" role="search" class="search-form inner">

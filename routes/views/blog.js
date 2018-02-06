@@ -17,9 +17,9 @@ exports = module.exports = function (req, res) {
 		pathName: req.url,
 		source: 'blog', // for pagination
 		meta: {
-			title: "Student blog, " + locals.title, // under 70 characters
+			title: "Student blog - " + locals.title, // under 70 characters
 			description: "Read the latest posts from Complete University Info's blog, for advice on studying abroad and more.", // under 160 characters
-			keywords: "blog, articles, posts, student advice, study abroad" // No more than 10 keyword phrases
+			keywords: "blog, articles, posts, student advice, university guide, study abroad" // No more than 10 keyword phrases
 		},
 	};
 

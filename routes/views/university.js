@@ -38,7 +38,7 @@ exports = module.exports = function (req, res) {
         pageTitle += ", Acceptance Rate";
       }
       if (result.programs) {
-        pageTitle += ", Courses, Programs";
+        pageTitle += ", Programs";
       }
       if (result.BDtuitionIn || result.BDtuitionOut || result.MDtuitionIn || result.MDtuitionOut) {
         pageTitle += ", Tuition Fee";

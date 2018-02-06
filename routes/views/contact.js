@@ -9,9 +9,9 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		pathName: req.url,
 		meta: {
-			title: "Contact " + locals.title, // under 70 characters
-			description: "Contact Complete University Info to study abroad guidance for free.", // under 160 characters
-			keywords: "Contact, study, information" // No more than 10 keyword phrases
+			title: "Contact - " + locals.title, // under 70 characters
+			description: "Contact " + locals.title + " to study abroad guidance for free.", // under 160 characters
+			keywords: "Contact, study abroad, information, university guide, feedback" // No more than 10 keyword phrases
 		},
 	};
 

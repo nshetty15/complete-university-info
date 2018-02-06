@@ -9,10 +9,10 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		pathName: req.url,
 		studyIn: [],
-		meta: {
-			title: locals.title, // under 70 characters
-			description: locals.description, // under 160 characters
-			keywords: locals.keywords // No more than 10 keyword phrases
+		meta:{
+			title: "Where to study? Study abroad destinations.", // under 70 characters
+			description: "Find your perfect destination. We have covered all the required information you need from university costs to student life.", // under 160 characters - locals.description
+			keywords: "study abroad, study destinations, study, guide, univeristy" // No more than 10 keyword phrases
 		},
 	};
 
