@@ -38,7 +38,7 @@
 						</li>
 						{{else}}
 						<li class="nav-item dropdown{{#ifeq ../section key}} active{{/ifeq}}">
-							<a class="nav-link dropdown-toggle" href="#" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
+							<a class="nav-link dropdown-toggle" href="/tests/" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
 							<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
 								{{#each pages}}
 								<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{ href }}">{{ label }}</a>
