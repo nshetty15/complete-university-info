@@ -60,7 +60,7 @@
 					<article>
 						<header>
 							<h3>
-								<a href="/blog/post/{{slug}}">{{title}}</a>
+								<a href="{{postUrl slug}}">{{title}}</a>
 							</h3>
 						</header>
 						<p>{{ meta.description }}</p>
@@ -73,7 +73,7 @@
 
 	<section class="levels">
 		<div class="container">
-			<h2>Study abroad Levels</h2>
+			{{!-- <h2>Study abroad Levels</h2> --}}
 			<div class="row">
 
 				{{#each data.levels}}

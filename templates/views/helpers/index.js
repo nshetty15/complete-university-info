@@ -200,18 +200,18 @@ module.exports = function () {
 
 	// Direct url link to a specific post
 	_helpers.postUrl = function (postSlug, options) {
-		return ('/blog/post/' + postSlug);
+		return ('/blog/post/' + postSlug + '/');
 	};
 
 	// create the category url for a blog-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
-		return ('/blog/' + categorySlug);
+		return ('/blog/' + categorySlug + '/');
 	};
 
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
-		return '?page=' + pageNumber; // /blog
+		return '/?page=' + pageNumber; // /blog
 	};
 
 	/***********/
@@ -219,69 +219,72 @@ module.exports = function () {
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (region, country, state, city, universitySlug, options) {
 		// some countries do not have city & state (eg: Singapore)
-		if (!city && !state) {
-			return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-		}
-		// some countries do not have state (eg: new zealand(auckland))
-		if (!state) {
-			return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-		}
-		// if (!city || !state) {
-		// 	if (!city && !state) {
-		// 		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-		// 	} else if (!city) {
-		// 		return ('/universities/' + region + '/' + country + '/' + state + '/-/' + universitySlug);
-		// 	} else if(!state){
-		// 		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-		// 	}
-		// }
+		
+	if (!city && !state) {
+		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug + '/');
+	}
+	// some countries do not have state (eg: new zealand(auckland))
+	if (!state) {
+		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug + '/');
+	}
+	// if (!city || !state) {
+	// 	if (!city && !state) {
+	// 		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
+	// 	} else if (!city) {
+	// 		return ('/universities/' + region + '/' + country + '/' + state + '/-/' + universitySlug);
+	// 	} else if(!state){
+	// 		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
+	// 	}
+	// }
 
-		return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug);
+	return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug + '/');
 	};
 
 	// country category
 	_helpers.categoryCountryUrl = function (region, country, options) {
-		return ('/universities/' + region + '/' + country);
+		return ('/universities/' + region + '/' + country + '/');
 	};
 
 	// For pagination - eg: http://localhost:3000/universities/
 	_helpers.uniPageUrl = function (pageNumber, options) {
-		return '/universities?page=' + pageNumber;
+		return '/universities/?page=' + pageNumber;
 	};
 
 	// For pagination - eg: http://localhost:3000/universities/north-america/united-states/queensland/calgary/
 	_helpers.uniPageDestinationUrl = function (pageNumber, region, country, state, city, options) {
 		if (region && country && state && city) {
-			return '/universities/' + region + '/' + country + '/' + state + '/' + city + '?page=' + pageNumber;
+			return '/universities/' + region + '/' + country + '/' + state + '/' + city + '/?page=' + pageNumber;
 		}
 		else if (region && country && state) {
-			return '/universities/' + region + '/' + country + '/' + state + '?page=' + pageNumber;
+			return '/universities/' + region + '/' + country + '/' + state + '/?page=' + pageNumber;
+		}
+		else if (region && country && city) {
+			return '/universities/' + region + '/' + country + '/' + city + '/?page=' + pageNumber;
 		}
 		else if (region && country) {
-			return '/universities/' + region + '/' + country + '?page=' + pageNumber;
+			return '/universities/' + region + '/' + country + '/?page=' + pageNumber;
 		}
 		else if (region) {
-			return '/universities/' + region + '?page=' + pageNumber;
+			return '/universities/' + region + '/?page=' + pageNumber;
 		}
-
 	};
 
 	// Tests - academic & language
 	_helpers.testUrl = function (categorySlug, options) {
-		return ('/tests/' + categorySlug);
+		return ('/tests/' + categorySlug + '/');
 	};
 
 	// Study in 
 	_helpers.studyDestinationtUrl = function (locationSlug, options) {
-		return ('/study-abroad/' + locationSlug);
+		return ('/study-abroad/' + locationSlug + '/');
 	};
 
 	// _helpers.courseUrl = function (courseSlug, options) {
-	// 	return ('/courses/' + courseSlug);
+	// 	return ('/courses/' + courseSlug + '/');
 	// };
 	// // For pagination 
 	// _helpers.coursePageUrl = function (pageNumber, options) {
-	// 	return '/courses?page=' + pageNumber;
+	// 	return '/courses/?page=' + pageNumber;
 	// };
 
 	/******************* */
