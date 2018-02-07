@@ -24,28 +24,28 @@
 		<p class="lead mb-4">Study abroad destinations</p>
 		<div class="row">
 			{{# each data.studyIn}}
-      <div class="col-md-6">
-        <div class="wrap">
-          <div class="row">
-            <div class="col-md-5">
-              <a href="{{studyDestinationtUrl slug}}">
-                <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
-                  {{ name }}
-                </div>
-              </a>
-            </div>
-            <div class="col-md-7">
-              <div class="copy">
-                <h3>
-                  <a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
-                </h3>
-                {{{ brief}}}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{/each}}
+			<div class="col-md-6">
+				<div class="wrap">
+					<div class="row">
+						<div class="col-md-5">
+							<a href="{{studyDestinationtUrl slug}}">
+								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
+									{{ name }}
+								</div>
+							</a>
+						</div>
+						<div class="col-md-7">
+							<div class="copy">
+								<h3>
+									<a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
+								</h3>
+								{{{ brief}}}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
 		</div>
 	</section>
 
@@ -59,12 +59,6 @@
 				<div class="col-md-4">
 					<article>
 						<header>
-							{{!--
-							<p>
-								Posted on
-								<time datetime="2009-09-04T16:31:24+02:00">September 4th 2009</time>
-								by
-							</p> --}}
 							<h3>
 								<a href="/blog/post/{{slug}}">{{title}}</a>
 							</h3>
@@ -80,14 +74,11 @@
 	<section class="levels">
 		<div class="container">
 			<h2>Study abroad Levels</h2>
-			{{!-- <p class="lead mb-4">Education systems</p> --}}
 			<div class="row">
 
 				{{#each data.levels}}
 				<div class="col-md-6">
-					<h3>{{name}} {{!--
-						<a href="/{{key}}/"></a> --}}
-					</h3>
+					<h3>{{name}}</h3>
 					{{{description}}}
 				</div>
 				{{/each}}
@@ -102,10 +93,9 @@
 			{{#each data.tests }}
 			<div class="col-md-4">
 				<div class="test-block rounded bg-white">
-					<h3>
-						<a href="{{testUrl slug}}" title="{{meta.title}}">{{name}}</a>
-					</h3>
-					<img class="card-img-top" src="/images/tests/{{lowercase name }}_logo.jpg" alt="{{name}}">
+					<a href="{{testUrl slug}}" title="{{meta.title}}">
+						<img class="card-img-top" src="/images/tests/{{lowercase name }}_logo.jpg" alt="{{name}}">
+					</a>
 					<p>{{ meta.description }}</p>
 				</div>
 			</div>
