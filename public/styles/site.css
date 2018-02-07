@@ -8567,6 +8567,10 @@ footer {
   line-height: 2.2;
   font-size: 1.2rem; }
 
+.fb-comments iframe[style],
+.fb-comments span {
+  width: 100% !important; }
+
 @media (min-width: 768px) {
   /** individual article*/
   .blog-post header h1 {

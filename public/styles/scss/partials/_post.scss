@@ -14,6 +14,13 @@
     font-size: 1.2rem;
 }
 
+.fb-comments {
+    iframe[style],
+    span {
+        width: 100%!important;
+    }
+}
+
 @media (min-width: 768px) {
     /** individual article*/
     .blog-post {
