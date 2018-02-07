@@ -27,6 +27,7 @@ exports.initLocals = function (req, res, next) {
 	res.locals.keywords = keystone.get('keywords client');
 	res.locals.gaProperty = keystone.get('ga property client');
 	res.locals.twitterSite = keystone.get('twitter');
+	res.locals.cloudinaryAccount = keystone.get('cloudinary account');
 
 	res.locals.navLinks = [
 		// { label: 'Home', key: 'home', href: '/' },

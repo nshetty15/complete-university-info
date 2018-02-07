@@ -19,7 +19,7 @@ keystone.init({
 	'description client': process.env.CLIENT_DESCRIPTION,
 	'keywords client': process.env.CLIENT_KEYWORDS,
 	'env': process.env.NODE_ENV,
-	'base url': process.env.NODE_ENV === 'production' ? 'https://www.completeuniversityinfo.com': 'http://localhost:3000',
+	'base url': process.env.NODE_ENV === 'production' ? 'https://www.completeuniversityinfo.com' : 'http://localhost:3000',
 
 	'sass': 'public',
 	'static': 'public',
@@ -52,7 +52,8 @@ keystone.init({
 	'wysiwyg additional buttons':'formatselect, removeformat ',
 
 	'ga property client': process.env.GA_PROPERTY_FRONT,
-	'twitter': process.env.TWITTER_ACCOUNT
+	'twitter': process.env.TWITTER_ACCOUNT,
+	'cloudinary account': process.env.CLOUDINARY_ACCOUNT,
 });
 
 // Load your project's Models

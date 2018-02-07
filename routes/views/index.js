@@ -18,7 +18,7 @@ locals.data = {
 	studyIn: [],
 	pathName: req.url,
 	meta:{
-		title: "Find Information on international universities and their Rankings, Courses & Costs.", // under 70 characters
+		title: "Universities and their Rankings, Programs, Costs & Guidance for free.", // under 70 characters
 		description: locals.description, // under 160 characters
 		keywords: locals.keywords // No more than 10 keyword phrases
 	},

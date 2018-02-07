@@ -7979,24 +7979,20 @@ h6,
 hr {
   margin: 3rem 0; }
 
-.content div,
-.content p,
-.content h1,
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6,
-.content img,
-.content ul {
-  margin-bottom: 2rem; }
 .content h1,
 .content h2,
 .content h3,
 .content h4,
 .content h5,
 .content h6 {
-  margin-top: 3rem; }
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-weight: bold; }
+.content div,
+.content p,
+.content img,
+.content ul {
+  margin-bottom: 2rem; }
 .content img {
   display: block;
   margin: 0 auto;
@@ -8567,9 +8563,10 @@ footer {
   padding-top: 2.5rem; }
 
 .post-content {
-  line-height: 2.2;
+  line-height: 2;
   font-size: 1.2rem; }
 
+.fb-comments,
 .fb-comments iframe[style],
 .fb-comments span {
   width: 100% !important; }

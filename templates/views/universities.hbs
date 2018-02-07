@@ -48,7 +48,7 @@
           <div class="logo mx-auto">
             <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
             {{#if logo.version}}
-            <img src="//res.cloudinary.com/uguide/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid" />
+            <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid" />
              {{else}}
             <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
             </a>

@@ -15,7 +15,7 @@
 					<div class="thumbnail">
 						{{#if data.post.image.version}} {{!--
 						<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
-						<img src="//res.cloudinary.com/uguide/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg" alt="{{data.post.title}}"
+						<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg" alt="{{data.post.title}}"
 						 class="img-fluid" /> {{else}}
 						<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{data.post.title}}" /> {{/if}}
 					</div>

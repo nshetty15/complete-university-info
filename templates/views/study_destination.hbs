@@ -4,7 +4,7 @@
     <div class="padding-tb search-intro">
       <div>
         {{#if data.destination.image.version}}
-        <img src="//res.cloudinary.com/uguide/image/upload/v{{data.destination.image.version}}/{{data.destination.image.public_id}}.jpg"
+        <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.destination.image.version}}/{{data.destination.image.public_id}}.jpg"
           alt="{{data.destination}}" class="img-fluid" /> {{else}}
         <img src="/images/country/{{data.destination.country.countryCode}}_banner.jpg" class="img-fluid" /> {{/if}}
       </div>

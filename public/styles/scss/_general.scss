@@ -1,6 +1,6 @@
 body {
     //font-size: $font-size-base; // color: $black;
-    margin-top:152px;
+    margin-top: 152px;
 }
 
 header {
@@ -103,18 +103,6 @@ hr {
 }
 
 .content {
-    div,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    img,
-    ul {
-        margin-bottom: 2rem;
-    }
     h1,
     h2,
     h3,
@@ -123,6 +111,14 @@ hr {
     h6,
     {
         margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-weight: bold;
+    }
+    div,
+    p,
+    img,
+    ul {
+        margin-bottom: 2rem;
     }
     img {
         display: block;
@@ -142,7 +138,7 @@ hr {
 
 .tl-dr {
     ul {
-        margin-top:1rem;
+        margin-top: 1rem;
         padding-left: 1.25rem;
     }
     li {
