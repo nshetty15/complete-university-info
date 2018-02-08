@@ -1,6 +1,6 @@
 <ul class="pagination">
 	<li {{#unless data.courses.previous}}class="disabled"{{/unless}}>
-		<a href="{{baseUrl}}{{paginationPreviousUrl data.courses.previous}}">
+		<a href="{{paginationPreviousUrl data.courses.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
 		</a>
 	</li>
@@ -8,7 +8,7 @@
 	{{{paginationNavigation baseUrl data.courses.pages data.courses.currentPage data.courses.totalPages data.source null }}}
 
 	<li {{#unless data.courses.next}}class="disabled"{{/unless}}>
-		<a href="{{baseUrl}}{{paginationNextUrl data.courses.next data.courses.totalPages}}">
+		<a href="{{paginationNextUrl data.courses.next data.courses.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 		</a>
 	</li>

@@ -1,7 +1,7 @@
 <nav aria-label="Search results pages">
 <ul class="pagination">
 	<li class="page-item {{#unless data.universitiesdestination.previous}}disabled{{/unless}}">
-		<a class="page-link" href="{{baseUrl}}{{paginationPreviousUrl data.universitiesdestination.previous}}">
+		<a class="page-link" href="{{paginationPreviousUrl data.universitiesdestination.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
 			prev
 		</a>
@@ -10,7 +10,7 @@
 	{{{paginationNavigation baseUrl data.universitiesdestination.pages data.universitiesdestination.currentPage data.universitiesdestination.totalPages data.source data.region data.country data.state data.city }}}
 
 	<li class="page-item {{#unless data.universitiesdestination.next}}disabled{{/unless}}">
-		<a class="page-link" href="{{baseUrl}}{{paginationNextUrl data.universitiesdestination.next data.universitiesdestination.totalPages}}">
+		<a class="page-link" href="{{paginationNextUrl data.universitiesdestination.next data.universitiesdestination.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 			next
 		</a>

@@ -211,7 +211,7 @@ module.exports = function () {
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
-		return '/?page=' + pageNumber; // /blog
+		return '?page=' + pageNumber; 
 	};
 
 	/***********/
@@ -327,21 +327,21 @@ module.exports = function () {
 				page = ((ctr) ? totalPages : 1);
 			}
 
-			// get the pageUrl||uniPageUrl using the integer value - 
-			var pageUrl;
+			// get the - using the integer value - 
+			var indPageUrl;
 			if (source === "universities") {
-				pageUrl = _helpers.uniPageUrl(baseUrl, page);
+				indPageUrl = _helpers.uniPageUrl(baseUrl, page);
 			} else if (source === "blog") {
-				pageUrl = _helpers.pageUrl(baseUrl, page);
+				indPageUrl = _helpers.pageUrl(baseUrl, page);
 			} else if (source === "bydestination") {
-				pageUrl = _helpers.uniPageDestinationUrl(baseUrl, page, region, country, state, city);
+				indPageUrl = _helpers.uniPageDestinationUrl(baseUrl, page, region, country, state, city);
 			} 
 			// else if (source === "courses") {
-			// 	pageUrl = _helpers.coursePageUrl(baseUrl, page);
+			// 	indPageUrl = _helpers.coursePageUrl(baseUrl, page);
 			// }
 
 			// wrapup the html
-			html += '<li' + liClass + '>' + linkTemplate({ url: pageUrl, text: pageText }) + '</li>\n';
+			html += '<li' + liClass + '>' + linkTemplate({ url: indPageUrl, text: pageText }) + '</li>\n';
 		});
 		return html;
 	};
