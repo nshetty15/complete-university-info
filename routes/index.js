@@ -66,11 +66,9 @@ exports = module.exports = function (app) {
 
 	app.get('/universities/', routes.views.universities);
 
-	// console.log("univeristy");
-	app.get('/universities/:region/', routes.views.universities_destination);
-	app.get('/universities/:region/:country/', routes.views.universities_destination);
+	app.get('/universities/:region?/:country?/', routes.views.universities_destination);
 	app.get('/universities/:region/:country/:state?/:city?/:university', routes.views.university);
-	// console.log("destination");
+
 	// app.get('/universities/:region/:country/:state/:city/', routes.views.universities_destination);
 	app.get('/universities/:region/:country/:state?/:city?/', routes.views.universities_destination);
 

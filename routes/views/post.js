@@ -3,6 +3,10 @@ var keystone = require('keystone');
 exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
+
+	// https://stackoverflow.com/questions/10183291/how-to-get-the-full-url-in-express
+	// var fullUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+	// console.log(fullUrl);
 	// Set locals
 	locals.section = 'blog';
 	locals.filters = {

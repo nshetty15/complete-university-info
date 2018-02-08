@@ -247,7 +247,6 @@ module.exports = function () {
 
 	// For pagination - eg: http://localhost:3000/universities/
 	_helpers.uniPageUrl = function (baseUrl, pageNumber, options) {
-		console.log(baseUrl, pageNumber, options);
 		return baseUrl + '/universities/?page=' + pageNumber;
 	};
 
