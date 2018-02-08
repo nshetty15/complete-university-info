@@ -3,7 +3,9 @@
     <div class="w-medium mx-auto">
       <h1>Universities in {{data.category.name}}</h1>
       <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form inner">
-        <label><input type="text" class="form-control form-control" placeholder="Type an university..." name="q"></label>
+        <label>
+          <input type="text" class="form-control form-control" placeholder="Type an university..." name="q">
+        </label>
         <button class="btn btn-primary" type="submit" title="Search universities">
           <i class="fa fa-search" aria-hidden="true"></i>
           <span class="sr-only">Search Universities</span>
@@ -16,13 +18,18 @@
 <section class="uni-results no-mb">
   <div class="container">
 
-{{!-- <nav aria-label="breadcrumb" style="display:none;">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/universities/">Universities</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
-  </ol>
-</nav> --}}
+    {{!--
+    <nav aria-label="breadcrumb" style="display:none;">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="/universities/">Universities</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav> --}}
 
     <h4>Total {{ data.universitiesdestination.total}} Universities</h4>
     <ul id="universities" class="list-unstyled row no-gutters">
@@ -31,10 +38,10 @@
         <div class="wrapper">
           <div class="logo mx-auto">
             <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
-            {{#if logo.version}}
-            <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid"
-            /> {{else}}
-            <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
+              {{#if logo.version}}
+              <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo"
+                class="img-fluid" /> {{else}}
+              <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
             </a>
           </div>
           <h3>
@@ -45,8 +52,7 @@
             <i class="fa fa-map-marker" aria-hidden="true"></i>{{address}}</address>
           {{/if}} {{#if outStudents}}
           <p class="feature">International students: {{outStudents}}</p>
-          {{/if}}
-           {{#ifCond qs '||' the }}
+          {{/if}} {{#ifCond qs '||' the }}
 
           <div class="rankings">
             <hr>
@@ -88,18 +94,17 @@
       {{/each}}
     </ul>
 
-
-    {{!-- <div class="row">
-          {{# each data.universitiesdestination.results}}
-            {{#if image}}
-            <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="img-responsive"> {{else}}
-            <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}}
-          {{/each}}
-    </div> --}}
-
+    {{!--
+    <div class="row">
+      {{# each data.universitiesdestination.results}} {{#if image}}
+      <img src="{{{cloudinaryUrl image width=160 height=160 crop=" fit "}}}" class="img-responsive"> {{else}}
+      <img src="/images/university_placeholder.png" class="img-responsive" width="100" style="border:1px solid #ccc;"> {{/if}} {{/each}}
+    </div> --}} 
+    {{#ifCond data.universitiesdestination.total ">" 10}}
     <div class="pagi-block">
       {{>paginationuniversitybydestination}}
     </div>
+    {{/ifCond}}
   </div>
 
 </section>

@@ -8580,8 +8580,7 @@ footer {
     display: block;
     min-height: 300px; }
   .blog-post .w-large {
-    padding: 3rem;
-    margin-top: -200px; } }
+    padding: 3rem; } }
 /********** contact us, About us**************/
 .about-us p {
   margin-bottom: 30px; }

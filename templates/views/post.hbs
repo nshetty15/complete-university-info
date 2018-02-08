@@ -1,5 +1,19 @@
 <section class="blog-post content">
-	<div class="banner" style="background-image: none;"></div>
+	<div class="pt-5">
+		<div class="container">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="{{baseUrl}}/">Home</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="{{baseUrl}}/blog/">blog</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">{{data.post.title}}</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
 
 	<div class="container bg-white">
 		{{!--
@@ -11,12 +25,12 @@
 		<div class="w-large mx-auto">
 			<article class="post">
 				<header class="text-center">
-					<h1>{{{data.post.title}}}</h1>
+					<h1>{{data.post.title}}</h1>
 					<div class="thumbnail">
 						{{#if data.post.image.version}} {{!--
 						<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
-						<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg" alt="{{data.post.title}}"
-						 class="img-fluid" /> {{else}}
+						<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg"
+						 alt="{{data.post.title}}" class="img-fluid" /> {{else}}
 						<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{data.post.title}}" /> {{/if}}
 					</div>
 					<p class="lead text-muted">
@@ -39,7 +53,7 @@
 							js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1950322238562764&autoLogAppEvents=1';
 							fjs.parentNode.insertBefore(js, fjs);
 						}(document, 'script', 'facebook-jssdk'));</script>
-						<div class="fb-comments" data-href="https://www.completeuniversityinfo.com/blog/" data-numposts="5"></div>
+					<div class="fb-comments" data-href="https://www.completeuniversityinfo.com/blog/" data-numposts="5"></div>
 				</section>
 
 			</article>

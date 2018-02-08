@@ -106,8 +106,10 @@
       {{/each}}
     </ul>
 
+    {{#ifCond data.universities.total ">" 10}}
     <div class="pagi-block">
       {{>paginationuniversities}}
     </div>
+    {{/ifCond}}
   </div>
 </section>
