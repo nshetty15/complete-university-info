@@ -7,7 +7,7 @@
 				<h3 class="lead">Study abroad with our
 					<strong>free</strong> resources on choosing a university</h3>
 
-				<form method="GET" action="/search/" role="search" class="search-form">
+				<form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form">
 					<label>
 						<input type="text" class="form-control form-control-lg" placeholder="Type an university..." name="q">
 					</label>
@@ -28,16 +28,17 @@
 				<div class="wrap">
 					<div class="row">
 						<div class="col-md-5">
-							<a href="{{studyDestinationtUrl slug}}">
-								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
-									{{ name }}
+							<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">
+								{{!-- <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)"> --}}
+								<div class="thumbnail bg-cover text-hide img-lazy" data-src="/images/country/{{country.countryCode}}.jpg">
+									{{ name }} 
 								</div>
 							</a>
 						</div>
 						<div class="col-md-7">
 							<div class="copy">
 								<h3>
-									<a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
+									<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">{{ name }}</a> 
 								</h3>
 								{{{ brief}}}
 							</div>
@@ -51,7 +52,7 @@
 
 	<section class="articles dark-bg no-mb">
 		<div class="container">
-			<a href="/blog/" class="float-right">All articles</a>
+			<a href="{{baseUrl}}/blog/" class="float-right">All articles</a>
 			<h2>Latest Articles</h2>
 			<p class="lead mb-4">Helpful articles to make your study abroad journey even more simpler</p>
 			<div class="row">
@@ -60,7 +61,7 @@
 					<article>
 						<header>
 							<h3>
-								<a href="{{postUrl slug}}">{{title}}</a>
+								<a href="{{@root.baseUrl}}{{postUrl slug}}">{{title}}</a>
 							</h3>
 						</header>
 						<p>{{ meta.description }}</p>
@@ -93,8 +94,8 @@
 			{{#each data.tests }}
 			<div class="col-md-4">
 				<div class="test-block rounded bg-white">
-					<a href="{{testUrl slug}}" title="{{meta.title}}">
-						<img class="card-img-top" src="/images/tests/{{lowercase name }}_logo.jpg" alt="{{name}}">
+					<a href="{{@root.baseUrl}}{{testUrl slug}}" title="{{meta.title}}">
+						<img class="card-img-top img-lazy" data-src="/images/tests/{{lowercase name }}_logo.jpg" alt="{{name}}">
 					</a>
 					<p>{{ meta.description }}</p>
 				</div>

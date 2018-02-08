@@ -219,25 +219,25 @@ module.exports = function () {
 	// Direct url link to a specific university
 	_helpers.universityUrl = function (region, country, state, city, universitySlug, options) {
 		// some countries do not have city & state (eg: Singapore)
-		
-	if (!city && !state) {
-		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug + '/');
-	}
-	// some countries do not have state (eg: new zealand(auckland))
-	if (!state) {
-		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug + '/');
-	}
-	// if (!city || !state) {
-	// 	if (!city && !state) {
-	// 		return ('/universities/' + region + '/' + country + '/-/-/' + universitySlug);
-	// 	} else if (!city) {
-	// 		return ('/universities/' + region + '/' + country + '/' + state + '/-/' + universitySlug);
-	// 	} else if(!state){
-	// 		return ('/universities/' + region + '/' + country + '/-/' + city + '/' + universitySlug);
-	// 	}
-	// }
+		// if (!city && !state) {
+		// 	return ('/universities/' + region + '/' + country + '/' + universitySlug);
+		// }
+		// some countries do not have state (eg: new zealand(auckland))
+		// if (!state) {
+		// 	return ('/universities/' + region + '/' + country + '/' + city + '/' + universitySlug);
+		// }
 
-	return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug + '/');
+		if (!city || !state) {
+			if (!city && !state) {
+				return ('/universities/' + region + '/' + country + '/' + universitySlug + '/');
+			} else if (!city) {
+				return ('/universities/' + region + '/' + country + '/' + state + '/' + universitySlug + '/');
+			} else if (!state) {
+				return ('/universities/' + region + '/' + country + '/' + city + '/' + universitySlug + '/');
+			}
+		}
+
+		return ('/universities/' + region + '/' + country + '/' + state + '/' + city + '/' + universitySlug + '/');
 	};
 
 	// country category
@@ -246,26 +246,27 @@ module.exports = function () {
 	};
 
 	// For pagination - eg: http://localhost:3000/universities/
-	_helpers.uniPageUrl = function (pageNumber, options) {
-		return '/universities/?page=' + pageNumber;
+	_helpers.uniPageUrl = function (baseUrl, pageNumber, options) {
+		console.log(baseUrl, pageNumber, options);
+		return baseUrl + '/universities/?page=' + pageNumber;
 	};
 
 	// For pagination - eg: http://localhost:3000/universities/north-america/united-states/queensland/calgary/
-	_helpers.uniPageDestinationUrl = function (pageNumber, region, country, state, city, options) {
+	_helpers.uniPageDestinationUrl = function (baseUrl, pageNumber, region, country, state, city, options) {
 		if (region && country && state && city) {
-			return '/universities/' + region + '/' + country + '/' + state + '/' + city + '/?page=' + pageNumber;
+			return baseUrl + '/universities/' + region + '/' + country + '/' + state + '/' + city + '/?page=' + pageNumber;
 		}
 		else if (region && country && state) {
-			return '/universities/' + region + '/' + country + '/' + state + '/?page=' + pageNumber;
+			return baseUrl + '/universities/' + region + '/' + country + '/' + state + '/?page=' + pageNumber;
 		}
 		else if (region && country && city) {
-			return '/universities/' + region + '/' + country + '/' + city + '/?page=' + pageNumber;
+			return baseUrl + '/universities/' + region + '/' + country + '/' + city + '/?page=' + pageNumber;
 		}
 		else if (region && country) {
-			return '/universities/' + region + '/' + country + '/?page=' + pageNumber;
+			return baseUrl + '/universities/' + region + '/' + country + '/?page=' + pageNumber;
 		}
 		else if (region) {
-			return '/universities/' + region + '/?page=' + pageNumber;
+			return baseUrl + '/universities/' + region + '/?page=' + pageNumber;
 		}
 	};
 
@@ -308,7 +309,7 @@ module.exports = function () {
 		return options.inverse(this);
 	};
 
-	_helpers.paginationNavigation = function (pages, currentPage, totalPages, source, region, country, state, city, options) {
+	_helpers.paginationNavigation = function (baseUrl, pages, currentPage, totalPages, source, region, country, state, city, options) {
 		var html = '';
 		// pages should be an array ex.  [1,2,3,4,5,6,7,8,9,10, '....']
 		// '...' will be added by keystone if the pages exceed 10
@@ -329,14 +330,15 @@ module.exports = function () {
 			// get the pageUrl||uniPageUrl using the integer value - 
 			var pageUrl;
 			if (source === "universities") {
-				pageUrl = _helpers.uniPageUrl(page);
+				pageUrl = _helpers.uniPageUrl(baseUrl, page);
 			} else if (source === "blog") {
-				pageUrl = _helpers.pageUrl(page);
+				pageUrl = _helpers.pageUrl(baseUrl, page);
 			} else if (source === "bydestination") {
-				pageUrl = _helpers.uniPageDestinationUrl(page, region, country, state, city);
-			} else if (source === "courses") {
-				pageUrl = _helpers.coursePageUrl(page);
-			}
+				pageUrl = _helpers.uniPageDestinationUrl(baseUrl, page, region, country, state, city);
+			} 
+			// else if (source === "courses") {
+			// 	pageUrl = _helpers.coursePageUrl(baseUrl, page);
+			// }
 
 			// wrapup the html
 			html += '<li' + liClass + '>' + linkTemplate({ url: pageUrl, text: pageText }) + '</li>\n';
@@ -383,22 +385,22 @@ module.exports = function () {
 		return isTrue ? options.fn(this) : options.inverse(this);
 	};
 
-// https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
-// {{#or foo bar "" sally bob}} yup {{else}} nope {{/or}} // yup
-_helpers.or = function() {
-    var args = Array.prototype.slice.call(arguments);
-    var options = args[args.length-1];
+	// https://stackoverflow.com/questions/8853396/logical-operator-in-a-handlebars-js-if-conditional
+	// {{#or foo bar "" sally bob}} yup {{else}} nope {{/or}} // yup
+	_helpers.or = function () {
+		var args = Array.prototype.slice.call(arguments);
+		var options = args[args.length - 1];
 
-    for(var i=0; i<args.length-1; i++){
-        if( args[i] ){
-            return options.fn(this);
-        }
-    }
+		for (var i = 0; i < args.length - 1; i++) {
+			if (args[i]) {
+				return options.fn(this);
+			}
+		}
 
-    return options.inverse(this);
-};
+		return options.inverse(this);
+	};
 
-// https://stackoverflow.com/questions/14839375/boolean-logic-within-a-handlebars-template
+	// https://stackoverflow.com/questions/14839375/boolean-logic-within-a-handlebars-template
 	_helpers.ifCond = function (v1, operator, v2, options) {
 		switch (operator) {
 			case '==':
@@ -423,7 +425,7 @@ _helpers.or = function() {
 	};
 
 	// https://stackoverflow.com/questions/14492098/handlebars-function-to-format-currency-with-javascript
-	_helpers.formatCurrency = function(value){
+	_helpers.formatCurrency = function (value) {
 		return value.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 	};
 
@@ -443,7 +445,7 @@ _helpers.or = function() {
 		var template = hbs.compile('{{formatNumber value}}');
 
 		var compiled = template(context, {
-			data: {intl: intlData}
+			data: { intl: intlData }
 		});
 
 		return compiled;
@@ -451,7 +453,7 @@ _helpers.or = function() {
 
 	/**Lowercase */
 	_helpers.lowercase = function (str) {
-		if(str && typeof str === "string") {
+		if (str && typeof str === "string") {
 			return str.toLowerCase();
 		}
 		return '';

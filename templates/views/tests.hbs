@@ -17,12 +17,12 @@
       {{# each tests}}
       <div class="col-md-4">
         <div class="card">
-          <a href="{{testUrl slug}}">
+          <a href="{{@root.baseUrl}}{{testUrl slug}}">
             <img class="card-img-top" src="/images/tests/{{lowercase name }}_logo.jpg" alt="{{ name }}">
           </a>
           <div class="card-body">
             <h5 class="card-title">
-              <a href="{{testUrl slug}}">{{ meta.title }}</a>
+              <a href="{{@root.baseUrl}}{{testUrl slug}}">{{ meta.title }}</a>
             </h5>
             <p class="card-text">{{ meta.description }}</p>
             {{!--

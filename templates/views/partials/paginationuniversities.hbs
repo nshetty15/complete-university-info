@@ -1,17 +1,16 @@
-
 <nav aria-label="Search results pages">
 <ul class="pagination">
 	<li class="page-item {{#unless data.universities.previous}}disabled{{/unless}}">
-		<a class="page-link" href="{{paginationPreviousUrl data.universities.previous}}">
+		<a class="page-link" href="{{baseUrl}}{{paginationPreviousUrl data.universities.previous}}">
 			<span class="glyphicon glyphicon-chevron-left"></span>
 			prev
 		</a>
 	</li>
 
-	{{{paginationNavigation data.universities.pages data.universities.currentPage data.universities.totalPages data.source null }}}
+	{{{paginationNavigation baseUrl data.universities.pages data.universities.currentPage data.universities.totalPages data.source null }}}
 
 	<li class="page-item {{#unless data.universities.next}}disabled{{/unless}}">
-		<a class="page-link" href="{{paginationNextUrl data.universities.next data.universities.totalPages}}">
+		<a class="page-link" href="{{baseUrl}}{{paginationNextUrl data.universities.next data.universities.totalPages}}">
 			<span class="glyphicon glyphicon-chevron-right"></span>
 			next
 		</a>

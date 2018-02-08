@@ -19,12 +19,12 @@
             <p>
               {{# each data.countries }} 
               {{#if show}}
-              <a href="{{categoryCountryUrl region.key key}}" class="badge badge-secondary" title="{{name}}">{{name}}</a>
+              <a href="{{@root.baseUrl}}{{categoryCountryUrl region.key key}}" class="badge badge-secondary" title="{{name}}">{{name}}</a>
               {{/if}}
               {{/each}}
             </p>
 
-            <form method="GET" action="/search/" role="search" class="search-form inner">
+            <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form inner">
               <label><input type="text" class="form-control form-control" placeholder="Type an university..." name="q"></label>
               <button class="btn btn-primary" type="submit" title="Search universities">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
       <li class="col-md-4">
         <div class="wrapper">
           <div class="logo mx-auto">
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
+            <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
             {{#if logo.version}}
             <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid" />
              {{else}}
@@ -54,7 +54,7 @@
             </a>
           </div>
           <h3>
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">{{name}}</a>
+            <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">{{name}}</a>
           </h3>
           {{#if address}}
           <address>

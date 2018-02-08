@@ -1,4 +1,4 @@
-<section class="container blog">
+<section class="container blog">	
 	<div class="row">
 		<div class="col-xs-12 col-md-8 col-lg-8">
 			{{!-- <h4>Showing {{ data.posts.results.length}} post.</h4> --}}
@@ -9,7 +9,7 @@
 				<article class="post">
 					<header>
 						<h3>
-							<a href="{{postUrl slug}}">{{{title}}}</a>
+							<a href="{{@root.baseUrl}}{{postUrl slug}}">{{{title}}}</a>
 						</h3>
 						<p class="lead text-muted">
 							<time datetime="{{publishedDate}}">
@@ -21,9 +21,12 @@
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail text-center">
-								{{#if image.version}} {{!--
+								
+								{{#if image.version}} 
+								{{!--
 								<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
-								<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" /> {{else}}
+								<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" /> 
+								{{else}}
 								<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}" /> {{/if}}
 							</div>
 						</div>
@@ -42,7 +45,7 @@
 						</div>
 						<header>
 							<h3>
-								<a href="{{postUrl slug}}">{{{title}}}</a>
+								<a href="{{@root.baseUrl}}{{postUrl slug}}">{{{title}}}</a>
 							</h3>
 							<p class="text-muted">
 								<time datetime="{{publishedDate}}">{{date publishedDate format='MMM Do'}}</time>
@@ -66,7 +69,7 @@
 			<aside class="categories mb-5">
 				<h4>Categories</h4>
 				{{#each data.categories }}
-				<a href="{{categoryUrl key}}" class="page-link">
+				<a href="{{@root.baseUrl}}{{categoryUrl key}}" class="page-link">
 					{{name}} {{#if postCount}}
 					<span class="badge badge-light">{{postCount}}</span>
 					{{/if}}

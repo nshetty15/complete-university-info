@@ -22,7 +22,7 @@
         <div class="wrap">
           <div class="row">
             <div class="col-md-5">
-              <a href="{{studyDestinationtUrl slug}}">
+              <a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">
                 <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
                   {{ title }}
                 </div>
@@ -31,7 +31,7 @@
             <div class="col-md-7">
               <div class="copy">
                 <h3>
-                  <a href="{{studyDestinationtUrl slug}}">{{ name }}</a>
+                  <a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">{{ name }}</a>
                 </h3>
                 {{{ brief}}}
               </div>
@@ -50,7 +50,7 @@
   <div class="container">
     <div class="padding bg-white bs text-center">
       <h4>Check out the univesities all over</h4>
-      <a href="{{baseUrl}}/universities" class="btn btn-primary">
+      <a href="{{baseUrl}}/universities/" class="btn btn-primary">
         Universities
       </a>
     </div>

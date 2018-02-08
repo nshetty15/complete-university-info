@@ -15,7 +15,7 @@
 <body>
 	<header class="fixed-top">
 		<div class="container">
-			<a href="/">
+			<a href="{{baseUrl}}/">
 				<img src="/images/completeuniversityinfo.png" alt="Complete university Info logo" />
 			</a>
 		</div>
@@ -30,7 +30,7 @@
 					<ul class="navbar-nav mr-auto">
 						{{# each navLinks}} {{#if href}}
 						<li class="nav-item">
-							<a class="nav-link{{#ifeq ../section key}} active{{/ifeq}}" href="{{href }}" title="{{key}}">
+							<a class="nav-link{{#ifeq ../section key}} active{{/ifeq}}" href="{{@root.baseUrl}}{{href }}" title="{{key}}">
 								{{ label }} {{#ifeq ../section key}}
 								<span class="sr-only">(current)</span>
 								{{/ifeq}}
@@ -38,10 +38,10 @@
 						</li>
 						{{else}}
 						<li class="nav-item dropdown{{#ifeq ../section key}} active{{/ifeq}}">
-							<a class="nav-link dropdown-toggle" href="/tests/" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
+							<a class="nav-link dropdown-toggle" href="{{@root.baseUrl}}/tests/" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
 							<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
 								{{#each pages}}
-								<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{ href }}">{{ label }}</a>
+								<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{@root.baseUrl}}{{ href }}">{{ label }}</a>
 								{{/each}}
 							</div>
 						</li>
@@ -56,14 +56,14 @@
 		<div class="container pt-5 text-center">
 			<h1 class="text-uppercase text-secondary" style="font-size:70px">PAGE NOT FOUND</h1>
 			<h3 class="lead">We're SORRY, unfortunately, this page doesn't exist.<br> 
-				Please check your URL or return to the <a href="/">hompage</a>.</h3>
+				Please check your URL or return to the <a href="{{baseUrl}}/">hompage</a>.</h3>
 		</div>
 	</section>
 
 	<footer>
 		<div class="container text-center">
 			<div class="ft-links">
-				<a href="/aboutus/">About Us</a>
+				<a href="{{baseUrl}}/aboutus/">About Us</a>
 			</div>
 			<div class="social-links">
 				<h6>Show us some

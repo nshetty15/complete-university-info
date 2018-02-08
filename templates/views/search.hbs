@@ -3,7 +3,7 @@
     <div class="padding-tb search-intro">
       <div class="w-medium mx-auto">
         <h1>Searched university</h1>
-        <form method="GET" action="/search/" role="search" class="search-form main-search inner">
+        <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form main-search inner">
           <label>
             <input type="text" class="form-control form-control-lg" value="{{data.searchQuery}}" placeholder="Type an university..." name="q">
           </label>
@@ -26,7 +26,7 @@
       <li class="col-md-4">
         <div class="wrapper">
           <div class="logo mx-auto">
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
+            <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
               {{#if logo.version}}
               <img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" class="img-fluid"
               /> {{else}}
@@ -34,7 +34,7 @@
             </a>
           </div>
           <h3>
-            <a href="{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">{{name}}</a>
+            <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">{{name}}</a>
           </h3>
           {{#if address}}
           <address>

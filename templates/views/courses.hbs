@@ -8,7 +8,7 @@
         {{# each data.courses.results}}
         <div class="col-md-4 col-lg-4">
           {{!-- <h1>{{universityUrl}}/{{filters.category}}/{{ slug }}</h1> --}}
-          <h2><a href="{{ courseUrl slug }}">{{{title}}}</a></h2>
+          <h2><a href="{{@root.baseUrl}}{{ courseUrl slug }}">{{{title}}}</a></h2>
           <p>
             {{#each discipline }}
               {{this.title}}{{#unless @last}},{{/unless}}
