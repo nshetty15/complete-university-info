@@ -24,8 +24,8 @@ module.exports = {
 
 		var newEnquiry = new Enquiry.model({
 			name: { first: 'Test', last: 'User' },
-			email: 'contact@info.com',
-			phone: '+61 2 1234 5678',
+			email: 'contact@completeuniversityinfo.com',
+			phone: '+91 9620406438',
 			enquiryType: 'message',
 			message: { md: 'Nice enquiry notification.' },
 		});
