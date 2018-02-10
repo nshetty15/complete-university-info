@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
     countries: [],
     pathName: req.url,
     source: 'universities', // for pagination
+    hideBanner: !req.query.page,
     meta: {
       title: "Universities around the world - find your ideal university", // under 70 characters
       description: "Find degree options by comparing the universities around the world and choose universities of your choice.", // under 160 characters - locals.description
