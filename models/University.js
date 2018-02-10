@@ -18,7 +18,7 @@ var University = new keystone.List('University', {
 
 University.add({
   name: { type: String, requried: true },
-  status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+  status: { type: Types.Select, options: 'draft, approval, published, archived', default: 'draft', index: true },
 
   region: { type: Types.Relationship, ref: 'Region' },
   country: { type: Types.Relationship, ref: 'UniversityCountry' },
