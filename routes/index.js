@@ -84,18 +84,18 @@ exports = module.exports = function (app) {
 	app.get('/study-abroad/', routes.views.study_destinations);
 	app.get('/study-abroad/:destination', routes.views.study_destination);
 
-	app.all('/contact', routes.views.contact);
-	app.all('/aboutus/', routes.views.aboutus);
+	app.get('/contact', routes.views.contact);
+	app.get('/aboutus/', routes.views.aboutus);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 
 	// Post methods
-	app.post('/api/countries', routes.api.countries);
-	app.post('/api/universities', routes.api.universities);
-	app.post('/api/regions', routes.api.regions);
-	app.post('/api/states', routes.api.states);
-	app.post('/api/cities', routes.api.cities);
+	//app.post('/api/countries', routes.api.countries);
+	//app.post('/api/universities', routes.api.universities);
+	//app.post('/api/regions', routes.api.regions);
+	//app.post('/api/states', routes.api.states);
+	//app.post('/api/cities', routes.api.cities);
 	// Get methods
 	app.get('/api/search/:value', routes.api.search);
 };
