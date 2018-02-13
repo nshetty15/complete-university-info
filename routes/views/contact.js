@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
 			description: "Contact " + locals.title + " to study abroad guidance for free.", // under 160 characters
 			keywords: "Contact, study abroad, information, university guide, feedback" // No more than 10 keyword phrases
 		},
+		showShare: false,
 	};
 
 	// Set locals

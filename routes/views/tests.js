@@ -14,6 +14,7 @@ exports = module.exports = function (req, res) {
       description: "At universities teaching in English, a test of English language proficiency and admission test is likely to be part of the applications process for many international students.", // under 160 characters
       keywords: "IELTS, TOEFL, GMAT, GRE, PTE, language test, admission test" // No more than 10 keyword phrases
     },
+    hideShare: false,
   };
 
   // Load Tests

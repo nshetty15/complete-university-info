@@ -19,6 +19,7 @@ exports = module.exports = function (req, res) {
       description: "Find degree options by comparing the universities around the world and choose universities of your choice.", // under 160 characters - locals.description
       keywords:  "universities,study abroad,international students,study guide" // No more than 10 keyword phrases - locals.keywords
     },
+    showShare: true, // show share -fb,twitter etc
   };
 
   // Load all countries

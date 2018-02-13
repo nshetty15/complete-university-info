@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
     university: [],
     pathName: req.url,
     meta: {},
+    showShare: true, // show share -fb,twitter etc
   };
   //console.log(req.params.university)
 

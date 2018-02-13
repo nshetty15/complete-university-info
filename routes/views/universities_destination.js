@@ -25,6 +25,7 @@ exports = module.exports = function (req, res) {
     pathName: req.url,
     source: 'bydestination', // for pagination
     meta: {},
+    hideShare: false,
   };
 
   // Load the current category filter

@@ -15,6 +15,7 @@ exports = module.exports = function (req, res) {
       description: "Want to study a university courses abroad? Use our free tool to find your dream university.", // under 160 characters
       keywords: "search, find, universities, courses, programs, university" // No more than 10 keyword phrases
     },
+    showShare: false, // show share -fb,twitter etc
   };
 
   view.on("init", function (next) {

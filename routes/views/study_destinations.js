@@ -14,6 +14,7 @@ exports = module.exports = function (req, res) {
 			description: "Find your perfect destination. We have covered all the required information you need from university costs to student life.", // under 160 characters - locals.description
 			keywords: "study abroad, study destinations, study, guide, univeristy" // No more than 10 keyword phrases
 		},
+		showShare: true, // show share -fb,twitter etc
 	};
 
 	// Load the current post

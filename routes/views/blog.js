@@ -21,6 +21,7 @@ exports = module.exports = function (req, res) {
 			description: "Read the latest posts from Complete University Info's blog, for advice on studying abroad and more.", // under 160 characters
 			keywords: "blog, articles, posts, student advice, university guide, study abroad" // No more than 10 keyword phrases
 		},
+		showShare: true, // show share -fb,twitter etc
 	};
 
 	// Load all categories

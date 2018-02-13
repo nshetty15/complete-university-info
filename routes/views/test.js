@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
     tests: [],
     pathName: req.url,
     meta: {},
+    showShare: true, // show share -fb,twitter etc
   };
 
   view.on('init', function (next) {

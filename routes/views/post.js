@@ -16,6 +16,7 @@ exports = module.exports = function (req, res) {
 		posts: [],
 		meta: {},
 		pathName: req.url,
+		showShare: true, // show share -fb,twitter etc
 	};
 
 	// Load the current post

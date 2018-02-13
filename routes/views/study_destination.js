@@ -11,6 +11,7 @@ exports = module.exports = function (req, res) {
 	locals.data = {
 		pathName: req.url,
 		meta:{},
+		showShare: true, // show share -fb,twitter etc
 	};
 
 	// Load the current 
