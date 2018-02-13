@@ -35,7 +35,9 @@ exports = module.exports = function (req, res) {
 
           next(err);
 
-        }).limit(10)
+        })
+        .limit(40)
+        .populate('region country state city');
     } else {
       next();
     }

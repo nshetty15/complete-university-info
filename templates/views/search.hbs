@@ -20,7 +20,7 @@
 <section class="uni-results no-mb">
   <div class="container">
      {{!-- {{ data.universities.total }} --}}
-    <h4>Result(s) displayed</h4>
+    <h4>{{ data.universities.length}} Result(s) displayed</h4>
     <ul id="universities" class="list-unstyled row no-gutters">
       {{#each data.universities}}
       <li class="col-md-4">
@@ -85,10 +85,10 @@
       {{/each}}
     </ul>
 
-    {{#if data.universities}}
+    {{!-- {{#if data.universities}}
     <div class="pagi-block">
       {{>paginationuniversities}}
     </div>
-    {{/if}}
+    {{/if}} --}}
   </div>
 </section>
