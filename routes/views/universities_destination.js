@@ -25,7 +25,7 @@ exports = module.exports = function (req, res) {
     pathName: req.url,
     source: 'bydestination', // for pagination
     meta: {},
-    hideShare: false,
+    showShare: true, // show share -fb,twitter etc
   };
 
   // Load the current category filter
