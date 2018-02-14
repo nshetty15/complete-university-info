@@ -2,18 +2,19 @@
 < default}} <section class="page-home">
 	<section class="banner bg-cover">
 		<div class="container">
-			<div class="w-medium mx-auto">
+			<div class="w-medium mx-auto" itemscope itemtype="http://schema.org/WebSite">
 				<h1>FIND YOUR DREAM UNIVERSITY ABROAD</h1>
 				<h3 class="lead">Study abroad with our
 					<strong>free</strong> resources on choosing a university</h3>
-
-				<form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form">
+				<meta itemprop="url" content="{{baseUrl}}/" />
+				<form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form" 
+				itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+					<meta itemprop="target" content="{{baseUrl}}/search/?q={q}" />
 					<label>
-						<input type="text" class="form-control form-control-lg" placeholder="Type an university..." name="q">
+						<input type="text" class="form-control form-control-lg" placeholder="Type an university..." name="q" required
+						 itemprop="query-input" />
 					</label>
-					<button class="btn btn-lg btn-primary" type="submit">
-						Discover Universities
-					</button>
+					<input class="btn btn-lg btn-primary" type="submit" value="Discover Universities" />
 				</form>
 			</div>
 		</div>
@@ -29,25 +30,27 @@
 					<div class="row">
 						<div class="col-md-5">
 							<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">
-								{{!-- <div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)"> --}}
-								<div class="thumbnail bg-cover text-hide img-lazy" data-src="/images/country/{{country.countryCode}}.jpg">
-									{{ name }} 
-								</div>
+								{{!--
+								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
+								--}}
+									<div class="thumbnail bg-cover text-hide img-lazy" data-src="/images/country/{{country.countryCode}}.jpg">
+										{{ name }}
+									</div>
 							</a>
-						</div>
-						<div class="col-md-7">
-							<div class="copy">
-								<h3>
-									<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">{{ name }}</a> 
-								</h3>
-								{{{ brief}}}
+							</div>
+							<div class="col-md-7">
+								<div class="copy">
+									<h3>
+										<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">{{ name }}</a>
+									</h3>
+									{{{ brief}}}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				{{/each}}
 			</div>
-			{{/each}}
-		</div>
 	</section>
 
 	<section class="articles dark-bg no-mb">
@@ -74,7 +77,8 @@
 
 	<section class="levels">
 		<div class="container">
-			{{!-- <h2>Study abroad Levels</h2> --}}
+			{{!--
+			<h2>Study abroad Levels</h2> --}}
 			<div class="row">
 
 				{{#each data.levels}}
