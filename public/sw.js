@@ -1,5 +1,5 @@
 // use a CACHE_NAME for cache versioning
-var CACHE_NAME = '8feb2018';
+var CACHE_NAME = '14feb2018';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function (e) {
