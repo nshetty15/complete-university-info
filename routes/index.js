@@ -23,7 +23,8 @@ var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 var sslRedirect = require('heroku-ssl-redirect');
-
+// https://github.com/GenomeUS/keystone-express-sitemap
+var sitemap = require('keystone-express-sitemap');
 
 
 // Common Middleware
@@ -59,6 +60,12 @@ exports = module.exports = function (app) {
 
 	// enable heroku ssl redirect - to use https
 	app.use(sslRedirect());
+  // Sitemap
+	// app.get('/sitemap.xml', function(req, res) {
+	// 	sitemap.create(keystone, req, res, {
+	// 		// ignore: ['/courses/']
+	// 	});
+	// });
 	
 	// console.log(routes.views.index)
 	// Views
@@ -67,24 +74,24 @@ exports = module.exports = function (app) {
 	app.get('/universities/', routes.views.universities);
 
   //app.get('/universities/:region?/:country?/', routes.views.universities_destination);
-	app.get('/universities/:region/:country/:state/:city/:university', routes.views.university);
+	app.get('/universities/:region/:country/:state/:city/:university/', routes.views.university);
 	app.get('/universities/:region?/:country?/:state?/:city?/', routes.views.universities_destination);
 
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
+	app.get('/blog/:category?/', routes.views.blog);
+	app.get('/blog/post/:post/', routes.views.post);
 
 	app.get('/tests/', routes.views.tests);
-	app.get('/tests/:test', routes.views.test);
+	app.get('/tests/:test/', routes.views.test);
 
 	app.get('/courses/', routes.views.courses);
-	app.get('/courses/:course', routes.views.course);
+	app.get('/courses/:course/', routes.views.course);
 
 	app.get('/search/', routes.views.search);
 
 	app.get('/study-abroad/', routes.views.study_destinations);
-	app.get('/study-abroad/:destination', routes.views.study_destination);
+	app.get('/study-abroad/:destination/', routes.views.study_destination);
 
-	app.get('/contact', routes.views.contact);
+	app.get('/contact/', routes.views.contact);
 	app.get('/aboutus/', routes.views.aboutus);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
