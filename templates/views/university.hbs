@@ -212,12 +212,11 @@
 
 
           {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
-          data.university.BDprogramsCount data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut
-          data.university.MDprogramsCount }}
+           data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
           <section>
             <h3>General Information</h3>
             <div class="row">
-              {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut data.university.BDprogramsCount}}
+              {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut }}
               <div class="col-md-6">
                 <ul class="list-unstyled mb-sm list-group">
                   <li class="list-group-item bg-light text-uppercase">
@@ -238,15 +237,10 @@
                     <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionOut }}</span>
                     International tuition fee(avg.)
                   </li>
-                  {{/if}}{{#if data.university.BDprogramsCount}}
-                  <li class="list-group-item">
-                    <span class="badge badge-1 float-right">{{data.university.BDprogramsCount }}</span>
-                    Total programs
-                  </li>
                   {{/if}}
                 </ul>
               </div>
-              {{/or}} {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut data.university.MDprogramsCount}}
+              {{/or}} {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
               <div class="col-md-6">
                 <ul class="list-unstyled list-group">
                   <li class="list-group-item bg-light text-uppercase">
@@ -267,12 +261,7 @@
                     <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionOut }}</span>
                     International student tuition fee(avg.)
                   </li>
-                  {{/if}} {{#if data.university.MDprogramsCount}}
-                  <li class="list-group-item">
-                    <span class="badge badge-1 float-right">{{data.university.MDprogramsCount }}</span>
-                    Total programs
-                  </li>
-                  {{/if}}
+                  {{/if}} 
                 </ul>
               </div>
               {{/or}}

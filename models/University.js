@@ -82,11 +82,14 @@ University.add({
   entityType: { type: String, label: 'Entity Type', note: 'eg: Non-Profit' },
 
   // PROGRAMS
-  BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Programs' },
-  BDprogramsCount: { type: String, label: 'Total Bachelor Programs', note: 'eg: 48 https://www.topuniversities.com/' },
-  MDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Masters Programs' },
-  MDprogramsCount: { type: String, label: 'Total Masters Programs', note: 'eg: 43 https://www.topuniversities.com/' },
+  // BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Programs' },
+  // BDprogramsCount: { type: String, label: 'Total Bachelor Programs', note: 'eg: 48 https://www.topuniversities.com/' },
+  // MDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Masters Programs' },
+  // MDprogramsCount: { type: String, label: 'Total Masters Programs', note: 'eg: 43 https://www.topuniversities.com/' },
+
   programs: { type: Types.Html, wysiwyg: true, height: 400, label: 'Bachelors & master programs', note: 'eg: https://www.timeshighereducation.com/ ' },
+  noBD: { type: Types.Boolean, label: 'Bachelors not available' },
+  noMD: { type: Types.Boolean, label: 'Masters not available' },
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
   // ACADEMIC & LANGUAGE TESTS
