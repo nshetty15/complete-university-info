@@ -9,7 +9,13 @@ self.addEventListener('install', function (e) {
             return cache.addAll([
                 '/',
                 '/dist/common.bundle.js',
-                './offline.html'
+                './offline.html',
+                '/images/completeuniversityinfo.png',
+                '/images/tests/ielts_logo.jpg',
+                '/images/tests/toefl_logo.jpg',
+                '/images/tests/pte_logo.jpg',
+                '/images/tests/gmat_logo.jpg',
+                '/images/tests/gre_logo.jpg',
             ]).then(function () {
                 self.skipWaiting();
             });
