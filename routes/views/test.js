@@ -5,7 +5,7 @@ exports = module.exports = function (req, res) {
   var locals = res.locals;
 
   // Set locals
-  locals.section = 'test';
+  locals.section = 'tests';
   locals.filters = {
     test: req.params.test
   };

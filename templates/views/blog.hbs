@@ -40,7 +40,7 @@
 					<div class="post wrap">
 						<div class="thumbnail text-center">
 							{{#if image.version}}
-							<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid"> {{else}}
+							<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid"> {{else}}
 							<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}"> {{/if}}
 						</div>
 						<header>
