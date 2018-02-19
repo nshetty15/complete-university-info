@@ -108,7 +108,7 @@ module.exports = function () {
 				return _.map(tags, function (tag) {
 					// console.log("tag key blog", tag.key, tag.name);
 					return linkTemplateBlog({
-						url: ('/blog/' + tag.key),
+						url: ('/blog/' + tag.key + '/'),
 						text: _.escape(tag.name),
 					});
 				}).join(separator);
@@ -211,7 +211,7 @@ module.exports = function () {
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
-		return '?page=' + pageNumber; 
+		return '?page=' + pageNumber;
 	};
 
 	/***********/
@@ -334,7 +334,7 @@ module.exports = function () {
 				indPageUrl = _helpers.pageUrl(baseUrl, page);
 			} else if (source === "bydestination") {
 				indPageUrl = _helpers.uniPageDestinationUrl(baseUrl, page, region, country, state, city);
-			} 
+			}
 			// else if (source === "courses") {
 			// 	indPageUrl = _helpers.coursePageUrl(baseUrl, page);
 			// }
