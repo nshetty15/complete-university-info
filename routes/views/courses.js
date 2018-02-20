@@ -19,7 +19,7 @@ exports = module.exports = function(req, res){
 
   // Load all Programs with pagination
   view.on('init', function(next){
-    var q = keystone.list('Program').paginate({
+    var q = keystone.list('Course').paginate({
       page: req.query.page || 1,
       perPage: 10,
       maxPages: 10,
