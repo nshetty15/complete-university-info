@@ -212,7 +212,7 @@
 
 
           {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
-           data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
+          data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
           <section>
             <h3>General Information</h3>
             <div class="row">
@@ -261,7 +261,7 @@
                     <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionOut }}</span>
                     International student tuition fee(avg.)
                   </li>
-                  {{/if}} 
+                  {{/if}}
                 </ul>
               </div>
               {{/or}}
@@ -269,8 +269,15 @@
           </section>
           {{/or}} {{!-- Subjects text-secondary --}}
           <section>
-            <h3>Programs at {{data.university.name}}</h3>
-            <div class="subjects">
+            <h3>Programs/Courses at {{data.university.name}}</h3>
+            <form>
+              <div class="form-group">
+                <label for="searchProgram">Search program from the below list</label>
+                <input type="text" id="searchProgram" class="form-control col-md-8" placeholder="Search program(s)" />
+              </div>
+            </form>
+
+            <div class="subjects" id="subjects">
               {{{data.university.programs}}}
             </div>
           </section>
@@ -469,8 +476,8 @@
           <section>
             <div class="uni-social text-center">
               {{#if data.university.website}}
-              <a href="{{data.university.website }}?utm_source=www.completeuniversityinfo.com" title="{{data.university.name}}, website"
-                target="_blank" rel="noopener">
+              <a href="{{data.university.website }}?utm_source=completeuniversityinfo.com" title="{{data.university.name}}, website" target="_blank"
+                rel="noopener">
                 <i class="fa fa-globe" aria-hidden="true"></i>
                 <span class="sr-only">Website</span>
               </a>
