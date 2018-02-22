@@ -13,6 +13,8 @@ var Level = new keystone.List('Level', {
 Level.add({
   name: { type: String, required: true },
   code: { type: String},
+  status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
+  brief: { type: Types.Html, wysiwyg: true, height: 150 },
   description: {type: Types.Html, wysiwyg: true, height: 300},
 });
 

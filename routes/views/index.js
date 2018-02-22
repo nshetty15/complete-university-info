@@ -60,6 +60,7 @@ exports = module.exports = function (req, res) {
 	// Load Levels
 	view.on('init', function (next) {
 		var q = keystone.list("Level").model.find()
+			.where('status', 'published')
 			.sort('name')
 			.limit(6);
 
