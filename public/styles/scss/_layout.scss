@@ -35,7 +35,12 @@ header {
     }
 }
 
-
+#menu{
+    .nav-link{ padding:1rem .75rem;}
+    .dropdown-item{
+        padding:.5rem 1rem;
+    }
+}
 /*** footer ***/
 
 footer {
@@ -44,7 +49,7 @@ footer {
     color: $cui-light-grey; // span {
     a {
         margin: 0 1rem;
-        color: $cui-mdm-grey;
+        color: $cui-light-grey;
         &:hover,
         &:focus {
             color: lighten($cui-light-grey, 10%);

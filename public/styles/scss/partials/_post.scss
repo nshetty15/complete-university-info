@@ -4,9 +4,7 @@
     .banner {
         display: none;
     }
-    .w-large {
-        padding-top: 2.5rem;
-    }
+   
 }
 
 .post-content {
@@ -28,6 +26,9 @@
                 font-size: 3rem;
                 font-weight: 700;
             }
+        }
+        .w-large {
+            padding-top: 2.5rem;
         }
         .banner {
             display: block;

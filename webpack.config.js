@@ -1,8 +1,6 @@
 const path = require('path');
-//const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('./public/styles/site.css');
 
 module.exports = {
   entry: {
@@ -16,7 +14,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
-    extractCSS,
+    new ExtractTextPlugin('./public/dist/style.css'),
     new webpack.optimize.UglifyJsPlugin(),
     //  new UglifyJSPlugin({
     //    sourceMap: true
@@ -32,12 +30,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        // use: [{ loader: "style-loader" }, { loader: "css-loader" }] // loaders are applied from right to left
-        // use: extractCSS.extract(['css-loader?minimize'])
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            { loader: 'css-loader', options: { minimize: true } }
+          ]
+        }),
       },
       {
         test: /\.js?$/,
