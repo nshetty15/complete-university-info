@@ -163,7 +163,7 @@ University.add({
   //   description: { type: String }, // under 160 characters
   //   keywords: { type: String } // No more than 10 keyword phrases
   // },
-
+  isShared: { type: Types.Boolean, label: 'Shared on social -FB,twitter,Insta,Google+', },
   publishedDate: { type: Date, default: Date.now }
 });
 

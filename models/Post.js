@@ -27,6 +27,7 @@ Post.add({
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
+	isShared: { type: Types.Boolean, label: 'Shared on social -FB,twitter,Insta,Google+', },
 });
 
 Post.schema.virtual('content.full').get(function () {

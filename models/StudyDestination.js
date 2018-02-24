@@ -30,6 +30,7 @@ StudyDestination.add({
   scholarships: { type: Types.Html, wysiwyg: true, height: 300, label: 'Available Scholarships' },
   misc: { type: Types.Html, wysiwyg: true, height: 150, label: 'Miscellaneous' },
   facts: {type: Types.TextArray, label: '', note: 'eg: fast facts https://www.topuniversities.com/where-to-study/north-america/canada/guide'}, // right side panel may be
+  isShared: { type: Types.Boolean, label: 'Shared on social -FB,twitter,Insta,Google+', },
   createdAt: { type: Date, default: Date.now },
 });
 
