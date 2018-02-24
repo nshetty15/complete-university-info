@@ -2,11 +2,11 @@
 	<div class="padding bg-white bs pt-5 pb-5">
 		<div class="row">
 
-			<div class="col-xs-12 col-md-5 col-lg-8">
+			<div class="col-xs-12 col-md-8 col-lg-8">
 
 				<h1>Contact us</h1>
 				{{#unless enquirySubmitted}}
-				<p class="lead">Thank you for visiting www.completuniversityinfo.com. We always welcome feedback. </p>
+				<p class="lead">Thank you for visiting www.completeuniversityinfo.com. We always welcome feedback. </p>
 
 				<p>If you have any questions, or if you've experienced any technical issues while on our site, please use the contact form
 					below to reach out. We apologize if you do not hear from us in a timely manner, and, if that is the case, we encourage
@@ -22,20 +22,20 @@
 				<form method="post" class="col-xs-12 col-md-10 col-lg-8">
 					<input type="hidden" name="action" value="contact">
 					<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-						<label for="name"><b>Name</b></label>
-						<input type="text" name="name.full" id="name" class="form-control" placeholder="Enter your name" value="{{formData.[name.full]}}">
+						<label for="cname"><b>Name</b></label>
+						<input type="text" name="name.full" id="cname" class="form-control" placeholder="Enter your name" value="{{formData.[name.full]}}">
 					</div>
 					<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-						<label for="email"><b>Email</b></label>
-						<input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" value="{{formData.email}}">
+						<label for="cemail"><b>Email</b></label>
+						<input type="email" name="email" id="cemail" class="form-control" placeholder="Enter your email" value="{{formData.email}}">
 					</div>
 					<div class="form-group">
-						<label for="phone"><b>Phone</b></label>
-						<input type="tel" name="phone" id="phone" placeholder="Enter phone number(optional)" class="form-control" value="{{formData.phone}}">
+						<label for="cphone"><b>Phone</b></label>
+						<input type="tel" name="phone" id="cphone" placeholder="Enter phone number(optional)" class="form-control" value="{{formData.phone}}">
 					</div>
 					<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-						<label for="contact"><b>What are you contacting us about?</b></label>
-						<select name="enquiryType" id="contact" class="form-control">
+						<label for="ccontact"><b>What are you contacting us about?</b></label>
+						<select name="enquiryType" id="ccontact" class="form-control">
 							<option value="">Choose one</option>
 							{{#each enquiryTypes}}
 							<option value="{{value}}">{{label}}</option>
@@ -43,8 +43,8 @@
 						</select>
 					</div>
 					<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-						<label for="message"><b>Message</b></label>
-						<textarea name="message" id="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+						<label for="cmessage"><b>Message</b></label>
+						<textarea name="message" id="cmessage" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
 					</div>
 					<div class="form-actions">
 						<button type="submit" class="btn btn-primary">Send Message</button>
