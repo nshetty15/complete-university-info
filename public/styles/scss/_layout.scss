@@ -164,6 +164,12 @@ footer {
             border-top: 2px solid $cui-color;
         }
     }
+    #menu{
+        .nav-link{ padding:1rem 2rem;}
+        .dropdown-item{
+            padding:0.25rem 1.5rem;
+        }
+    }
     footer {
         padding: 60px 0;
         p {

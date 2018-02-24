@@ -8288,6 +8288,11 @@ footer {
   .navbar-dark .navbar-nav .nav-link.active {
     border-top: 2px solid #f4bb3a; }
 
+  #menu .nav-link {
+    padding: 1rem 2rem; }
+  #menu .dropdown-item {
+    padding: 0.25rem 1.5rem; }
+
   footer {
     padding: 60px 0; }
     footer p {
