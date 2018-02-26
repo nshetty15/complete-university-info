@@ -91,7 +91,8 @@ exports = module.exports = function (app) {
 	app.get('/study-abroad/', routes.views.study_destinations);
 	app.get('/study-abroad/:destination/', routes.views.study_destination);
 
-	app.get('/contact/', routes.views.contact);
+	// app.all -don't change
+	app.all('/contact/', routes.views.contact);
 	app.get('/aboutus/', routes.views.aboutus);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

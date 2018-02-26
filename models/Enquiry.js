@@ -64,7 +64,7 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			to: admins,
 			from: {
 				name: 'Info',
-				email: 'contact@info.com',
+				email: 'completeuniversityinfo@gmail.com',
 			},
 			subject: 'New Enquiry for Info',
 			enquiry: enquiry,
