@@ -8442,49 +8442,70 @@ footer {
 .uni-results {
   padding: 40px 0; }
 
-#universities h3 {
-  font-size: 1.25rem; }
-#universities .wrapper {
-  margin: 0 0 40px;
-  border: 1px solid #f5f5f5;
-  padding: 1.5rem;
-  background-color: #fff;
-  box-shadow: 0 0px 10px 0 rgba(160, 152, 120, 0.1); }
-#universities .logo {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #f5f5f5;
-  margin-bottom: 1rem;
-  overflow: hidden; }
-#universities address {
-  color: #999999;
-  margin-top: 5px; }
-#universities .feature {
-  color: #777777; }
-#universities .rankings strong {
-  display: inline-block;
-  margin-bottom: 5px;
-  color: #f4bb3a; }
-#universities .fa {
-  margin-right: 15px; }
+#universities {
+  /*universities page */ }
+  #universities h3 {
+    font-size: 1.25rem; }
+  #universities .wrapper {
+    margin: 0 0 40px;
+    border: 1px solid #f5f5f5;
+    padding: 1.5rem;
+    background-color: #fff;
+    box-shadow: 0 0px 10px 0 rgba(160, 152, 120, 0.1); }
+  #universities .logo {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #f5f5f5;
+    margin-bottom: 1rem;
+    overflow: hidden; }
+  #universities address {
+    color: #999999;
+    margin-top: 5px; }
+  #universities .feature {
+    color: #777777; }
+  #universities .rankings strong {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f4bb3a; }
+  #universities .fa {
+    margin-right: 15px; }
+  #universities .list {
+    padding: 1rem 0; }
+    #universities .list .logo {
+      width: auto;
+      height: auto; }
+    #universities .list hr {
+      margin: 1rem 0; }
+
+.x-results {
+  padding: 2rem 0 0; }
+  .x-results h4 {
+    font-size: 1rem; }
+
+.filter {
+  margin-bottom: 1rem; }
+  .filter .item {
+    margin-bottom: 20px; }
 
 @media (min-width: 768px) {
   /*************** Universities (search) **************/
   .uni-results {
     padding: 60px 0; }
 
-  .cover-50 {
-    background-image: url(/images/search-banner.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 50%; }
-
   #universities .wrapper {
-    margin: 0 10px 60px; } }
+    margin: 0 10px 60px; }
+    #universities .wrapper.list {
+      margin: 0 0 40px; }
+      #universities .wrapper.list h3 {
+        font-size: 1.5rem; }
+
+  .filter {
+    padding: 1rem; }
+    .filter .item {
+      margin-bottom: 40px; }
+
+  .x-results {
+    padding: 3rem 0 0; } }
 /********* university  page**********/
 .uni-banner address {
   color: #666; }

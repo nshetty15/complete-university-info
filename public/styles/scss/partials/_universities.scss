@@ -48,6 +48,31 @@
     .fa {
         margin-right: 15px;
     }
+    /*universities page */
+    .list {
+        padding: 1rem 0;
+        .logo {
+            width: auto;
+            height: auto;
+        }
+        hr {
+            margin: 1rem 0;
+        }
+    }
+}
+
+.x-results {
+    padding: 2rem 0 0;
+    h4 {
+        font-size: 1rem;
+    }
+}
+
+.filter {
+    margin-bottom: 1rem;
+    .item {
+        margin-bottom: 20px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -55,19 +80,24 @@
     .uni-results {
         padding: 60px 0;
     }
-    .cover-50 {
-        background-image: url(/images/search-banner.jpg);
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 50%;
-    }
     #universities {
         .wrapper {
             margin: 0 10px 60px;
+            &.list {
+                margin: 0 0 40px;
+                h3 {
+                    font-size: 1.5rem;
+                }
+            }
         }
+    }
+    .filter {
+        padding: 1rem;
+        .item {
+            margin-bottom: 40px;
+        }
+    }
+    .x-results {
+        padding: 3rem 0 0;
     }
 }
