@@ -9,6 +9,7 @@ self.addEventListener('install', function (e) {
             return cache.addAll([
                 '/',
                 '/dist/common.bundle.js',
+                '/dist/style.css',
                 '/offline.html',
                 '/images/completeuniversityinfo.png',
                 '/images/banner.jpg',
