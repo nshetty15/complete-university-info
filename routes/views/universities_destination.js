@@ -54,9 +54,9 @@ exports = module.exports = function (req, res) {
     } else if (locals.filters.country) {
       keystone.list('UniversityCountry').model.findOne({ key: locals.filters.country }).exec(function (err, result) {
         // Add meta tags -title, description, keywords
-        if (result.meta) {
-          locals.data.meta = result.meta;
-        }
+        // if (result.meta) {
+        //   locals.data.meta = result.meta;
+        // }
         // console.log('COUNTRY: ', JSON.stringify(result)); // {"_id":"59b69aef92ce7a5e1c2cb1cb","key":"canada","name":"Canada","__v":0}
         locals.data.category = result;
 

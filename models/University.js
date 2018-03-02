@@ -163,13 +163,13 @@ University.add({
   //   description: { type: String }, // under 160 characters
   //   keywords: { type: String } // No more than 10 keyword phrases
   // },
-  isShared: { type: Types.Boolean, label: 'Shared on social -FB,twitter,Insta,Google+', },
+  isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   publishedDate: { type: Date, default: Date.now }
 });
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
-University.defaultColumns = 'name|20%, status, address, website, founded, region, country, state, city';
+University.defaultColumns = 'name|20%, status, address, website, founded|6%, region, country, state, city, isShared|3%';
 /**
  * Registration
  * ============

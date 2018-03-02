@@ -269,7 +269,7 @@
           </section>
           {{/or}} {{!-- Subjects text-secondary --}}
           <section>
-            <h3>Programs/Courses at {{data.university.name}}</h3>
+            <h3>Programs/Courses/Degrees at {{data.university.name}}</h3>
             <form>
               <div class="form-group">
                 <label for="searchProgram">Search program from the below list</label>
@@ -281,7 +281,6 @@
               {{{data.university.programs}}}
             </div>
           </section>
-
 
           {{!-- Selection criteria --}} {{#or data.university.BDielts data.university.MDielts data.university.BDtoefl data.university.MDtoefl
           data.university.BDpte data.university.MDpte data.university.gmat data.university.gre data.university.sat data.university.act
@@ -493,7 +492,7 @@
               </a>
               {{/if}} {{#if data.university.google}}
               <a href="{{data.university.google }}" title="{{data.university.name}}, Google+ profile" target="_blank" rel="noopener">
-                <i class="fa fa-google" aria-hidden="true"></i>
+                <i class="fa fa-google-plus" aria-hidden="true"></i>
                 <span class="sr-only">Google+</span>
               </a>
               {{/if}} {{#if data.university.linkedin}}
@@ -519,6 +518,26 @@
               {{/if}}
             </div>
           </section>
+
+
+        {{!-- Other Universities in COUNTRY --}}
+          {{#if data.inCountry.length}}
+          <section>
+            <h3>Other Universities in {{data.university.country.name}}</h3>
+            <ul class="list-unstyled row">
+              {{#each data.inCountry}}
+              <li class="col-xs-12 col-md-6 mb-3">
+                <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key this.slug }}">{{ this.name }}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </section>
+          {{/if}} 
+
+          {{!-- <section>
+            <h3>What's it like to study in {{data.university.country.name}}</h3>
+          </section> --}}
+
           </div>
         </div>
 

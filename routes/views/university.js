@@ -13,6 +13,7 @@ exports = module.exports = function (req, res) {
   };
   locals.data = {
     university: [],
+    inCountry: [],
     pathName: req.url,
     meta: {},
     showShare: true, // show share -fb,twitter etc
@@ -57,8 +58,31 @@ exports = module.exports = function (req, res) {
       };
 
       locals.data.university = result;
+
       next(err);
+
     });
+
+  });
+
+  limitrecords=10;
+
+  function getRandomArbitrary(min, max) {
+    return Math.ceil(Math.random() * (max - min) + min);
+  }
+
+  // Other universities from the country
+  // --to fix - exclude same school, and random order
+  view.on('init', function (next) {
+
+    keystone.list('University').model.find()
+      .where({'country': locals.data.university.country})
+      .populate('region country state city')
+      .limit(10).exec(function (err, result) {
+        // locals.data.inCountry = result;
+        next(err);
+      });
+
   });
 
   // Render View
