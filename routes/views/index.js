@@ -61,7 +61,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		var q = keystone.list("Level").model.find()
 			.where('status', 'published')
-			.sort('name')
+			.sort('order')
 			.limit(6);
 
 		q.exec(function (err, results) {
@@ -76,7 +76,7 @@ exports = module.exports = function (req, res) {
 		var q = keystone.list("StudyDestination").model.find()
 			.where('status', 'published')
 			.populate('country')
-			.sort('name')
+			.sort('order')
 			.limit(6);
 		// { status: 'published'}
 		q.exec(function (err, results) {

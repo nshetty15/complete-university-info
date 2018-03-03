@@ -164,6 +164,7 @@ University.add({
   //   keywords: { type: String } // No more than 10 keyword phrases
   // },
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
+  score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100'},
   publishedDate: { type: Date, default: Date.now }
 });
 

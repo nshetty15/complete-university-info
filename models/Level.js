@@ -16,6 +16,8 @@ Level.add({
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
   description: {type: Types.Html, wysiwyg: true, height: 300},
+  order: { type: Types.Number, },
+  publishedDate: { type: Date, default: Date.now }
 });
 
 Level.relationship({ ref: 'Program', path: 'programs', refPath: 'level' });
