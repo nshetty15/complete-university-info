@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,13 +17,9 @@
 	<meta name="twitter:description" content="{{data.meta.description}}">
 
 	<meta name="twitter:site" content="{{twitterSite}}">
-	<meta name="twitter:card" content="summary"> 
-	{{!-- if blog article --}}
-	{{#if data.post}}
-	<meta name="keywords" content="{{#each data.post.categories}}{{name}}, {{/each}}{{data.meta.keywords}}"> 
-	{{#each data.post.categories}}
-	<meta property="article:tag" content="{{name}}"> 
-	{{/each}}
+	<meta name="twitter:card" content="summary"> {{!-- if blog article --}} {{#if data.post}}
+	<meta name="keywords" content="{{#each data.post.categories}}{{name}}, {{/each}}{{data.meta.keywords}}"> {{#each data.post.categories}}
+	<meta property="article:tag" content="{{name}}"> {{/each}}
 
 	<meta property="og:type" content="article">
 
@@ -32,9 +29,7 @@
 	<meta name="twitter:image:src" content="{{data.post.image.url}}">
 	<meta name="twitter:url" content="{{data.post.fullPostUrl}}">
 
-	<meta property="article:published_time" content="{{data.post.publishedDate}}"> 
-	{{else}}
-	{{!-- else on other pages --}}
+	<meta property="article:published_time" content="{{data.post.publishedDate}}"> {{else}} {{!-- else on other pages --}}
 	<meta property="og:type" content="website">
 	<meta name="keywords" content="{{data.meta.keywords}}">
 
@@ -45,61 +40,59 @@
 	<meta name="twitter:url" content="{{baseUrl}}{{data.pathName}}"> {{/if}}
 	<link rel="canonical" href="{{baseUrl}}{{data.pathName}}">
 	<link rel="manifest" href="/manifest.json">
-	
-	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> 
+
+	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon">
 	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="/dist/style.css"></noscript>
+	<noscript>
+		<link rel="stylesheet" href="/dist/style.css">
+	</noscript>
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
-	admin--}} {{{isAdminEditorCSS user}}} 
-	{{>criticalCss}} {{>analytics}}
-	<script src="/dist/common.bundle.js" async></script> 
-	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //-
-	Safely remove this block if you are not targeting IE8 --}}
+	admin--}} {{{isAdminEditorCSS user}}} {{>criticalCss}} {{>analytics}}
+	<script src="/dist/common.bundle.js" async></script> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //- Safely remove this block if you are
+	not targeting IE8 --}}
 	<!--[if lt IE 9]>
 		<script src="//cdn.jsdelivr.net/combine/npm/html5shiv@3.7.3,npm/respond.js@1.4.2/dest/respond.min.js"></script>
 	<![endif]-->
 </head>
 
 <body>
-	<header class="fixed-top">
+
+	<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
 		<div class="container">
-			<a href="{{baseUrl}}/">
+			<a href="{{baseUrl}}/" class="navbar-brand">
 				<img src="/images/completeuniversityinfo.png" alt="Complete university Info logo" />
 			</a>
-		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark" id="menu">
-			{{!-- fixed-top --}}
-			<div class="container">
-				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
+			<button class="navbar-toggler p-0 border-0 collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
 				 aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				{{!-- https://stackoverflow.com/questions/38994107/drop-down-sub-menus-in-keystonejs --}}
-				<div class="navbar-collapse collapse" id="cuiMenu">
-					<ul class="navbar-nav mr-auto">
-						{{# each navLinks}} {{#if href}}
-						<li class="nav-item">
-							<a class="nav-link{{#ifeq ../section key}} active{{/ifeq}}" href="{{@root.baseUrl}}{{href }}" title="{{title}}">
-								{{ label }} {{#ifeq ../section key}}
-								<span class="sr-only">(current)</span>
-								{{/ifeq}}
-							</a>
-						</li>
-						{{else}}
-						<li class="nav-item dropdown{{#ifeq ../section key}} active{{/ifeq}}">
-							<a class="nav-link dropdown-toggle" href="{{@root.baseUrl}}/tests/" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ label }}</a>
-							<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
-								{{#each pages}}
-								<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{@root.baseUrl}}{{ href }}" title="{{title}}">{{ label }}</a>
-								{{/each}}
-							</div>
-						</li>
-						{{/if}} {{/each}}
-					</ul>
-				</div>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="navbar-collapse collapse" id="cuiMenu">
+				<ul class="navbar-nav ml-auto">
+
+					{{#each navLinks}} {{#if href}}
+					<li class="nav-item">
+						<a class="nav-link{{#ifeq ../section key}} active{{/ifeq}}" href="{{@root.baseUrl}}{{href }}" title="{{title}}">
+							{{ label }} {{#ifeq ../section key}}
+							<span class="sr-only">(current)</span>
+							{{/ifeq}}
+						</a>
+					</li>
+					{{else}}
+					<li class="nav-item dropdown{{#ifeq ../section key}} active{{/ifeq}}">
+						<a class="nav-link dropdown-toggle" href="{{@root.baseUrl}}/tests/" id="cuiSubMenu" data-toggle="dropdown" aria-haspopup="true"
+						 aria-expanded="false">{{ label }}</a>
+						<div class="dropdown-menu" aria-labelledby="cuiSubMenu">
+							{{#each pages}}
+							<a class="dropdown-item{{#ifeq ../subsection subkey}} active{{/ifeq}}" href="{{@root.baseUrl}}{{ href }}" title="{{title}}">{{ label }}</a>
+							{{/each}}
+						</div>
+					</li>
+					{{/if}} {{/each}}
+				</ul>
 			</div>
-		</nav>
-	</header>
+		</div>
+	</nav>
 
 	{{!-- Flash messages allow you to display once-off status messages to users, e.g. form validation errors, success messages,
 	etc --}} {{#if messages}}
@@ -122,12 +115,10 @@
 		</div>
 		{{/if}}
 	</div>
-	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}}
-
-{{#if data.showShare}} 
-	<section id="socialShare">
-		<div class="container text-center share">
-			<h4>Share via</h4>
+	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}} {{#if data.showShare}}
+	<div class="fixed-bottom share" id="socialShare" style="display:none;">
+		<div class="container text-center">
+			<span class="text-muted">Share via</span>
 			<a class="fb" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.pathName}}"
 			 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" rel="noopener">
 				<span class="sr-only">Facebook</span>
@@ -148,14 +139,14 @@
 				<i class="fa fa-whatsapp" aria-hidden="true"></i>
 			</a>
 		</div>
-	</section>
-	{{/if}} 
+	</div>
+	{{/if}}
 
 	<footer>
 		<div class="container text-center">
 
 			<div class="ft-links">
-				<a href="{{baseUrl}}/aboutus/">About Us</a>
+				<a href="{{baseUrl}}/aboutus/">About us</a>
 				{{!--
 				<a href="{{baseUrl}}/privacy/">Privacy Policy</a>
 				<a href="{{baseUrl}}/terms/">Terms of Use</a> --}}
@@ -177,7 +168,8 @@
 					<i class="fa fa-twitter-square" aria-hidden="true"></i>
 					<span class="sr-only">Follow us on Twitter</span>
 				</a>
-				<a title="Follow us on Instagram" href="https://www.instagram.com/completeuniversityinfo/" target="_blank" rel="noopener" itemprop="sameAs">
+				<a title="Follow us on Instagram" href="https://www.instagram.com/completeuniversityinfo/" target="_blank" rel="noopener"
+				 itemprop="sameAs">
 					<i class="fa fa-instagram" aria-hidden="true"></i>
 					<span class="sr-only">Follow us on Instagram</span>
 				</a>

@@ -26,7 +26,6 @@ var sslRedirect = require('heroku-ssl-redirect');
 // https://github.com/GenomeUS/keystone-express-sitemap
 var sitemap = require('keystone-express-sitemap');
 
-
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.initErrorHandlers);
@@ -66,6 +65,8 @@ exports = module.exports = function (app) {
 	// 		// ignore: ['/courses/']
 	// 	});
 	// });
+
+
 	
 	// console.log(routes.views.index)
 	// Views

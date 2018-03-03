@@ -138,6 +138,15 @@ $('#searchProgram').on('keyup', function () {
 	}
 }( typeof global !== "undefined" ? global : this ) );
 
+/********* Show/hide social share************/
+$(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 600) {
+    $('#socialShare').fadeIn();
+  } else {
+    $('#socialShare').fadeOut();
+  }
+});
 
 // register the service worker if available
 if ('serviceWorker' in navigator) {

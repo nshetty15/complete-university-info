@@ -1,8 +1,8 @@
-<section class="blog-post content">
+<section class="blog-post">
 	<div class="pt-5">
 		<div class="container">
 			<nav aria-label="breadcrumb">
-				<ol class="breadcrumb">
+				<ol class="breadcrumb mb-0">
 					<li class="breadcrumb-item">
 						<a href="{{baseUrl}}/">Home</a>
 					</li>
@@ -12,51 +12,46 @@
 					<li class="breadcrumb-item active" aria-current="page">{{data.post.title}}</li>
 				</ol>
 			</nav>
-		</div>
-	</div>
+	
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-lg-10">
+				<article class="post bg-white content">
+					<header class="text-center">
+						<h1>{{data.post.title}}</h1>
+						<div class="thumbnail">
+							{{#if data.post.image.version}} {{!--
+							<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
+							<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg"
+							 alt="{{data.post.title}}" class="img-fluid" /> {{else}}
+							<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{data.post.title}}" /> {{/if}}
+						</div>
+						<p class="lead text-muted">
+							<time datetime="{{data.post.publishedDate}}">
+								{{date data.post.publishedDate format='MMM Do'}}
+							</time>
+						</p>
+					</header>
+					<section class="post-content padding no-mb">
+						{{{data.post.content.brief}}} {{{data.post.content.extended}}} {{!-- https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
+						--}}
+					</section>
 
-	<div class="container bg-white">
-		{{!--
-		<div class="">
-			<p>
-				<a href="{{baseUrl}}/blog/">&larr; back to the blog</a>
-			</p>
-		</div> --}}
-		<div class="w-large mx-auto">
-			<article class="post">
-				<header class="text-center">
-					<h1>{{data.post.title}}</h1>
-					<div class="thumbnail">
-						{{#if data.post.image.version}} {{!--
-						<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> --}}
-						<img src="//res.cloudinary.com/{{cloudinaryAccount}}/image/upload/v{{data.post.image.version}}/{{data.post.image.public_id}}.jpg"
-						 alt="{{data.post.title}}" class="img-fluid" /> {{else}}
-						<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{data.post.title}}" /> {{/if}}
-					</div>
-					<p class="lead text-muted">
-						<time datetime="{{data.post.publishedDate}}">
-							{{date data.post.publishedDate format='MMM Do'}}
-						</time>
-					</p>
-				</header>
-				<section class="post-content no-mb">
-					{{{data.post.content.brief}}} {{{data.post.content.extended}}} {{!-- https://nodevision.com.au/blog/post/tutorial-blogging-with-nodejs-and-keystone-cms
-					--}}
-				</section>
+					<section>
+						<div id="fb-root"></div>
+						<script>(function (d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0];
+								if (d.getElementById(id)) return;
+								js = d.createElement(s); js.id = id;
+								js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1950322238562764&autoLogAppEvents=1';
+								fjs.parentNode.insertBefore(js, fjs);
+							}(document, 'script', 'facebook-jssdk'));</script>
+						<div class="fb-comments" data-href="https://www.completeuniversityinfo.com/blog/" data-numposts="5"></div>
+					</section>
 
-				<section>
-					<div id="fb-root"></div>
-					<script>(function (d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0];
-							if (d.getElementById(id)) return;
-							js = d.createElement(s); js.id = id;
-							js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1950322238562764&autoLogAppEvents=1';
-							fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'facebook-jssdk'));</script>
-					<div class="fb-comments" data-href="https://www.completeuniversityinfo.com/blog/" data-numposts="5"></div>
-				</section>
+				</article>
+			</div>
 
-			</article>
+			<div class="col-xs-12 col-md-4 col-lg-4"></div>
 		</div>
 		{{!--
 		<aside class="">

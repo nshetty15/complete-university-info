@@ -51,9 +51,11 @@
     /*universities page */
     .list {
         padding: 1rem 0;
+        margin:0 0 20px;
         .logo {
             width: auto;
             height: auto;
+            margin:0;
         }
         hr {
             margin: 1rem 0;
@@ -83,11 +85,11 @@
     #universities {
         .wrapper {
             margin: 0 10px 60px;
-            &.list {
-                margin: 0 0 40px;
-                h3 {
-                    font-size: 1.5rem;
-                }
+        }
+        .list {
+            margin: 0 0 20px;
+            h3 {
+                font-size: 1.5rem;
             }
         }
     }

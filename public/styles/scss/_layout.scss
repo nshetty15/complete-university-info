@@ -4,7 +4,6 @@
     flex-wrap: wrap;
 }
 
-
 /*** header ***/
 
 header {
@@ -15,11 +14,10 @@ header {
     }
 }
 
-
 /** top navigation **/
 
 .navbar {
-    background-color: $cui-dark-grey;
+    border-bottom: 1px solid darken(#f8f9fa, 7%);
     padding-left: 25px;
     padding-right: 25px;
 }
@@ -28,25 +26,32 @@ header {
     padding: 1rem 0 .5rem;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: $white;
+.navbar-light .navbar-nav .nav-link {
+    color: #212529;
     &.active {
-        color: $cui-color;
+        color: $anchor;
     }
 }
 
-#menu{
-    .nav-link{ padding:1rem .75rem;}
-    .dropdown-item{
-        padding:.5rem 1rem;
+#cuiMenu {
+    .nav-link {
+        padding: 1rem .75rem;
+    }
+    .dropdown-item {
+        padding: .5rem 1rem;
     }
 }
+.navbar-brand{
+    img {height:51px;}
+}
+
 /*** footer ***/
 
 footer {
     background-color: $cui-dark-grey;
     padding: 40px 0;
-    color: $cui-light-grey; // span {
+    color: $cui-light-grey; 
+    margin-bottom: 2.5rem;
     a {
         margin: 0 1rem;
         color: $cui-light-grey;
@@ -69,51 +74,33 @@ footer {
     }
 }
 
-
-.navbar.navbar-fixed-top.fixed-theme {
-    background-color: #222;
-    border-color: #080808;
-    box-shadow: 0 0 5px rgba(0,0,0,.8);
-}
-
-.navbar-brand.fixed-theme {
-    font-size: 18px;
-}
-
-.navbar-container.fixed-theme {
-    padding: 0;
-}
-
-.navbar-brand.fixed-theme,
-.navbar-container.fixed-theme,
-.navbar.navbar-fixed-top.fixed-theme,
-.navbar-brand,
-.navbar-container{
-    transition: 0.8s;
-    -webkit-transition:  0.8s;
-}
-
 // /**** Share ****/
-.share{
-    a{
-        color:$white;
+.share {
+    background-color:#f5f5f5;
+    padding: 5px 0;
+    a {
+        color: $white;
         display: inline-block;
-        margin:0 1rem;
-        width:2.5rem;
-        height:2.5rem;
-        line-height:2.5rem;
-        font-size:1.2rem;
+        margin: 0 .8rem;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
     }
 }
-.fb{
-    background-color:#3B5998;
+
+.fb {
+    background-color: #3B5998;
 }
-.twitter{
-    background-color:#1DA1F2;
+
+.twitter {
+    background-color: #1DA1F2;
 }
-.email{
-    background-color:$anchor;
+
+.email {
+    background-color: $anchor;
 }
+
 // .g-plus{
 //     background-color:#DB4437;
 // }
@@ -126,9 +113,10 @@ footer {
 // .linked-in{
 //     background-color:#0077B5
 // }
-.w-app{
-    background-color:#075e54;
+.w-app {
+    background-color: #075e54;
 }
+
 /********8 ***********/
 
 .bg-cui {
@@ -148,26 +136,27 @@ footer {
 @media (min-width: 768px) {
     header>.container {
         text-align: left;
-    }
-    .navbar {
-        padding: 0 1rem;
-    }
-    .nav-link {
-        padding: 1rem 2rem;
-    }
-    .navbar-dark .navbar-nav .nav-link {
+    } // .navbar {
+    //     padding: 0 1rem;
+    // }
+    // .nav-link {
+    //     padding: 1rem 2rem;
+    // }
+    .navbar-light .navbar-nav .nav-link {
         &:hover,
         &:focus {
-            color: $cui-color;
+            color: $anchor;
         }
         &.active {
-            border-top: 2px solid $cui-color;
+            border-bottom: 2px solid $anchor;
         }
     }
-    #menu{
-        .nav-link{ padding:1rem 2rem;}
-        .dropdown-item{
-            padding:0.25rem 1.5rem;
+    #cuiMenu {
+        .nav-link {
+            padding: .2rem 1rem;
+        }
+        .dropdown-item {
+            padding: 0.25rem 1.5rem;
         }
     }
     footer {
@@ -215,9 +204,7 @@ footer {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .navbar-expand-lg .navbar-nav .nav-link {
-        padding: 1rem 2rem;
-    }
+    
 }
 
 // Extra large devices (large desktops, 1200px and up)
