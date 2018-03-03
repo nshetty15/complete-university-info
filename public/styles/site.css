@@ -8209,7 +8209,7 @@ header > .container {
 /*** footer ***/
 footer {
   background-color: #2f3135;
-  padding: 40px 0;
+  padding: 40px 0 60px;
   color: #999999;
   margin-bottom: 2.5rem; }
   footer a {
@@ -8276,7 +8276,7 @@ footer {
     padding: 0.25rem 1.5rem; }
 
   footer {
-    padding: 60px 0; }
+    padding: 60px 0 80px; }
     footer p {
       float: left; }
 
