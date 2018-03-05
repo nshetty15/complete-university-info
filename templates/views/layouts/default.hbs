@@ -42,12 +42,15 @@
 	<link rel="manifest" href="/manifest.json">
 
 	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon">
+	{{>criticalCss}}
 	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript>
 		<link rel="stylesheet" href="/dist/style.css">
 	</noscript>
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
-	admin--}} {{{isAdminEditorCSS user}}} {{>criticalCss}} {{>analytics}}
+	admin--}} 
+	{{{isAdminEditorCSS user}}}
+	{{>analytics}}
 	<script src="/dist/common.bundle.js" async></script> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //- Safely remove this block if you are
 	not targeting IE8 --}}
 	<!--[if lt IE 9]>
@@ -115,32 +118,7 @@
 		</div>
 		{{/if}}
 	</div>
-	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}} {{#if data.showShare}}
-	<div class="fixed-bottom share" id="socialShare" style="display:none;">
-		<div class="container text-center">
-			<span class="text-muted">Share via</span>
-			<a class="fb" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.pathName}}"
-			 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" rel="noopener">
-				<span class="sr-only">Facebook</span>
-				<i class="fa fa-facebook" aria-hidden="true"></i>
-			</a>
-			<a class="twitter" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{data.meta.title}}&url={{baseUrl}}{{data.pathName}}"
-			 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" rel="noopener">
-				<span class="sr-only">Twitter</span>
-				<i class="fa fa-twitter" aria-hidden="true"></i>
-			</a>
-			<a class="email" title="Share by Email" href="mailto:?subject=I wanted you to see this site&amp;body={{data.meta.title}} {{baseUrl}}{{data.pathName}}.">
-				<span class="sr-only">Email</span>
-				<i class="fa fa-envelope-o" aria-hidden="true"></i>
-			</a>
-			<a class="w-app d-md-none" tittle="Share via Whatsapp" href="whatsapp://send?text={{baseUrl}}{{data.pathName}}" data-action="share/whatsapp/share"
-			 rel="noopener">
-				<span class="sr-only">Whatsapp</span>
-				<i class="fa fa-whatsapp" aria-hidden="true"></i>
-			</a>
-		</div>
-	</div>
-	{{/if}}
+	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}} 
 
 	<footer>
 		<div class="container text-center">
@@ -183,6 +161,33 @@
 
 		</div>
 	</footer>
+
+		{{#if data.showShare}}
+	<div class="fixed-bottom share" id="socialShare" style="display:none;">
+		<div class="container text-center">
+			<span class="text-muted">Share</span>
+			<a class="fb" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl}}{{data.pathName}}"
+			 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" rel="noopener">
+				<span class="sr-only">Facebook</span>
+				<i class="fa fa-facebook" aria-hidden="true"></i>
+			</a>
+			<a class="twitter" title="Share on Twitter" href="https://twitter.com/intent/tweet?text={{data.meta.title}}&url={{baseUrl}}{{data.pathName}}"
+			 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" rel="noopener">
+				<span class="sr-only">Twitter</span>
+				<i class="fa fa-twitter" aria-hidden="true"></i>
+			</a>
+			<a class="email" title="Share by Email" href="mailto:?subject=I wanted you to see this site&amp;body={{data.meta.title}} {{baseUrl}}{{data.pathName}}.">
+				<span class="sr-only">Email</span>
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+			</a>
+			<a class="w-app d-md-none" tittle="Share via Whatsapp" href="whatsapp://send?text={{baseUrl}}{{data.pathName}}" data-action="share/whatsapp/share"
+			 rel="noopener">
+				<span class="sr-only">Whatsapp</span>
+				<i class="fa fa-whatsapp" aria-hidden="true"></i>
+			</a>
+		</div>
+	</div>
+	{{/if}}
 
 	{{!--
 	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> --}} {{!-- {{{isAdminEditorJS user}}} --}}
