@@ -84,8 +84,8 @@ exports = module.exports = function (app) {
 	app.get('/tests/', routes.views.tests);
 	app.get('/tests/:test/', routes.views.test);
 
-	app.get('/courses/', routes.views.courses);
-	app.get('/courses/:course/', routes.views.course);
+	// app.get('/courses/', routes.views.courses);
+	// app.get('/courses/:course/', routes.views.course);
 
 	app.get('/search/', routes.views.search);
 
