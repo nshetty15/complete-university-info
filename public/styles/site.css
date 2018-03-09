@@ -8334,7 +8334,7 @@ footer {
     display: block;
     margin: 0; }
   .search-form .form-control:focus {
-    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.3); }
   .search-form .btn {
     width: 100%; }
   .search-form.inner .form-control {

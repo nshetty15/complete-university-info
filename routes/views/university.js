@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+require('mongoose-query-random');
 
 exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
@@ -65,23 +66,41 @@ exports = module.exports = function (req, res) {
 
   });
 
-  limitrecords=10;
+  limitrecords = 10;
 
   function getRandomArbitrary(min, max) {
     return Math.ceil(Math.random() * (max - min) + min);
   }
 
   // Other universities from the country
-  // --to fix - exclude same school, and random order
+  // --to fix - random order
   view.on('init', function (next) {
 
     keystone.list('University').model.find()
-      .where({'country': locals.data.university.country})
+      .where({'country': locals.data.university.country, 'status' : 'published' }) 
+      .where("_id").ne(locals.data.university._id)
       .populate('region country state city')
-      .limit(10).exec(function (err, result) {
-        // locals.data.inCountry = result;
-        next(err);
+      .limit(16)
+      .exec(function (err, result) {
+        locals.data.inCountry = result;
+        next(err); 
       });
+
+    // https://github.com/zsloss/mongoose-query-random - 
+    // This module performs as well as mongodb's cursor.skip(), 
+    // multiplied by the specified count (it needs to skip for each document it pulls out). 
+    // So very large queries with a large count might take a while to execute.
+    // bug: populate doesn't work
+
+    // keystone.list('University').model.find()
+    //   .where({ 'country': locals.data.university.country, 'status': 'published' })
+    //   .where("_id").ne(locals.data.university._id)
+    //   .populate('region country state city')
+    //   .random(10, true, function (err, result) {
+    //     if (err) throw err;
+    //     locals.data.inCountry = result;
+    //     next(err);
+    //   });
 
   });
 

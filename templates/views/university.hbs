@@ -520,12 +520,13 @@
           </section>
 
 
-        {{!-- Other Universities in COUNTRY --}}
-          {{#if data.inCountry.length}}
+          {{!-- Other Universities in COUNTRY --}} {{#if data.inCountry.length}}
           <section>
             <h3>Other Universities in {{data.university.country.name}}</h3>
             <ul class="list-unstyled row">
+              
               {{#each data.inCountry}}
+              {{ region.key }}
               <li class="col-xs-12 col-md-6 mb-3">
                 <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key this.slug }}">{{ this.name }}</a>
               </li>
@@ -533,10 +534,23 @@
             </ul>
           </section>
           {{/if}} 
-
-          {{!-- <section>
+          
+          {{#checkIf data.university.country.name '==' "Australia" '||' data.university.country.name '==' "Canada"}}
+          <section class="text-center">
             <h3>What's it like to study in {{data.university.country.name}}</h3>
-          </section> --}}
+            <div class="text-uppercase">
+              {{#ifCond data.university.country.name '==' "Australia" }}
+              <a href="{{baseUrl}}/study-abroad/study-in-australia/" class="btn btn-primary">
+                <strong>Study in {{data.university.country.name}}</strong>
+              </a>
+              {{/ifCond}} {{#ifCond data.university.country.name '==' "Canada" }}
+              <a href="{{baseUrl}}/study-abroad/study-in-canada/" class="btn btn-primary">
+                <strong>Study in {{data.university.country.name}}</strong>
+              </a>
+              {{/ifCond}}
+            </div>
+          </section>
+          {{/checkIf}}
 
           </div>
         </div>
