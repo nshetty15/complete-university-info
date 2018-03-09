@@ -1,11 +1,10 @@
 var keystone = require('keystone');
-require('mongoose-query-random');
+var random = require('mongoose-simple-random');
 
 exports = module.exports = function (req, res) {
   var view = new keystone.View(req, res);
 
   var locals = res.locals;
-  //console.log(req, res)
 
   // Set locals
   locals.section = 'universities';
@@ -30,11 +29,10 @@ exports = module.exports = function (req, res) {
     q.exec(function (err, result) {
       // Add meta tags -title, description, keywords 
       var rex = /(<([^>]+)>)/ig;
-      // result.title + ( result.meta.title ? " - " + result.meta.title : "")
+
       var pageTitle = "";
       // console.log(result)
-      if (result.qs || result.the || result.arwu || result.forbes || result.macleans
-        || result.cug || result.ft || result.theEconomist || result.usNewsNational || result.usNewsLiberal) {
+      if (result.qs || result.the || result.arwu || result.forbes || result.macleans || result.cug || result.ft || result.theEconomist || result.usNewsNational || result.usNewsLiberal) {
         pageTitle += ", Rankings";
       }
       if (result.acceptRate) {
@@ -66,41 +64,19 @@ exports = module.exports = function (req, res) {
 
   });
 
-  limitrecords = 10;
-
-  function getRandomArbitrary(min, max) {
-    return Math.ceil(Math.random() * (max - min) + min);
-  }
-
   // Other universities from the country
   // --to fix - random order
   view.on('init', function (next) {
 
     keystone.list('University').model.find()
-      .where({'country': locals.data.university.country, 'status' : 'published' }) 
+      .where({ 'country': locals.data.university.country, 'status': 'published' })
       .where("_id").ne(locals.data.university._id)
       .populate('region country state city')
-      .limit(16)
+      .limit(15)
       .exec(function (err, result) {
         locals.data.inCountry = result;
-        next(err); 
+        next(err);
       });
-
-    // https://github.com/zsloss/mongoose-query-random - 
-    // This module performs as well as mongodb's cursor.skip(), 
-    // multiplied by the specified count (it needs to skip for each document it pulls out). 
-    // So very large queries with a large count might take a while to execute.
-    // bug: populate doesn't work
-
-    // keystone.list('University').model.find()
-    //   .where({ 'country': locals.data.university.country, 'status': 'published' })
-    //   .where("_id").ne(locals.data.university._id)
-    //   .populate('region country state city')
-    //   .random(10, true, function (err, result) {
-    //     if (err) throw err;
-    //     locals.data.inCountry = result;
-    //     next(err);
-    //   });
 
   });
 
