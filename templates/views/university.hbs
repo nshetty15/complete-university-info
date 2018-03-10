@@ -267,12 +267,14 @@
               {{/or}}
 
           </section>
-          {{/or}} {{!-- Subjects text-secondary --}}
+          {{/or}} 
+          
+          {{!-- Subjects text-secondary --}}
           <section>
             <h3>Programs / Courses / Degrees at {{data.university.name}}</h3>
             <form>
               <div class="form-group">
-                <label for="searchProgram">Search program from the below list</label>
+                <label for="searchProgram">Search program from the list below:</label>
                 <input type="text" id="searchProgram" class="form-control col-md-8" placeholder="Search program(s)" />
               </div>
             </form>
@@ -464,14 +466,19 @@
               {{/if}}
             </ul>
           </section>
-          {{/or}} {{!-- Scholarships --}} {{#if data.university.scholarships}}
+          {{/or}} 
+          
+          {{!-- Scholarships --}} 
+          {{#if data.university.scholarships}}
           <section>
             <h3>Scholarships</h3>
             <div class="bd-callout bd-callout-warning">
               {{{data.university.scholarships }}}
             </div>
           </section>
-          {{/if}} {{!-- Social media --}}
+          {{/if}} 
+          
+          {{!-- Social media --}}
           <section>
             <div class="uni-social text-center">
               {{#if data.university.website}}
@@ -515,26 +522,31 @@
                 <i class="fa fa-vimeo" aria-hidden="true"></i>
                 <span class="sr-only">Vimeo</span>
               </a>
+              {{/if}} {{#if data.university.flickr}}
+              <a href="{{data.university.flickr }}" title="{{data.university.name}}, Flickr profile" target="_blank" rel="noopener">
+                <i class="fa fa-flickr" aria-hidden="true"></i>
+                <span class="sr-only">Flickr</span>
+              </a>
+              {{/if}} {{#if data.university.pinterest}}
+              <a href="{{data.university.pinterest }}" title="{{data.university.name}}, Pinterest profile" target="_blank" rel="noopener">
+                <i class="fa fa-pinterest" aria-hidden="true"></i>
+                <span class="sr-only">pinterest</span>
+              </a>
+              {{/if}} {{#if data.university.itunes}}
+              <a href="{{data.university.itunes }}" title="{{data.university.name}}, iTunes profile" target="_blank" rel="noopener">
+                <i class="fa fa-music" aria-hidden="true"></i>
+                <span class="sr-only">iTunes</span>
+              </a>
               {{/if}}
+
+
             </div>
           </section>
 
 
-          {{!-- Other Universities in COUNTRY --}} {{#if data.inCountry.length}}
-          <section>
-            <h3>Other Universities in {{data.university.country.name}}</h3>
-            <ul class="list-unstyled row">
-              
-              {{#each data.inCountry}}
-              <li class="col-xs-12 col-md-6 mb-3">
-                <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key this.slug }}">{{ this.name }}</a>
-              </li>
-              {{/each}}
-            </ul>
-          </section>
-          {{/if}} 
-          
-          {{#checkIf data.university.country.name '==' "Australia" '||' data.university.country.name '==' "Canada"}}
+          {{!-- What's it like to study in --}} 
+          {{#checkIf data.university.country.name '==' "Australia" '||' data.university.country.name
+          '==' "Canada"}}
           <section class="text-center">
             <h3>What's it like to study in {{data.university.country.name}}</h3>
             <div class="text-uppercase">
@@ -549,7 +561,24 @@
               {{/ifCond}}
             </div>
           </section>
-          {{/checkIf}}
+          {{/checkIf}} 
+          
+          
+          {{!-- Other Universities in COUNTRY --}} 
+          {{#if data.inCountry.length}}
+          <section>
+            <h3>Other Universities in {{data.university.country.name}}</h3>
+            <ul class="list-unstyled row">
+
+              {{#each data.inCountry}}
+              <li class="col-xs-12 col-md-6 mb-3">
+                <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key this.slug }}">{{ this.name }}</a>
+              </li>
+              {{/each}}
+            </ul>
+          </section>
+          {{/if}}
+
 
           </div>
         </div>
