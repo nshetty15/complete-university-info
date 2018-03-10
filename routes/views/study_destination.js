@@ -18,12 +18,17 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
     var q = keystone.list('StudyDestination').model.findOne({
       slug: locals.filters.destination
-    }).populate('country');
+    }).populate({
+			path: 'country',
+			populate: {
+				path: 'region'
+			}
+		});
 
     q.exec(function (err, result) {
 			// Final result
 			locals.data.meta = {
-				title: result.meta.title || result.data.title,
+				title: result.meta.title || locals.title,
 				description: result.meta.description || locals.description,
 				keywords: result.meta.keywords || locals.keywords,
 			};

@@ -21,16 +21,29 @@
           <h1>{{ data.destination.name }}</h1>
           <div class="lead">{{{ data.destination.brief }}}</div>
 
+
+
           {{{ data.destination.about }}}
 
           <hr>{{!--
           <Education system --}} {{{ data.destination.education }}} {{!-- Study Options --}} {{{ data.destination.options }}} {{!--
             Cost of study &amp; living --}} {{{ data.destination.cost }}} <hr> {{!-- Visa Requirements --}} {{{ data.destination.visa }}} {{!-- Available Scholarships --}} {{{ data.destination.scholarships
             }}} {{!-- Miscellaneous> --}}
-            <hr> {{{ data.destination.misc }}}
-
-            {{!-- <div class="text-center"><a class="btn btn-primary" href="../universities/oceania/australia/">Universities in Australia</a></div> --}}
+            <hr> {{{ data.destination.misc }}} 
             
+            
+            {{!-- Other Universities in COUNTRY --}} 
+            {{#if data.destination.country}}
+            <section>
+              <h3>Universities in {{data.destination.country.name}}</h3>
+              <div class="text-uppercase">
+                <a href="{{baseUrl}}/universities/{{data.destination.country.region.key}}/{{data.destination.country.key}}/" class="btn btn-primary">
+                  <strong>Universities in {{data.destination.country.name}}</strong>
+                </a>
+              </div>
+            </section>
+            {{/if}} 
+
 
       </div>
 
