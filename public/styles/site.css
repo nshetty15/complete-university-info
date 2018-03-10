@@ -8540,17 +8540,17 @@ footer {
   text-transform: uppercase;
   font-weight: bold; }
 
-#subjects > ul {
+#subjects ul {
   padding: 0; }
-  #subjects > ul > li {
+  #subjects ul li {
     padding: 15px 10px;
     background-color: #f1f2f2;
     border-top: 2px solid #f4bb3a; }
 #subjects li {
   margin-bottom: 10px; }
-#subjects > ul li {
+#subjects ul li {
   list-style: none; }
-#subjects > ul li > ul {
+#subjects ul li > ul {
   margin-bottom: 40px; }
 #subjects h3 {
   text-transform: inherit;
@@ -8654,15 +8654,21 @@ footer {
     margin-left: 0;
     margin-right: 0; }
 
-  .subjects > ul {
+  .subjects ul {
     -moz-column-gap: 1.5rem;
     -webkit-column-gap: 1.5rem;
     column-gap: 1.5rem;
     -moz-column-count: 3;
     -webkit-column-count: 3;
     column-count: 3; }
-    .subjects > ul li > ul {
-      margin-bottom: 60px; }
+    .subjects ul li > ul {
+      margin-bottom: 60px;
+      -moz-column-gap: 0;
+      -webkit-column-gap: 0;
+      column-gap: 0;
+      -moz-column-count: 0;
+      -webkit-column-count: 0;
+      column-count: 0; }
 
   .col-highlight li:nth-last-child(1), .col-highlight li:nth-last-child(2), .col-highlight li:nth-last-child(3), .col-highlight li:nth-last-child(4),
   .li-plain li:nth-last-child(1),
