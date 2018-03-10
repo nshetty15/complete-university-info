@@ -39,16 +39,13 @@ University.add({
   phone: { type: Types.TextArray },
   // fax: { type: Types.TextArray },
   email: { type: Types.TextArray },
-  janDate: { type: Types.Date, label: 'January Deadline', }, // x
-  mayDate: { type: Types.Date, label: 'May Deadline', }, // x
-  sepDate: { type: Types.Date, label: 'September Deadline', }, // x
+  // janDate: { type: Types.Date, label: 'January Deadline', }, // x
+  // mayDate: { type: Types.Date, label: 'May Deadline', }, // x
+  // sepDate: { type: Types.Date, label: 'September Deadline', }, // x
   appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
-  // currency: { type: String, label: 'Country Currency' },
 
-  //content: {
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
   extended: { type: Types.Html, wysiwyg: true, height: 400 },
-  //},
 
   // FOR STUDENTS  -
   students: { type: String, label: 'Total Students', note: 'eg: 25000 || 35000+ || over 45000 || 10000-15000' },
@@ -58,22 +55,22 @@ University.add({
   studentFaculty: { type: String, label: 'Student per staff', note: 'eg: 4.1 https://www.timeshighereducation.com/' },
   staff: { type: String, label: 'Total staffs', note: 'eg: 2500-2999 (https://in.linkedin.com/)' },
   femaleMale: { type: String, label: 'Female Male Ratio', note: 'eg: 47:53 https://www.timeshighereducation.com/' },
-  // avgTuition: { type: String, label: 'Average Tuition (per year)', note: 'eg: 46300 (convert to country currency)' },
+
   // TUITION
   totalCost: { type: String, label: 'Total Annual Cost', note: 'eg: OVERALL COST OF LIVING (convert to country currency)' },
-  campusAcc: { type: String, label: 'Campus Accomodation Cost', note: 'eg: CAMPUS ACCOMMODATION (https://www.hotcoursesabroad.com/india/newzealand/school-college-university/southern-institute-of-technology/142331/international.html)'},
+  campusAcc: { type: String, label: 'Campus Accomodation Cost', note: 'eg: CAMPUS ACCOMMODATION (https://www.hotcoursesabroad.com/india/newzealand/school-college-university/southern-institute-of-technology/142331/international.html)' },
   BDtuitionIn: { type: String, label: 'Bachelor Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
   BDtuitionOut: { type: String, label: 'Bachelor Tuition(International students)', note: 'eg: https://www.hotcoursesabroad.com/ 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
   MDtuitionIn: { type: String, label: 'Masters Tuition(Residents)', note: 'eg: 5000  || 2500-5000 (find field: In-State Tuition)' },
   MDtuitionOut: { type: String, label: 'Masters Tuition(International students)', note: 'eg: https://www.hotcoursesabroad.com/ 5000  || 2500-5000 (find field: Out-of-State Tuition)' },
-
+  // 
   acceptRate: { type: String, label: 'Acceptance Rate', note: 'eg: 25%' },
   roomBoard: { type: String, label: 'Room and Board', note: 'eg: 14601' },
   financialAid: { type: String, label: 'financialAid', note: 'eg: 35,000 || yes' },
   studentClubs: { type: String, label: 'Student Clubs', note: 'eg: 650' },
   gradEmployee: { type: String, label: 'Graduate Employment Rate', note: 'eg: 80%' },
   scholarshipAmt: { type: String, label: '', note: 'eg: 165629375' },
-
+  // 
   yearLevel: { type: String, label: 'Year Level', note: 'eg: Four or more Years' },
   academicCalendar: { type: String, label: '', note: 'eg: Semesters' },
   campusSetting: { type: String, label: '', note: 'eg: Urban || Rural || Regional' },
@@ -83,13 +80,12 @@ University.add({
 
   // PROGRAMS
   // BDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Bachelors Programs' },
-  // BDprogramsCount: { type: String, label: 'Total Bachelor Programs', note: 'eg: 48 https://www.topuniversities.com/' },
   // MDprograms: { type: Types.Relationship, ref: 'Program', many: true, label: 'Masters Programs' },
-  // MDprogramsCount: { type: String, label: 'Total Masters Programs', note: 'eg: 43 https://www.topuniversities.com/' },
 
   programs: { type: Types.Html, wysiwyg: true, height: 400, label: 'Bachelors & master programs', note: 'eg: https://www.timeshighereducation.com/ ' },
   noBD: { type: Types.Boolean, label: 'Bachelors not available' },
   noMD: { type: Types.Boolean, label: 'Masters not available' },
+  mba: { type: Types.Boolean, label: 'MBA', note:'For Business schools: https://www.forbes.com/business-schools/#3920da686d6d' },
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
   // ACADEMIC & LANGUAGE TESTS
@@ -140,7 +136,7 @@ University.add({
   // SOCIAL MEDIA
   facebook: { type: Types.Url, label: 'Facebook page url' },
   twitter: { type: Types.Url },
-  google: { type: Types.Url },
+  google: { type: Types.Url, label: 'Google+' },
   linkedin: { type: Types.Url },
   instagram: { type: Types.Url },
   youtube: { type: Types.Url },
@@ -148,11 +144,11 @@ University.add({
   flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
 
+  // ONLINE COURSES
+  itunes: { type: String },
+
   // notable alumni
   alumni: { type: Types.TextArray, label: 'Notable Alumni' },
-
-  // ONLINE COURSES
-  // itunes: { type: String },
 
   // WIKIPEDIA ARTICLE
   // wikipedia: { type: Types.Url },
@@ -164,7 +160,7 @@ University.add({
   //   keywords: { type: String } // No more than 10 keyword phrases
   // },
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
-  score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100'},
+  score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
   publishedDate: { type: Date, default: Date.now }
 });
 
