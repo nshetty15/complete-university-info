@@ -16,7 +16,7 @@ exports = module.exports = function (req, res) {
 		tests: [],
 		levels: [],
 		studyIn: [],
-		pathName: req.url,
+		pathName: req.path,
 		meta: {
 			title: "Universities and their Rankings, Programs, Costs & Guidance for free.", // under 70 characters
 			description: locals.description, // under 160 characters

@@ -12,7 +12,7 @@ exports = module.exports = function (req, res) {
 
   locals.data = {
     course: [],
-    pathName: req.url,
+    pathName: req.path,
     meta: {},
   };
 

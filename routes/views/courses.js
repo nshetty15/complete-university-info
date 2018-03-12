@@ -8,7 +8,7 @@ exports = module.exports = function(req, res){
 
   locals.data = {
     courses: [],
-    pathName: req.url,
+    pathName: req.path,
     source: 'courses',
     meta: {
       title: locals.title, // under 70 characters

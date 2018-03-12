@@ -9,7 +9,7 @@ exports = module.exports = function (req, res) {
 		destination: req.params.destination,
 	};
 	locals.data = {
-		pathName: req.url,
+		pathName: req.path,
 		meta:{},
 		showShare: true, // show share -fb,twitter etc
 	};

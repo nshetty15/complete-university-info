@@ -7,7 +7,7 @@ exports = module.exports = function (req, res) {
 	var locals = res.locals;
 
 	locals.data = {
-		pathName: req.url,
+		pathName: req.path,
 		meta: {
 			title: "Contact - " + locals.title, // under 70 characters
 			description: "Contact " + locals.title + " to study abroad guidance for free.", // under 160 characters

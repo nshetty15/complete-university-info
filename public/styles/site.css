@@ -8236,10 +8236,10 @@ footer {
     color: #fff;
     display: inline-block;
     margin: 0 .7rem;
-    width: 1.7rem;
-    height: 1.7rem;
-    line-height: 1.7rem;
-    font-size: 1.1rem; }
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.2rem; }
 
 .fb {
   background-color: #3B5998; }
@@ -8284,11 +8284,6 @@ footer {
 
   .share {
     padding: .3rem; }
-    .share a {
-      width: 2rem;
-      height: 2rem;
-      font-size: 1.2rem;
-      line-height: 2rem; }
 
   .social {
     top: 50%;

@@ -56,7 +56,7 @@
 
 <section class="uni-primary">
   <div class="container bg-white">
-    <div class="row">
+    
       <div class="padding">
         {{!-- Badges --}}
         <section class="col-highlight m-minus">
@@ -204,69 +204,68 @@
           </ul>
         </section>
         {{/or}} {{!-- Overview --}}
-        <section class="row">
-          <div class="col-xs-12 col-md-8 col-lg-8">
-            <h3>Overview</h3>
-            {{{data.university.extended}}}
-          </div>
-          <div class="col-xs-12 col-md-4 col-lg-4">
-            {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
-            data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
+        <section>
+          <div class="row">
+            <div class="col-xs-12 col-md-8 col-lg-8">
+              <h3>Overview</h3>
+              {{{data.university.extended}}}
+            </div>
+            <div class="col-xs-12 col-md-4 col-lg-4">
+              {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
+              data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
 
-            <h3>General Information</h3>
+              <h3>General Information</h3>
 
-            {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut }}
-            <section>
+              {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut }}
+              <section>
+                <ul class="list-unstyled list-group">
+                  <li class="list-group-item bg-light text-uppercase">
+                    <strong>Bachelors degree</strong>
+                  </li>
+                  {{#if data.university.BDstudents}}
+                  <li class="list-group-item">
+                    <span class="badge badge-1 float-right">{{data.university.BDstudents }}</span>
+                    Students
+                  </li>
+                  {{/if}} {{#if data.university.BDtuitionIn}}
+                  <li class="list-group-item">
+                    <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionIn }}</span>
+                    Domestic tuition fee(avg.)
+                  </li>
+                  {{/if}}{{#if data.university.BDtuitionOut}}
+                  <li class="list-group-item">
+                    <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionOut }}</span>
+                    International tuition fee(avg.)
+                  </li>
+                  {{/if}}
+                </ul>
+              </section>
+              {{/or}} {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
               <ul class="list-unstyled list-group">
                 <li class="list-group-item bg-light text-uppercase">
-                  <strong>Bachelors degree</strong>
+                  <strong>Masters degree</strong>
                 </li>
-                {{#if data.university.BDstudents}}
+                {{#if data.university.MDstudents}}
                 <li class="list-group-item">
-                  <span class="badge badge-1 float-right">{{data.university.BDstudents }}</span>
+                  <span class="badge badge-1 float-right">{{data.university.MDstudents }}</span>
                   Students
                 </li>
-                {{/if}} {{#if data.university.BDtuitionIn}}
+                {{/if}} {{#if data.university.MDtuitionIn}}
                 <li class="list-group-item">
-                  <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionIn }}</span>
-                  Domestic tuition fee(avg.)
+                  <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionIn }}</span>
+                  Domestic student tuition fee(avg.)
                 </li>
-                {{/if}}{{#if data.university.BDtuitionOut}}
+                {{/if}} {{#if data.university.MDtuitionOut}}
                 <li class="list-group-item">
-                  <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionOut }}</span>
-                  International tuition fee(avg.)
+                  <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionOut }}</span>
+                  International student tuition fee(avg.)
                 </li>
                 {{/if}}
               </ul>
-            </section>
-            {{/or}} 
-            
-            {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
-            <ul class="list-unstyled list-group">
-              <li class="list-group-item bg-light text-uppercase">
-                <strong>Masters degree</strong>
-              </li>
-              {{#if data.university.MDstudents}}
-              <li class="list-group-item">
-                <span class="badge badge-1 float-right">{{data.university.MDstudents }}</span>
-                Students
-              </li>
-              {{/if}} {{#if data.university.MDtuitionIn}}
-              <li class="list-group-item">
-                <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionIn }}</span>
-                Domestic student tuition fee(avg.)
-              </li>
-              {{/if}} {{#if data.university.MDtuitionOut}}
-              <li class="list-group-item">
-                <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionOut }}</span>
-                International student tuition fee(avg.)
-              </li>
-              {{/if}}
-            </ul>
 
-            {{/or}} {{/or}}
+              {{/or}} {{/or}}
+            </div>
           </div>
-
         </section>
 
 
@@ -287,7 +286,7 @@
 
 
 
-      </div>
+      
     </div>
 
     <div class="row">

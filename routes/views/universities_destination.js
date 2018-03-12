@@ -22,7 +22,7 @@ exports = module.exports = function (req, res) {
     state: req.params.state,
     city: req.params.city,
 
-    pathName: req.url,
+    pathName: req.path,
     source: 'bydestination', // for pagination
     meta: {},
     showShare: true, // show share -fb,twitter etc

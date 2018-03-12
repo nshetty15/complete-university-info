@@ -7,7 +7,7 @@ exports = module.exports = function (req, res) {
   // Set locals
   locals.section = 'aboutus';
   locals.data = {
-    pathName: req.url,
+    pathName: req.path,
     meta: {
       title: "About - " + locals.title, // under 70 characters
       description: "We strive to furnish the latest data of a university to aspiring students to achieve their professional success.", // under 160 characters - locals.description

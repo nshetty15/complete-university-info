@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
   };
   locals.data = {
     tests: [],
-    pathName: req.url,
+    pathName: req.path,
     meta: {},
     showShare: true, // show share -fb,twitter etc
   };
