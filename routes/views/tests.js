@@ -8,7 +8,7 @@ exports = module.exports = function (req, res) {
   locals.section = 'tests';
 
   locals.data = {
-    pathName: req.url,
+    pathName: req.path,
     meta: {
       title: "Language and Admission tests explained", // under 70 characters
       description: "At universities teaching in English, a test of English language proficiency and admission test is likely to be part of the applications process for many international students.", // under 160 characters

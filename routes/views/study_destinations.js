@@ -7,7 +7,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'studyin';
 
 	locals.data = {
-		pathName: req.url,
+		pathName: req.path,
 		studyIn: [],
 		meta:{
 			title: "Where to study? Study abroad destinations.", // under 70 characters

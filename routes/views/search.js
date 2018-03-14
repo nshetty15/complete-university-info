@@ -10,6 +10,7 @@ exports = module.exports = function (req, res) {
   locals.data = {
     universities: [],
     searchQuery: req.query.q,
+    pathName: req.path,
     meta: {
       title: locals.title + " search results", // under 70 characters
       description: "Want to study a university courses abroad? Use our free tool to find your dream university.", // under 160 characters

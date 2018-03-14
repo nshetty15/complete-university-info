@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
   locals.data = {
     universities: [],
     countries: [],
-    pathName: req.url,
+    pathName: req.path,
     source: 'universities', // for pagination
     hideBanner: !req.query.page,
     meta: {

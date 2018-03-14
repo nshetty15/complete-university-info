@@ -8091,7 +8091,8 @@ h6,
   border-color: #FB493A; }
 
 .padding-tb {
-  padding: 3rem 0; }
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
 
 .media-cont,
 hr {
