@@ -24,7 +24,7 @@ header {
     padding-right: 25px;
 }
 
-.navbar-collapse{
+.navbar-collapse {
     margin-top: 1.2rem;
     border-top: 1px solid #e3e7eb;
 }
@@ -149,12 +149,11 @@ footer {
 @media (min-width: 768px) {
     header>.container {
         text-align: left;
-    } // .navbar {
-    //     padding: 0 1rem;
-    // }
-    // .nav-link {
-    //     padding: 1rem 2rem;
-    // }
+    } 
+    .navbar-collapse {
+        margin-top: 0;
+        border-top: 0;
+    }
     .navbar-light .navbar-nav .nav-link {
         &:hover,
         &:focus {
