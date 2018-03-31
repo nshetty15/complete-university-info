@@ -38,20 +38,17 @@
 
 	<meta name="twitter:image:src" content="/completeuniversityinfo.jpg">
 	<meta name="twitter:url" content="{{baseUrl}}{{data.pathName}}"> {{/if}}
-	
+
 	<link rel="canonical" href="{{baseUrl}}{{data.pathName}}">
 	<link rel="manifest" href="/manifest.json">
 
-	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon">
-	{{>criticalCss}}
+	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> {{>criticalCss}}
 	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<noscript>
 		<link rel="stylesheet" href="/dist/style.css">
 	</noscript>
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
-	admin--}} 
-	{{!-- {{{isAdminEditorCSS user}}} --}}
-	{{>analytics}}
+	admin--}} {{!-- {{{isAdminEditorCSS user}}} --}} {{>analytics}}
 	<script src="/dist/common.bundle.js" async></script> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //- Safely remove this block if you are
 	not targeting IE8 --}}
 	<!--[if lt IE 9]>
@@ -60,14 +57,14 @@
 </head>
 
 <body>
-
+	<div id="fb-root"></div>
 	<nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
 		<div class="container">
 			<a href="{{baseUrl}}/" class="navbar-brand">
 				<img src="/images/completeuniversityinfo.png" alt="Complete university Info logo" />
 			</a>
 			<button class="navbar-toggler p-0 border-0 collapsed" type="button" data-toggle="collapse" data-target="#cuiMenu" aria-controls="cuiMenu"
-				 aria-expanded="false" aria-label="Toggle navigation">
+			 aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
@@ -119,10 +116,10 @@
 		</div>
 		{{/if}}
 	</div>
-	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}} 
+	{{/if}} {{!-- The content block should contain the body of your template's content --}} {{{body}}}
 
 	<footer>
-		<div class="container text-center">
+		<div class="container text-center clearfix">
 
 			<div class="ft-links">
 				<a href="{{baseUrl}}/aboutus/">About us</a>
@@ -158,12 +155,16 @@
 				</a>
 			</div>
 
-			<p>&copy; 2018 www.completeuniversityinfo.com</p>
+			<div class="copyright">
+				<p>&copy; 2018 www.completeuniversityinfo.com</p>
+				<div class="fb-page" data-href="https://www.facebook.com/completeuniversityinfo/" data-adapt-container-width="true" data-hide-cover="false"
+				 data-show-facepile="false"></div>
+			</div>
 
 		</div>
 	</footer>
 
-		{{#if data.showShare}}
+	{{#if data.showShare}}
 	<div class="fixed-bottom share" id="socialShare" style="display:none;">
 		<div class="container text-center">
 			<span class="text-muted">Share</span>
@@ -188,9 +189,7 @@
 			</a>
 		</div>
 	</div>
-	{{/if}}
-
-	{{!--
+	{{/if}} {{!--
 	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> --}} {{!-- {{{isAdminEditorJS user}}} --}}
 </body>
 

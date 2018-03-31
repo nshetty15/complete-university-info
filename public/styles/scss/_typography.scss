@@ -200,24 +200,110 @@
     color: #fff
 }
 
-.fa-glass:before {
-    content: "\f000"
+/************ USED ICONS **********/
+.fa-heart:before {
+    content: "\f004"
 }
-
+.fa-facebook-square:before {
+    content: "\f082"
+}
+.fa-twitter-square:before {
+    content: "\f081"
+}
+.fa-instagram:before {
+    content: "\f16d"
+}
+.fa-google-plus-square:before {
+    content: "\f0d4"
+}
+.fa-facebook-f:before,
+.fa-facebook:before {
+    content: "\f09a"
+}
+.fa-twitter:before {
+    content: "\f099"
+}
+.fa-envelope-o:before {
+    content: "\f003"
+}
+.fa-whatsapp:before {
+    content: "\f232"
+}
+.fa-search:before {
+    content: "\f002"
+}
+.fa-map-marker:before {
+    content: "\f041"
+}
+.fa-trophy:before {
+    content: "\f091"
+}
+.fa-phone-square:before {
+    content: "\f098"
+}
+.fa-envelope-square:before {
+    content: "\f199"
+}
+.fa-globe:before {
+    content: "\f0ac"
+}
+.fa-google-plus:before {
+    content: "\f0d5"
+}
+.fa-linkedin-square:before {
+    content: "\f08c"
+}
+.fa-youtube:before {
+    content: "\f167"
+}
+.fa-vimeo:before {
+    content: "\f27d"
+}
+.fa-flickr:before {
+    content: "\f16e"
+}
+.fa-pinterest:before {
+    content: "\f0d2"
+}
 .fa-music:before {
     content: "\f001"
 }
 
-.fa-search:before {
-    content: "\f002"
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0
 }
 
-.fa-envelope-o:before {
-    content: "\f003"
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto
 }
 
-.fa-heart:before {
-    content: "\f004"
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('/fonts/fontawesome-webfont.eot');
+    src: url('/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), 
+    url('/fonts/fontawesome-webfont.woff2') format('woff2'), 
+    url('/fonts/fontawesome-webfont.woff') format('woff'), 
+    url('/fonts/fontawesome-webfont.ttf') format('truetype'), 
+    url('/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/******** Unused *********
+.fa-glass:before {
+    content: "\f000"
 }
 
 .fa-star:before {
@@ -451,9 +537,7 @@
     content: "\f040"
 }
 
-.fa-map-marker:before {
-    content: "\f041"
-}
+
 
 .fa-adjust:before {
     content: "\f042"
@@ -695,13 +779,8 @@
     content: "\f080"
 }
 
-.fa-twitter-square:before {
-    content: "\f081"
-}
 
-.fa-facebook-square:before {
-    content: "\f082"
-}
+
 
 .fa-camera-retro:before {
     content: "\f083"
@@ -740,9 +819,7 @@
     content: "\f08b"
 }
 
-.fa-linkedin-square:before {
-    content: "\f08c"
-}
+
 
 .fa-thumb-tack:before {
     content: "\f08d"
@@ -756,9 +833,7 @@
     content: "\f090"
 }
 
-.fa-trophy:before {
-    content: "\f091"
-}
+
 
 .fa-github-square:before {
     content: "\f092"
@@ -784,18 +859,10 @@
     content: "\f097"
 }
 
-.fa-phone-square:before {
-    content: "\f098"
-}
 
-.fa-twitter:before {
-    content: "\f099"
-}
 
-.fa-facebook-f:before,
-.fa-facebook:before {
-    content: "\f09a"
-}
+
+
 
 .fa-github:before {
     content: "\f09b"
@@ -862,9 +929,7 @@
     content: "\f0ab"
 }
 
-.fa-globe:before {
-    content: "\f0ac"
-}
+
 
 .fa-wrench:before {
     content: "\f0ad"
@@ -961,21 +1026,15 @@
     content: "\f0d1"
 }
 
-.fa-pinterest:before {
-    content: "\f0d2"
-}
+
 
 .fa-pinterest-square:before {
     content: "\f0d3"
 }
 
-.fa-google-plus-square:before {
-    content: "\f0d4"
-}
 
-.fa-google-plus:before {
-    content: "\f0d5"
-}
+
+
 
 .fa-money:before {
     content: "\f0d6"
@@ -1540,9 +1599,7 @@
     content: "\f166"
 }
 
-.fa-youtube:before {
-    content: "\f167"
-}
+
 
 .fa-xing:before {
     content: "\f168"
@@ -1564,13 +1621,9 @@
     content: "\f16c"
 }
 
-.fa-instagram:before {
-    content: "\f16d"
-}
 
-.fa-flickr:before {
-    content: "\f16e"
-}
+
+
 
 .fa-adn:before {
     content: "\f170"
@@ -1731,9 +1784,7 @@
     content: "\f198"
 }
 
-.fa-envelope-square:before {
-    content: "\f199"
-}
+
 
 .fa-wordpress:before {
     content: "\f19a"
@@ -2321,9 +2372,6 @@
     content: "\f231"
 }
 
-.fa-whatsapp:before {
-    content: "\f232"
-}
 
 .fa-server:before {
     content: "\f233"
@@ -2619,9 +2667,7 @@
     content: "\f27c"
 }
 
-.fa-vimeo:before {
-    content: "\f27d"
-}
+
 
 .fa-black-tie:before {
     content: "\f27e"
@@ -3010,32 +3056,4 @@
 .fa-meetup:before {
     content: "\f2e0"
 }
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0
-}
-
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    clip: auto
-}
-
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot');
-    src: url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2') format('woff2'), url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff') format('woff'), url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'), url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
+*/

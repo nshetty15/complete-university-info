@@ -645,7 +645,7 @@
           <section>
             <h5>Notable Alumni</h3>
               {{#each data.university.alumni }}
-              <a href="https://www.google.com/search?q={{this}}" class="badge badge-secondary" target="_blank" rel="noopener">{{ this }}</a>
+                <span class="badge badge-secondary">{{ this }}</span>
               {{/each}}
           </section>
           {{/if}} {{!-- Admission (office,phone,rate)--}} {{#or data.university.admissionOffice data.university.admissionRate}}

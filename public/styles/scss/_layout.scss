@@ -24,6 +24,11 @@ header {
     padding-right: 25px;
 }
 
+.navbar-collapse{
+    margin-top: 1.2rem;
+    border-top: 1px solid #e3e7eb;
+}
+
 .nav-link {
     padding: 1rem 0 .5rem;
 }
@@ -59,7 +64,6 @@ footer {
     background-color: $cui-dark-grey;
     padding: 40px 0 70px;
     color: $cui-light-grey;
-
     a {
         margin: 0 1rem;
         color: $cui-light-grey;
@@ -170,9 +174,11 @@ footer {
     }
     footer {
         padding: 60px 0 100px;
-
-        p {
+        .copyright {
             float: left;
+        }
+        .fb_iframe_widget {
+            display: block;
         }
     }
     .share {

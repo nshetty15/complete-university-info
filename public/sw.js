@@ -1,5 +1,5 @@
 // use a CACHE_NAME for cache versioning
-var CACHE_NAME = '4.0.3';
+var CACHE_NAME = '4.0.4';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function (e) {
@@ -18,6 +18,11 @@ self.addEventListener('install', function (e) {
                 '/images/tests/pte_logo.jpg',
                 '/images/tests/gmat_logo.jpg',
                 '/images/tests/gre_logo.jpg',
+                '/fonts/fontawesome-webfont.eot',
+                '/fonts/fontawesome-webfont.woff2',
+                '/fonts/fontawesome-webfont.woff',
+                '/fonts/fontawesome-webfont.ttf',
+                '/fonts/fontawesome-webfont.svg'
             ]).then(function () {
                 self.skipWaiting();
             });
