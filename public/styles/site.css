@@ -5908,8 +5908,8 @@ a.text-dark:focus, a.text-dark:hover {
 .fa-google-plus:before {
   content: ""; }
 
-.fa-linkedin-square:before {
-  content: ""; }
+.fa-linkedin:before {
+  content: ""; }
 
 .fa-youtube:before {
   content: ""; }
@@ -6049,6 +6049,9 @@ a.text-dark:focus, a.text-dark:hover {
 
 .fa-inbox:before {
     content: "\f01c"
+}
+.fa-linkedin-square:before {
+    content: "\f08c"
 }
 
 .fa-play-circle-o:before {
@@ -6729,9 +6732,6 @@ a.text-dark:focus, a.text-dark:hover {
     content: "\f0e0"
 }
 
-.fa-linkedin:before {
-    content: "\f0e1"
-}
 
 .fa-rotate-left:before,
 .fa-undo:before {

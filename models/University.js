@@ -42,6 +42,7 @@ University.add({
   // janDate: { type: Types.Date, label: 'January Deadline', }, // x
   // mayDate: { type: Types.Date, label: 'May Deadline', }, // x
   // sepDate: { type: Types.Date, label: 'September Deadline', }, // x
+  appDeadline: { type: String, label: 'Application Deadline', note: 'eg: https://www.usnews.com/best-colleges/university-of-michigan-9092 (, seperate dates)' },
   appFee: { type: String, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
 
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
