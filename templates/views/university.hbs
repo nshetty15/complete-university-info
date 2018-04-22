@@ -270,6 +270,7 @@
 
 
         {{!-- Subjects text-secondary --}}
+        {{#if data.university.programs}}
         <section>
           <h3>Programs / Courses / Degrees at {{data.university.name}}</h3>
           <form>
@@ -283,7 +284,7 @@
             {{{data.university.programs}}}
           </div>
         </section>
-
+        {{/if}}
 
 
       
