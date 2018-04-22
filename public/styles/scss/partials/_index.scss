@@ -49,10 +49,9 @@
 .study-locations {
     .wrap {
         background-color: $cui-light;
-        margin-bottom: 1rem;
-        &:nth-last-child(2) {
-            margin-bottom: 0;
-        }
+        margin-bottom: 1rem; // &:nth-last-child(2) {
+        //     margin-bottom: 0;
+        // }
     }
     .thumbnail {
         min-height: 250px;
@@ -121,20 +120,19 @@
             .col-md-5 {
                 padding-right: 0;
             }
-            &:last-child {
-                margin-bottom: 0;
-            }
+        }
+        .col-md-6:last-child .wrap {
+            margin-bottom: 0;
         }
         .thumbnail {
             margin-bottom: 0;
             height: 100%;
         }
     }
-    
     .levels {
         padding: 4rem 0 2.5rem;
     }
-    .articles{
+    .articles {
         padding: 4rem 0;
     }
     .articles article {
