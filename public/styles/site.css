@@ -9246,12 +9246,20 @@ footer {
   margin-bottom: 40px; }
 #subjects h3 {
   text-transform: inherit;
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+  margin: 3rem 0 1.5rem; }
 #subjects h4 {
   font-size: 1.1rem; }
-#subjects h3,
-#subjects h4 {
+#subjects h5 {
   color: #777777; }
+#subjects .to-expand, #subjects .to-collapse {
+  cursor: pointer; }
+  #subjects .to-expand:after, #subjects .to-collapse:after {
+    margin-left: 20px; }
+#subjects .to-expand:after {
+  content: '+'; }
+#subjects .to-collapse:after {
+  content: '-'; }
 
 .col-highlight {
   background-color: #faf8f9;
@@ -9346,21 +9354,9 @@ footer {
     margin-left: 0;
     margin-right: 0; }
 
-  .subjects ul {
-    -moz-column-gap: 1.5rem;
-    -webkit-column-gap: 1.5rem;
-    column-gap: 1.5rem;
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3; }
-    .subjects ul li > ul {
-      margin-bottom: 60px;
-      -moz-column-gap: 0;
-      -webkit-column-gap: 0;
-      column-gap: 0;
-      -moz-column-count: 0;
-      -webkit-column-count: 0;
-      column-count: 0; }
+  #subjects > ul li ul li {
+    border-left: 2px solid #f4bb3a;
+    border-top: 0; }
 
   .col-highlight li:nth-last-child(1), .col-highlight li:nth-last-child(2), .col-highlight li:nth-last-child(3), .col-highlight li:nth-last-child(4),
   .li-plain li:nth-last-child(1),
