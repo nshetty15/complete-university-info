@@ -43,10 +43,13 @@ University.add({
   // mayDate: { type: Types.Date, label: 'May Deadline', }, // x
   // sepDate: { type: Types.Date, label: 'September Deadline', }, // x
   appDeadline: { type: String, label: 'Application Deadline', note: 'eg: https://www.usnews.com/best-colleges/university-of-michigan-9092 (, seperate dates)' },
-  appFee: { type: String, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
+  appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
+  serviceFee: {type: Types.Number, label: 'Service Fee', note: 'eg: http://school.cucas.edu.cn/China-University-of-Mining-and-Technology-1276/fee-structure/' },
 
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
-  extended: { type: Types.Html, wysiwyg: true, height: 400 },
+  extended: { type: Types.Html, wysiwyg: true, height: 400, 
+    note: 'About(history), education(faculties,disciplines,courses), research, services(career,library,medical,housing,student), student life(campus,sports facilities,student clubs) eg: https://www.mastersportal.com/universities/ ' 
+  },
 
   // FOR STUDENTS  -
   students: { type: String, label: 'Total Students', note: 'eg: 25000 || 35000+ || over 45000 || 10000-15000' },
@@ -110,7 +113,7 @@ University.add({
   the: { type: String, label: 'THE(World University Rankings)', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
   arwu: { type: String, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' },
   forbes: { type: String, label: 'Forbes', note: 'eg: https://www.forbes.com/top-colleges/list/' },
-  macleans: { type: String, label: 'Macleans', note: 'eg: http://www.macleans.ca/education/unirankings/university-rankings-2017/' }, // 
+  macleans: { type: Types.Number, label: 'Macleans', note: 'eg: http://www.macleans.ca/education/unirankings/university-rankings-2017/' }, // 
   cug: { type: String, label: 'Complete University Guide', note: 'eg: https://www.thecompleteuniversityguide.co.uk/' }, // 
   ft: { type: String, label: 'Financial Times', note: 'eg: http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017' }, // 
   theEconomist: { type: String, label: 'The Economist', note: 'eg:  http://www.economist.com/whichmba/full-time-mba-ranking' }, //
