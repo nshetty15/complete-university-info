@@ -49,12 +49,13 @@ $('#searchProgram').on('keyup', function () {
 });
 
 // hide UL's & add class to each UL
-$("#subjects ul").css('display','none');
+// $("#subjects ul").css('display','none');
 
 $("#subjects h3, #subjects h4, #subjects h5").each(function(index, item){
 	var $ul = $(this).next('ul').length,
 			$this = $(this);
 			if($ul){
+				$(this).next('ul').css('display','none');
 				$this.addClass('to-expand');
 			}
 });
