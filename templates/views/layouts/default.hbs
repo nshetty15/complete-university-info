@@ -43,7 +43,7 @@
 	<link rel="manifest" href="/manifest.json">
 
 	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> {{>criticalCss}}
-	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> 
 	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
 	admin--}} {{!-- {{{isAdminEditorCSS user}}} --}} {{>analytics}}
 	<script src="/dist/common.bundle.js" async></script> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //- Safely remove this block if you are
@@ -51,6 +51,16 @@
 	<!--[if lt IE 9]>
 		<script src="//cdn.jsdelivr.net/combine/npm/html5shiv@3.7.3,npm/respond.js@1.4.2/dest/respond.min.js"></script>
 	<![endif]-->
+
+	{{!-- Adsense --}} 
+	{{#if data.showAdvertise }}
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-3727398703271877",
+			enable_page_level_ads: true
+		});
+	</script> {{/if}}
 </head>
 
 <body>

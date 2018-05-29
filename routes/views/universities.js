@@ -20,6 +20,7 @@ exports = module.exports = function (req, res) {
       keywords:  "universities,study abroad,international students,study guide" // No more than 10 keyword phrases - locals.keywords
     },
     showShare: true, // show share -fb,twitter etc
+    showAdvertise: true, // Page to display advertisement
   };
 
   // Load all countries
