@@ -10,7 +10,7 @@
             <p>Compare universities around the world and choose universities of your choice from the results or find by country.</p>
             {{/if}}
 
-            <h4>Search</h4>
+            <h4><strong>Search</strong></h4>
               <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form inner">
                 <label>
                   <input type="text" class="form-control form-control" placeholder="Type a university..." name="q" autofocus>
@@ -23,7 +23,7 @@
           </div>
 
           <div class="item">
-            <h4>Country</h4>
+            <h4><strong>Country</strong></h4>
               <p>
                 {{# each data.countries }} {{#if show}}
                 <a href="{{@root.baseUrl}}{{categoryCountryUrl region.key key}}" class="badge badge-secondary" title="{{name}}">{{name}}</a>

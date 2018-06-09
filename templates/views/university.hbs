@@ -235,7 +235,7 @@
                 {{/if}}{{#if data.university.BDtuitionOut}}
                 <li class="list-group-item">
                   <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionOut }}</span>
-                  International tuition fee(avg.)
+                  International student tuition fee(avg.)
                 </li>
                 {{/if}}
               </ul>
@@ -301,7 +301,7 @@
             <h3>Selection criteria</h3>
             {{#or data.university.BDielts data.university.MDielts data.university.BDtoefl data.university.MDtoefl data.university.BDpte
             data.university.MDpte}}
-            <h5>Languge test</h5>
+            <h5>Language test</h5>
             <ul class="list-unstyled li-bg-grey row">
               {{#if data.university.BDielts}}
               <li class="col-md-3">

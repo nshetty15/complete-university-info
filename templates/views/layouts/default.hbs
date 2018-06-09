@@ -43,8 +43,7 @@
 	<link rel="manifest" href="/manifest.json">
 
 	<link rel="shortcut icon" href="/images/favicon/icon.ico" type="image/x-icon"> {{>criticalCss}}
-	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> 
-	{{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
+	<link rel="preload" href="/dist/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> {{!-- This file provides the default styling for the KeystoneJS Content Editor - only renders when user is logged in and
 	admin--}} {{!-- {{{isAdminEditorCSS user}}} --}} {{>analytics}}
 	<script src="/dist/common.bundle.js" async></script> {{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries //- Safely remove this block if you are
 	not targeting IE8 --}}
@@ -52,8 +51,7 @@
 		<script src="//cdn.jsdelivr.net/combine/npm/html5shiv@3.7.3,npm/respond.js@1.4.2/dest/respond.min.js"></script>
 	<![endif]-->
 
-	{{!-- Adsense --}} 
-	{{#if data.showAdvertise }}
+	{{!-- Adsense --}} {{#if data.showAdvertise }}
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
@@ -131,7 +129,8 @@
 			<div class="ft-links">
 				<a href="{{baseUrl}}/aboutus/">About us</a>
 				<a href="{{baseUrl}}/privacy/">Privacy policy</a>
-				{{!--<a href="{{baseUrl}}/terms/">Terms of Use</a> --}}
+				{{!--
+				<a href="{{baseUrl}}/terms/">Terms of Use</a> --}}
 			</div>
 			<div class="social-links" itemscope itemtype="http://schema.org/Organization">
 				<h6>Show us some
@@ -194,7 +193,15 @@
 			</a>
 		</div>
 	</div>
-	{{/if}} {{!--
+	{{/if}}
+	<div class="fixed-bottom c-accept" id="privacyAcpt" role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc">
+		<div class="container text-center" id="cookieconsent:desc">
+				We use cookies to personalize content and improve your experience. By using our site, you consent to our 
+				<a aria-label="learn more about cookies" role="button" tabindex="0" href="/privacy/">terms &amp; cookies</a>.
+				<a href="javascript:void(0)" aria-label="dismiss cookie message" id="btnConsent" role="button" tabindex="0" class="btn btn-warning">Got it!</a>
+		</div>
+	</div>
+	{{!--
 	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> --}} {{!-- {{{isAdminEditorJS user}}} --}}
 </body>
 

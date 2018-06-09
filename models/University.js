@@ -44,6 +44,7 @@ University.add({
   // sepDate: { type: Types.Date, label: 'September Deadline', }, // x
   appDeadline: { type: String, label: 'Application Deadline', note: 'eg: https://www.usnews.com/best-colleges/university-of-michigan-9092 (, seperate dates)' },
   appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
+  intakes: {type: Types.TextArray,label: 'Program Intakes', note:'February | July | October; Fall (September/October), Winter (December/January), Spring (March/April), Summer (June/July)'},
   serviceFee: {type: Types.Number, label: 'Service Fee', note: 'eg: http://school.cucas.edu.cn/China-University-of-Mining-and-Technology-1276/fee-structure/' },
 
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
@@ -90,6 +91,7 @@ University.add({
   noBD: { type: Types.Boolean, label: 'Bachelors not available' },
   noMD: { type: Types.Boolean, label: 'Masters not available' },
   mba: { type: Types.Boolean, label: 'MBA', note:'For Business schools: https://www.forbes.com/business-schools/#3920da686d6d' },
+  online: { type: Types.Boolean, label: 'Online programs available' },
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
   // ACADEMIC & LANGUAGE TESTS
@@ -109,16 +111,16 @@ University.add({
   scholarships: { type: Types.Html, wysiwyg: true, height: 200, label: 'Scholarships', note: 'eg: Canadian Bureau for International Education (CBIE)' },
 
   // RANKINGS
-  qs: { type: String, label: 'QS World University Rankings', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
-  the: { type: String, label: 'THE(World University Rankings)', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
-  arwu: { type: String, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' },
-  forbes: { type: String, label: 'Forbes', note: 'eg: https://www.forbes.com/top-colleges/list/' },
+  qs: { type: Types.Number, label: 'QS World University Rankings', note: 'eg:  https://www.topuniversities.com/university-rankings' }, //
+  the: { type: Types.Number, label: 'THE(World University Rankings)', note: 'eg: https://www.timeshighereducation.com/world-university-rankings ' }, //  
+  arwu: { type: Types.Number, label: 'ARWU', note: 'eg: http://www.shanghairanking.com/' },
+  forbes: { type: Types.Number, label: 'Forbes', note: 'eg: https://www.forbes.com/top-colleges/list/' },
   macleans: { type: Types.Number, label: 'Macleans', note: 'eg: http://www.macleans.ca/education/unirankings/university-rankings-2017/' }, // 
-  cug: { type: String, label: 'Complete University Guide', note: 'eg: https://www.thecompleteuniversityguide.co.uk/' }, // 
-  ft: { type: String, label: 'Financial Times', note: 'eg: http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017' }, // 
-  theEconomist: { type: String, label: 'The Economist', note: 'eg:  http://www.economist.com/whichmba/full-time-mba-ranking' }, //
-  usNewsNational: { type: String, label: 'US News National', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-universities  ' }, // 
-  usNewsLiberal: { type: String, label: 'US News Liberal', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-liberal-arts-colleges' }, // 
+  cug: { type: Types.Number, label: 'Complete University Guide', note: 'eg: https://www.thecompleteuniversityguide.co.uk/' }, // 
+  ft: { type: Types.Number, label: 'Financial Times', note: 'eg: http://rankings.ft.com/businessschoolrankings/global-mba-ranking-2017' }, // 
+  theEconomist: { type: Types.Number, label: 'The Economist', note: 'eg:  http://www.economist.com/whichmba/full-time-mba-ranking' }, //
+  usNewsNational: { type: Types.Number, label: 'US News National', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-universities  ' }, // 
+  usNewsLiberal: { type: Types.Number, label: 'US News Liberal', note: 'eg: https://www.usnews.com/best-colleges/rankings/national-liberal-arts-colleges' }, // 
 
   // ADMISSIONS 
   admissionOffice: { type: String, label: 'Admission Office', note: 'eg: 51 Dineen Drive Fredericton E3B 5G3+1 (506) 452 0532' },
@@ -165,6 +167,7 @@ University.add({
   // },
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
+  note: {type: Types.Html, wysiwyg: true, height: 200, label: 'Note', note: 'any other informationw which wont be published to the website'},
   publishedDate: { type: Date, default: Date.now }
 });
 

@@ -1,10 +1,10 @@
-<section class="container  pt-5">
+<section class="container pt-5">
 	<div class="padding bg-white bs pb-5">
+		<h1>Contact us</h1>
 		<div class="row">
 
 			<div class="col-xs-12 col-md-8 col-lg-8">
 
-				<h1>Contact us</h1>
 				{{#unless enquirySubmitted}}
 				<p class="lead">Thank you for visiting www.completeuniversityinfo.com. We always welcome feedback. </p>
 
@@ -19,40 +19,66 @@
 				</div>
 				{{else}}
 				<div class="row">
-				<form method="post" class="col-xs-12 col-md-10 col-lg-8">
-					<input type="hidden" name="action" value="contact">
-					<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
-						<label for="cname"><b>Name</b></label>
-						<input type="text" name="name.full" id="cname" class="form-control" placeholder="Enter your name" value="{{formData.[name.full]}}">
-					</div>
-					<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-						<label for="cemail"><b>Email</b></label>
-						<input type="email" name="email" id="cemail" class="form-control" placeholder="Enter your email" value="{{formData.email}}">
-					</div>
-					<div class="form-group">
-						<label for="cphone"><b>Phone</b></label>
-						<input type="tel" name="phone" id="cphone" placeholder="Enter phone number(optional)" class="form-control" value="{{formData.phone}}">
-					</div>
-					<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
-						<label for="ccontact"><b>What are you contacting us about?</b></label>
-						<select name="enquiryType" id="ccontact" class="form-control">
-							<option value="">Choose one</option>
-							{{#each enquiryTypes}}
-							<option value="{{value}}">{{label}}</option>
-							{{/each}}
-						</select>
-					</div>
-					<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-						<label for="cmessage"><b>Message</b></label>
-						<textarea name="message" id="cmessage" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-					</div>
-					<div class="form-actions">
-						<button type="submit" class="btn btn-primary">Send Message</button>
-					</div>
-				</form>
+					<form method="post" class="col-xs-12 col-md-10 col-lg-8">
+						<input type="hidden" name="action" value="contact">
+						<div class="form-group {{#if validationErrors.name}}has-error{{/if}}">
+							<label for="cname">
+								<b>Name</b>
+							</label>
+							<input type="text" name="name.full" id="cname" class="form-control" placeholder="Enter your name" value="{{formData.[name.full]}}">
+						</div>
+						<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+							<label for="cemail">
+								<b>Email</b>
+							</label>
+							<input type="email" name="email" id="cemail" class="form-control" placeholder="Enter your email" value="{{formData.email}}">
+						</div>
+						<div class="form-group">
+							<label for="cphone">
+								<b>Phone</b>
+							</label>
+							<input type="tel" name="phone" id="cphone" placeholder="Enter phone number(optional)" class="form-control" value="{{formData.phone}}">
+						</div>
+						<div class="form-group {{#if validationErrors.enquiryType}}has-error{{/if}}">
+							<label for="ccontact">
+								<b>What are you contacting us about?</b>
+							</label>
+							<select name="enquiryType" id="ccontact" class="form-control">
+								<option value="">Choose one</option>
+								{{#each enquiryTypes}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+							<label for="cmessage">
+								<b>Message</b>
+							</label>
+							<textarea name="message" id="cmessage" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary">Send Message</button>
+						</div>
+					</form>
 				</div>
 				{{/if}}
 			</div>
+
+			<div class="col-xs-12 col-md-4 col-lg-4">
+				<div class="contact-info">
+					
+					<h5>Address</h5>
+				<address>
+					#33/2, 35th main, 6th cross,
+					<br> Sarakki Garden,
+					<br> J.P Nagara 6th phase,
+					<br> Bangalore - 560078, India</address>
+					<p>Telephone: <a href="tel:+919620406438">+91 9620406438</a> <br>
+						Email: <a href="mailto:completeuniversityinfo@gmail.com">completeuniversityinfo@gmail.com</a></p>
+				</div>
+				
+			</div>
+
 		</div>
 	</div>
 </section>

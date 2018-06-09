@@ -129,6 +129,19 @@ footer {
     background-color: #075e54;
 }
 
+/* Accept cookie**/
+.fixed-bottom.c-accept{
+    z-index: 1031;
+    background-color:$cui-dark-grey;
+    color:$white;
+    padding: 8px 0;
+    font-size: 14px;
+    border-top: 1px solid #444;
+
+    .btn{
+        margin-left: 5px;
+    }
+}
 
 /********8 ***********/
 

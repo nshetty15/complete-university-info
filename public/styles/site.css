@@ -8946,6 +8946,17 @@ footer {
 .w-app {
   background-color: #075e54; }
 
+/* Accept cookie**/
+.fixed-bottom.c-accept {
+  z-index: 1031;
+  background-color: #2f3135;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 14px;
+  border-top: 1px solid #444; }
+  .fixed-bottom.c-accept .btn {
+    margin-left: 5px; }
+
 /********8 ***********/
 .bg-cui {
   background-color: #f4bb3a; }
@@ -9436,6 +9447,14 @@ footer {
 .about-us p {
   margin-bottom: 30px; }
 
+.contact-info {
+  margin-top: 40px;
+  background-color: #f8f9fa;
+  padding: 20px; }
+
+@media (min-width: 768px) {
+  .contact-info {
+    margin-top: 0; } }
 @media (min-width: 768px) {
   .test.padding-tb {
     padding-bottom: 5rem; } }

@@ -26,14 +26,14 @@ $('#searchProgram').on('keyup', function () {
 	var value = $(this).val();
 	var $heading;
 	// Expand when start typing
-	if(collapsed && value.length){
-		$("#subjects ul").css('display','block');
+	if (collapsed && value.length) {
+		$("#subjects ul").css('display', 'block');
 		$("#subjects h3, #subjects h4, #subjects h5").removeClass('to-expand').addClass('to-collapse');
 		collapsed = false;
 		// $("#subjects h3, #subjects h4, #subjects h5").trigger("click");
 	}
 	// hide when empty
-	if(!collapsed && !value.length){
+	if (!collapsed && !value.length) {
 		collapsed = true;
 		// $("#subjects h3, #subjects h4, #subjects h5").trigger("click");
 	}
@@ -51,29 +51,45 @@ $('#searchProgram').on('keyup', function () {
 // hide UL's & add class to each UL
 // $("#subjects ul").css('display','none');
 
-$("#subjects h3, #subjects h4, #subjects h5").each(function(index, item){
+$("#subjects h3, #subjects h4, #subjects h5").each(function (index, item) {
 	var $ul = $(this).next('ul').length,
-			$this = $(this);
-			if($ul){
-				$(this).next('ul').css('display','none');
-				$this.addClass('to-expand');
-			}
+		$this = $(this);
+	if ($ul) {
+		$(this).next('ul').css('display', 'none');
+		$this.addClass('to-expand');
+	}
 });
 
 // expand collapse
-$("#subjects h3, #subjects h4, #subjects h5").click(function(){
+$("#subjects h3, #subjects h4, #subjects h5").click(function () {
 	var $ul = $(this).next('ul'),
-			$this = $(this);
-			if($ul){
-				
-				$ul.slideToggle(200, function(){
-					if($this.hasClass('to-expand')){
-						$this.removeClass('to-expand').addClass('to-collapse');
-					}else{
-						$this.removeClass('to-collapse').addClass('to-expand');
-					}
-				});
+		$this = $(this);
+	if ($ul) {
+
+		$ul.slideToggle(200, function () {
+			if ($this.hasClass('to-expand')) {
+				$this.removeClass('to-expand').addClass('to-collapse');
+			} else {
+				$this.removeClass('to-collapse').addClass('to-expand');
 			}
+		});
+	}
+});
+
+/****Accept Cookie policy */
+// remove if available
+if (typeof (Storage) !== "undefined") {
+	if (localStorage.getItem("cookie") !== null) {
+		$("#privacyAcpt").remove();
+	}
+}
+// on accept
+$("#btnConsent").click(function (e) {
+	e.preventDefault();
+	if (typeof (Storage) !== "undefined") {
+		localStorage.setItem("cookie", "true");
+	}
+	$("#privacyAcpt").fadeOut();
 });
 
 
