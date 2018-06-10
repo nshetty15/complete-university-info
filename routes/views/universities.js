@@ -58,10 +58,11 @@ exports = module.exports = function (req, res) {
         status: 'published',
       },
     })
-      //.sort({publishedDate: '-publishedDate', the: '-the'})
-      .populate('region country state city')
-      .sort({ the: 'asc' });
-
+      // .sort({publishedDate: '-publishedDate', the: '-the'})
+      // .sort({ the: 1 })
+      .sort({ the: 1 })
+      .populate('region country state city');
+      
     q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));

@@ -67,16 +67,16 @@
                   University Ranking
                 </p>
                 <div class="row">
-                  {{#if qs}}
-                  <div class="col-6">QS:
-                    <strong>{{qs}}</strong>
-                  </div>
-                  {{/if}} {{#if the}}
-                  <div class="col-6">THE:
+                  {{#if the}}
+                  <div class="col-6" title="Times World University (THE) Ranking">THE:
                     <strong>{{the}}</strong>
                   </div>
-                  {{/if}} {{#if arwu}}
-                  <div class="col-6">ARWU:
+                  {{/if}} {{#if qs}}
+                  <div class="col-6" title="QS World Univesity Ranking">QS:
+                    <strong>{{qs}}</strong>
+                  </div>
+                  {{/if}}  {{#if arwu}}
+                  <div class="col-6" title="Academic Ranking of World Universities (ARWU) Ranking">ARWU:
                     <strong>{{arwu}}</strong>
                   </div>
                   {{/if}} {{#if forbes}}
@@ -88,10 +88,32 @@
                     <strong>{{macleans}}</strong>
                   </div>
                   {{/if}} {{#if cug}}
-                  <div class="col-6">Complete University Guide:
+                  <div class="col-6" title="The Complete University Guide Ranking">Complete University Guide:
                     <strong>{{cug}}</strong>
                   </div>
                   {{/if}}
+
+                  {{!-- {{#if ft}}
+                  <div class="col-6">Financial Timess (MBA):
+                    <strong>{{ft}}</strong>
+                  </div>
+                  {{/if}}
+                  {{#if theEconomist}}
+                  <div class="col-6">The Economist (MBA):
+                    <strong>{{theEconomist}}</strong>
+                  </div>
+                  {{/if}}
+                  {{#if usNewsNational}}
+                  <div class="col-6">US News National University:
+                    <strong>{{usNewsNational}}</strong>
+                  </div>
+                  {{/if}}
+                  {{#if usNewsLiberal}}
+                  <div class="col-6">US News National Liberal Arts Colleges:
+                    <strong>{{usNewsLiberal}}</strong>
+                  </div>
+                  {{/if}} --}}
+
                 </div>
               </div>
               {{/ifCond }}
