@@ -26,7 +26,7 @@ exports = module.exports = function (req, res) {
     source: 'bydestination', // for pagination
     meta: {},
     showShare: true, // show share -fb,twitter etc
-    showAdvertise: true, // Page to display advertisement
+    showAdvertise: false, // Page to display advertisement-true
   };
 
   // Load the current category filter
@@ -97,7 +97,7 @@ exports = module.exports = function (req, res) {
 
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
-      perPage: 10,
+      perPage: 15,
       maxPages: 10,
       filters: filter,
     })

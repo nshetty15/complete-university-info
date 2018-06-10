@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 		var q = keystone.list('StudyDestination').paginate({
 			page: req.query.page || 1,
-			perPage: 10,
+			perPage: 15,
 			maxPages: 10,
 			filters: {
 				status: 'published',
