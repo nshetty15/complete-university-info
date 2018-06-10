@@ -59,8 +59,8 @@ exports = module.exports = function (req, res) {
       },
     })
       //.sort({publishedDate: '-publishedDate', the: '-the'})
-      .sort('-the')
-      .populate('region country state city');
+      .populate('region country state city')
+      .sort({ the: 'asc' });
 
     q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
