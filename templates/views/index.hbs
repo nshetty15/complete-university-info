@@ -7,12 +7,11 @@
 				<h3 class="lead">Study abroad with our
 					<strong>free</strong> resources on choosing a university</h3>
 				<meta itemprop="url" content="{{baseUrl}}/" />
-				<form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form" 
-				itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+				<form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
 					<meta itemprop="target" content="{{baseUrl}}/search/?q={q}" />
 					<label>
-						<input type="text" class="form-control form-control-lg" placeholder="Type a university..." name="q" required
-						 itemprop="query-input" autofocus />
+						<input type="text" class="form-control form-control-lg" placeholder="Type a university..." name="q" required itemprop="query-input"
+						 autofocus />
 					</label>
 					<input class="btn btn-lg btn-primary" type="submit" value="Discover Universities" />
 				</form>
@@ -32,7 +31,7 @@
 							<a href="{{@root.baseUrl}}{{studyDestinationtUrl slug}}">
 								{{!--
 								<div class="thumbnail bg-cover text-hide img-lazy" style="background-image:url(/images/country/{{country.countryCode}}.jpg)">
-								--}}
+									--}}
 									<div class="thumbnail bg-cover text-hide img-lazy" data-src="/images/country/{{country.countryCode}}.jpg">
 										{{ name }}
 									</div>
@@ -62,6 +61,10 @@
 				{{#each data.articles}}
 				<div class="col-md-4">
 					<article>
+						<a href="{{@root.baseUrl}}{{postUrl slug}}">
+							<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/c_scale,w_400/v{{image.version}}/{{image.public_id}}.jpg"
+							 class="img-fluid" alt="{{title}}" title="{{title}}">
+						</a>
 						<header>
 							<h3>
 								<a href="{{@root.baseUrl}}{{postUrl slug}}">{{title}}</a>

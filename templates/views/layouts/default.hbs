@@ -60,7 +60,7 @@
 			enable_page_level_ads: true
 		});
 	</script> {{/if}}--}}
-	
+
 </head>
 
 <body>
@@ -205,6 +205,10 @@
 	</div>
 	{{!--
 	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> --}} {{!-- {{{isAdminEditorJS user}}} --}}
+	{{#if data.adVerify }}
+		<script type="text/javascript"> var infolinks_pid = 3105061; var infolinks_wsid = 0; </script> 
+		<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
+	{{/if}}
 </body>
 
 </html>

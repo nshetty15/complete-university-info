@@ -9077,7 +9077,8 @@ footer {
   border-bottom: 5px solid #999999;
   margin-bottom: 2rem; }
   .articles article header {
-    background-color: transparent; }
+    background-color: transparent;
+    margin-top: 1rem; }
 
 .levels {
   background-color: #f5f5f5; }
@@ -9157,15 +9158,21 @@ footer {
     margin-top: 5px; }
   #universities .feature {
     color: #777777; }
-  #universities .rankings strong {
-    display: inline-block;
-    margin-bottom: 5px;
-    color: #f4bb3a; }
+  #universities .rankings {
+    margin-bottom: 1.5rem; }
+    #universities .rankings strong {
+      display: inline-block;
+      margin-bottom: 5px;
+      color: #f4bb3a; }
+  #universities .brief {
+    margin: 0 0 20px;
+    color: #777; }
+    #universities .brief p:last-child {
+      margin-bottom: 0; }
   #universities .fa {
     margin-right: 15px; }
   #universities .list {
-    padding: 1rem 0;
-    margin: 0 0 20px; }
+    padding: 1rem 0; }
     #universities .list .logo {
       width: auto;
       height: auto;

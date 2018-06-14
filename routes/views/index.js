@@ -23,6 +23,7 @@ exports = module.exports = function (req, res) {
 			keywords: locals.keywords // No more than 10 keyword phrases
 		},
 		showShare: true, // show share -fb,twitter etc
+		adVerify: true,
 	};
 
 	// Load the latest 3 articles
