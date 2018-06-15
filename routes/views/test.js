@@ -14,6 +14,7 @@ exports = module.exports = function (req, res) {
     pathName: req.path,
     meta: {},
     showShare: true, // show share -fb,twitter etc
+    showAdvertise: true, // Page to display advertisement -true
   };
 
   view.on('init', function (next) {

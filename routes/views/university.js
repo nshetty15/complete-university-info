@@ -16,7 +16,7 @@ exports = module.exports = function (req, res) {
     pathName: req.path,
     meta: {},
     showShare: true, // show share -fb,twitter etc
-    showAdvertise: false, // Page to display advertisement -true
+    showAdvertise: true, // Page to display advertisement -true
   };
   //console.log(req.params.university)
 

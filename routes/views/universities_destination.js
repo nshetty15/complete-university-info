@@ -26,7 +26,7 @@ exports = module.exports = function (req, res) {
     source: 'bydestination', // for pagination
     meta: {},
     showShare: true, // show share -fb,twitter etc
-    showAdvertise: false, // Page to display advertisement-true
+    showAdvertise: true, // Page to display advertisement-true
   };
 
   // Load the current category filter
