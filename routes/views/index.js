@@ -18,7 +18,7 @@ exports = module.exports = function (req, res) {
 		studyIn: [],
 		pathName: req.path,
 		meta: {
-			title: "Universities and their Rankings, Programs, Costs & Guidance for free.", // under 70 characters
+			title: "Universities around the world - Rankings, Programs, Costs & Guidance for free.", // under 70 characters
 			description: locals.description, // under 160 characters
 			keywords: locals.keywords // No more than 10 keyword phrases
 		},

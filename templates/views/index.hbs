@@ -62,8 +62,8 @@
 				<div class="col-md-4">
 					<article>
 						<a href="{{@root.baseUrl}}{{postUrl slug}}">
-							<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/c_scale,w_400/v{{image.version}}/{{image.public_id}}.jpg"
-							 class="img-fluid" alt="{{title}}" title="{{title}}">
+							<img data-src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/c_scale,w_400/v{{image.version}}/{{image.public_id}}.jpg"
+							 class="img-lazy img-fluid" alt="{{title}}" title="{{title}}">
 						</a>
 						<header>
 							<h3>

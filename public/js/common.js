@@ -98,7 +98,7 @@ $("#btnConsent").click(function (e) {
 - testing support for link[rel=preload]
 - enabling async CSS loading in browsers that do not support rel=preload
 - applying rel preload css once loaded, whether supported or not.
-*/
+*
 (function (w) {
 	"use strict";
 	// rel=preload support test
@@ -197,7 +197,7 @@ $("#btnConsent").click(function (e) {
 		w.loadCSS = loadCSS;
 	}
 }(typeof global !== "undefined" ? global : this));
-
+*/
 /********* Show/hide social share************/
 var like = true;
 $(document).scroll(function () {

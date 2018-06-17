@@ -10,25 +10,32 @@
             <p>Compare universities around the world and choose universities of your choice from the results or find by country.</p>
             {{/if}}
 
-            <h4><strong>Search</strong></h4>
-              <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form inner">
-                <label>
-                  <input type="text" class="form-control form-control" placeholder="Type a university..." name="q" autofocus>
-                </label>
-                <button class="btn btn-primary" type="submit" title="Search universities">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                  <span class="sr-only">Search Universities</span>
-                </button>
-              </form>
+            <h4 class="text-uppercase">
+              <strong>Search</strong>
+            </h4>
+            <form method="GET" action="{{baseUrl}}/search/" role="search" class="search-form inner">
+              <label for="searchForm">
+                <input id="searchForm" type="text" class="form-control form-control" placeholder="Type a university..." name="q" autofocus>
+              </label>
+              <button class="btn btn-primary" type="submit" title="Search universities">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <span class="sr-only">Search Universities</span>
+              </button>
+            </form>
           </div>
 
           <div class="item">
-            <h4><strong>Country</strong></h4>
-              <p>
-                {{# each data.countries }} {{#if show}}
-                <a href="{{@root.baseUrl}}{{categoryCountryUrl region.key key}}" class="badge badge-secondary" title="{{name}}">{{name}}</a>
-                {{/if}} {{/each}}
-              </p>
+            <ul class="list-unstyled list-group">
+              <li class="list-group-item bg-light text-uppercase">
+                <h4 class="mb-0">
+                  <strong>Country</strong>
+                </h4>
+              </li>
+              {{# each data.countries }} {{#if show}}
+              <li class="list-group-item">
+                <a href="{{@root.baseUrl}}{{categoryCountryUrl region.key key}}" title="{{name}}">{{name}}</a>
+              </li>{{/if}} {{/each}}
+            </ul>
           </div>
 
         </div>
@@ -45,7 +52,7 @@
                   {{#if logo.version}}
                   <img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo"
                     class="img-fluid" /> {{else}}
-                  <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
+                  <img src="/images/university_placeholder.png" class="img-fluid" alt="{{name}}" title="{{name}}" /> {{/if}}
                 </a>
               </div>
             </div>
@@ -75,7 +82,7 @@
                   <div class="col-6" title="QS World Univesity Ranking">QS:
                     <strong>{{qs}}</strong>
                   </div>
-                  {{/if}}  {{#if arwu}}
+                  {{/if}} {{#if arwu}}
                   <div class="col-6" title="Academic Ranking of World Universities (ARWU) Ranking">ARWU:
                     <strong>{{arwu}}</strong>
                   </div>
@@ -91,24 +98,19 @@
                   <div class="col-6" title="The Complete University Guide Ranking">Complete University Guide:
                     <strong>{{cug}}</strong>
                   </div>
-                  {{/if}}
-
-                  {{!-- {{#if ft}}
+                  {{/if}} {{!-- {{#if ft}}
                   <div class="col-6">Financial Timess (MBA):
                     <strong>{{ft}}</strong>
                   </div>
-                  {{/if}}
-                  {{#if theEconomist}}
+                  {{/if}} {{#if theEconomist}}
                   <div class="col-6">The Economist (MBA):
                     <strong>{{theEconomist}}</strong>
                   </div>
-                  {{/if}}
-                  {{#if usNewsNational}}
+                  {{/if}} {{#if usNewsNational}}
                   <div class="col-6">US News National University:
                     <strong>{{usNewsNational}}</strong>
                   </div>
-                  {{/if}}
-                  {{#if usNewsLiberal}}
+                  {{/if}} {{#if usNewsLiberal}}
                   <div class="col-6">US News National Liberal Arts Colleges:
                     <strong>{{usNewsLiberal}}</strong>
                   </div>
