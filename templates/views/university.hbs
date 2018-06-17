@@ -643,10 +643,10 @@
               </ul>
           </section>
           {{/or}} {{!-- Notable Alumni --}} {{#if data.university.alumni }}
-          <section>
+          <section class="h5">
             <h5>Notable Alumni</h3>
               {{#each data.university.alumni }}
-              <span class="badge badge-secondary">{{ this }}</span>
+              <span class="badge badge-info">{{ this }}</span>
               {{/each}}
           </section>
           {{/if}} {{!-- Admission (office,phone,rate)--}} {{#or data.university.admissionOffice data.university.admissionRate}}

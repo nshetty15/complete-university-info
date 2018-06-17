@@ -50,9 +50,9 @@
               <div class="logo text-center">
                 <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
                   {{#if logo.version}}
-                  <img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo"
-                    class="img-fluid" /> {{else}}
-                  <img src="/images/university_placeholder.png" class="img-fluid" alt="{{name}}" title="{{name}}" /> {{/if}}
+                  <img data-src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo" title="{{name}}"
+                    class="img-fluid img-lazy" /> {{else}}
+                  <img data-src="/images/university_placeholder.png" class="img-fluid img-lazy" alt="{{name}}" title="{{name}}" /> {{/if}}
                 </a>
               </div>
             </div>

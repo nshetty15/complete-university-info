@@ -27,9 +27,9 @@
 								<img src="{{{cloudinaryUrl image width=160 height=160 crop='fit' }}}" class="img-fluid" alt="{{title}}"> 
 								<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" /> 
 								--}}
-								<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/c_scale,w_400/v{{image.version}}/{{image.public_id}}.jpg" alt="{{title}}" class="img-fluid" /> 
+								<img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/c_scale,w_400/v{{image.version}}/{{image.public_id}}.jpg" title="{{title}}" alt="{{title}}" class="img-fluid" /> 
 								{{else}}
-								<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}" /> {{/if}}
+								<img src="/images/cui-blog-plc.jpg" class="img-fluid" alt="{{title}}" title="{{title}}" /> {{/if}}
 							</div>
 						</div>
 						<div class="col-md-8">
