@@ -39,9 +39,9 @@
           <div class="logo mx-auto">
             <a href="{{@root.baseUrl}}{{ universityUrl region.key country.key state.key city.key slug }}" title="{{name}}">
               {{#if logo.version}}
-              <img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" alt="{{name}} logo"
-                class="img-fluid" /> {{else}}
-              <img src="/images/university_placeholder.png" class="img-fluid" /> {{/if}}
+              <img src="//res.cloudinary.com/{{@root.cloudinaryAccount}}/image/upload/v{{logo.version}}/{{logo.public_id}}.jpg" 
+              alt="{{name}} logo" title="{{name}} logo" class="img-fluid" /> {{else}}
+              <img src="/images/university_placeholder.png" class="img-fluid" alt="{{name}} logo" title="{{name}} logo" /> {{/if}}
             </a>
           </div>
           <h3>
@@ -52,8 +52,8 @@
             <i class="fa fa-map-marker" aria-hidden="true"></i>{{address}}</address>
           {{/if}} {{#if outStudents}}
           <p class="feature">International students: {{outStudents}}</p>
-          {{/if}} {{#ifCond qs '||' the }}
-
+          {{/if}} 
+          {{#or the qs arwu forbes macleans cug }}
           <div class="rankings">
             <hr>
             <p>
@@ -61,34 +61,34 @@
               University Ranking
             </p>
             <div class="row">
-              {{#if qs}}
-              <div class="col-6">QS:
-                <strong>{{qs}}</strong>
-              </div>
-              {{/if}} {{#if the}}
-              <div class="col-6">THE:
+              {{#if the}}
+              <div class="col-6" title="Times World University (THE) Ranking">THE:
                 <strong>{{the}}</strong>
               </div>
-              {{/if}} {{#if arwu}}
-              <div class="col-6">ARWU:
+              {{/if}}{{#if qs}}
+              <div class="col-6" title="QS World Univesity Ranking">QS:
+                <strong>{{qs}}</strong>
+              </div>
+              {{/if}}  {{#if arwu}}
+              <div class="col-6" title="Academic Ranking of World Universities (ARWU) Ranking">ARWU:
                 <strong>{{arwu}}</strong>
               </div>
               {{/if}} {{#if forbes}}
-              <div class="col-6">Forbes:
+              <div class="col-6" title="Forbes Ranking">Forbes:
                 <strong>{{forbes}}</strong>
               </div>
               {{/if}} {{#if macleans}}
-              <div class="col-6">Macleans:
+              <div class="col-6" title="Maclean's Ranking">Maclean's:
                 <strong>{{macleans}}</strong>
               </div>
               {{/if}} {{#if cug}}
-              <div class="col-6">Complete University Guide:
+              <div class="col-6" title="The Complete University Guide Ranking">The Complete University Guide:
                 <strong>{{cug}}</strong>
               </div>
               {{/if}}
             </div>
           </div>
-          {{/ifCond }}
+          {{/or }}
         </div>
       </li>
       {{/each}}

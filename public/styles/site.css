@@ -9160,16 +9160,12 @@ footer {
   #universities address {
     color: #999999;
     margin-top: 5px; }
-  #universities .feature {
-    color: #777777; }
-  #universities .rankings {
-    margin-bottom: 1.5rem; }
-    #universities .rankings strong {
-      display: inline-block;
-      margin-bottom: 5px;
-      color: #f4bb3a; }
+  #universities .rankings strong {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #f4bb3a; }
   #universities .brief {
-    margin: 0 0 20px;
+    margin: 20px 0 0;
     color: #777; }
     #universities .brief p:last-child {
       margin-bottom: 0; }
