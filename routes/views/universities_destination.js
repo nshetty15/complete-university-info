@@ -101,7 +101,7 @@ exports = module.exports = function (req, res) {
       maxPages: 10,
       filters: filter,
     })
-      .sort('-publishedDate')
+      .sort('-the')
       .populate('region country state city');
 
     q.exec(function (err, results) {

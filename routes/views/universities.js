@@ -48,19 +48,27 @@ exports = module.exports = function (req, res) {
     });
   });
 
+
+  // var q = keystone.list('Post').model.find()
+	// 		.where('state', 'published')
+	// 		.sort('-publishedDate')
+	// 		.populate('author')
+  //     .limit(3);
+      
   // Load the list of universities
   view.on('init', function (next) {
+    var filter = {
+      status : "published"
+    };
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
-      perPage: 10,
+      perPage: 15,
       maxPages: 10,
-      filters: {
-        status: 'published',
-      },
+      filters: filter,
     })
       // .sort({publishedDate: '-publishedDate', the: '-the'})
-      // .sort({ the: 1 })
-      .sort({ the: 1 })
+      // .sort('the')
+      .sort({ the: -1 })
       .populate('region country state city');
       
     q.exec(function (err, results) {
