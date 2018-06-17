@@ -48,13 +48,6 @@ exports = module.exports = function (req, res) {
     });
   });
 
-
-  // var q = keystone.list('Post').model.find()
-	// 		.where('state', 'published')
-	// 		.sort('-publishedDate')
-	// 		.populate('author')
-  //     .limit(3);
-      
   // Load the list of universities
   view.on('init', function (next) {
     var filter = {
