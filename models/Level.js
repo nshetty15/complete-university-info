@@ -7,20 +7,20 @@ var Types = keystone.Field.Types;
  */
 
 var Level = new keystone.List('Level', {
-	autokey: { from: 'name', path: 'key', unique: true },
+  autokey: { from: 'name', path: 'key', unique: true },
 });
 
 Level.add({
   name: { type: String, required: true },
-  code: { type: String},
+  code: { type: String },
   status: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
-  description: {type: Types.Html, wysiwyg: true, height: 300},
+  description: { type: Types.Html, wysiwyg: true, height: 300 },
   order: { type: Types.Number, },
   publishedDate: { type: Date, default: Date.now }
 });
 
-Level.relationship({ ref: 'Program', path: 'programs', refPath: 'level' });
+Level.relationship({ ref: 'Course', path: 'courses', refPath: 'level' });
 
 Level.defaultColumns = 'name, code, description';
 

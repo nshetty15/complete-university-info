@@ -47,9 +47,9 @@ keystone.init({
 
 	'cors allow origin': true, //
 	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
-	
+
 	'wysiwyg override toolbar': false,
-	'wysiwyg additional buttons':'formatselect, removeformat ',
+	'wysiwyg additional buttons': 'formatselect, removeformat ',
 
 	'ga property client': process.env.GA_PROPERTY_FRONT,
 	'twitter': process.env.TWITTER_ACCOUNT,
@@ -76,7 +76,7 @@ keystone.set('routes', require('./routes'));
 keystone.set('nav', {
 	universities: ['universities', 'regions', 'university-countries', 'university-states', 'university-cities'],
 	posts: ['posts', 'post-categories'],
-	levels: ['levels', 'disciplines', 'programs', 'specializations', 'careers'],
+	levels: ['levels', 'disciplines', 'programs', 'courses', 'qualifications', 'specializations', 'careers'], // 'scholarships'
 	studyDestination: "study-destinations",
 	tests: 'tests',
 	enquiries: 'enquiries',
@@ -102,4 +102,3 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 
 
 keystone.start();
- 
