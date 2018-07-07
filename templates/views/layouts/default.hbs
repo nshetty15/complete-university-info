@@ -195,20 +195,13 @@
 		</div>
 	</div>
 
-	{{!-- Google analytics --}} {{>analytics}}
-	<script src="/dist/common.bundle.js" async></script> {{!--
-	<script src="https://use.fontawesome.com/bc6d7a31fe.js" async></script> --}} {{!-- {{{isAdminEditorJS user}}} --}} 
+	{{!-- Google analytics --}} 
+	{{>analytics}}
+	<script src="/dist/common.bundle.js" async></script> 
+	{{!-- {{{isAdminEditorJS user}}} --}} 
 	{{#if data.showAdvertise }}
-  {{!-- <script type="text/javascript"> var infolinks_pid = 3105061; var infolinks_wsid = 0; </script>
-	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js" defer></script> --}}
-	<!-- PopAds.net Popunder Code for www.completeuniversityinfo.com | 2018-06-30,2699487,0,1 -->
-<script type="text/javascript" data-cfasync="false">
-/*<![CDATA[/* */
-  var _pop = _pop || [];_pop.push(['siteId', 2699487]);_pop.push(['minBid', 0]);_pop.push(['popundersPerIP', 1]); _pop.push(['delayBetween', 0]);_pop.push(['default', false]);_pop.push(['defaultPerDay', 0]);_pop.push(['topmostLayer', false]);
-	(function(){var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.async = true;var s = document.getElementsByTagName('script')[0];pa.src = '//c1.popads.net/pop.js';
-    pa.onerror = function() { var sa = document.createElement('script'); sa.type = 'text/javascript'; sa.async = true;sa.src = '//c2.popads.net/pop.js';s.parentNode.insertBefore(sa, s);};s.parentNode.insertBefore(pa, s);})();
-/*]]>/* */
-</script>
+  <script type="text/javascript"> var infolinks_pid = 3105061; var infolinks_wsid = 0; </script>
+	<script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js" defer></script>
 	{{/if}}
 </body>
 

@@ -75,11 +75,12 @@
               <strong>International students</strong>
             </div>
           </li>
-          {{/if}} {{#if data.university.studentFaculty}}
+          {{/if}} {{#if data.university.intakes}}
           <li class="col-md-3">
-            <div class="value">{{data.university.studentFaculty}}</div>
+            <div class="value">{{#each data.university.intakes}}{{ this }}, {{/each}}
+            </div>
             <div class="title">
-              <strong>Students per staff</strong>
+              <strong>Intakes</strong>
             </div>
           </li>
           {{/if}} {{#if data.university.totalCost}}
@@ -97,7 +98,25 @@
               <strong>Living on-campus(avg.)</strong>
             </div>
           </li>
-          {{/if}} {{#if data.university.roomBoard}}
+          {{/if}}  {{#if data.university.studentFaculty}}
+          <li class="col-md-3">
+            <div class="value">{{data.university.studentFaculty}}</div>
+            <div class="title">
+              <strong>Students per staff</strong>
+            </div>
+          </li>
+          {{/if}} 
+          
+          {{#if data.university.appFee }}
+          <li class="col-md-3">
+            <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.appFee}}</div>
+            <div class="title">
+              <strong>Application Fee</strong>
+            </div>
+          </li>
+           {{/if}}
+
+          {{#if data.university.roomBoard}}
           <li class="col-md-3">
             <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.roomBoard }}</div>
             <div class="title">
@@ -282,7 +301,7 @@
           {{!-- Subjects text-secondary --}} {{#if data.university.programs}}
           <section>
             <h3>Programs / Degrees at {{data.university.name}}</h3>
-            
+
             <form>
               <div class="form-group">
                 <label for="searchProgram">Search program from the list below:</label>
@@ -537,12 +556,18 @@
                 <i class="fa fa-pinterest" aria-hidden="true"></i>
                 <span class="sr-only">pinterest</span>
               </a>
+              {{/if}} {{#if data.university.snapchat}}
+              <a href="{{data.university.snapchat }}" title="{{data.university.name}}, Snapchat profile" target="_blank" rel="noopener">
+                <i class="fa fa-snapchat" aria-hidden="true"></i>
+                <span class="sr-only">Snapchat</span>
+              </a>
               {{/if}} {{#if data.university.itunes}}
               <a href="{{data.university.itunes }}" title="{{data.university.name}}, iTunes profile" target="_blank" rel="noopener">
                 <i class="fa fa-music" aria-hidden="true"></i>
                 <span class="sr-only">iTunes</span>
               </a>
               {{/if}}
+
 
 
             </div>
@@ -587,7 +612,7 @@
 
         <aside class="uni-seconday bs m-minus text-secondary">
 
-          {{!-- Motto, Locations, Application fee --}} {{#or data.university.appFee data.university.motto data.university.locations
+          {{!-- Motto, Locations, Application fee --}} {{#or data.university.motto data.university.locations data.university.serviceFee
           }}
           <section>
             {{#if data.university.motto}}
@@ -596,9 +621,14 @@
             {{/if}} {{#if data.university.locations}}
             <p>
               <strong>Other locations: </strong>
-              {{data.university.locations }} </p>{{/if}} {{#if data.university.appFee }}
-            <p>
-              <strong>Application Fee:</strong>{{data.university.appFee }} </p>{{/if}}
+              {{data.university.locations }} </p>{{/if}} 
+
+              {{#if data.university.serviceFee}}
+              <p>
+              <strong>Service Fee: </strong>{{data.university.serviceFee }} </p>
+          
+          {{/if}}
+          
           </section>
           {{/or}} {{!-- Accreditation and Recognition --}} {{#if data.university.accreditations}}
           <section>

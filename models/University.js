@@ -104,7 +104,7 @@ University.add({
   gmat: { type: String, label: 'Gamat range', note: 'eg: (graduate management programs of business schools) value1-value2-value3  || value1-value3 (value 1 is minimum & value 2 is averge & value 3 maximum)' },
   gre: { type: String, label: 'GRE range', note: 'eg: (masters and doctoral degree programs : US) value1-value2-value3 || value1-value3' },
   sat: { type: String, label: 'SAT range', note: 'eg: (Bachelor:US) value1-value2-value3 -1400-1600-2020 || value1-value3 - https://www.niche.com/colleges/harvard-university/' },
-  act: { type: String, label: 'ACT range', note: 'eg: (Bachelor:US) value1-value2-value3 || value1-value3 || value1' },
+  act: { type: String, label: 'ACT range', note: 'eg: (Bachelor:US) ' },
   gpa: { type: String, label: 'GPA score', note: 'eg: 4.0' },
 
   // Scholarships
@@ -149,6 +149,7 @@ University.add({
   pinterest: { type: Types.Url },
   flickr: { type: Types.Url }, // https://www.flickr.com/photos/rmit/with/39042495081/
   vimeo: { type: Types.Url },
+  snapchat: { type: Types.Url },
 
   // ONLINE COURSES
   itunes: { type: String },
@@ -167,7 +168,7 @@ University.add({
   // },
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
-  note: {type: Types.Html, wysiwyg: true, height: 200, label: 'Note', note: 'any other informationw which wont be published to the website'},
+  note: {type: Types.Html, wysiwyg: true, height: 50, label: 'Note', note: 'Other information/Comments (incase archived,if found duplicate). Wont be published on the website'},
   publishedDate: { type: Date, default: Date.now }
 });
 

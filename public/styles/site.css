@@ -5926,6 +5926,9 @@ a.text-dark:focus, a.text-dark:hover {
 .fa-music:before {
   content: ""; }
 
+.fa-snapchat:before {
+  content: ""; }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -8491,9 +8494,7 @@ a.text-dark:focus, a.text-dark:hover {
     content: "\f2aa"
 }
 
-.fa-snapchat:before {
-    content: "\f2ab"
-}
+
 
 .fa-snapchat-ghost:before {
     content: "\f2ac"
