@@ -23,6 +23,6 @@ UniversityCountry.add({
 UniversityCountry.relationship({ ref: 'University', path: 'universities', refPath: 'country' });
 
 /******/
-UniversityCountry.defaultColumns = 'name, countryCode, region, currencyCode, nationality';
+UniversityCountry.defaultColumns = 'name, countryCode, region, currencyCode, nationality, show';
 
 UniversityCountry.register();
