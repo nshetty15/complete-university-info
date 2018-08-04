@@ -98,25 +98,21 @@
               <strong>Living on-campus(avg.)</strong>
             </div>
           </li>
-          {{/if}}  {{#if data.university.studentFaculty}}
+          {{/if}} {{#if data.university.studentFaculty}}
           <li class="col-md-3">
             <div class="value">{{data.university.studentFaculty}}</div>
             <div class="title">
               <strong>Students per staff</strong>
             </div>
           </li>
-          {{/if}} 
-          
-          {{#if data.university.appFee }}
+          {{/if}} {{#if data.university.appFee }}
           <li class="col-md-3">
             <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.appFee}}</div>
             <div class="title">
               <strong>Application Fee</strong>
             </div>
           </li>
-           {{/if}}
-
-          {{#if data.university.roomBoard}}
+          {{/if}} {{#if data.university.roomBoard}}
           <li class="col-md-3">
             <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.roomBoard }}</div>
             <div class="title">
@@ -164,7 +160,8 @@
         </ul>
       </section>
 
-      {{!-- Rankings --}} {{#or data.university.the data.university.qs data.university.arwu data.university.forbes data.university.macleans
+      {{!-- Rankings --}} 
+      {{#or data.university.the data.university.qs data.university.arwu data.university.forbes data.university.macleans
       data.university.cug data.university.ft data.university.theEconomist data.university.usNewsNational data.university.usNewsLiberal}}
       <section class="row-block">
         <h3>University Rankings</h3>
@@ -222,19 +219,22 @@
           {{/if}}
         </ul>
       </section>
-      {{/or}} {{!-- Overview --}}
+      {{/or}} 
+      
+      {{!-- Overview --}}
       <section>
         <div class="row">
+          {{#if data.university.extended}}
           <div class="col-xs-12 col-md-8 col-lg-8">
             <h3>Overview</h3>
             {{{data.university.extended}}}
           </div>
+          {{/if}} 
+          {{!-- General Information --}} 
+          {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
+          data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
           <div class="col-xs-12 col-md-4 col-lg-4">
-            {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
-            data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
-
             <h3>General Information</h3>
-
             {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut }}
             <section>
               <ul class="list-unstyled list-group">
@@ -259,7 +259,8 @@
                 {{/if}}
               </ul>
             </section>
-            {{/or}} {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
+            {{/or}} 
+            {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
             <ul class="list-unstyled list-group">
               <li class="list-group-item bg-light text-uppercase">
                 <strong>Masters degree</strong>
@@ -281,14 +282,11 @@
               </li>
               {{/if}}
             </ul>
-
-            {{/or}} {{/or}}
+            {{/or}}
           </div>
+          {{/or}}
         </div>
       </section>
-
-
-
 
     </section>
 
@@ -621,14 +619,12 @@
             {{/if}} {{#if data.university.locations}}
             <p>
               <strong>Other locations: </strong>
-              {{data.university.locations }} </p>{{/if}} 
-
-              {{#if data.university.serviceFee}}
-              <p>
+              {{data.university.locations }} </p>{{/if}} {{#if data.university.serviceFee}}
+            <p>
               <strong>Service Fee: </strong>{{data.university.serviceFee }} </p>
-          
-          {{/if}}
-          
+
+            {{/if}}
+
           </section>
           {{/or}} {{!-- Accreditation and Recognition --}} {{#if data.university.accreditations}}
           <section>
@@ -679,17 +675,16 @@
               <span class="badge badge-info">{{ this }}</span>
               {{/each}}
           </section>
-          {{/if}} {{!-- Admission (office,phone,rate)--}} {{#or data.university.admissionOffice data.university.admissionRate}}
+          {{/if}} {{!-- Admission (office,phone,rate)--}} {{#if data.university.admissionRate}}
           <section>
-            <h5>Admission</h3>
-              {{#if data.university.admissionOffice}}
+            {{!--
+            <h5>Admission</h3> --}} {{!-- {{#if data.university.admissionOffice}}
               <address>{{data.university.admissionOffice }} </address>
-              {{/if}} {{#if data.university.admissionRate}}
+              {{/if}} --}}
               <p>
                 <strong>Admission rate: </strong>{{data.university.admissionRate }} </p>
-              {{/if}}
           </section>
-          {{/or}}
+          {{/if}}
 
         </aside>
 

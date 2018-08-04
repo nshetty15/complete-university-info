@@ -71,8 +71,11 @@ exports = module.exports = function (req, res) {
     keystone.list('University').model.find()
       .where({ 'country': locals.data.university.country, 'status': 'published' })
       .where("_id").ne(locals.data.university._id)
+      // .aggregate([
+      //   { $sample: { size: 5 } }
+      // ])
       .populate('region country state city')
-      .limit(15)
+      .limit(25)
       .exec(function (err, result) {
         locals.data.inCountry = result;
         next(err);
