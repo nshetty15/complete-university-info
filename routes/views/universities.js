@@ -17,7 +17,7 @@ exports = module.exports = function (req, res) {
     meta: {
       title: "Universities around the world - find your ideal university", // under 70 characters
       description: "Find degree options by comparing the universities around the world and choose universities of your choice.", // under 160 characters - locals.description
-      keywords:  "universities,study abroad,international students,study guide" // No more than 10 keyword phrases - locals.keywords
+      keywords: "universities,study abroad,international students,study guide" // No more than 10 keyword phrases - locals.keywords
     },
     showShare: true, // show share -fb,twitter etc
     showAdvertise: true, // Page to display advertisement
@@ -51,7 +51,7 @@ exports = module.exports = function (req, res) {
   // Load the list of universities
   view.on('init', function (next) {
     var filter = {
-      status : "published"
+      status: "published"
     };
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
@@ -59,11 +59,11 @@ exports = module.exports = function (req, res) {
       maxPages: 10,
       filters: filter,
     })
-      // .sort({publishedDate: '-publishedDate', the: '-the'})
-      // .sort('the')
-      .sort({ the: -1 })
+
+      .where({ the: { $ne: null } })
+      .sort({ the: 1 })
       .populate('region country state city');
-      
+
     q.exec(function (err, results) {
       // console.log("FINAL RESULTS: " + JSON.stringify(results));
       // console.log("FINAL Count: " + JSON.stringify(results.total));
