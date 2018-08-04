@@ -59,8 +59,7 @@ exports = module.exports = function (req, res) {
       maxPages: 10,
       filters: filter,
     })
-
-      .where({ the: { $ne: null } })
+      // .where({ the: { $ne: null } })
       .sort({ the: 1 })
       .populate('region country state city');
 
