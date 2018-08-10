@@ -55,7 +55,7 @@ exports = module.exports = function (req, res) {
     };
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
-      perPage: 10, // let this 10
+      perPage: 15, // let this 10
       maxPages: 10,
       filters: filter,
     })
