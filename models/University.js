@@ -18,6 +18,7 @@ var University = new keystone.List('University', {
 
 University.add({
   name: { type: String, requried: true },
+  localName: { type: String, label: 'Alternate name' },
   status: { type: Types.Select, options: 'draft, approval, published, archived', default: 'draft', index: true },
 
   region: { type: Types.Relationship, ref: 'Region' },
@@ -44,12 +45,13 @@ University.add({
   // sepDate: { type: Types.Date, label: 'September Deadline', }, // x
   appDeadline: { type: String, label: 'Application Deadline', note: 'eg: https://www.usnews.com/best-colleges/university-of-michigan-9092 (, seperate dates)' },
   appFee: { type: Types.Number, label: 'Application Fee', note: 'In numbers (convert to country currency)' },
-  intakes: {type: Types.TextArray,label: 'Program Intakes', note:'February | July | October; Fall (September/October), Winter (December/January), Spring (March/April), Summer (June/July)'},
-  serviceFee: {type: Types.Number, label: 'Service Fee', note: 'eg: http://school.cucas.edu.cn/China-University-of-Mining-and-Technology-1276/fee-structure/' },
+  intakes: { type: Types.TextArray, label: 'Program Intakes', note: 'February | July | October; Fall (September/October), Winter (December/January), Spring (March/April), Summer (June/July)' },
+  serviceFee: { type: Types.Number, label: 'Service Fee', note: 'eg: http://school.cucas.edu.cn/China-University-of-Mining-and-Technology-1276/fee-structure/' },
 
   brief: { type: Types.Html, wysiwyg: true, height: 150 },
-  extended: { type: Types.Html, wysiwyg: true, height: 400, 
-    note: 'About(history), education(faculties,disciplines,courses), research, services(career,library,medical,housing,student), student life(campus,sports facilities,student clubs) eg: https://www.mastersportal.com/universities/ ' 
+  extended: {
+    type: Types.Html, wysiwyg: true, height: 400,
+    note: 'About(history), education(faculties,disciplines,courses), research, services(career,library,medical,housing,student), student life(campus,sports facilities,student clubs) eg: https://www.mastersportal.com/universities/ '
   },
 
   // FOR STUDENTS  -
@@ -90,7 +92,7 @@ University.add({
   programs: { type: Types.Html, wysiwyg: true, height: 400, label: 'Bachelors & master programs', note: 'eg: https://www.timeshighereducation.com/ ' },
   noBD: { type: Types.Boolean, label: 'Bachelors not available' },
   noMD: { type: Types.Boolean, label: 'Masters not available' },
-  mba: { type: Types.Boolean, label: 'MBA', note:'For Business schools: https://www.forbes.com/business-schools/#3920da686d6d' },
+  mba: { type: Types.Boolean, label: 'MBA', note: 'For Business schools: https://www.forbes.com/business-schools/#3920da686d6d' },
   online: { type: Types.Boolean, label: 'Online programs available' },
   eveningDegree: { type: Types.Boolean, label: 'Evening Degree Programs', note: 'eg: https://www.niche.com/colleges/harvard-university/' },
 
@@ -138,7 +140,6 @@ University.add({
   // AFFILIATIONS AND MEMBERSHIPS
   affiliations: { type: Types.TextArray, label: '', note: 'eg: Canadian Bureau for International Education (CBIE)' }, // eg: 
 
-
   // SOCIAL MEDIA
   facebook: { type: Types.Url, label: 'Facebook page url' },
   twitter: { type: Types.Url },
@@ -166,15 +167,19 @@ University.add({
   //   description: { type: String }, // under 160 characters
   //   keywords: { type: String } // No more than 10 keyword phrases
   // },
+  theUrl: { type: String, label: 'THE URL', note: 'Times higher education URL related to this profile' },
+  qsUrl: { type: String, label: 'QS URL', note: 'Top universities URL related to this profile' },
+  hcaUrl: { type: String, label: 'HCA URL', note: 'Hot Course abroad URL related to this profile' },
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
-  note: {type: Types.Html, wysiwyg: true, height: 50, label: 'Note', note: 'Other information/Comments (incase archived,if found duplicate). Wont be published on the website'},
+  note: { type: Types.Html, wysiwyg: true, height: 50, label: 'Note', note: 'Other information/Comments (incase archived,if found duplicate). Wont be published on the website' },
   publishedDate: { type: Date, default: Date.now }
 });
 
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
 University.defaultColumns = 'name|20%, status, address, website, founded|6%, region, country, state, city, isShared|3%';
+//University.defaultColumns = 'name|20%, status|10%, founded|10%, motto, acronym|10%';
 /**
  * Registration
  * ============
