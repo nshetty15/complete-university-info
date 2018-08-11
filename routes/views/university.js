@@ -51,7 +51,7 @@ exports = module.exports = function (req, res) {
 
       // title, description, keywords
       locals.data.meta = {
-        title: result.name + " - " + result.country.name + pageTitle,
+        title: (result.acronym ? result.acronym + ' | ' : '') + result.name + (result.localName ? ' | ' + result.localName : '') + " - " + result.country.name + pageTitle,
         description: result.brief.replace(rex, ""),
         keywords: result.name + ",university" + pageTitle + "," + result.country.name + "," + result.region.name
       };
