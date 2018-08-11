@@ -22,6 +22,11 @@ exports = module.exports = function (req, res) {
     state: req.params.state,
     city: req.params.city,
 
+    regionCrumb: false,
+    countryCrumb: false,
+    stateCrumb: false,
+    cityCrumb: false,
+
     pathName: req.path,
     source: 'bydestination', // for pagination
     meta: {},
@@ -87,21 +92,25 @@ exports = module.exports = function (req, res) {
     };
     if (locals.filters.city) {
       filter.city = { $in: [locals.data.category] };
+      locals.data.cityCrumb = true;
     } else if (locals.filters.state) {
       filter.state = { $in: [locals.data.category] };
+      locals.data.stateCrumb = true;
     } else if (locals.filters.country) {
       filter.country = { $in: [locals.data.category] };
+      locals.data.countryCrumb = true;
     } else if (locals.filters.region) {
       filter.region = { $in: [locals.data.category] };
+      locals.data.regionCrumb = true;
     }
-
+   
     var q = keystone.list('University').paginate({
       page: req.query.page || 1,
       perPage: 15,
       maxPages: 10,
       filters: filter,
     })
-      .sort('-the')
+      .sort('the')
       .populate('region country state city');
 
     q.exec(function (err, results) {
@@ -115,11 +124,11 @@ exports = module.exports = function (req, res) {
       // title, description, keywords
       locals.data.meta = {
         title: "Universities in " + locals.data.category.name, // under 70 characters
-        description: "Do you want to study in " + locals.data.category.name + "? Find out the universities in "+ locals.data.category.name, // under 160 characters
+        description: "Do you want to study in " + locals.data.category.name + "? Find out the universities in " + locals.data.category.name, // under 160 characters
         keywords: "study abroad, study guide, university, universities abroad," + locals.data.category.name // No more than 10 keyword phrases
       };
-
       locals.data.universitiesdestination = results;
+      locals.data.crumbValues = results.results[0];
       next(err);
     });
 

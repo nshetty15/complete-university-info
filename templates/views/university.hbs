@@ -160,8 +160,7 @@
         </ul>
       </section>
 
-      {{!-- Rankings --}} 
-      {{#or data.university.the data.university.qs data.university.arwu data.university.forbes data.university.macleans
+      {{!-- Rankings --}} {{#or data.university.the data.university.qs data.university.arwu data.university.forbes data.university.macleans
       data.university.cug data.university.ft data.university.theEconomist data.university.usNewsNational data.university.usNewsLiberal}}
       <section class="row-block">
         <h3>University Rankings</h3>
@@ -219,9 +218,7 @@
           {{/if}}
         </ul>
       </section>
-      {{/or}} 
-      
-      {{!-- Overview --}}
+      {{/or}} {{!-- Overview --}}
       <section>
         <div class="row">
           {{#if data.university.extended}}
@@ -229,9 +226,7 @@
             <h3>Overview</h3>
             {{{data.university.extended}}}
           </div>
-          {{/if}} 
-          {{!-- General Information --}} 
-          {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
+          {{/if}} {{!-- General Information --}} {{#or data.university.BDstudents data.university.BDtuitionIn data.university.BDtuitionOut
           data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
           <div class="col-xs-12 col-md-4 col-lg-4">
             <h3>General Information</h3>
@@ -259,8 +254,7 @@
                 {{/if}}
               </ul>
             </section>
-            {{/or}} 
-            {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
+            {{/or}} {{#or data.university.MDstudents data.university.MDtuitionIn data.university.MDtuitionOut }}
             <ul class="list-unstyled list-group">
               <li class="list-group-item bg-light text-uppercase">
                 <strong>Masters degree</strong>
@@ -690,6 +684,38 @@
 
       </div>
 
+    </div>
+
+    <div class="pt-5">
+      <div class="container">
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/">
+                <span class="sr-only">Home</span>
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/universities/">Universities</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/universities/{{data.university.region.key}}/">{{data.university.region.name}}</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/universities/{{data.university.region.key}}/{{data.university.country.key}}/">{{data.university.country.name}}</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/universities/{{data.university.region.key}}/{{data.university.country.key}}/{{data.university.state.key}}/">{{data.university.state.name}}</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{baseUrl}}/universities/{{data.university.region.key}}/{{data.university.country.key}}/{{data.university.state.key}}/{{data.university.city.key}}/">{{data.university.city.name}}</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{data.university.name}}</li>
+          </ol>
+        </nav>
+      </div>
     </div>
 
   </div>

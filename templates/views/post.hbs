@@ -4,10 +4,13 @@
 			<nav aria-label="breadcrumb">
 				<ol class="breadcrumb mb-0">
 					<li class="breadcrumb-item">
-						<a href="{{baseUrl}}/">Home</a>
-					</li>
+              <a href="{{baseUrl}}/">
+                <span class="sr-only">Home</span>
+                <i class="fa fa-home" aria-hidden="true"></i>
+              </a>
+            </li>
 					<li class="breadcrumb-item">
-						<a href="{{baseUrl}}/blog/">blog</a>
+						<a href="{{baseUrl}}/blog/">Blog</a>
 					</li>
 					<li class="breadcrumb-item active" aria-current="page">{{data.post.title}}</li>
 				</ol>
