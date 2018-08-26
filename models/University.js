@@ -170,8 +170,10 @@ University.add({
   theUrl: { type: String, label: 'THE URL', note: 'Times higher education URL related to this profile' },
   qsUrl: { type: String, label: 'QS URL', note: 'Top universities URL related to this profile' },
   hcaUrl: { type: String, label: 'HCA URL', note: 'Hot Course abroad URL related to this profile' },
+  
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
+  canonical: {type: String, label: 'Canonical URL', note: 'eg: /universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hanover/'},
   note: { type: Types.Html, wysiwyg: true, height: 50, label: 'Note', note: 'Other information/Comments (incase archived,if found duplicate). Wont be published on the website' },
   publishedDate: { type: Date, default: Date.now }
 });
@@ -179,7 +181,7 @@ University.add({
 
 /* A comma-delimited list of default columns to display in the Admin UI List View.  */
 University.defaultColumns = 'name|20%, status, address, website, founded|6%, region, country, state, city, isShared|3%';
-//University.defaultColumns = 'name|20%, status|10%, founded|10%, motto, acronym|10%';
+// University.defaultColumns = 'name|20%, status|5%, address, motto, acronym|10%';
 /**
  * Registration
  * ============
