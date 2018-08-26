@@ -84,10 +84,30 @@ keystone.set('nav', {
 });
 
 // 301 redirection - https://github.com/keystonejs/keystone/issues/303
-// keystone.redirect({
-// 	'/index.php': '/',
-// 	'sermons.php': '/'
-// });
+keystone.redirect({
+	'/universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hanover/': '/universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hannover/',
+	'/universities/north-america/united-states/south-dakota/aberdeen/northern-state-university/': '/universities/north-america/united-states/south-dakota/aberdeen-us/northern-state-university/',
+	'/universities/north-america/united-states/south-dakota/aberdeen/presentation-college/': '/universities/north-america/united-states/south-dakota/aberdeen-us/presentation-college/',
+	'/universities/north-america/united-states/alabama/birmingham/birmingham-southern-college/': '/universities/north-america/united-states/alabama/birmingham-us/birmingham-southern-college/',
+	'/universities/north-america/united-states/alabama/birmingham/university-of-alabama-at-birmingham/': '/universities/north-america/united-states/alabama/birmingham-us/university-of-alabama-at-birmingham/',
+	'/universities/north-america/united-states/alabama/birmingham/southeastern-bible-college/': '/universities/north-america/united-states/alabama/birmingham-us/southeastern-bible-college/',
+	'/universities/north-america/united-states/alabama/birmingham/samford-university/': '/universities/north-america/united-states/alabama/birmingham-us/samford-university/',
+	'/universities/north-america/united-states/rhode-island/bristol/roger-williams-university/': '/universities/north-america/united-states/rhode-island/bristol-us/roger-williams-university/',
+	'/universities/north-america/united-states/tennessee/bristol/king-university/': '/universities/north-america/united-states/tennessee/bristol-us/king-university/',
+	'/universities/north-america/united-states/massachusetts/cambridge/massachusetts-institute-of-technology/': '/universities/north-america/united-states/massachusetts/cambridge-us/massachusetts-institute-of-technology/',
+	'/universities/north-america/united-states/massachusetts/cambridge/cambridge-college/': '/universities/north-america/united-states/massachusetts/cambridge-us/cambridge-college/',
+	'/universities/north-america/united-states/massachusetts/cambridge/hult-international-business-school/': '/universities/north-america/united-states/massachusetts/cambridge-us/hult-international-business-school/',
+	'/universities/north-america/united-states/massachusetts/cambridge/harvard-university/': '/universities/north-america/united-states/massachusetts/cambridge-us/harvard-university/',
+	'/universities/north-america/united-states/massachusetts/cambridge/lesley-university/': '/universities/north-america/united-states/massachusetts/cambridge-us/lesley-university/',
+	'/universities/oceania/new-zealand/waikato/hamilton/university-of-waikato/': '/universities/oceania/new-zealand/waikato/hamilton-nz/university-of-waikato/',
+	'/universities/north-america/united-states/new-york/hamilton/colgate-university/': '/universities/north-america/united-states/new-york/hamilton-us/colgate-university/',
+	'/universities/north-america/canada/ontario/london/western-university/': '/universities/north-america/canada/ontario/london-ca/western-university/',
+	'/universities/north-america/united-states/ohio/oxford/miami-university/': '/universities/north-america/united-states/ohio/oxford-us/miami-university/',
+	'/universities/north-america/united-states/new-york/potsdam/clarkson-university/': '/universities/north-america/united-states/new-york/potsdam-us/clarkson-university/',
+	'/universities/north-america/united-states/new-york/potsdam/state-university-of-new-york-at-potsdam/': '/universities/north-america/united-states/new-york/potsdam-us/state-university-of-new-york-at-potsdam/',
+	'/universities/europe/united-kingdom/london/richmond/richmond-the-american-international-university-in-london/': '/universities/europe/united-kingdom/london/richmond-gb/richmond-the-american-international-university-in-london/',
+	'/universities/north-america/canada/nova-scotia/sydney/cape-breton-university/': '/universities/north-america/canada/nova-scotia/sydney-ca/cape-breton-university/',
+});
 
 // Start Keystone to connect to your database and initialise the web server
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
