@@ -58,7 +58,7 @@ exports = module.exports = function (req, res) {
 
       locals.data.university = result;
       // Check if canonical url available
-      locals.data.pathName = locals.data.university.canonical ? locals.data.university.canonical : locals.data.pathName;
+      // locals.data.pathName = locals.data.university.canonical ? locals.data.university.canonical : locals.data.pathName;
 
       next(err);
 

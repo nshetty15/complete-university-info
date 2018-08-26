@@ -173,7 +173,7 @@ University.add({
   
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
-  canonical: {type: String, label: 'Canonical URL', note: 'eg: /universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hanover/'},
+  // canonical: {type: String, label: 'Canonical URL', note: 'eg: /universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hanover/'},
   note: { type: Types.Html, wysiwyg: true, height: 50, label: 'Note', note: 'Other information/Comments (incase archived,if found duplicate). Wont be published on the website' },
   publishedDate: { type: Date, default: Date.now }
 });
