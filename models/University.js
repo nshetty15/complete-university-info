@@ -13,7 +13,7 @@ var University = new keystone.List('University', {
   autokey: { path: 'slug', from: 'name', unique: true },
   sortable: true,
   track: { createdAt: true, createdBy: true, updatedAt: true, updatedBy: true },
-  defaultSort: '-createdAt'
+  defaultSort: 'createdAt'
 });
 
 University.add({
@@ -76,7 +76,8 @@ University.add({
   financialAid: { type: String, label: 'financialAid', note: 'eg: 35,000 || yes' },
   studentClubs: { type: String, label: 'Student Clubs', note: 'eg: 650' },
   gradEmployee: { type: String, label: 'Graduate Employment Rate', note: 'eg: 80%' },
-  scholarshipAmt: { type: String, label: '', note: 'eg: 165629375' },
+  scholarshipAmt: { type: String, label: 'scholarship Amount', note: 'eg: 165629375' },
+  researchOutput: {type: String, label: 'Research Output', note: 'eg:Very high,low... https://www.topuniversities.com/universities/boston-university'},
   // 
   yearLevel: { type: String, label: 'Year Level', note: 'eg: Four or more Years' },
   academicCalendar: { type: String, label: '', note: 'eg: Semesters' },
@@ -169,8 +170,12 @@ University.add({
   // },
   theUrl: { type: String, label: 'THE URL', note: 'Times higher education URL related to this profile' },
   qsUrl: { type: String, label: 'QS URL', note: 'Top universities URL related to this profile' },
+  qsUrlOld: {type: String, label: 'QS URL old', note: 'Another url with /node/230392'},
   hcaUrl: { type: String, label: 'HCA URL', note: 'Hot Course abroad URL related to this profile' },
-  
+  cugUrl: { type: String, label: 'TCUG URL', note: 'The Complete University Guide URL related to this profile'},
+  forbesUrl: { type: String, label: 'Forbes URL', note: 'Forbes URL related to this profile'},
+  arwuUrl: { type: String, label: 'ARWU URL', note: 'Shanghai Ranking URL related to this profile'},
+
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
   // canonical: {type: String, label: 'Canonical URL', note: 'eg: /universities/europe/germany/lower-saxony/hannover/leibniz-university-of-hanover/'},
