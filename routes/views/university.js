@@ -74,6 +74,8 @@ exports = module.exports = function (req, res) {
       .where({ 'country': locals.data.university.country, 'status': 'published' })
       .where("_id").ne(locals.data.university._id)
       // .aggregate([
+        // https://stackoverflow.com/questions/24806721/mongodb-how-to-find-10-random-document-in-a-collection-of-100
+      //  {$match: {'country': locals.data.university.country}},
       //   { $sample: { size: 5 } }
       // ])
       .populate('region country state city')

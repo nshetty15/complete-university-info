@@ -1,276 +1,278 @@
 /********* university  page**********/
 
 .uni-banner {
-    address {
-        color: #666;
-    }
+  address {
+    color: #666;
+  }
 }
 
 .m-minus {
-    margin-left: -25px;
-    margin-right: -25px;
+  margin-left: -25px;
+  margin-right: -25px;
 }
 
 .uni-logo {
-    margin-bottom: 20px;
-    img {
-        max-width: 200px;
-    }
+  margin-bottom: 20px;
+  img {
+    max-width: 200px;
+  }
 }
 
 .uni-contact {
-    padding: 20px 20px 10px;
-    a {
-        display: block;
-    }
-    .fa {
-        position: absolute;
-        left: 0;
-        top: 5px;
-    }
+  padding: 20px 20px 10px;
+  a {
+    display: block;
+  }
+  .fa {
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
 }
 
 .contact-row {
-    padding-left: 30px;
-    position: relative;
-    margin-bottom: 10px;
-    color: $anchor;
-    .fa {
-        font-size: 1.25rem;
-    }
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 10px;
+  color: $anchor;
+  .fa {
+    font-size: 1.25rem;
+  }
 }
 
 .uni-brief {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .badge-1 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .uni-primary {
-    h3 {
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+  h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 #subjects {
-    ul {
-        padding: 0;
-        li {
-            padding: 15px 10px;
-            background-color: #f1f2f2;
-            border-top: 2px solid $cui-color;
-        }
-    }
+  ul {
+    padding: 0;
     li {
-        margin-bottom: 10px;
+      padding: 15px 10px;
+      background-color: #f1f2f2;
+      border-top: 2px solid $cui-color;
     }
-    ul {
-        li {
-            list-style: none;
-        }
-        li>ul {
-            margin-bottom: 40px;
-        }
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  ul {
+    li {
+      list-style: none;
     }
-    h3 {
-        text-transform: inherit;
-        font-size: 1.3rem;
-        margin:3rem 0 1.5rem;
+    li>ul {
+      margin-bottom: 40px;
     }
-    h4 {
-        font-size: 1.1rem;
+  }
+  h3 {
+    text-transform: inherit;
+    font-size: 1.3rem;
+    margin: 3rem 0 1.5rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  h5 {
+    color: $cui-mdm-grey;
+  }
+  .to-expand,
+  .to-collapse {
+    cursor: pointer;
+    &:after {
+      margin-left: 20px;
     }
-    h5 {
-        color: $cui-mdm-grey;
+  }
+  .to-expand {
+    &:after {
+      content: '+';
     }
-    .to-expand,.to-collapse{
-        cursor: pointer;
-
-        &:after{
-            margin-left: 20px;
-        }
-    } 
-    .to-expand {
-        
-        &:after {
-            content: '+';
-        }
+  }
+  .to-collapse {
+    &:after {
+      content: '-';
     }
-    .to-collapse{
-        &:after {
-            content: '-';
-        }
-    }
+  }
 }
 
 .col-highlight {
-    background-color: #faf8f9;
-    padding: 30px; // border: 1px solid #efefef;
+  background-color: #faf8f9;
+  padding: 30px; // border: 1px solid #efefef;
 }
 
 .col-highlight,
 .li-plain,
 .li-bg {
-    li {
-        margin-bottom: 40px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+  li {
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 }
 
 .li-bg-grey li {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .range {
-    height: 100%;
-    background-color: $cui-light;
-    padding: 15px;
-    border-bottom: 3px solid #efefef;
-    strong {
-        display: block;
-        padding: 10px 10px 0;
-        margin-top: 10px;
-        border-top: 1px solid $cui-light-grey;
-    }
+  height: 100%;
+  background-color: $cui-light;
+  padding: 15px;
+  border-bottom: 3px solid #efefef;
+  strong {
+    display: block;
+    padding: 10px 10px 0;
+    margin-top: 10px;
+    border-top: 1px solid $cui-light-grey;
+  }
 }
 
 .value {
-    font-size: 1.5rem;
-    color: #4b7986;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #4b7986;
+  margin-bottom: 10px;
 }
 
 .title {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
+  span {
+    font-size: .9rem;
+    display: block;
+    font-weight: normal;
+  }
 }
 
 .row-block {
-    li {
-        border: 1px solid #efefef;
-        padding: 10px;
-        margin-bottom: 20px;
-        &:last-child {
-            margin-bottom: 0;
-        }
+  li {
+    border: 1px solid #efefef;
+    padding: 10px;
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
     }
-    .value {
-        width: 21%;
-        margin-bottom: 0;
-        padding-left: 15px;
-        border-left: 1px solid #efefef;
-        margin-left: -1px;
-    }
-    .title {
-        width: 75%;
-        font-weight: 500;
-        color: $cui-mdm-grey;
-        padding-right: 4%;
-        border-right: 1px solid #efefef;
-    }
+  }
+  .value {
+    width: 21%;
+    margin-bottom: 0;
+    padding-left: 15px;
+    border-left: 1px solid #efefef;
+    margin-left: -1px;
+  }
+  .title {
+    width: 75%;
+    font-weight: 500;
+    color: $cui-mdm-grey;
+    padding-right: 4%;
+    border-right: 1px solid #efefef;
+  }
 }
 
 .li-plain {
-    .value {
-        font-size: 1.1rem;
-        color: $cui-mdm-grey;
-        position: relative;
-        padding-bottom: 12px;
-        margin-bottom: 5px;
-        &:after {
-            content: '';
-            position: absolute;
-            border: 2px solid $cui-light;
-            width: 50%;
-            bottom: 0;
-            left: 0;
-        }
+  .value {
+    font-size: 1.1rem;
+    color: $cui-mdm-grey;
+    position: relative;
+    padding-bottom: 12px;
+    margin-bottom: 5px;
+    &:after {
+      content: '';
+      position: absolute;
+      border: 2px solid $cui-light;
+      width: 50%;
+      bottom: 0;
+      left: 0;
     }
-    .title {
-        color: $cui-dark-grey;
-    }
+  }
+  .title {
+    color: $cui-dark-grey;
+  }
 }
 
 .uni-social {
-    a {
-        display: inline-block;
-        background-color: $cui-color;
-        border-radius: 4px;
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
-        margin: 0 20px 40px;
-        &:hover,
-        &:focus {
-            text-decoration: none;
-        }
+  a {
+    display: inline-block;
+    background-color: $cui-color;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    margin: 0 20px 40px;
+    &:hover,
+    &:focus {
+      text-decoration: none;
     }
+  }
 }
 
 .uni-seconday {
-    padding: 40px 20px;
+  padding: 40px 20px;
 }
 
 @media (min-width: 768px) {
-    /******* University page ***********/
-    .uni-banner {
-        padding-bottom: 80px;
+  /******* University page ***********/
+  .uni-banner {
+    padding-bottom: 80px;
+  }
+  .m-minus {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #subjects {
+    >ul {
+      // -moz-column-gap: 1.5rem;
+      // -webkit-column-gap: 1.5rem;
+      // column-gap: 1.5rem;
+      // -moz-column-count: 3;
+      // -webkit-column-count: 3;
+      // column-count: 3;
+      li ul li {
+        border-left: 2px solid $cui-color;
+        border-top: 0;
+      }
     }
-    .m-minus {
-        margin-left: 0;
+  }
+  .col-highlight,
+  .li-plain,
+  .li-bg {
+    li {
+      &:nth-last-child(1),
+      &:nth-last-child(2),
+      &:nth-last-child(3){
+        margin-bottom: 0;
+      }
+    }
+  }
+  .row-block {
+    li {
+      width: 48%;
+      float: left;
+      margin-right: 4%;
+      &:nth-of-type(2n) {
         margin-right: 0;
+      }
+      &:nth-last-child(2) {
+        margin-bottom: 0;
+      }
     }
-    #subjects {
-        >ul {
-            // -moz-column-gap: 1.5rem;
-            // -webkit-column-gap: 1.5rem;
-            // column-gap: 1.5rem;
-            // -moz-column-count: 3;
-            // -webkit-column-count: 3;
-            // column-count: 3;
-            li ul li {
-                border-left: 2px solid $cui-color;
-                border-top: 0;
-            }
-        }
-    }
-    .col-highlight,
-    .li-plain,
-    .li-bg {
-        li {
-            &:nth-last-child(1),
-            &:nth-last-child(2),
-            &:nth-last-child(3),
-            &:nth-last-child(4),
-                {
-                margin-bottom: 0;
-            }
-        }
-    }
-    .row-block {
-        li {
-            width: 48%;
-            float: left;
-            margin-right: 4%;
-            &:nth-of-type(2n) {
-                margin-right: 0;
-            }
-            &:nth-last-child(2) {
-                margin-bottom: 0;
-            }
-        }
-    }
-    .col-highlight,
-    .m-top-m {
-        margin-top: -80px;
-    }
-    .uni-seconday,
-    .m-top-m {
-        background-color: #fff;
-    }
+  }
+  .col-highlight,
+  .m-top-m {
+    margin-top: -80px;
+  }
+  .uni-seconday,
+  .m-top-m {
+    background-color: #fff;
+  }
 }

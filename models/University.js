@@ -77,7 +77,7 @@ University.add({
   studentClubs: { type: String, label: 'Student Clubs', note: 'eg: 650' },
   gradEmployee: { type: String, label: 'Graduate Employment Rate', note: 'eg: 80%' },
   scholarshipAmt: { type: String, label: 'scholarship Amount', note: 'eg: 165629375' },
-  researchOutput: {type: String, label: 'Research Output', note: 'eg:Very high,low... https://www.topuniversities.com/universities/boston-university'},
+  researchOutput: { type: String, label: 'Research Output', note: 'eg:Very high,low... https://www.topuniversities.com/universities/boston-university' },
   // 
   yearLevel: { type: String, label: 'Year Level', note: 'eg: Four or more Years' },
   academicCalendar: { type: String, label: '', note: 'eg: Semesters' },
@@ -170,11 +170,11 @@ University.add({
   // },
   theUrl: { type: String, label: 'THE URL', note: 'Times higher education URL related to this profile' },
   qsUrl: { type: String, label: 'QS URL', note: 'Top universities URL related to this profile' },
-  qsUrlOld: {type: String, label: 'QS URL old', note: 'Another url with /node/230392'},
+  qsUrlOld: { type: String, label: 'QS URL old', note: 'Another url with /node/230392' },
   hcaUrl: { type: String, label: 'HCA URL', note: 'Hot Course abroad URL related to this profile' },
-  cugUrl: { type: String, label: 'TCUG URL', note: 'The Complete University Guide URL related to this profile'},
-  forbesUrl: { type: String, label: 'Forbes URL', note: 'Forbes URL related to this profile'},
-  arwuUrl: { type: String, label: 'ARWU URL', note: 'Shanghai Ranking URL related to this profile'},
+  cugUrl: { type: String, label: 'TCUG URL', note: 'The Complete University Guide URL related to this profile' },
+  forbesUrl: { type: String, label: 'Forbes URL', note: 'Forbes URL related to this profile' },
+  arwuUrl: { type: String, label: 'ARWU URL', note: 'Shanghai Ranking URL related to this profile' },
 
   isShared: { type: Types.Boolean, note: 'Shared on social -FB,twitter,Insta,Google+', },
   score: { type: Types.Number, note: 'Rendering order in /universities/ page; score range 0-100' },
@@ -191,5 +191,11 @@ University.defaultColumns = 'name|20%, status, address, website, founded|6%, reg
  * Registration
  * ============
  */
+
+// University.schema.pre('save', function (next) {
+//   this.score = 10;
+//   console.log(this.region);
+//   next();
+// });
 
 University.register();

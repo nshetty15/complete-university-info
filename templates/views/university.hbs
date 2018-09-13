@@ -87,7 +87,7 @@
           <li class="col-md-3">
             <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.totalCost }}</div>
             <div class="title">
-              <strong>Total Cost of Living(avg per year*)</strong>
+              <strong>Total Cost of Living<span>(average per year*)</span></strong>
               {{!-- Living off-campus --}}
             </div>
           </li>
@@ -95,7 +95,7 @@
           <li class="col-md-3">
             <div class="value">{{data.university.country.currencyCode}} {{formatCurrency data.university.campusAcc }}</div>
             <div class="title">
-              <strong>Living On-campus(avg per year*)</strong>
+              <strong>Living On-campus<span>(average per year*)</span></strong>
             </div>
           </li>
           {{/if}} {{#if data.university.studentFaculty}}
@@ -239,12 +239,12 @@
                 {{/if}} {{#if data.university.BDtuitionIn}}
                 <li class="list-group-item">
                   <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionIn }}</span>
-                  Domestic tuition fee(avg. per year*)
+                  Domestic tuition fee <small class="text-secondary">(average per year*)</small>
                 </li>
                 {{/if}}{{#if data.university.BDtuitionOut}}
                 <li class="list-group-item">
                   <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.BDtuitionOut }}</span>
-                  International student tuition fee(avg. per year*)
+                  International student tuition fee <small class="text-secondary">(average per year*)</small>
                 </li>
                 {{/if}}
               </ul>
@@ -262,12 +262,12 @@
               {{/if}} {{#if data.university.MDtuitionIn}}
               <li class="list-group-item">
                 <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionIn }}</span>
-                Domestic student tuition fee(avg. per year*)
+                Domestic student tuition fee <small class="text-secondary">(average per year*)</small>
               </li>
               {{/if}} {{#if data.university.MDtuitionOut}}
               <li class="list-group-item">
                 <span class="badge badge-1 float-right">{{data.university.country.currencyCode}} {{formatCurrency data.university.MDtuitionOut }}</span>
-                International student tuition fee(avg. per year*)
+                International student tuition fee <small class="text-secondary">(average per year*)</small>
               </li>
               {{/if}}
             </ul>
