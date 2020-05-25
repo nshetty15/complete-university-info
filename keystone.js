@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
@@ -13,7 +14,7 @@ var handlebars = require('express-handlebars');
 keystone.init({
 	'name': 'Info', // do not change-mongodb connection fails
 	'brand': 'Info',
-	'brand safe': 'cui', //take out when not needed
+	'brand safe': 'cui', // take out when not needed
 
 	'title name': process.env.CLIENT_TITLE,
 	'description client': process.env.CLIENT_DESCRIPTION,
@@ -42,11 +43,11 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 
-	//added later
+	// added later
 	'file limit': '50MB', // increase data upload via api to 50mb from 100kb
 
 	'cors allow origin': true, //
-	'cloudinary config': { secure: true }, //startum-cms || -keystone.set('cloudinary secure', true);
+	'cloudinary config': { secure: true }, // startum-cms || -keystone.set('cloudinary secure', true);
 
 	'wysiwyg override toolbar': false,
 	'wysiwyg additional buttons': 'formatselect, removeformat ',
@@ -77,7 +78,7 @@ keystone.set('nav', {
 	universities: ['universities', 'regions', 'university-countries', 'university-states', 'university-cities'],
 	posts: ['posts', 'post-categories'],
 	levels: ['levels', 'disciplines', 'programs', 'courses', 'qualifications', 'specializations', 'careers'], // 'scholarships'
-	studyDestination: "study-destinations",
+	studyDestination: 'study-destinations',
 	tests: 'tests',
 	enquiries: 'enquiries',
 	users: 'users',

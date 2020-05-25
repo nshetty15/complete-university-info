@@ -1,7 +1,7 @@
-"# My project's README" 
+"# My project's README"
 
-nodemon  || node keystone  //to run keystone
+nodemon || node keystone.js //to run keystone
 
 sass --watch public/styles:public/styles
 
-webpack --progress --watch ||  npm run watch
+webpack --progress --watch || npm run watch
