@@ -1,22 +1,23 @@
+/* eslint-disable linebreak-style */
 import '../styles/site.css';
 
 import 'bootstrap'; // bootstrap js
 
 
 var $ = require('jquery');
-var LazyLoad = require('vanilla-lazyload');
+import LazyLoad from 'vanilla-lazyload';
 var FontFaceObserver = require('fontfaceobserver');
 
-// Lazy load images 
+// Lazy load images
 var myLazyLoad = new LazyLoad({
-	elements_selector: ".img-lazy"
+	elements_selector: '.img-lazy',
 });
 
 // lazy load fonts
 var font = new FontFaceObserver('FontAwesome');
 
 font.load().then(function () {
-	$("body").addClass("fonts");
+	$('body').addClass('fonts');
 });
 
 // Program search
@@ -24,11 +25,11 @@ font.load().then(function () {
 var collapsed = true;
 $('#searchProgram').on('keyup', function () {
 	var value = $(this).val();
-	var $heading;
+	// var $heading;
 	// Expand when start typing
 	if (collapsed && value.length) {
-		$("#subjects ul").css('display', 'block');
-		$("#subjects h3, #subjects h4, #subjects h5").removeClass('to-expand').addClass('to-collapse');
+		$('#subjects ul').css('display', 'block');
+		$('#subjects h3, #subjects h4, #subjects h5').removeClass('to-expand').addClass('to-collapse');
 		collapsed = false;
 		// $("#subjects h3, #subjects h4, #subjects h5").trigger("click");
 	}
@@ -51,9 +52,9 @@ $('#searchProgram').on('keyup', function () {
 // hide UL's & add class to each UL
 // $("#subjects ul").css('display','none');
 
-$("#subjects h3, #subjects h4, #subjects h5").each(function (index, item) {
-	var $ul = $(this).next('ul').length,
-		$this = $(this);
+$('#subjects h3, #subjects h4, #subjects h5').each(function (index, item) {
+	var $ul = $(this).next('ul').length;
+	var $this = $(this);
 	if ($ul) {
 		$(this).next('ul').css('display', 'none');
 		$this.addClass('to-expand');
@@ -61,9 +62,9 @@ $("#subjects h3, #subjects h4, #subjects h5").each(function (index, item) {
 });
 
 // expand collapse
-$("#subjects h3, #subjects h4, #subjects h5").click(function () {
-	var $ul = $(this).next('ul'),
-		$this = $(this);
+$('#subjects h3, #subjects h4, #subjects h5').click(function () {
+	var $ul = $(this).next('ul');
+	var $this = $(this);
 	if ($ul) {
 
 		$ul.slideToggle(200, function () {
@@ -76,24 +77,24 @@ $("#subjects h3, #subjects h4, #subjects h5").click(function () {
 	}
 });
 
-/****Accept Cookie policy */
+/** **Accept Cookie policy */
 // remove if available
-if (typeof (Storage) !== "undefined") {
-	if (localStorage.getItem("cookie") !== null) {
-		$("#privacyAcpt").remove();
+if (typeof (Storage) !== 'undefined') {
+	if (localStorage.getItem('cookie') !== null) {
+		$('#privacyAcpt').remove();
 	}
 }
 // on accept
-$("#btnConsent").click(function (e) {
+$('#btnConsent').click(function (e) {
 	e.preventDefault();
-	if (typeof (Storage) !== "undefined") {
-		localStorage.setItem("cookie", "true");
+	if (typeof (Storage) !== 'undefined') {
+		localStorage.setItem('cookie', 'true');
 	}
-	$("#privacyAcpt").fadeOut();
+	$('#privacyAcpt').fadeOut();
 });
 
 
-/*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* ! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
 - enabling async CSS loading in browsers that do not support rel=preload
@@ -198,7 +199,7 @@ $("#btnConsent").click(function (e) {
 	}
 }(typeof global !== "undefined" ? global : this));
 */
-/********* Show/hide social share************/
+/** ******* Show/hide social share************/
 var like = true;
 $(document).scroll(function () {
 	var y = $(this).scrollTop();
@@ -213,9 +214,10 @@ $(document).scroll(function () {
 	}
 });
 
-/***** FB lIke widget ***** */
-function fbLike(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
+/** *** FB lIke widget ***** */
+function fbLike (d, s, id) {
+	var js;
+	var fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
 	js = d.createElement(s); js.id = id;
 	js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=1950322238562764&autoLogAppEvents=1';
@@ -226,9 +228,9 @@ function fbLike(d, s, id) {
 if ('serviceWorker' in navigator) {
 
 	navigator.serviceWorker.register('/sw.js').then(function (reg) {
-		//console.log('Successfully registered service worker', reg);
+		// console.log('Successfully registered service worker', reg);
 	}).catch(function (err) {
-		//console.warn('Error whilst registering service worker', err);
+		// console.warn('Error whilst registering service worker', err);
 	});
 
 	// unregister service worker

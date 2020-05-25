@@ -1,61 +1,62 @@
+/* eslint-disable linebreak-style */
 // use a CACHE_NAME for cache versioning
 var CACHE_NAME = '4.0.4';
 
 // during the install phase you usually want to cache static assets
 self.addEventListener('install', function (e) {
     // once the SW is installed, go ahead and fetch the resources to make this work offline
-    e.waitUntil(
+	e.waitUntil(
         caches.open(CACHE_NAME).then(function (cache) {
-            return cache.addAll([
-                '/',
-                '/dist/common.bundle.js',
-                '/dist/style.css',
-                '/offline.html',
-                '/images/completeuniversityinfo.png',
-                '/images/banner.jpg',
-                '/images/tests/ielts_logo.jpg',
-                '/images/tests/toefl_logo.jpg',
-                '/images/tests/pte_logo.jpg',
-                '/images/tests/gmat_logo.jpg',
-                '/images/tests/gre_logo.jpg',
-                '/fonts/fontawesome-webfont.eot',
-                '/fonts/fontawesome-webfont.woff2',
-                '/fonts/fontawesome-webfont.woff',
-                '/fonts/fontawesome-webfont.ttf',
-                '/fonts/fontawesome-webfont.svg'
-            ]).then(function () {
-                self.skipWaiting();
-            });
-        })
+	return cache.addAll([
+		'/',
+		'/dist/common.bundle.js',
+		'/dist/style.css',
+		'/offline.html',
+		'/images/completeuniversityinfo.png',
+		'/images/banner.jpg',
+		'/images/tests/ielts_logo.jpg',
+		'/images/tests/toefl_logo.jpg',
+		'/images/tests/pte_logo.jpg',
+		'/images/tests/gmat_logo.jpg',
+		'/images/tests/gre_logo.jpg',
+		'/fonts/fontawesome-webfont.eot',
+		'/fonts/fontawesome-webfont.woff2',
+		'/fonts/fontawesome-webfont.woff',
+		'/fonts/fontawesome-webfont.ttf',
+		'/fonts/fontawesome-webfont.svg',
+	]).then(function () {
+		self.skipWaiting();
+	});
+})
     );
 });
 
 // to delete outdated caches
 self.addEventListener('activate', function (event) {
-    event.waitUntil(
+	event.waitUntil(
         caches.keys().then(function (cacheNames) {
-            return Promise.all(
+	return Promise.all(
                 cacheNames.filter(function (cacheName) {
-                    return true;
-                }).map(function (cacheName) {
-                    return caches.delete(cacheName);
-                })
+	return true;
+}).map(function (cacheName) {
+	return caches.delete(cacheName);
+})
             );
-        })
+})
     );
 });
 
 // when the browser fetches a url
 self.addEventListener('fetch', function (event) {
     // either respond with the cached object or go ahead and fetch the actual url
-    event.respondWith(
+	event.respondWith(
         caches.match(event.request).then(function (response) {
-            if (response) {
+	if (response) {
                 // retrieve from cache
-                return response;
-            }
+		return response;
+	}
             // fetch as normal
-            return fetch(event.request);
-        })
+	return fetch(event.request);
+})
     );
 });
