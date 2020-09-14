@@ -64,10 +64,15 @@ exports = module.exports = function (req, res) {
       .populate('region country state city');
 
     q.exec(function (err, results) {
-      // console.log("FINAL RESULTS: " + JSON.stringify(results));
-      // console.log("FINAL Count: " + JSON.stringify(results.total));
-      locals.data.universities = results;
-      next(err);
+      const shuffled = results.results
+            .map((a) => ({ sort: Math.random(), value: a }))
+            .sort((a, b) => a.sort - b.sort)
+            .map((a) => a.value);
+        results.results = shuffled;
+        // console.log("FINAL RESULTS: " + JSON.stringify(results));
+        // console.log("FINAL Count: " + JSON.stringify(results.total));
+        locals.data.universities = results;
+        next(err);
     });
 
   });
